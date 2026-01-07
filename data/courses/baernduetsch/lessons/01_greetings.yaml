@@ -1,0 +1,85 @@
+id: 01_greetings
+order: 1
+title: "Greetings & Politeness"
+description: "Say hello, ask how someone is, and be polite."
+estimated_minutes: 8
+
+steps:
+  - type: markdown
+    id: intro
+    title: "Welcome"
+    markdown: |
+      ## How this course works
+
+      - The **course language** is **English**.
+      - The **target language** is **Bernese Swiss German** (*Bärndütsch*).
+      - We also show **Standard German** side by side.
+
+      You can author new lessons by writing YAML files like this one.
+
+    images:
+      - "assets/images/bern_placeholder.png"
+
+  - type: cloze
+    id: cloze_hoi
+    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    sentence:
+      en: ["In Bern, you can say", "to greet someone."]
+      de: ["In Bern kannst du ", " sagen, um jemanden zu grüßen."]
+      de_ch: ["I Bärn chasch ", " säge, zum öpper z'grüesse."]
+    answers: ["Hoi", "Hoi!"]
+    solution_display: "Correct! \"Hoi\" means hello; you can also say \"Tschau\" or \"Säli\", like they would in Italian and French respectively"
+    audio: "assets/audio/hoi.wav"
+    images:
+      - "assets/images/hoi.jpg"
+
+  - type: order
+    id: order_wiegeits
+    prompt: "Put the words in the correct order (Bernese)."
+    target:
+      de_ch: "Wie geit's der?"
+      de: "Wie geht's dir?"
+      en: "How are you?"
+    tokens: ["Wie", "geit's", "der?"]
+    accepted:
+      - "Wie geit's der?"
+      - "Wie geit's der"
+
+  - type: listen_type
+    id: listen_hoi
+    prompt: "Listen and type what you hear (Bernese)."
+    audio: "assets/audio/hoi.wav"
+    answers: ["Hoi", "Hoi!"]
+
+  - type: pronounce
+    id: pronounce_merci
+    prompt: "Listen, then record yourself saying the Bernese phrase."
+    reference_text:
+      de_ch: "Merci viu mau"
+      de: "Vielen Dank"
+      en: "Thanks a lot"
+    reference_audio: "assets/audio/merci_viu_mau.wav"
+    pass_score: 70
+
+  - type: match
+    id: match_basic
+    prompt: "Match the translations (English/German → Bernese)."
+    pairs:
+      - left:
+          en: "Hi"
+          de: "Hallo"
+        right:
+          de_ch: "Hoi"
+          de: "Hallo"
+      - left:
+          en: "Thanks"
+          de: "Danke"
+        right:
+          de_ch: "Merci"
+          de: "Danke"
+      - left:
+          en: "Bye"
+          de: "Tschüss"
+        right:
+          de_ch: "Tschou"
+          de: "Tschüss"

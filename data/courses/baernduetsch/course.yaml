@@ -1,0 +1,11 @@
+id: baernduetsch
+title: "Bernese Swiss German (Bärndütsch)"
+tagline: "English course • always shows Standard German • beginner friendly"
+description: |
+  Learn the basics of Bernese Swiss German (Bärndütsch). The course language is **English**,
+  but we always show **Standard German** on screen for context.
+
+from_language: en
+target_language: de_ch
+secondary_language: de
+icon: "🐻"
