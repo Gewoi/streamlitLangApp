@@ -45,21 +45,24 @@ def player(course_id : str, lesson_id : str):
         st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
         st.rerun()
     with top_mid:
-        st.markdown(f"### {lesson_dict["title"]}")
+        st.markdown(f"#### {lesson_dict["title"]}")
         st.caption(course_dict["title"])
     top_right.caption(f"Step {step_idx+1}/{len(lesson_dict["steps"])}")
+
+    st.space("small")
 
     current_step = lesson_dict["steps"][step_idx]
     prompt = current_step.get("prompt", None)
     if prompt:
-        st.markdown(f"__{prompt}__")
+        st.markdown(f"#### :blue[{prompt}]", text_alignment="center")
 
-    present_container = st.container(border=True, gap="medium")
+    st.space("small")
+    present_container = st.container(border=True, gap="small")
     with present_container:
         outcome = render_step(current_step)
             
 
-    b1, b2, b3, b4 = st.columns([1, 1, 1, 3])
+    b1, b2, b3 = st.columns(3)
     back_disabled = step_idx <= 0
     next_disabled = (step_idx >= len(lesson_dict["steps"]) - 1) or (not outcome.can_go_next)
 

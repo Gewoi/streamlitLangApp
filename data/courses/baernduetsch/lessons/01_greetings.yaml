@@ -24,9 +24,9 @@ steps:
     id: cloze_hoi
     prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
     sentence:
-      en: ["In Bern, you can say", "to greet someone."]
-      de: ["In Bern kannst du ", " sagen, um jemanden zu grüßen."]
-      de_ch: ["I Bärn chasch ", " säge, zum öpper z'grüesse."]
+      question: "In Bern, you can say 'Hi' to greet somebody"
+      helper: "In Bern kannst du 'Hoi' sagen, um jemanden zu grüßen."
+      target: ["I Bärn chasch ", " säge, zum öpper z'grüesse."]
     answers: ["Hoi", "Hoi!"]
     solution_display: "Correct! \"Hoi\" means hello; you can also say \"Tschau\" or \"Säli\", like they would in Italian and French respectively"
     audio: "assets/audio/hoi.wav"

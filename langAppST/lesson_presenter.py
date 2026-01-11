@@ -3,6 +3,7 @@ from __future__ import annotations
 import streamlit as st
 import os
 from dataclasses import dataclass
+import pathlib as Path
 
 @dataclass
 class StepOutcome:
@@ -40,8 +41,54 @@ def render_markdown(step : dict):
 #TODO: Write all the render functions
 
 def render_cloze(step: dict):
-    st.write("rendering cloze now")
-    return StepOutcome(can_go_next=True)
+    sentence_data = step["sentence"]
+    original_sentence = sentence_data["question"] or None
+    goal_sentence_arr = sentence_data["target"]
+    helper_sentence = sentence_data["helper"] or None
+    
+    solutions = step["answers"]
+    caseIns_solutions = []
+    for sol in solutions:
+        caseIns_solutions.append(sol.casefold())
+
+    audio = step["audio"]
+    images = step["images"]
+    #st.space("small")
+    with st.form("answer", border=False):
+        if original_sentence:
+            st.markdown(f"__{original_sentence}__", text_alignment="center")
+        if helper_sentence:
+            st.caption(helper_sentence, text_alignment="center")
+        for img in images:
+            if os.path.exists(img):
+                st.image(img)
+        if os.path.exists(audio):
+            st.audio(audio)
+        else:
+            st.info(f"(Missing audio asset: {audio})")
+        
+        st.space("small")
+    
+        blank_space = ""
+        for i in range(len(solutions[0])):
+            blank_space += "_"
+            
+        full_question_sentence = str(goal_sentence_arr[0] + blank_space + goal_sentence_arr[1])
+        st.markdown(f"_{full_question_sentence}_")
+
+        answer = st.text_input("", autocomplete="off")
+        submitted = st.form_submit_button("Check")
+
+
+    #st.space("small")
+    if submitted:
+        if answer.casefold() in caseIns_solutions:
+            st.success("Correct ✅")
+            return StepOutcome(can_go_next=True)
+        else:
+            st.error("Not quite. Try again.")
+
+    return StepOutcome(can_go_next=False)
 
 def render_order(step: dict):
     st.write("rendering order now")
