@@ -30,50 +30,50 @@ def course_page(course_id : str):
         st.markdown(f"### {lesson["title"]}")
         st.markdown(lesson["description"])
         if st.button(label="Start Lesson", width="stretch"):
-            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"], "step_idx" : 0}
+            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
+            st.session_state["step_idx"] = 0
             st.rerun()
 
 def player(course_id : str, lesson_id : str):
     course_dict = get_course(course_id)
     lesson_dict = load_lesson_content(course_id, lesson_id)
 
-    #TODO: Adjust so it can be saved from progress
-    step_idx = 0
-    #FIXME: NEEDS TO COME FROM PROGRESS SOMEWHERE
+    step_idx = st.session_state["step_idx"]
 
     top_left, top_mid, top_right = st.columns([2, 3.5, 1], vertical_alignment="bottom")
     if top_left.button("⬅ Lessons"):
-        st.session_state["nav"] = {"page": "course", "course_id": course_id}
+        st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
         st.rerun()
     with top_mid:
         st.markdown(f"### {lesson_dict["title"]}")
         st.caption(course_dict["title"])
     top_right.caption(f"Step {step_idx+1}/{len(lesson_dict["steps"])}")
 
+    current_step = lesson_dict["steps"][step_idx]
+    prompt = current_step.get("prompt", None)
+    if prompt:
+        st.markdown(f"__{prompt}__")
+
     present_container = st.container(border=True, gap="medium")
     with present_container:
-        current_step = lesson_dict["steps"][step_idx]
         outcome = render_step(current_step)
-        if outcome.just_completed:
-            #TODO: Pass it to progress
-            pass
+            
 
     b1, b2, b3, b4 = st.columns([1, 1, 1, 3])
     back_disabled = step_idx <= 0
     next_disabled = (step_idx >= len(lesson_dict["steps"]) - 1) or (not outcome.can_go_next)
 
-    #TODO: Save the step index in the progress, otherwise this gets messy
 
     if b1.button("⬅ Back", disabled=back_disabled):
-        st.session_state["nav"]["step_idx"] -= 1
+        st.session_state["step_idx"] -= 1
         st.rerun()
 
     if b2.button("Skip", disabled=(step_idx >= len(lesson_dict["steps"]) - 1)):
-        st.session_state["nav"]["step_idx"] += 1
+        st.session_state["step_idx"] += 1
         st.rerun()
 
     if b3.button("Next ➡", disabled=next_disabled, type="primary" if not next_disabled else "secondary"):
-        st.session_state["nav"]["step_idx"] += 1
-        print(st.session_state["nav"]["step_idx"])
+        st.session_state["step_idx"] += 1
         st.rerun()
 
+    #TODO: Insert a progress bar of sorts

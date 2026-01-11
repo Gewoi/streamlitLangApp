@@ -1,15 +1,10 @@
 import streamlit as st
-import json
-
 import langAppST.pages as pages
 
 st.set_page_config(
     page_title="MyLangApp",
     page_icon="🗣"
 )
-
-with open("data/progress.json") as json_data:
-    progress = json.load(json_data)
 
 nav = st.session_state.get("nav") or {"page" : "home"}
 
