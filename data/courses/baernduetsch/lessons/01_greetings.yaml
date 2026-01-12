@@ -36,14 +36,12 @@ steps:
   - type: order
     id: order_wiegeits
     prompt: "Put the words in the correct order (Bernese)."
-    target:
-      de_ch: "Wie geit's der?"
-      de: "Wie geht's dir?"
-      en: "How are you?"
+    sentence:
+      question: "How are you?"
+      helper: "Wie geht's dir?"
     tokens: ["Wie", "geit's", "der?"]
-    accepted:
+    answers:
       - "Wie geit's der?"
-      - "Wie geit's der"
 
   - type: listen_type
     id: listen_hoi

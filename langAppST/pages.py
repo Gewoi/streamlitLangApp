@@ -32,6 +32,9 @@ def course_page(course_id : str):
         if st.button(label="Start Lesson", width="stretch"):
             st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
             st.session_state["step_idx"] = 0
+            st.session_state["order_tokens"] = []
+            st.session_state["used_tokens"] = []
+            st.session_state["order_answer"] = ""
             st.rerun()
 
 def player(course_id : str, lesson_id : str):
@@ -75,7 +78,7 @@ def player(course_id : str, lesson_id : str):
         st.session_state["step_idx"] += 1
         st.rerun()
 
-    if b3.button("Next ➡", disabled=next_disabled, type="primary" if not next_disabled else "secondary"):
+    if b3.button("Next ➡", disabled=next_disabled):
         st.session_state["step_idx"] += 1
         st.rerun()
 

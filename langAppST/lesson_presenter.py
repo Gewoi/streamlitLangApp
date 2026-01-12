@@ -5,6 +5,8 @@ import os
 from dataclasses import dataclass
 import pathlib as Path
 
+import random
+
 @dataclass
 class StepOutcome:
     can_go_next: bool
@@ -42,28 +44,30 @@ def render_markdown(step : dict):
 
 def render_cloze(step: dict):
     sentence_data = step["sentence"]
-    original_sentence = sentence_data["question"] or None
+    original_sentence = sentence_data.get("question", None)
     goal_sentence_arr = sentence_data["target"]
-    helper_sentence = sentence_data["helper"] or None
+    helper_sentence = sentence_data.get("helper", None)
     
     solutions = step["answers"]
     caseIns_solutions = []
     for sol in solutions:
         caseIns_solutions.append(sol.casefold())
 
-    audio = step["audio"]
-    images = step["images"]
+    audio = step.get("audio",None)
+    images = step.get("images",None)
     #st.space("small")
     with st.form("answer", border=False):
         if original_sentence:
             st.markdown(f"__{original_sentence}__", text_alignment="center")
         if helper_sentence:
             st.caption(helper_sentence, text_alignment="center")
-        for img in images:
-            if os.path.exists(img):
-                st.image(img)
-        if os.path.exists(audio):
-            st.audio(audio)
+        if images:
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
+        if audio:
+            if os.path.exists(audio):
+                st.audio(audio)
         else:
             st.info(f"(Missing audio asset: {audio})")
         
@@ -76,8 +80,8 @@ def render_cloze(step: dict):
         full_question_sentence = str(goal_sentence_arr[0] + blank_space + goal_sentence_arr[1])
         st.markdown(f"_{full_question_sentence}_")
 
-        answer = st.text_input("", autocomplete="off")
-        submitted = st.form_submit_button("Check")
+        answer = st.text_input("answer", autocomplete="off", label_visibility="hidden")
+        submitted = st.form_submit_button("Check", width="stretch")
 
 
     #st.space("small")
@@ -91,5 +95,72 @@ def render_cloze(step: dict):
     return StepOutcome(can_go_next=False)
 
 def render_order(step: dict):
-    st.write("rendering order now")
-    return StepOutcome(can_go_next=True)
+    sentence_data = step["sentence"]
+    original_sentence = sentence_data.get("question", None)
+    helper_sentence = sentence_data.get("helper", None)
+    if not st.session_state["order_tokens"]:
+        tokens = step["tokens"]
+        random.shuffle(tokens)
+        st.session_state["order_tokens"] = tokens
+        used_tokens = []
+    else:
+        tokens = st.session_state["order_tokens"]
+        used_tokens = st.session_state["used_tokens"]
+
+    solutions = step["answers"]
+
+    audio = step.get("audio", None)
+    images = step.get("images", None)
+
+
+    if original_sentence:
+        st.markdown(f"__{original_sentence}__", text_alignment="center")
+    if helper_sentence:
+        st.caption(helper_sentence, text_alignment="center")
+    if images:
+        for img in images:
+            if os.path.exists(img):
+                st.image(img)
+    if audio:
+        if os.path.exists(audio):
+            st.audio(audio)
+    else:
+        st.info(f"(Missing audio asset: {audio})")
+    #TODO: Better formatting!!
+
+    st.divider()
+    answer = st.session_state["order_answer"]
+    st.markdown(f"#### {answer}", text_alignment="center")
+    st.divider()
+    tempCols = st.columns(3, vertical_alignment="center")
+    with tempCols[1]:
+        if st.button("Undo", type="primary", width="stretch"):
+            st.session_state["order_answer"] = ""
+            st.session_state["used_tokens"] = []
+            st.rerun()
+    
+    
+    cols = st.columns(len(tokens))
+    for i, col in enumerate(cols):
+        with cols[i % 5]:
+            button_disabled = tokens[i] in used_tokens
+            if st.button(label=tokens[i], disabled=button_disabled):
+                st.session_state["used_tokens"] = used_tokens + [tokens[i]]
+                st.session_state["order_answer"] += "  " + tokens[i] if not answer == "" else tokens[i]
+                st.rerun()
+    st.divider()
+    st.space("small")
+    with st.form("answer", border=False):
+        submitted = st.form_submit_button("Check", width="stretch")
+    
+    
+            
+
+    if submitted:
+        if answer in solutions:
+            st.success("Correct ✅")
+            return StepOutcome(can_go_next=True)
+        else:
+            st.error("Not quite. Try again.")
+
+    return StepOutcome(can_go_next=False)
