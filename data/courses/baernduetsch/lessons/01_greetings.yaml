@@ -40,8 +40,15 @@ steps:
       question: "How are you?"
       helper: "Wie geht's dir?"
     tokens: ["Wie", "geit's", "der?"]
+
+  - type: translate_type
+    id: translate_Hallo
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Hello, how are you?"
+      helper: "Hallo, wie geht es dir?"
     answers:
-      - "Wie geit's der?"
+      ["Hallo, wie geits dir?", "Hallo, wie geits?"]
 
   - type: listen_type
     id: listen_hoi

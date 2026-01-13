@@ -4,12 +4,18 @@ import streamlit as st
 import os
 from dataclasses import dataclass
 import pathlib as Path
+from string import ascii_letters
 
 import random
 
 @dataclass
 class StepOutcome:
     can_go_next: bool
+
+def comparison_string(input_string : str):
+    result = ''.join([letter for letter in input_string if letter in ascii_letters])
+    result = result.casefold()
+    return result
 
 def render_step(step : dict):
     stype = str(step.get("type", "markdown"))
@@ -19,6 +25,8 @@ def render_step(step : dict):
         return render_cloze(step)
     if stype == "order":
         return render_order(step)
+    if stype == "translate_type":
+        return render_translate_type(step)
     # if stype == "listen_type":
     #     return render_listen_type(step, course=course, lesson=lesson, course_id=course_id)
     # if stype == "pronounce":
@@ -47,11 +55,13 @@ def render_cloze(step: dict):
     original_sentence = sentence_data.get("question", None)
     goal_sentence_arr = sentence_data["target"]
     helper_sentence = sentence_data.get("helper", None)
+
+    sol_display = step.get("solutions_display", None)
     
     solutions = step["answers"]
     caseIns_solutions = []
     for sol in solutions:
-        caseIns_solutions.append(sol.casefold())
+        caseIns_solutions.append(comparison_string(sol))
 
     audio = step.get("audio",None)
     images = step.get("images",None)
@@ -86,8 +96,11 @@ def render_cloze(step: dict):
 
     #st.space("small")
     if submitted:
-        if answer.casefold() in caseIns_solutions:
-            st.success("Correct ✅")
+        if comparison_string(answer) in caseIns_solutions:
+            if sol_display:
+                st.success(sol_display)
+            else:
+                st.success("Correct ✅")
             return StepOutcome(can_go_next=True)
         else:
             st.error("Not quite. Try again.")
@@ -107,10 +120,12 @@ def render_order(step: dict):
         tokens = st.session_state["order_tokens"]
         used_tokens = st.session_state["used_tokens"]
 
-    solutions = step["answers"]
+    solutions = step["tokens"]
 
     audio = step.get("audio", None)
     images = step.get("images", None)
+
+    sol_display = step.get("solution_display", None)
 
 
     if original_sentence:
@@ -129,13 +144,15 @@ def render_order(step: dict):
     #TODO: Better formatting!!
 
     st.divider()
-    answer = st.session_state["order_answer"]
+    answer = ""
+    for elm in st.session_state["order_answer"]:
+        answer += " " + str(elm)
     st.markdown(f"#### {answer}", text_alignment="center")
     st.divider()
     tempCols = st.columns(3, vertical_alignment="center")
     with tempCols[1]:
         if st.button("Undo", type="primary", width="stretch"):
-            st.session_state["order_answer"] = ""
+            st.session_state["order_answer"] = []
             st.session_state["used_tokens"] = []
             st.rerun()
     
@@ -146,21 +163,53 @@ def render_order(step: dict):
             button_disabled = tokens[i] in used_tokens
             if st.button(label=tokens[i], disabled=button_disabled):
                 st.session_state["used_tokens"] = used_tokens + [tokens[i]]
-                st.session_state["order_answer"] += "  " + tokens[i] if not answer == "" else tokens[i]
+                st.session_state["order_answer"] += [tokens[i]]
                 st.rerun()
     st.divider()
-    st.space("small")
     with st.form("answer", border=False):
         submitted = st.form_submit_button("Check", width="stretch")
-    
-    
-            
 
     if submitted:
-        if answer in solutions:
-            st.success("Correct ✅")
+        if st.session_state["order_answer"] == solutions:
+            if sol_display:
+                st.success(sol_display)
+            else:
+                st.success("Correct ✅")
+            st.session_state["order_tokens"] = []
+            st.session_state["used_tokens"] = []
+            st.session_state["order_answer"] = []
             return StepOutcome(can_go_next=True)
         else:
             st.error("Not quite. Try again.")
-
     return StepOutcome(can_go_next=False)
+
+def render_translate_type(step : dict):
+    sentence_data = step["sentence"]
+    original_sentence = sentence_data.get("question", None)
+    helper_sentence = sentence_data.get("helper", None)
+
+    sol_display = step.get("solutions_display", None)
+    
+    solutions = step["answers"]
+    caseIns_solutions = []
+    for sol in solutions:
+        caseIns_solutions.append(comparison_string(sol))
+
+    audio = step.get("audio", None)
+    images = step.get("images", None)
+
+    #st.space("small")
+    with st.form("answer", border=False):
+        if original_sentence:
+            st.markdown(f"__{original_sentence}__", text_alignment="center")
+        if helper_sentence:
+            st.caption(helper_sentence, text_alignment="center")
+        if images:
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
+        if audio:
+            if os.path.exists(audio):
+                st.audio(audio)
+        else:
+            st.info(f"(Missing audio asset: {audio})")
