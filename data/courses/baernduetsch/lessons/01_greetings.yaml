@@ -3,6 +3,7 @@ order: 1
 title: "Greetings & Politeness"
 description: "Say hello, ask how someone is, and be polite."
 estimated_minutes: 8
+section : Basics
 
 steps:
   - type: markdown

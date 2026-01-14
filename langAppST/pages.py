@@ -1,9 +1,29 @@
 from __future__ import annotations
 
 import streamlit as st
+from streamlit_extras.floating_button import floating_button
 from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content
 from .lesson_presenter import render_step
+
+css = """
+.st-key-bkg_image_bern{
+    background-image: url("https://kursaal-bern.ch/fileadmin/inhalte/Bilder/Ueber_Uns/Stories/Das-Perfekte-Wochenende-in-Bern/Kursaal-Bern_Ueber-Uns_Stories_Das-Perfekte-Wochenende-in-Bern_Zytglogge.jpg");
+    background-size: 100%; 
+    background-position-x: center;
+    background-position-y: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+}
+
+.st-key-finished_lesson{
+    background: #2c9b2a;
+    background: linear-gradient(90deg, rgba(44, 155, 42, 0.21) 0%, rgba(66, 189, 57, 0.41) 46%, rgba(83, 237, 147, 0.25) 100%);
+}
+"""
+
+st.html(f"<style>{css}</style>")
+
 
 def homepage():
     st.title("Language App")
@@ -11,36 +31,39 @@ def homepage():
 
     course_list = load_courses()
 
+    st.divider()
+
     for course in course_list:
-        st.divider()
-        st.markdown(f"### {course["icon"]} {course["title"]}")
-        st.markdown(course["description"])
-        if st.button(label="Open Course", width="stretch"):
-            st.session_state["nav"] = {"page": "course_page", "course_id": course["id"]}
-            st.rerun()
+        with st.container(border=True, key="bkg_image_bern"):
+            st.markdown(f"### {course["icon"]} {course["title"]}")
+            st.markdown(course["description"])
+            if st.button(label="Open Course", width="stretch"):
+                st.session_state["nav"] = {"page": "course_page", "course_id": course["id"]}
+                st.session_state["step_idx"] = 0
+                st.rerun()
 
 def course_page(course_id : str):
     st.title("Select Lesson")
     st.markdown("Pick a lesson!")
 
+    course_dict = get_course(course_id)
+    sections = course_dict["sections"]
+
     lesson_list = load_lessons(course_id)
 
+    current_section = ""
+
     for lesson in lesson_list:
-        st.divider()
-        with st.container(border=True):
+        if (not lesson["section"] == current_section) and (lesson["section"] in sections):
+            st.divider()
+            current_section = lesson["section"]
+            st.title(current_section)
+        with st.container(border=True, key="finished_lesson"):
             st.markdown(f"### {lesson["title"]}", text_alignment="center")
             st.markdown(lesson["description"], text_alignment="center")
             if st.button(label="Start Lesson", width="stretch"):
                 st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
-                st.session_state["step_idx"] = 0
-                st.session_state["order_tokens"] = []
-                st.session_state["used_tokens"] = []
-                st.session_state["order_answer"] = []
-
-                st.session_state["left"] = []
-                st.session_state["right"] = []
-                st.session_state["pressed_match_buttons"] = []
-                st.session_state["match_sel_btn"] = None
+                clear_lesson_sessionstate()
                 st.rerun()
 
 def player(course_id : str, lesson_id : str):
@@ -57,6 +80,7 @@ def player(course_id : str, lesson_id : str):
         st.markdown(f"#### {lesson_dict["title"]}")
         st.caption(course_dict["title"])
     top_right.caption(f"Step {step_idx+1}/{len(lesson_dict["steps"])}")
+    st.progress( round((step_idx+1) / len(lesson_dict["steps"]) * 100))
 
     st.space("small")
 
@@ -104,6 +128,7 @@ def finishing_screen(course_id : str, lesson_id : str):
         st.title("Congratulations! :balloon:", text_alignment="center")
         st.markdown(f"### You finished the lesson!", text_alignment="center")
         st.space("large")
+        st.balloons()
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             st.rerun()

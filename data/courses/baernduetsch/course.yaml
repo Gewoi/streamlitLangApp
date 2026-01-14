@@ -5,6 +5,8 @@ description: |
   Learn the basics of Bernese Swiss German (Bärndütsch). The course language is **English**,
   but we always show **Standard German** on screen for context.
 
+sections: 
+  - Basics
 from_language: en
 target_language: de_ch
 secondary_language: de
