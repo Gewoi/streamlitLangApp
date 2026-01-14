@@ -27,14 +27,14 @@ def render_step(step : dict):
         return render_order(step)
     if stype == "translate_type":
         return render_translate_type(step)
-    # if stype == "listen_type":
-    #     return render_listen_type(step, course=course, lesson=lesson, course_id=course_id)
-    # if stype == "pronounce":
-    #     return render_pronounce(step, course=course, lesson=lesson, course_id=course_id)
-    # if stype == "match":
-    #     return render_match(step, course=course, lesson=lesson, course_id=course_id)
-    # st.warning(f"Unknown step type: {stype!r}")
-    # return StepOutcome(can_go_next=True)
+    if stype == "listen_type":
+        return render_listen_type(step)
+    if stype == "match":
+        return render_match(step)
+    if stype == "true_false":
+        return render_true_false(step)
+    st.warning(f"Unknown step type: {stype!r}")
+    return StepOutcome(can_go_next=True)
 
 def render_markdown(step : dict):
     st.markdown(step.get("markdown", "no markdown found"))
@@ -78,8 +78,8 @@ def render_cloze(step: dict):
         if audio:
             if os.path.exists(audio):
                 st.audio(audio)
-        else:
-            st.info(f"(Missing audio asset: {audio})")
+            else:
+                st.info(f"(Missing audio asset: {audio})")
         
         st.space("small")
     
@@ -139,8 +139,8 @@ def render_order(step: dict):
     if audio:
         if os.path.exists(audio):
             st.audio(audio)
-    else:
-        st.info(f"(Missing audio asset: {audio})")
+        else:
+            st.info(f"(Missing audio asset: {audio})")
     #TODO: Better formatting!!
 
     st.divider()
@@ -162,7 +162,7 @@ def render_order(step: dict):
         with cols[i % 5]:
             button_disabled = tokens[i] in used_tokens
             if st.button(label=tokens[i], disabled=button_disabled):
-                st.session_state["used_tokens"] = used_tokens + [tokens[i]]
+                st.session_state["used_tokens"] += [tokens[i]]
                 st.session_state["order_answer"] += [tokens[i]]
                 st.rerun()
     st.divider()
@@ -211,5 +211,164 @@ def render_translate_type(step : dict):
         if audio:
             if os.path.exists(audio):
                 st.audio(audio)
+            else:
+                st.info(f"(Missing audio asset: {audio})")
+
+        answer = st.text_input("answer", label_visibility="hidden", autocomplete="off")
+        
+        submitted = st.form_submit_button("Check", width="stretch")
+    
+    if submitted:
+        if comparison_string(answer) in caseIns_solutions:
+            if sol_display:
+                st.success(sol_display)
+            else:
+                st.success("Correct ✅")
+            return StepOutcome(can_go_next=True)
+        else:
+            st.error("Not quite. Try again.")
+
+    return StepOutcome(can_go_next=False)
+
+
+
+def render_listen_type(step : dict):
+    sol_display = step.get("solutions_display", None)
+    
+    solutions = step["answers"]
+    caseIns_solutions = []
+    for sol in solutions:
+        caseIns_solutions.append(comparison_string(sol))
+
+    audio = step["audio"]
+    images = step.get("images", None)
+
+    #st.space("small")
+    with st.form("answer", border=False):
+        if images:
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
+        if os.path.exists(audio):
+            st.audio(audio)
         else:
             st.info(f"(Missing audio asset: {audio})")
+
+        answer = st.text_input("answer", label_visibility="hidden", autocomplete="off")
+        
+        submitted = st.form_submit_button("Check", width="stretch")
+    
+    if submitted:
+        if comparison_string(answer) in caseIns_solutions:
+            if sol_display:
+                st.success(sol_display)
+            else:
+                st.success("Correct ✅")
+            return StepOutcome(can_go_next=True)
+        else:
+            st.error("Not quite. Try again.")
+
+    return StepOutcome(can_go_next=False)
+
+def render_match(step : dict):
+    pairs = step["pairs"]
+    all_buttons = []
+    for pair in pairs:
+        all_buttons.append(pair["right"]["target"])
+        all_buttons.append(pair["left"]["original"])
+    if not st.session_state["left"]:
+        left = [el["left"] for el in pairs]
+        random.shuffle(left)
+        st.session_state["left"] = left
+    else:
+        left = st.session_state["left"]
+    if not st.session_state["right"]:
+        right = [el["right"] for el in pairs]
+        random.shuffle(right)
+        st.session_state["right"] = right
+        pressed_match_btns = []
+    else:
+        right = st.session_state["right"]
+        pressed_match_btns = st.session_state["pressed_match_buttons"]
+    match_sel_btn = st.session_state["match_sel_btn"]
+    corresponding_btn = ""
+    for pair in pairs:
+        if pair["left"]["original"] == match_sel_btn:
+            corresponding_btn = pair["right"]["target"]
+            break
+        elif pair["right"]["target"] == match_sel_btn:
+            corresponding_btn = pair["left"]["original"]
+            break
+    
+    def check_buttons(lang : str):
+        if match_sel_btn:
+            if elm[lang] == corresponding_btn:
+                st.session_state["pressed_match_buttons"] += [elm[lang], match_sel_btn]
+                st.session_state["match_sel_btn"] = None
+                st.rerun()
+            else:
+                st.session_state["match_sel_btn"] = None
+                st.rerun()
+        else:
+            st.session_state["match_sel_btn"] = elm[lang]
+            st.rerun()
+
+    cols = st.columns([2,1,2], gap="medium")
+    for elm in left:
+        disable_cond = elm["original"] in pressed_match_btns or elm["original"] == match_sel_btn
+        if cols[0].button(label = f":orange-background[**{elm["original"]}**]" if elm["original"] is match_sel_btn else elm["original"], width="stretch", disabled=disable_cond):
+            check_buttons("original")
+    for elm in right:
+        disable_cond = elm["target"] in pressed_match_btns or elm["target"] == match_sel_btn
+        if cols[2].button(label = f":orange-background[**{elm["target"]}**]" if elm["target"] is match_sel_btn else elm["target"], width="stretch", disabled=disable_cond):
+            check_buttons("target")
+
+    if st.session_state["pressed_match_buttons"] == all_buttons:
+        st.success("Correct ✅")
+        return StepOutcome(can_go_next=True)
+
+    return StepOutcome(can_go_next=False)
+
+def render_true_false(step: dict):
+    audio = step.get("audio", None)
+    images = step.get("images", None)
+    sol_display = step.get("solution_display", None)
+    display_text = step["text"]
+
+    answer = step["answer"]
+
+    if audio:
+        if os.path.exists(audio):
+            st.audio(audio)
+        else:
+            st.info(f"(Missing audio asset: {audio})")
+    if images:
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
+    st.markdown(f"### {display_text}", text_alignment="center")
+
+    def check_answer(label):
+        if answer == label:
+            if sol_display:
+                st.success(sol_display)
+            else:
+                st.success("Correct ✅")
+            return True
+        else:
+            st.error("Not quite. Try again.")
+            return False
+
+    correct = False
+
+    cols = st.columns(3, vertical_alignment="center")
+    true_label = "True"
+    if cols[0].button(label = true_label, width="stretch"):
+        correct = check_answer(true_label)
+    false_label = "False"
+    if cols[2].button(label= false_label, width="stretch"):
+        correct = check_answer(false_label)
+
+    if correct:
+        return StepOutcome(can_go_next=True)
+    return StepOutcome(can_go_next=False)

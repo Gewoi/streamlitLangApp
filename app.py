@@ -15,6 +15,8 @@ elif page == "course_page":
     pages.course_page(nav.get("course_id"))
 elif page == "lesson":
     pages.player(nav.get("course_id"), nav.get("current_lesson"))
+elif page == "finish":
+    pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"))
 
 with st.sidebar:
     st.title("This is a sidebar")

@@ -56,35 +56,41 @@ steps:
     audio: "assets/audio/hoi.wav"
     answers: ["Hoi", "Hoi!"]
 
-  - type: pronounce
-    id: pronounce_merci
-    prompt: "Listen, then record yourself saying the Bernese phrase."
-    reference_text:
-      de_ch: "Merci viu mau"
-      de: "Vielen Dank"
-      en: "Thanks a lot"
-    reference_audio: "assets/audio/merci_viu_mau.wav"
-    pass_score: 70
+  # - type: pronounce
+  #   id: pronounce_merci
+  #   prompt: "Listen, then record yourself saying the Bernese phrase."
+  #   reference_text:
+  #     de_ch: "Merci viu mau"
+  #     de: "Vielen Dank"
+  #     en: "Thanks a lot"
+  #   reference_audio: "assets/audio/merci_viu_mau.wav"
+  #   pass_score: 70
 
   - type: match
     id: match_basic
     prompt: "Match the translations (English/German → Bernese)."
     pairs:
       - left:
-          en: "Hi"
-          de: "Hallo"
+          original: "Hi"
+          helper: "Hallo"
         right:
-          de_ch: "Hoi"
-          de: "Hallo"
+          target: "Hoi"
       - left:
-          en: "Thanks"
-          de: "Danke"
+          original: "Thanks"
+          helper: "Danke"
         right:
-          de_ch: "Merci"
-          de: "Danke"
+          target: "Merci"
       - left:
-          en: "Bye"
-          de: "Tschüss"
+          original: "Bye"
+          helper: "Tschüss"
         right:
-          de_ch: "Tschou"
-          de: "Tschüss"
+          target: "Tschou"
+
+  - type: true_false
+    id: geit_guet
+    prompt: "What do you think is said?"
+    audio : "assets/audio/hoi.wav"
+    images : 
+      - "assets/images/hoi.jpg"
+    text : "Is Claudio doing good?"
+    answer: "False"

@@ -27,15 +27,21 @@ def course_page(course_id : str):
 
     for lesson in lesson_list:
         st.divider()
-        st.markdown(f"### {lesson["title"]}")
-        st.markdown(lesson["description"])
-        if st.button(label="Start Lesson", width="stretch"):
-            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
-            st.session_state["step_idx"] = 0
-            st.session_state["order_tokens"] = []
-            st.session_state["used_tokens"] = []
-            st.session_state["order_answer"] = ""
-            st.rerun()
+        with st.container(border=True):
+            st.markdown(f"### {lesson["title"]}", text_alignment="center")
+            st.markdown(lesson["description"], text_alignment="center")
+            if st.button(label="Start Lesson", width="stretch"):
+                st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
+                st.session_state["step_idx"] = 0
+                st.session_state["order_tokens"] = []
+                st.session_state["used_tokens"] = []
+                st.session_state["order_answer"] = []
+
+                st.session_state["left"] = []
+                st.session_state["right"] = []
+                st.session_state["pressed_match_buttons"] = []
+                st.session_state["match_sel_btn"] = None
+                st.rerun()
 
 def player(course_id : str, lesson_id : str):
     course_dict = get_course(course_id)
@@ -67,19 +73,47 @@ def player(course_id : str, lesson_id : str):
 
     b1, b2, b3 = st.columns(3)
     back_disabled = step_idx <= 0
-    next_disabled = (step_idx >= len(lesson_dict["steps"]) - 1) or (not outcome.can_go_next)
+    last_condition = (step_idx >= len(lesson_dict["steps"]) - 1)
+    next_disabled = (not outcome.can_go_next)
 
 
     if b1.button("⬅ Back", disabled=back_disabled):
         st.session_state["step_idx"] -= 1
         st.rerun()
 
-    if b2.button("Skip", disabled=(step_idx >= len(lesson_dict["steps"]) - 1)):
-        st.session_state["step_idx"] += 1
-        st.rerun()
-
-    if b3.button("Next ➡", disabled=next_disabled):
-        st.session_state["step_idx"] += 1
-        st.rerun()
+    if not last_condition:
+        if b2.button("Skip"):
+            st.session_state["step_idx"] += 1
+            clear_lesson_sessionstate()
+            st.rerun()
+    
+        if b3.button("Next ➡", disabled=next_disabled):
+            st.session_state["step_idx"] += 1
+            clear_lesson_sessionstate()
+            st.rerun()
+    else:
+        if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
+            st.session_state["nav"] = {"page": "finish", "course_id": course_id, "current_lesson": lesson_id}
+            st.rerun()
+            
 
     #TODO: Insert a progress bar of sorts
+
+def finishing_screen(course_id : str, lesson_id : str):
+    with st.container(border=True):
+        st.title("Congratulations! :balloon:", text_alignment="center")
+        st.markdown(f"### You finished the lesson!", text_alignment="center")
+        st.space("large")
+        if st.button(label="continue", width= "stretch", type="primary"):
+            st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
+            st.rerun()
+
+
+def clear_lesson_sessionstate():
+    st.session_state["pressed_match_buttons"] = []
+    st.session_state["match_sel_btn"] = None
+    st.session_state["left"] = []
+    st.session_state["right"] = []
+    st.session_state["order_tokens"] = []
+    st.session_state["used_tokens"] = []
+    st.session_state["order_answer"] = []
