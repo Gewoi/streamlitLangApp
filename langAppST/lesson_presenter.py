@@ -18,6 +18,9 @@ def comparison_string(input_string : str):
     result = result.casefold()
     return result
 
+def mistake_made():
+    st.session_state["mistakes"] += 1
+
 def render_step(step : dict):
     stype = str(step.get("type", "markdown"))
     if stype == "markdown":
@@ -41,11 +44,18 @@ def render_markdown(step : dict):
     st.markdown(step.get("markdown", "no markdown found"))
 
     images = step.get("images", [])
+    audio = step.get("audio", None)
     for img in images or []:
-        if os.path.exists(img):
-            st.image(str(img))
+        with st.container(horizontal_alignment="center"):
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
+
+    if audio:
+        if os.path.exists(audio):
+            st.audio(audio, autoplay=True)
         else:
-            st.info(f"(Missing image asset: {img})")
+            st.info(f"(Missing audio asset: {audio})")
 
     return StepOutcome(can_go_next=True)
 
@@ -73,12 +83,13 @@ def render_cloze(step: dict):
         if helper_sentence:
             st.caption(helper_sentence, text_alignment="center")
         if images:
-            for img in images:
-                if os.path.exists(img):
-                    st.image(img)
+            with st.container(horizontal_alignment="center"):
+                for img in images:
+                    if os.path.exists(img):
+                        st.image(img)
         if audio:
             if os.path.exists(audio):
-                st.audio(audio)
+                st.audio(audio, autoplay=True)
             else:
                 st.info(f"(Missing audio asset: {audio})")
         
@@ -91,7 +102,7 @@ def render_cloze(step: dict):
         full_question_sentence = str(goal_sentence_arr[0] + blank_space + goal_sentence_arr[1])
         st.markdown(f"_{full_question_sentence}_")
 
-        answer = st.text_input("answer", autocomplete="off", label_visibility="hidden")
+        answer = st.text_input("answer_cloze", autocomplete="off", label_visibility="hidden", value="")
         submitted = st.form_submit_button("Check", width="stretch")
 
 
@@ -104,6 +115,7 @@ def render_cloze(step: dict):
                 st.success("Correct ✅")
             return StepOutcome(can_go_next=True)
         else:
+            mistake_made()
             st.error("Not quite. Try again.")
 
     return StepOutcome(can_go_next=False)
@@ -134,12 +146,13 @@ def render_order(step: dict):
     if helper_sentence:
         st.caption(helper_sentence, text_alignment="center")
     if images:
-        for img in images:
-            if os.path.exists(img):
-                st.image(img)
+        with st.container(horizontal_alignment="center"):
+            for img in images:
+                if os.path.exists(img):
+                    st.image(img)
     if audio:
         if os.path.exists(audio):
-            st.audio(audio)
+            st.audio(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
     #TODO: Better formatting!!
@@ -168,7 +181,7 @@ def render_order(step: dict):
                 st.rerun()
     st.divider()
     with st.form("answer", border=False):
-        submitted = st.form_submit_button("Check", width="stretch")
+        submitted = st.form_submit_button("Check", width="stretch", shortcut="enter")
 
     if submitted:
         if st.session_state["order_answer"] == solutions:
@@ -176,11 +189,13 @@ def render_order(step: dict):
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
+            st.session_state["enter_to_continue"] = True
             st.session_state["order_tokens"] = []
             st.session_state["used_tokens"] = []
             st.session_state["order_answer"] = []
             return StepOutcome(can_go_next=True)
         else:
+            mistake_made()
             st.error("Not quite. Try again.")
     return StepOutcome(can_go_next=False)
 
@@ -206,27 +221,29 @@ def render_translate_type(step : dict):
         if helper_sentence:
             st.caption(helper_sentence, text_alignment="center")
         if images:
-            for img in images:
-                if os.path.exists(img):
-                    st.image(img)
+            with st.container(horizontal_alignment="center"):
+                for img in images:
+                    if os.path.exists(img):
+                        st.image(img)
         if audio:
             if os.path.exists(audio):
-                st.audio(audio)
+                st.audio(audio, autoplay=True)
             else:
                 st.info(f"(Missing audio asset: {audio})")
 
-        answer = st.text_input("answer", label_visibility="hidden", autocomplete="off")
+        answer_type = st.text_input("answer_type", label_visibility="hidden", autocomplete="off", value = "")
         
         submitted = st.form_submit_button("Check", width="stretch")
     
     if submitted:
-        if comparison_string(answer) in caseIns_solutions:
+        if comparison_string(answer_type) in caseIns_solutions:
             if sol_display:
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
             return StepOutcome(can_go_next=True)
         else:
+            mistake_made()
             st.error("Not quite. Try again.")
 
     return StepOutcome(can_go_next=False)
@@ -247,26 +264,28 @@ def render_listen_type(step : dict):
     #st.space("small")
     with st.form("answer", border=False):
         if images:
-            for img in images:
-                if os.path.exists(img):
-                    st.image(img)
+            with st.container(horizontal_alignment="center"):
+                for img in images:
+                    if os.path.exists(img):
+                        st.image(img)
         if os.path.exists(audio):
-            st.audio(audio)
+            st.audio(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
 
-        answer = st.text_input("answer", label_visibility="hidden", autocomplete="off")
+        answer_listen = st.text_input("answer_listen", label_visibility="hidden", autocomplete="off", value = "")
         
         submitted = st.form_submit_button("Check", width="stretch")
     
     if submitted:
-        if comparison_string(answer) in caseIns_solutions:
+        if comparison_string(answer_listen) in caseIns_solutions:
             if sol_display:
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
             return StepOutcome(can_go_next=True)
         else:
+            mistake_made()
             st.error("Not quite. Try again.")
 
     return StepOutcome(can_go_next=False)
@@ -327,7 +346,7 @@ def render_match(step : dict):
         if cols[2].button(label = f":orange-background[**{elm["target"]}**]" if elm["target"] is match_sel_btn else elm["target"], width="stretch", disabled=disable_cond):
             check_buttons("target")
 
-    if st.session_state["pressed_match_buttons"] == all_buttons:
+    if len(st.session_state["pressed_match_buttons"]) == len(all_buttons):
         st.success("Correct ✅")
         return StepOutcome(can_go_next=True)
 
@@ -343,10 +362,11 @@ def render_true_false(step: dict):
 
     if audio:
         if os.path.exists(audio):
-            st.audio(audio)
+            st.audio(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
     if images:
+        with st.container(horizontal_alignment="center"):
             for img in images:
                 if os.path.exists(img):
                     st.image(img)
@@ -360,6 +380,7 @@ def render_true_false(step: dict):
                 st.success("Correct ✅")
             return True
         else:
+            mistake_made()
             st.error("Not quite. Try again.")
             return False
 
@@ -374,5 +395,6 @@ def render_true_false(step: dict):
         correct = check_answer(false_label)
 
     if correct:
+        st.session_state["enter_to_continue"] = True
         return StepOutcome(can_go_next=True)
     return StepOutcome(can_go_next=False)

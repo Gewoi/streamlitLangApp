@@ -1,6 +1,6 @@
-id: 01_greetings
+id: 00_TEST
 order: 1
-title: "Greetings & Politeness"
+title: "TEST"
 description: "Say hello, ask how someone is, and be polite."
 estimated_minutes: 8
 section : Basics
@@ -17,9 +17,9 @@ steps:
       - We also show **Standard German** side by side.
 
       You can author new lessons by writing YAML files like this one.
-    audio: "data/assets/audio/hoi.wav"
+
     images:
-      - "data/assets/images/hoi.jpg"
+      - "data/assets/images/bern.jpg"
 
   - type: cloze
     id: cloze_hoi

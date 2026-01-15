@@ -5,25 +5,35 @@ from streamlit_extras.floating_button import floating_button
 from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content
 from .lesson_presenter import render_step
+from .progress_handler import ProgressStore
+import hashlib
 
-css = """
-.st-key-bkg_image_bern{
-    background-image: url("https://kursaal-bern.ch/fileadmin/inhalte/Bilder/Ueber_Uns/Stories/Das-Perfekte-Wochenende-in-Bern/Kursaal-Bern_Ueber-Uns_Stories_Das-Perfekte-Wochenende-in-Bern_Zytglogge.jpg");
-    background-size: 100%; 
-    background-position-x: center;
-    background-position-y: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
-    background-blend-mode: lighten;
-}
 
-.st-key-finished_lesson{
-    background: #2c9b2a;
-    background: linear-gradient(90deg, rgba(44, 155, 42, 0.21) 0%, rgba(66, 189, 57, 0.41) 46%, rgba(83, 237, 147, 0.25) 100%);
-}
-"""
 
-st.html(f"<style>{css}</style>")
+users = st.secrets["users"]
 
+def hash_password(password: str) -> str:
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def check_login(username, password):
+    if username not in users:
+        return False
+    return hash_password(password) == users[username]
+
+def login_page():
+    with st.form(key="login"):
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+
+        submitted = st.form_submit_button("Login")
+        
+    if submitted:
+        if check_login(username, password):
+            st.session_state.logged_in = True
+            st.session_state.user = username
+            st.rerun()
+        else:
+            st.error("Invalid username or password")
 
 def homepage():
     st.title("Language App")
@@ -34,15 +44,16 @@ def homepage():
     st.divider()
 
     for course in course_list:
-        with st.container(border=True, key="bkg_image_bern"):
+        with st.container(border=True, key=f"bkg_image_bern_{course['id']}"):
             st.markdown(f"### {course["icon"]} {course["title"]}")
             st.markdown(course["description"])
-            if st.button(label="Open Course", width="stretch"):
+            if st.button(label="Open Course", width="stretch", key=f"start_{course['id']}"):
                 st.session_state["nav"] = {"page": "course_page", "course_id": course["id"]}
                 st.session_state["step_idx"] = 0
                 st.rerun()
+                
 
-def course_page(course_id : str):
+def course_page(course_id : str, store : ProgressStore):
     st.title("Select Lesson")
     st.markdown("Pick a lesson!")
 
@@ -58,12 +69,17 @@ def course_page(course_id : str):
             st.divider()
             current_section = lesson["section"]
             st.title(current_section)
-        with st.container(border=True, key="finished_lesson"):
+        completed_condition = store.check_lesson_completed(st.session_state["user"], course_id, lesson["id"])
+        with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
+            if completed_condition:
+                st.caption("Completed✅")
             st.markdown(f"### {lesson["title"]}", text_alignment="center")
             st.markdown(lesson["description"], text_alignment="center")
-            if st.button(label="Start Lesson", width="stretch"):
+            if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}"):
                 st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
                 clear_lesson_sessionstate()
+                st.session_state["step_idx"] = 0
+                st.session_state["new_words"] = lesson.get("new_words", [])
                 st.rerun()
 
 def player(course_id : str, lesson_id : str):
@@ -100,7 +116,6 @@ def player(course_id : str, lesson_id : str):
     last_condition = (step_idx >= len(lesson_dict["steps"]) - 1)
     next_disabled = (not outcome.can_go_next)
 
-
     if b1.button("⬅ Back", disabled=back_disabled):
         st.session_state["step_idx"] -= 1
         st.rerun()
@@ -108,22 +123,22 @@ def player(course_id : str, lesson_id : str):
     if not last_condition:
         if b2.button("Skip"):
             st.session_state["step_idx"] += 1
-            clear_lesson_sessionstate()
             st.rerun()
     
-        if b3.button("Next ➡", disabled=next_disabled):
+        if b3.button("Next ➡", disabled=next_disabled, width="stretch"):
             st.session_state["step_idx"] += 1
-            clear_lesson_sessionstate()
+            st.session_state["enter_to_continue"] = False
             st.rerun()
     else:
         if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
+            st.session_state["enter_to_continue"] = False
             st.session_state["nav"] = {"page": "finish", "course_id": course_id, "current_lesson": lesson_id}
             st.rerun()
             
 
     #TODO: Insert a progress bar of sorts
 
-def finishing_screen(course_id : str, lesson_id : str):
+def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
     with st.container(border=True):
         st.title("Congratulations! :balloon:", text_alignment="center")
         st.markdown(f"### You finished the lesson!", text_alignment="center")
@@ -131,6 +146,8 @@ def finishing_screen(course_id : str, lesson_id : str):
         st.balloons()
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
+            store.lesson_completed(st.session_state["user"], course_id, lesson_id, st.session_state["mistakes"], st.session_state["new_words"])
+            clear_lesson_sessionstate()
             st.rerun()
 
 
@@ -142,3 +159,5 @@ def clear_lesson_sessionstate():
     st.session_state["order_tokens"] = []
     st.session_state["used_tokens"] = []
     st.session_state["order_answer"] = []
+    st.session_state["mistakes"] = 0
+    st.session_state["new_words"] = []
