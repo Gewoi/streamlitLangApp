@@ -36,7 +36,7 @@ class ProgressStore:
                 CREATE TABLE IF NOT EXISTS user_stats (
                     user TEXT NOT NULL,
                     course_id TEXT NOT NULL,
-                    known_words TEXT NOT NULL DEFAULT "[]",
+                    known_words TEXT NOT NULL DEFAULT "{}",
                     PRIMARY KEY(user, course_id)
                 );
                 """
@@ -46,10 +46,10 @@ class ProgressStore:
         conn = sqlite3.connect(self.db_path)
         return conn
     
-    def lesson_completed(self, user: str, course_id: str, lesson_id: str, mistakes_made : int, new_words = []) -> None:
+    def lesson_completed(self, user: str, course_id: str, lesson_id: str, mistakes_made : int, new_words = {}) -> None:
         now = datetime.now(timezone.utc).isoformat()
         completed_list = self.get_known_words(user=user, course_id=course_id)
-        completed_list.append(new_words)
+        completed_list.update(new_words)
         completed_json = json.dumps(completed_list)
         with self._connect() as conn:
             conn.execute(
@@ -95,10 +95,10 @@ class ProgressStore:
                 (user, course_id),
             ).fetchone()
         if not row:
-            return []
+            return {}
         completed_json = row
         try:
-            completed_list = json.loads(completed_json) if completed_json else []
+            completed_list = json.loads(completed_json) if completed_json else {}
         except Exception:
-            completed_list = []
+            completed_list = {}
         return completed_list

@@ -2,11 +2,56 @@ from __future__ import annotations
 
 import streamlit as st
 import glob
+import cv2
 
 from pathlib import Path
 import yaml
 
 COURSES_ROOT = Path("data") / "courses"
+
+DEFAULT_TARGET_SIZE = (350, 300)
+
+def autoplay_sound(sound_path):
+    cols = st.columns([7,1,7])
+    with cols[1]:
+        with st.expander("", width=1):
+            st.audio(sound_path, autoplay=True)
+
+def play_correct():
+    autoplay_sound("data/assets/audio/correct_exercise.wav")
+
+def play_wrong():
+    autoplay_sound("data/assets/audio/wrong_exercise.wav")
+
+def play_match_correct():
+    autoplay_sound("data/assets/audio/match_correct.wav")
+
+def play_complete():
+    autoplay_sound("data/assets/audio/lesson_done.wav")
+
+
+def contain_cv2(img, target_w, target_h, allow_upscale=False):
+    h, w = img.shape[:2]
+
+    scale_w = target_w / w
+    scale_h = target_h / h
+    scale = min(scale_w, scale_h)
+
+    if not allow_upscale:
+        scale = min(scale, 1.0)
+
+    new_w = int(round(w * scale))
+    new_h = int(round(h * scale))
+
+    resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
+    return resized
+
+
+def resize_image(img_path, target_size = DEFAULT_TARGET_SIZE):
+    image = cv2.imread(img_path)
+    img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    resized = contain_cv2(img_rgb, target_size[0], target_size[1])
+    return resized
 
 def read_yaml(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:

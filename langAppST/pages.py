@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 import streamlit as st
-from streamlit_extras.floating_button import floating_button
 from .content import get_course
-from .content import load_courses, load_lessons, load_lesson_content
+from .content import load_courses, load_lessons, load_lesson_content, play_complete
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 import hashlib
@@ -79,7 +78,7 @@ def course_page(course_id : str, store : ProgressStore):
                 st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
                 clear_lesson_sessionstate()
                 st.session_state["step_idx"] = 0
-                st.session_state["new_words"] = lesson.get("new_words", [])
+                st.session_state["new_words"] = lesson.get("new_words", {})
                 st.rerun()
 
 def player(course_id : str, lesson_id : str):
@@ -144,6 +143,7 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         st.markdown(f"### You finished the lesson!", text_alignment="center")
         st.space("large")
         st.balloons()
+        play_complete()
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             store.lesson_completed(st.session_state["user"], course_id, lesson_id, st.session_state["mistakes"], st.session_state["new_words"])
@@ -160,4 +160,5 @@ def clear_lesson_sessionstate():
     st.session_state["used_tokens"] = []
     st.session_state["order_answer"] = []
     st.session_state["mistakes"] = 0
-    st.session_state["new_words"] = []
+    st.session_state["new_words"] = {}
+    st.session_state["take_over_answer"] = ""

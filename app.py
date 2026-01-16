@@ -19,6 +19,11 @@ css ="""
     background: #2c9b2a;
     background: linear-gradient(90deg, rgba(44, 155, 42, 0.21) 0%, rgba(66, 189, 57, 0.41) 46%, rgba(83, 237, 147, 0.25) 100%);
 }
+
+[class*="selected_match"]{
+    background: #9b8c2a;
+    background: linear-gradient(153deg, rgba(155, 140, 42, 0.08) 0%, rgba(189, 189, 57, 0.15) 46%, rgba(219, 237, 83, 0.08) 100%);
+}
 """
 
 st.html(f"<style>{css}</style>")

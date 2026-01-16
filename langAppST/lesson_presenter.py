@@ -6,6 +6,7 @@ import os
 from dataclasses import dataclass
 import pathlib as Path
 from string import ascii_letters
+from .content import resize_image, play_correct, play_wrong, play_match_correct
 
 import random
 
@@ -20,11 +21,14 @@ def comparison_string(input_string : str):
 
 def mistake_made():
     st.session_state["mistakes"] += 1
+    play_wrong()
 
 def render_step(step : dict):
     stype = str(step.get("type", "markdown"))
     if stype == "markdown":
         return render_markdown(step)
+    if stype == "introduce_word":
+        return render_introduce_word(step)
     if stype == "cloze":     
         return render_cloze(step)
     if stype == "order":
@@ -41,7 +45,7 @@ def render_step(step : dict):
     return StepOutcome(can_go_next=True)
 
 def render_markdown(step : dict):
-    st.markdown(step.get("markdown", "no markdown found"))
+    st.markdown(step.get("markdown", "no markdown found"), unsafe_allow_html=True)
 
     images = step.get("images", [])
     audio = step.get("audio", None)
@@ -49,7 +53,7 @@ def render_markdown(step : dict):
         with st.container(horizontal_alignment="center"):
             for img in images:
                 if os.path.exists(img):
-                    st.image(img)
+                    st.image(resize_image(img))
 
     if audio:
         if os.path.exists(audio):
@@ -59,7 +63,38 @@ def render_markdown(step : dict):
 
     return StepOutcome(can_go_next=True)
 
-#TODO: Write all the render functions
+
+def render_introduce_word(step : dict):
+    word = step["word"]
+
+    original = step["translation"]["en"] or None
+    helper = step["translation"]["de"] or None
+
+    images = step.get("images", [])
+    audio = step["audio"]
+
+    for img in images or []:
+        with st.container(horizontal_alignment="center"):
+            for img in images:
+                if os.path.exists(img):
+                    st.image(resize_image(img))
+
+    
+    if audio:
+        if os.path.exists(audio):
+            st.audio(audio, autoplay=True)
+        else:
+            st.info(f"(Missing audio asset: {audio})")
+
+    st.subheader(word, text_alignment="center")
+    if original:
+        st.markdown(original, text_alignment="center")
+    if helper:
+        st.caption(helper, text_alignment="center")
+
+    return StepOutcome(can_go_next=True)
+
+
 
 def render_cloze(step: dict):
     sentence_data = step["sentence"]
@@ -67,7 +102,7 @@ def render_cloze(step: dict):
     goal_sentence_arr = sentence_data["target"]
     helper_sentence = sentence_data.get("helper", None)
 
-    sol_display = step.get("solutions_display", None)
+    sol_display = step.get("solution_display", None)
     
     solutions = step["answers"]
     caseIns_solutions = []
@@ -86,7 +121,7 @@ def render_cloze(step: dict):
             with st.container(horizontal_alignment="center"):
                 for img in images:
                     if os.path.exists(img):
-                        st.image(img)
+                        st.image(resize_image(img))
         if audio:
             if os.path.exists(audio):
                 st.audio(audio, autoplay=True)
@@ -94,13 +129,16 @@ def render_cloze(step: dict):
                 st.info(f"(Missing audio asset: {audio})")
         
         st.space("small")
-    
-        blank_space = ""
-        for i in range(len(solutions[0])):
-            blank_space += "_"
-            
-        full_question_sentence = str(goal_sentence_arr[0] + blank_space + goal_sentence_arr[1])
-        st.markdown(f"_{full_question_sentence}_")
+
+        if st.session_state["take_over_answer"] == "":
+            blank_space = ""
+            for i in range(len(solutions[0])):
+                blank_space += "_"
+                
+            full_question_sentence = str(goal_sentence_arr[0] + blank_space + goal_sentence_arr[1])
+            st.markdown(f"### {full_question_sentence}", text_alignment="center")
+        else:
+            st.markdown(f"### {st.session_state["take_over_answer"]}", text_alignment="center")
 
         answer = st.text_input("answer_cloze", autocomplete="off", label_visibility="hidden", value="")
         submitted = st.form_submit_button("Check", width="stretch")
@@ -109,14 +147,20 @@ def render_cloze(step: dict):
     #st.space("small")
     if submitted:
         if comparison_string(answer) in caseIns_solutions:
-            if sol_display:
-                st.success(sol_display)
-            else:
-                st.success("Correct ✅")
-            return StepOutcome(can_go_next=True)
+            st.session_state["take_over_answer"] = str(goal_sentence_arr[0] + answer + goal_sentence_arr[1])
+            st.rerun()
         else:
             mistake_made()
             st.error("Not quite. Try again.")
+
+    if not st.session_state["take_over_answer"] == "":
+        if sol_display:
+            st.success(sol_display)
+        else:
+            st.success("Correct ✅")
+        play_correct()
+        st.session_state["take_over_answer"] =  ""
+        return StepOutcome(can_go_next=True)
 
     return StepOutcome(can_go_next=False)
 
@@ -149,7 +193,7 @@ def render_order(step: dict):
         with st.container(horizontal_alignment="center"):
             for img in images:
                 if os.path.exists(img):
-                    st.image(img)
+                    st.image(resize_image(img))
     if audio:
         if os.path.exists(audio):
             st.audio(audio, autoplay=True)
@@ -189,6 +233,7 @@ def render_order(step: dict):
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
+            play_correct()
             st.session_state["enter_to_continue"] = True
             st.session_state["order_tokens"] = []
             st.session_state["used_tokens"] = []
@@ -204,7 +249,7 @@ def render_translate_type(step : dict):
     original_sentence = sentence_data.get("question", None)
     helper_sentence = sentence_data.get("helper", None)
 
-    sol_display = step.get("solutions_display", None)
+    sol_display = step.get("solution_display", None)
     
     solutions = step["answers"]
     caseIns_solutions = []
@@ -217,14 +262,14 @@ def render_translate_type(step : dict):
     #st.space("small")
     with st.form("answer", border=False):
         if original_sentence:
-            st.markdown(f"__{original_sentence}__", text_alignment="center")
+            st.markdown(f"### {original_sentence}", text_alignment="center")
         if helper_sentence:
             st.caption(helper_sentence, text_alignment="center")
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
                     if os.path.exists(img):
-                        st.image(img)
+                        st.image(resize_image(img))
         if audio:
             if os.path.exists(audio):
                 st.audio(audio, autoplay=True)
@@ -241,6 +286,7 @@ def render_translate_type(step : dict):
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
+            play_correct()
             return StepOutcome(can_go_next=True)
         else:
             mistake_made()
@@ -251,7 +297,7 @@ def render_translate_type(step : dict):
 
 
 def render_listen_type(step : dict):
-    sol_display = step.get("solutions_display", None)
+    sol_display = step.get("solution_display", None)
     
     solutions = step["answers"]
     caseIns_solutions = []
@@ -267,7 +313,7 @@ def render_listen_type(step : dict):
             with st.container(horizontal_alignment="center"):
                 for img in images:
                     if os.path.exists(img):
-                        st.image(img)
+                        st.image(resize_image(img))
         if os.path.exists(audio):
             st.audio(audio, autoplay=True)
         else:
@@ -283,6 +329,7 @@ def render_listen_type(step : dict):
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
+            play_correct()
             return StepOutcome(can_go_next=True)
         else:
             mistake_made()
@@ -291,9 +338,6 @@ def render_listen_type(step : dict):
     return StepOutcome(can_go_next=False)
 
 def render_match(step : dict):
-
-    #TODO: Probabliy works better with stateful button!!!!!
-
     pairs = step["pairs"]
     all_buttons = []
     for pair in pairs:
@@ -323,14 +367,20 @@ def render_match(step : dict):
             corresponding_btn = pair["left"]["original"]
             break
     
-    def check_buttons(lang : str):
+    def give_css_selected(elm, lang : str):
+        key = f"selected_match_{elm[lang]}" if elm[lang] == match_sel_btn else elm[lang]
+        return key
+
+    def check_buttons(elm, lang : str):
         if match_sel_btn:
             if elm[lang] == corresponding_btn:
                 st.session_state["pressed_match_buttons"] += [elm[lang], match_sel_btn]
                 st.session_state["match_sel_btn"] = None
+                play_match_correct()
                 st.rerun()
             else:
                 st.session_state["match_sel_btn"] = None
+                play_wrong()
                 st.rerun()
         else:
             st.session_state["match_sel_btn"] = elm[lang]
@@ -339,15 +389,16 @@ def render_match(step : dict):
     cols = st.columns([2,1,2], gap="medium")
     for elm in left:
         disable_cond = elm["original"] in pressed_match_btns or elm["original"] == match_sel_btn
-        if cols[0].button(label = f":orange-background[**{elm["original"]}**]" if elm["original"] is match_sel_btn else elm["original"], width="stretch", disabled=disable_cond):
-            check_buttons("original")
+        if cols[0].button(label =elm["original"], width="stretch", disabled=disable_cond, key = give_css_selected(elm, "original")):
+            check_buttons(elm, "original")
     for elm in right:
         disable_cond = elm["target"] in pressed_match_btns or elm["target"] == match_sel_btn
-        if cols[2].button(label = f":orange-background[**{elm["target"]}**]" if elm["target"] is match_sel_btn else elm["target"], width="stretch", disabled=disable_cond):
-            check_buttons("target")
+        if cols[2].button(label =elm["target"], width="stretch", disabled=disable_cond, key = give_css_selected(elm, "target")):
+            check_buttons(elm, "target")
 
     if len(st.session_state["pressed_match_buttons"]) == len(all_buttons):
         st.success("Correct ✅")
+        play_correct()
         return StepOutcome(can_go_next=True)
 
     return StepOutcome(can_go_next=False)
@@ -369,7 +420,9 @@ def render_true_false(step: dict):
         with st.container(horizontal_alignment="center"):
             for img in images:
                 if os.path.exists(img):
-                    st.image(img)
+                    st.image(resize_image(img))
+    
+    st.space("medium")
     st.markdown(f"### {display_text}", text_alignment="center")
 
     def check_answer(label):
@@ -378,6 +431,7 @@ def render_true_false(step: dict):
                 st.success(sol_display)
             else:
                 st.success("Correct ✅")
+            play_correct()
             return True
         else:
             mistake_made()
@@ -385,7 +439,7 @@ def render_true_false(step: dict):
             return False
 
     correct = False
-
+    st.space("small")
     cols = st.columns(3, vertical_alignment="center")
     true_label = "True"
     if cols[0].button(label = true_label, width="stretch"):
@@ -395,6 +449,5 @@ def render_true_false(step: dict):
         correct = check_answer(false_label)
 
     if correct:
-        st.session_state["enter_to_continue"] = True
         return StepOutcome(can_go_next=True)
     return StepOutcome(can_go_next=False)

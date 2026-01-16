@@ -17,22 +17,71 @@ steps:
       - We also show **Standard German** side by side.
 
       You can author new lessons by writing YAML files like this one.
-    audio: "data/assets/audio/hoi.wav"
+    images:
+      - "data/assets/images/bern.jpg"
+
+  - type: markdown
+    id: important_note
+    title: "Important Note"
+    markdown: |
+      ## Swiss German is not a written language!
+
+      Unfortunately, there are *no rules* on how to write Swiss German.
+
+      For this course, we will be relying on how a person in Bern would **Text their friends**. 
+      It is impossible to include *all possible spellings*, so sometimes you might be shown that you're wrong even when you're **correct**.
+
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: introduce_word
+    id: word_hallo
+    title: "Greetings"
+    word : "Hallo / Tschau / Sälü"
+    translation:
+      en: "Hello"
+      de: "Hallo"
     images:
       - "data/assets/images/hoi.jpg"
+    audio: "data/assets/audio/hoi.wav"
+
+  - type: markdown
+    id: explanation_greeting
+    markdown: |
+      ## Greetings
+
+      There are different ways to **greet someone**. 
+
+      Very common is the German **Hallo**.
+
+      We also have **Tschou** (or **Tschau**, adapted from the Italian *Ciao*),
+      and **Sälü** (from the French *Salut*).
 
   - type: cloze
     id: cloze_hoi
     prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
     sentence:
-      question: "In Bern, you can say 'Hi' to greet somebody"
-      helper: "In Bern kannst du 'Hoi' sagen, um jemanden zu grüßen."
-      target: ["I Bärn chasch ", " säge, zum öpper z'grüesse."]
-    answers: ["Hoi", "Hoi!"]
-    solution_display: "Correct! \"Hoi\" means hello; you can also say \"Tschau\" or \"Säli\", like they would in Italian and French respectively"
-    audio: "assets/audio/hoi.wav"
+      question: "Hello, Claudio!"
+      helper: "Hallo, Claudio!"
+      target: [" ", ", Claudio!"]
+    answers: ["hallo", "sälü", "tschau", "tschou"]
+    solution_display: |
+      ✅ Correct! **Hallo** means hello.
+      
+      You can also say **Tschou** or **Sälü**, like in Italian and French respectively
     images:
-      - "assets/images/hoi.jpg"
+      - "data/assets/images/woman_waving.jpg"
+
+  - type: introduce_word
+    id: wiegeits_intr
+    title: "Greetings"
+    word : "Wie geit's? / Wie geit's dr?"
+    translation:
+      en: "How are you?"
+      de: "Wie geht's?"
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/wiegeits.wav"
 
   - type: order
     id: order_wiegeits
@@ -40,7 +89,11 @@ steps:
     sentence:
       question: "How are you?"
       helper: "Wie geht's dir?"
-    tokens: ["Wie", "geit's", "der?"]
+    tokens: ["Wie", "geit's", "dr?"]
+    solution_display: |
+      ✅ Correct! 
+      
+      You can add the **dir/dr** if you're talking to a friend, but it's not necessary.
 
   - type: translate_type
     id: translate_Hallo
@@ -49,13 +102,88 @@ steps:
       question: "Hello, how are you?"
       helper: "Hallo, wie geht es dir?"
     answers:
-      ["Hallo, wie geits dir?", "Hallo, wie geits?"]
+      ["hallo wie geits",  "hallo wie geits dr", "hallo wie geits dir",
+      "tschau wie geits", "tschau wie geits dr", "tschau wie geits dir",
+      "tschou wie geits", "tschou wie geits dr", "tschou wie geits dir",
+      "sälü wie geits", "sälü wie geits dr", "sälü wie geits dir"]
+    
+    images:
+      - "data/assets/images/hoi.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      You can add the **dir/dr** if you're talking to a friend, but it's not necessary.
 
   - type: listen_type
     id: listen_hoi
     prompt: "Listen and type what you hear (Bernese)."
-    audio: "assets/audio/hoi.wav"
-    answers: ["Hoi", "Hoi!"]
+    audio: "data/assets/audio/saeliwigeits.wav"
+    answers: ["sälü wie geits", "säli wie geits"]
+    images:
+      - "data/assets/images/handshake.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      **Sälü** is one of the ways we say *Hello*
+
+  - type: introduce_word
+    id: wiegeits_intr
+    word : "Tschüss / Tschau / Sälü"
+    translation:
+      en: "Bye!"
+      de: "Tschüss!"
+    images:
+      - "data/assets/images/wavinghand_curtain.jpg"
+    audio: "data/assets/audio/tschuesstschausaelu.wav"
+
+  - type: true_false
+    id: verabschiedung
+    prompt: "What do you think is said?"
+    audio : "data/assets/audio/saeliwigeits.wav"
+    text : "This person is saying goodbye."
+    answer: "False"
+    solution_display: |
+      ✅ Correct! 
+      
+      **Sälü** *can* mean goodbye, but here it's followed by **wie geits?** (*how are you?*).
+      
+      So, this person is saying hello.
+  - type: translate_type
+    id: translate_tschüss
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Bye!"
+      helper: "Tschüss!"
+    answers:
+      ["Tschüss", "Tschou", "Tschau", "Sälü"]
+    
+    images:
+      - "data/assets/images/wavinghand_curtain.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      You can say bye in multiple ways, like **Tschüss**, **Tschau** or **Sälü**; similar to greetings.
+
+  - type: introduce_word
+    id: bisspeter_intr
+    word : "Bis später!"
+    translation:
+      en: "See you later!"
+      de: "Bis später!"
+    images:
+      - "data/assets/images/woman_waving.jpg"
+    audio: "data/assets/audio/bisspeter.wav"
+  
+  - type: true_false
+    id: verabschiedung_oder begrüssung
+    prompt: "What do you think is said?"
+    audio : "data/assets/audio/tschussbisspeter.wav"
+    text : "This person is saying goodbye."
+    answer: "True"
+    solution_display: |
+      ✅ Correct! 
+      
+      **Tschüss** is one of the ways we say *Bye*, and **bis später** means *see you later* (literally: *until later*).
 
   # - type: pronounce
   #   id: pronounce_merci
@@ -75,23 +203,26 @@ steps:
           original: "Hi"
           helper: "Hallo"
         right:
-          target: "Hoi"
+          target: "Hallo / Tschau / Sälü"
       - left:
-          original: "Thanks"
-          helper: "Danke"
+          original: "Yes"
+          helper: "Ja"
         right:
-          target: "Merci"
+          target: "Ja"
       - left:
           original: "Bye"
           helper: "Tschüss"
         right:
-          target: "Tschou"
-
-  - type: true_false
-    id: geit_guet
-    prompt: "What do you think is said?"
-    audio : "assets/audio/hoi.wav"
-    images : 
-      - "assets/images/hoi.jpg"
-    text : "Is Claudio doing good?"
-    answer: "False"
+          target: "Tschüss / Tschou / Sälü"
+      - left:
+          original: "How are you?"
+        right:
+          target: "Wie geit's?"
+      - left:
+          original: "No"
+        right:
+          target: "Nei"
+      - left:
+          original: "See you later!"
+        right:
+          target: "Bis später!"
