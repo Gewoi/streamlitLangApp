@@ -1,0 +1,170 @@
+id: 02_introductions
+order: 12
+title: "🤝 Introductions"
+description: "Introduce yourself."
+estimated_minutes: 8
+section : Basics
+
+steps:
+  - type: introduce_word
+    id: word_iheisse
+    word : "I heisse Dennis"
+    translation:
+      en: "My name is Dennis"
+      de: "Ich heisse Dennis"
+    images:
+      - "data/assets/images/guy_with_headphones.jpg"
+    audio: "data/assets/audio/iheissedennis.wav"
+
+  - type: markdown
+    id: exp_iheisse
+    markdown: |
+      ## Introductions
+
+      There are two main ways of introducing yourself in Swiss German:
+
+      - **I heisse** ___    (*My name is* or, more literally, *I'm called*)
+      - **I bi** *dr/d* ___    (*I am*)
+
+      Often people will add an article after **i bi**
+
+      - I bi *dr*  ___    (for boys or according)
+      - I bi *d*  ___    (for girls or according)
+
+    images:
+      - "data/assets/images/woman_waving.jpg"
+
+  - type: cloze
+    id: cloze_ibidangela
+    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    sentence:
+      question: "My name is Angela"
+      helper: "Mein Name ist Angela"
+      target: [" ", ", Angela"]
+    answers: ["i heisse", "i bi d"]
+    solution_display: |
+      ✅ Correct! You can either say **i heisse** or **i bi ___**
+      
+      In this case, since we have a generally *girl* read name, we use **d** after *i bi*.
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+
+  - type: order
+    id: order_ibidrdennis
+    prompt: "Put the words in the correct order (Bernese)."
+    sentence:
+      question: "I am Dennis"
+    tokens: ["I","bi", "dr", "Dennis"]
+    solution_display: |
+      ✅ Correct! 
+      
+      Here, you (generally) add a **dr** after *i bi*.
+
+  - type: introduce_word
+    id: word_wieheissischdu
+    word : "Wie heissisch du?"
+    translation:
+      en: "What is your name?"
+      de: "Wie heisst du?"
+    images:
+      - "data/assets/images/pointing_you.jpg"
+    audio: "data/assets/audio/wieheissischdu.wav"
+
+  - type: true_false
+    id: ciaoibidennis
+    prompt: "What do you think is said?"
+    audio : "data/assets/audio/ciaoibidenniswiegeits.wav"
+    text : "You could answer with *guet* here."
+    answer: "True"
+    solution_display: |
+      ✅ Correct! 
+      
+      He said: **Tschau, i bir dr Dennis. Wie geits dir?** (*Hi, I'm Dennis, how are you?*).
+
+      So, **guet** (*good*) would be a good answer (literally).
+
+  - type: order
+    id: order_wieheissischdu
+    prompt: "Put the words in the correct order (Bernese)."
+    sentence:
+      question: "What's your name?"
+      helper: "Wie heisst du?"
+    tokens: ["Wie", "heissisch", "du?"]
+    solution_display: |
+      ✅ Correct! 
+
+  - type: translate_type
+    id: translate_ibidrclaudio
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Hello, I'm Claudio"
+    answers:
+      ["hallo, i bi dr claudio", "tschou, i bi dr claudio", "tschau, i bi dr claudio","sälü, i bi dr claudio",
+      "hallo, i heisse Claudio", "tschou, i heisse claudio","tschau, i heisse claudio", "sälü, i bi dr claudio"]
+    solution_display: |
+      ✅ Correct!   
+  
+  
+  - type: listen_type
+    id: listen_ibidrdenniswiegeits
+    prompt: "Listen and type what you hear (Bernese)."
+    audio: "data/assets/audio/ciaoibidenniswiegeits.wav"
+    answers: ["Tschau, i bi dr dennis. wie geits dir?", "tschou, i bi dr dennis, wie geits dir", "tschou, i bi dr dennis, wi geits dir", "tschau, i bi dr dennis, wi geits dir"]
+    images:
+      - "data/assets/images/guy_with_headphones.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      Good job! Dennis is introducing himself and then asking how you're doing.
+
+  - type: introduce_word
+    id: word_froitmi
+    word : "Fröit mi!"
+    translation:
+      en: "My pleasure! / Nice to meet you!"
+      de: "Freut mich!"
+    images:
+      - "data/assets/images/woman_waving_two.jpg"
+    audio: "data/assets/audio/froitmi.wav"
+
+
+  - type: true_false
+    id: dennisunicola
+    prompt: "What do you think is said?"
+    audio : "data/assets/audio/dennisunicola.wav"
+    text : "Dennis asked Nicola how he's doing."
+    answer: "False"
+    solution_display: |
+      ✅ Correct! 
+      
+      They are both introducing themselves to each other.
+
+  - type: translate_type
+    id: translate_froitmi
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "My name is Claudio, nice to meet you!"
+      helper: "Ich heisse Claudio, freut mich!"
+    answers:
+      ["I heisse Claudio, fröit mi", "ig heisse Claudio, fröit mi"]
+
+  - type: match
+    id: match_basic
+    prompt: "Match the translations (English → Bernese)."
+    pairs:
+      - left:
+          original: "I am ___"
+        right:
+          target: "I bi dr/d ___"
+      - left:
+          original: "My name is ___"
+        right:
+          target: "I heisse ___"
+      - left:
+          original: "What's your name?"
+        right:
+          target: "Wie heissisch du?"
+      - left:
+          original: "Nice to meet you!"
+        right:
+          target: "Fröit mi!"

@@ -168,15 +168,15 @@ def render_order(step: dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
     helper_sentence = sentence_data.get("helper", None)
-    if not st.session_state["order_tokens"]:
+    if st.session_state["order_tokens"] == []:
         st.session_state["correct_order"] = list(step["tokens"])
         tokens = list(step["tokens"])
         random.shuffle(tokens)
-        st.session_state["order_tokens"] = tokens
+        st.session_state["order_tokens"] = list(tokens)
         used_tokens = []
     else:
-        tokens = st.session_state["order_tokens"]
-        used_tokens = st.session_state["used_tokens"]
+        tokens = list(st.session_state["order_tokens"])
+        used_tokens = list(st.session_state["used_tokens"])
 
     solutions = st.session_state["correct_order"]
 
@@ -235,9 +235,6 @@ def render_order(step: dict):
             else:
                 st.success("Correct ✅")
             play_correct()
-            st.session_state["order_tokens"] = []
-            st.session_state["used_tokens"] = []
-            st.session_state["order_answer"] = []
             return StepOutcome(can_go_next=True)
         else:
             mistake_made()

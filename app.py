@@ -13,7 +13,7 @@ css ="""
     background-size: 100%; 
     background-position-x: center;
     background-position-y: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.93);
     background-blend-mode: lighten;
 } 
 [class*="finished_lesson"]{
@@ -29,19 +29,14 @@ css ="""
 [class*="sound_fx"]{
     display: none
 }
+
+[data-testid='stHeaderActionElements'] {
+    display: none;
+}
 """
 
 st.html(f"<style>{css}</style>")
 
-
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-if "guest" not in st.session_state:
-    st.session_state.guest = False
-
-if "user" not in st.session_state:
-    st.session_state.user = None
 
 @st.cache_resource
 def connect_supabase():
@@ -49,6 +44,37 @@ def connect_supabase():
     return supabase
 
 store = connect_supabase()
+
+def restore_session():
+    if "supabase_session" in st.session_state:
+        store.auth.set_session(
+            st.session_state["supabase_session"]["access_token"],
+            st.session_state["supabase_session"]["refresh_token"],
+        )
+
+        user = store.auth.get_user()
+        if user:
+            st.session_state["user"] = user.user
+            st.session_state["logged_in"] = True
+            return True
+
+    return False
+
+def logout(supabase : ProgressStore):
+    supabase.supabase.auth.sign_out()
+    st.session_state.clear()
+    st.rerun()
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = restore_session()
+
+if "guest" not in st.session_state:
+    st.session_state.guest = False
+
+if "user" not in st.session_state:
+    st.session_state.user = None
+
+
 
 if not st.session_state["logged_in"] and st.session_state["guest"]:
     result = store.supabase.auth.sign_in_with_password({
@@ -64,6 +90,11 @@ logged_in = st.session_state["logged_in"]
 if logged_in:
     with st.sidebar:
         st.title("Settings")
+    top_cols = st.columns([1,.2], vertical_alignment="top")
+    with top_cols[1]:
+        if st.button("Logout", type="primary"):
+            logout(store)
+
 
 nav = st.session_state.get("nav") or ({"page" : "home"} if logged_in else {"page" : "login"})
 

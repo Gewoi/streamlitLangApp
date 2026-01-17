@@ -1,6 +1,6 @@
 id: 01_greetings
 order: 1
-title: "Greetings & Politeness"
+title: "👋 Greetings & Politeness"
 description: "Say hello, ask how someone is, and be polite."
 estimated_minutes: 8
 section : Basics
@@ -8,7 +8,6 @@ section : Basics
 steps:
   - type: markdown
     id: intro
-    title: "Welcome"
     markdown: |
       ## How this course works
 
@@ -25,7 +24,6 @@ steps:
 
   - type: markdown
     id: important_note
-    title: "Important Note"
     markdown: |
       ## Swiss German is not a written language!
 
@@ -43,7 +41,6 @@ steps:
 
   - type: introduce_word
     id: word_hallo
-    title: "Greetings"
     word : "Hallo / Tschau / Sälü"
     translation:
       en: "Hello"
@@ -81,7 +78,6 @@ steps:
 
   - type: introduce_word
     id: wiegeits_intr
-    title: "Greetings"
     word : "Wie geit's? / Wie geit's dr?"
     translation:
       en: "How are you?"
@@ -155,6 +151,7 @@ steps:
       **Sälü** *can* mean goodbye, but here it's followed by **wie geits?** (*how are you?*).
       
       So, this person is saying hello.
+
   - type: translate_type
     id: translate_tschüss
     prompt: "Translate the following Sentence"
@@ -192,6 +189,27 @@ steps:
       
       **Tschüss** is one of the ways we say *Bye*, and **bis später** means *see you later* (literally: *until later*).
 
+  - type: introduce_word
+    id: guet
+    word : "Guet"
+    translation:
+      en: "Good"
+      de: "Gut"
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    audio: "data/assets/audio/guet.wav"
+
+  - type: cloze
+    id: cloze_hoi
+    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    sentence:
+      question: "How are you doing? - Good!"
+      helper: "Wie geht's? - Gut"
+      target: ["Wie geits? - ", "!"]
+    answers: ["guet"]
+    images:
+      - "data/assets/images/conversation_casual.jpg"
+
   # - type: pronounce
   #   id: pronounce_merci
   #   prompt: "Listen, then record yourself saying the Bernese phrase."
@@ -204,7 +222,7 @@ steps:
 
   - type: match
     id: match_basic
-    prompt: "Match the translations (English/German → Bernese)."
+    prompt: "Match the translations (English → Bernese)."
     pairs:
       - left:
           original: "Hi"
@@ -222,3 +240,7 @@ steps:
           original: "See you later!"
         right:
           target: "Bis später!"
+      - left:
+          original: "good"
+        right:
+          target: "guet"

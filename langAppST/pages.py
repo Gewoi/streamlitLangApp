@@ -20,11 +20,6 @@ def signup(email: str, password: str, supabase : ProgressStore):
     })
 
 
-def logout(supabase : ProgressStore):
-    supabase.supabase.auth.sign_out()
-    st.session_state.clear()
-
-
 def login_page(supabase : ProgressStore):
     st.title("Welcome!")
     mode = st.radio(
@@ -114,7 +109,7 @@ def course_page(course_id : str, store : ProgressStore):
         if (not lesson["section"] == current_section) and (lesson["section"] in sections):
             st.divider()
             current_section = lesson["section"]
-            st.title(current_section)
+            st.title(body=f"{current_section}", text_alignment="center")
         completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
         with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
             if completed_condition:
@@ -194,15 +189,21 @@ def player(course_id : str, lesson_id : str, store : ProgressStore):
 
     if b1.button("⬅ Back", disabled=back_disabled):
         st.session_state["step_idx"] -= 1
+        st.session_state["order_tokens"] = []   
+        st.session_state["used_tokens"] = []
+        st.session_state["order_answer"] = []
+        st.session_state["correct_order"] = []
         st.rerun()
 
     if not last_condition:
         if b2.button("Skip"):
             st.session_state["step_idx"] += 1
+            reset_select_sessionstate()
             st.rerun()
     
         if b3.button("Next ➡", disabled=next_disabled, width="stretch"):
             st.session_state["step_idx"] += 1
+            reset_select_sessionstate()
             st.rerun()
     else:
         if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
@@ -237,4 +238,10 @@ def clear_lesson_sessionstate():
     st.session_state["new_words"] = []
     st.session_state["take_over_answer"] = ""
     st.session_state["lesson_dict"] = {}
+    st.session_state["correct_order"] = []
+
+def reset_select_sessionstate():
+    st.session_state["order_tokens"] = []
+    st.session_state["used_tokens"] = []
+    st.session_state["order_answer"] = []
     st.session_state["correct_order"] = []
