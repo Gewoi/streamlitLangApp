@@ -117,7 +117,7 @@ with bottom():
     st.divider()
     cols = st.columns(3, vertical_alignment="bottom")
     with cols[0]:
-        st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️", )
+        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️", )
     with cols[2]:
         if logged_in:
             if st.button("Logout", type="primary", key="logout_btn"):
