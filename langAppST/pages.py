@@ -49,6 +49,8 @@ def login_page(supabase : ProgressStore):
             elif mode == "Create Account":
                 if password == password_repeat:
                     result = signup(email, password, supabase)
+                    if not result.user:
+                        st.error("Something went wrong. Probably user already exists.")
                     st.success("✅ Account created! Please check your email to confirm your account before logging in.")
                     st.info("After confirming, come back here and log in.")
                     return
