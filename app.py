@@ -36,7 +36,6 @@ css ="""
 }
 
 .st-key-logout_btn{
-    margin-left: auto; 
     margin-right: 0;
 }
 """
