@@ -47,15 +47,14 @@ def connect_supabase():
 
 store = connect_supabase()
 
-#TODO: Take out before releasing!
-# if True and not st.session_state["logged_in"]:
-#     result = store.supabase.auth.sign_in_with_password({
-#         "email": "dev@test.local",
-#         "password": "password123"
-#     })
-#     st.session_state["user"] = result.user
-#     st.session_state["session"] = result.session
-#     st.session_state["logged_in"] = True
+if not st.session_state["logged_in"] and st.session_state["guest"]:
+    result = store.supabase.auth.sign_in_with_password({
+        "email": "guest@test.local",
+        "password": "password123"
+    })
+    st.session_state["user"] = result.user
+    st.session_state["session"] = result.session
+    st.session_state["logged_in"] = True
 
 logged_in = st.session_state["logged_in"]
 

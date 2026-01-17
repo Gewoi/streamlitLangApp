@@ -19,6 +19,9 @@ class ProgressStore:
         return create_client(url, key)
     
     def lesson_completed(self, user_id: str, course_id: str, lesson_id: str, mistakes_made : int, new_words : list| None= None) -> None:
+        if st.session_state["guest"]:
+            return 0
+
         if new_words is None:
             new_words = []
         
@@ -52,6 +55,9 @@ class ProgressStore:
         ).execute()
             
     def check_lesson_completed(self, user_id: str, course_id: str, lesson_id : str):
+        if st.session_state["guest"]:
+            return 0
+
         response = (
             self.supabase.table("lesson_progress")
             .select("completed")
@@ -68,6 +74,8 @@ class ProgressStore:
         return int(response.data["completed"])
 
     def reset_lesson(self, user_id: str, course_id: str, lesson_id: str) -> None:
+        if st.session_state["guest"]:
+            return
         (
             self.supabase.table("lesson_progress")
             .delete()
@@ -81,6 +89,8 @@ class ProgressStore:
         """
         Returns known_words dict.
         """
+        if st.session_state["guest"]:
+            return []
         response = (
             self.supabase.table("user_stats")
             .select("known_words")
@@ -96,6 +106,8 @@ class ProgressStore:
         return response.data.get("known_words", []) or []
 
     def get_recommended_lesson(self, user_id, course_id):
+        if st.session_state["guest"]:
+            return None
         response = (
             self.supabase.table("lesson_progress")
             .select("lesson_id, mistakes, updated_at")
@@ -133,6 +145,8 @@ class ProgressStore:
         return recommended_lesson_id
     
     def generate_word_repetition(self,user_id, course_id) -> dict:
+        if st.session_state["guest"]:
+            return None
         known_words_temp = self.get_known_words(user_id=user_id, course_id=course_id)
 
         number = min(len(known_words_temp), 10)

@@ -28,6 +28,7 @@ def logout(supabase : ProgressStore):
 def login_page(supabase : ProgressStore):
     st.title("Welcome!")
 
+    st.session_state["guest"] = False
     mode = st.radio(
         "Account",
         ["Login", "Create Account"],
@@ -73,6 +74,10 @@ def login_page(supabase : ProgressStore):
 
         except Exception as e:
             st.error(str(e))
+
+    st.space("medium")
+    if st.button("Continue as Guest"):
+        st.session_state["guest"] = True
 
 def homepage():
     st.title("Language App")
