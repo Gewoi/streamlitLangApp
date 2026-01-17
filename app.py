@@ -2,6 +2,7 @@ import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
 from supabase import create_client, Client
+from streamlit_extras.bottom_container import bottom
 
 st.set_page_config(
     page_title="MyLangApp",
@@ -32,6 +33,11 @@ css ="""
 
 [data-testid='stHeaderActionElements'] {
     display: none;
+}
+
+.st-key-logout_btn{
+    margin-left: auto; 
+    margin-right: 0;
 }
 """
 
@@ -90,12 +96,8 @@ logged_in = st.session_state["logged_in"]
 if logged_in:
     with st.sidebar:
         st.title("Settings")
-    top_cols = st.columns([1,.2], vertical_alignment="top")
-    with top_cols[1]:
-        if st.button("Logout", type="primary"):
-            logout(store)
-
-
+        
+    
 nav = st.session_state.get("nav") or ({"page" : "home"} if logged_in else {"page" : "login"})
 
 page = nav.get("page")
@@ -109,3 +111,14 @@ elif page == "lesson":
     pages.player(nav.get("course_id"), nav.get("current_lesson"), store)
 elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), store)
+
+
+with bottom():
+    st.divider()
+    cols = st.columns(3, vertical_alignment="bottom")
+    with cols[0]:
+        st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️", )
+    with cols[2]:
+        if logged_in:
+            if st.button("Logout", type="primary", key="logout_btn"):
+                logout(store)
