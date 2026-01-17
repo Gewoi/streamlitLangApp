@@ -9,11 +9,33 @@ st.set_page_config(
     page_icon="🗣",
 )
 css ="""
-
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
 [class*="bkg_image_bern"]{
     background-image: url("https://kursaal-bern.ch/fileadmin/inhalte/Bilder/Ueber_Uns/Stories/Das-Perfekte-Wochenende-in-Bern/Kursaal-Bern_Ueber-Uns_Stories_Das-Perfekte-Wochenende-in-Bern_Zytglogge.jpg");
     background-size: 100%; 
