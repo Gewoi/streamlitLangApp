@@ -1,0 +1,226 @@
+id: 03_common_expressions
+order: 3
+title: "👍 Common Expressions"
+description: "How to say yes, no, thanks, please and sorry."
+estimated_minutes: 8
+section : Basics
+
+steps:
+  - type: introduce_word
+    id: word_mercidanke
+    word : "Merci / Danke"
+    translation:
+      en: "Thanks, Thank you"
+      de: "Danke"
+    images:
+      - "data/assets/images/thankyou.jpg"
+    audio: "data/assets/audio/mercidanke.wav"
+
+
+  - type: markdown
+    id: exp_mercidanke
+    markdown: |
+      There are two ways to say *thanks* in Bernese German:
+
+      - **Merci** (like in French)
+      - **Danke** (like in German)
+
+      Merci is more common, but both work great!
+
+      
+  - type: translate_type
+    id: translate_merci
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Thank you, Angela"
+      helper: "Danke, Angela"
+    answers:
+      ["Merci, angela", "Danke, angela"]
+
+  - type: introduce_word
+    id: word_janei
+    word : "Ja / Nei"
+    translation:
+      en: "Yes / No"
+      de: "Ja / Nein"
+    images:
+      - "data/assets/images/yes_no.jpg"
+    audio: "data/assets/audio/ja_nei.wav"
+
+  - type: markdown
+    id: geitsguet_exp
+    markdown: |
+      Another common way of asking *how someone is doing* is:
+
+      #### Geit's guet?
+      (*Are you doing good?* or, literally, *Is it going good*)
+
+      You will hear this quite frequently instead of the **Wie geit's?** you already know.
+
+    images:
+      - "data/assets/images/woman_asking.jpg"
+
+  - type: true_false
+    id: geitsguet_tf
+    prompt: "What do you think is said?"
+    audio : "data/assets/audio/geitsguet.wav"
+    text : "This person is **doing well**"
+    answer: "True"
+    solution_display: |
+      ✅ Correct! 
+      
+      They answered **geit's guet?** (*are you doing good?*) with **ja** (*yes*).
+
+  - type: cloze
+    id: cloze_geitsguetjamerci
+    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    sentence:
+      question: "Are you doing good? - Yes, thanks!"
+      helper: "Geht's gut? - Ja, danke!"
+      target: ["Geit's guet? - Ja,", "!"]
+    answers: ["danke", "merci"]
+    solution_display: |
+      ✅ Correct! 
+
+      You can say both **Danke** and **Merci**.
+    images:
+      - "data/assets/images/conversation_casual.jpg"
+
+  - type: listen_type
+    id: listen_neimerci
+    prompt: "Listen and type what you hear (Bernese)."
+    audio: "data/assets/audio/neimerci.wav"
+    answers: ["nei, merci"]
+    images:
+      - "data/assets/images/no.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      You can say **nei, merci** or **nei, danke** to *politely* decline something.
+
+  - type: introduce_word
+    id: word_entschuldigung
+    word : "Tschuldigung / Entschuldigung / Sorry"
+    translation:
+      en: "Sorry"
+      de: "Entschuldigung"
+    images:
+      - "data/assets/images/sorry.jpg"
+    audio: "data/assets/audio/tschuldigungsorry.wav"
+
+  - type: markdown
+    id: tschuldigung_exp
+    markdown: |
+      The most formal version of an apology is **entschuldigung**.
+
+      Often, we leave the first part off and instead just say **schuldigung**.
+
+      These days, it also extremely common to say **sorry**.
+
+  - type: translate_type
+    id: translate_geitsguet
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Sorry"
+      helper: "Entschuldigung"
+    answers:
+      ["Tschuldigung", "Entschuldigung", "Sorry"]
+    
+    images:
+      - "data/assets/images/sorry.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      You can say **tschuldigung**, **entschuldigung** or simply **sorry**.
+
+  - type: cloze
+    id: cloze_hoi
+    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    sentence:
+      question: "Sorry, no thanks!"
+      helper: "Entschuldigung, nein danke!"
+      target: ["Tschuldigung", "!"]
+    answers: ["nei danke", "nei merci"]
+    solution_display: |
+      ✅ Correct! 
+      
+      You can say **nei, merci** or **nei, danke** to *politely* decline something.
+    images:
+      - "data/assets/images/no.jpg"
+
+  - type: markdown
+    id: important_note
+    markdown: |
+      ## Swiss German is not a written language!
+
+      Unfortunately, there are *no rules* on how to write Swiss German.
+
+      For this course, we will be relying on how a person in Bern would **Text their friends**. 
+      It is impossible to include *all possible spellings*, so sometimes you might be shown that you're wrong even when you're **correct**.
+
+      This is partly due to me not thinking the programming through. Maybe in the future I'll upgrade it. For now, I'll say **sorry!**
+
+      If you find a mistake, let me know. There is always a **skip button** except the last exercise in case you get stuck.
+
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: introduce_word
+    id: word_bitte
+    word : "Bitte"
+    translation:
+      en: "Please / You're Welcome"
+      de: "Bitte"
+    images:
+      - "data/assets/images/bitte.jpg"
+    audio: "data/assets/audio/bitte.wav"
+
+  - type: translate_type
+    id: translate_bitte
+    prompt: "Translate the following Sentence"
+    sentence:
+      question: "Yes, please!"
+      helper: "Ja bitte!"
+    answers:
+      ["ja bitte"]
+    
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      **Bitte** can mean both *please* and *you're welcome*.
+
+  - type: order
+    id: order_wiegeits
+    prompt: "Put the words in the correct order (Bernese)."
+    sentence:
+      question: "Are you doing good? - Yes, thank you!"
+    tokens: ["Geits", "guet?", "Ja,", "merci!"]
+    solution_display: |
+      ✅ Correct!
+
+  - type: match
+    id: match_basic
+    prompt: "Match the translations (English → Bernese)."
+    pairs:
+      - left:
+          original: "Yes"
+        right:
+          target: "Ja"
+      - left:
+          original: "No"
+        right:
+          target: "Nei"
+      - left:
+          original: "Thanks"
+        right:
+          target: "Merci / Danke"
+      - left:
+          original: "Please / You're Welcome"
+        right:
+          target: "Bitte"
+      - left:
+          original: "Are you doing good?"
+        right:
+          target: "Geit's guet?"
