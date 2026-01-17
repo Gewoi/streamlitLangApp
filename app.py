@@ -37,6 +37,9 @@ st.html(f"<style>{css}</style>")
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+if "guest" not in st.session_state:
+    st.session_state.guest = False
+
 if "user" not in st.session_state:
     st.session_state.user = None
 

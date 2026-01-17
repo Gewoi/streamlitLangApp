@@ -27,8 +27,6 @@ def logout(supabase : ProgressStore):
 
 def login_page(supabase : ProgressStore):
     st.title("Welcome!")
-
-    st.session_state["guest"] = False
     mode = st.radio(
         "Account",
         ["Login", "Create Account"],
