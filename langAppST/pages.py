@@ -72,10 +72,14 @@ def login_page(supabase : ProgressStore):
 
         except Exception as e:
             st.error(str(e))
+    
+    st.space("small")
 
-    st.space("medium")
+    st.divider()
+    st.caption("Use the app as a guest. Your progress will not be saved, and you will not get recommended lessons and repetitions.")
     if st.button("Continue as Guest"):
         st.session_state["guest"] = True
+        st.rerun()
 
 def homepage():
     st.title("Language App")

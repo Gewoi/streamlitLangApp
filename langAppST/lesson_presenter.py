@@ -169,8 +169,8 @@ def render_order(step: dict):
     original_sentence = sentence_data.get("question", None)
     helper_sentence = sentence_data.get("helper", None)
     if not st.session_state["order_tokens"]:
-        st.session_state["correct_order"] = step["tokens"]
-        tokens = step["tokens"]
+        st.session_state["correct_order"] = list(step["tokens"])
+        tokens = list(step["tokens"])
         random.shuffle(tokens)
         st.session_state["order_tokens"] = tokens
         used_tokens = []

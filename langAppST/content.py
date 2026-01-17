@@ -3,6 +3,7 @@ from __future__ import annotations
 import streamlit as st
 import glob
 import cv2
+import random
 
 from pathlib import Path
 import yaml
@@ -12,7 +13,7 @@ COURSES_ROOT = Path("data") / "courses"
 DEFAULT_TARGET_SIZE = (350, 300)
 
 def autoplay_sound(sound_path):
-    with st.container(key=f"sound_fx_{sound_path}", width=1):
+    with st.container(key=f"sound_fx_{random.randint(0,4000)}", width=1):
         st.audio(sound_path, autoplay=True)
 
 def play_correct():
