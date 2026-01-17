@@ -63,7 +63,7 @@ steps:
   - type: true_false
     id: geitsguet_tf
     prompt: "What do you think is said?"
-    audio : "data/assets/audio/geitsguet.wav"
+    audio : "data/assets/audio/geitsguetja.wav"
     text : "This person is **doing well**"
     answer: "True"
     solution_display: |
@@ -113,7 +113,7 @@ steps:
     markdown: |
       The most formal version of an apology is **entschuldigung**.
 
-      Often, we leave the first part off and instead just say **schuldigung**.
+      Often, we leave the first part off and instead just say **tschuldigung**.
 
       These days, it also extremely common to say **sorry**.
 
