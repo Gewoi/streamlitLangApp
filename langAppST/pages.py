@@ -138,15 +138,17 @@ def course_page(course_id : str, store : ProgressStore):
                     st.rerun()
         else:
             st.write("No recommendations yet")
-        with st.container(border=True, key=f"lesson_REPETITON_rec"):
-            st.markdown(f"### Repetition", text_alignment="center")
-            st.markdown("Repeat a random selection of exercises from your completed lessons.", text_alignment="center")
-            if st.button(label="Start Lesson", width="stretch", key=f"start_REPETITION_rec"):
-                st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
-                clear_lesson_sessionstate()
-                st.session_state["step_idx"] = 0
-                st.session_state["lesson_dict"] = store.generate_word_repetition(st.session_state["user"].id, course_id)
-                st.rerun()
+        if store.get_known_words:
+            st.subheader("Repeat Random Exercises")
+            with st.container(border=True, key=f"lesson_REPETITON_rec"):
+                st.markdown(f"### Repetition", text_alignment="center")
+                st.markdown("Repeat a random selection of exercises from your completed lessons.", text_alignment="center")
+                if st.button(label="Start Lesson", width="stretch", key=f"start_REPETITION_rec"):
+                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                    clear_lesson_sessionstate()
+                    st.session_state["step_idx"] = 0
+                    st.session_state["lesson_dict"] = store.generate_word_repetition(st.session_state["user"].id, course_id)
+                    st.rerun()
 
         
 
