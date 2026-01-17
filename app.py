@@ -114,10 +114,9 @@ elif page == "finish":
 
 
 with bottom():
-    st.divider()
-    cols = st.columns(2, vertical_alignment="bottom")
+    cols = st.columns(3, vertical_alignment="bottom")
     with cols[0]:
-        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️", )
+        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
     with cols[1]:
         if logged_in:
             if st.button("Logout", type="primary", key="logout_btn"):
