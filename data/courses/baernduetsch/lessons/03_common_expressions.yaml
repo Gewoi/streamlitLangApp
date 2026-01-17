@@ -34,6 +34,8 @@ steps:
     sentence:
       question: "Thank you, Angela"
       helper: "Danke, Angela"
+    images:
+      - "data/assets/images/girl_smiling.jpg"
     answers:
       ["Merci, angela", "Danke, angela"]
 
@@ -139,7 +141,7 @@ steps:
     sentence:
       question: "Sorry, no thanks!"
       helper: "Entschuldigung, nein danke!"
-      target: ["Tschuldigung", "!"]
+      target: ["Tschuldigung, ", "!"]
     answers: ["nei danke", "nei merci"]
     solution_display: |
       ✅ Correct! 
@@ -148,22 +150,6 @@ steps:
     images:
       - "data/assets/images/no.jpg"
 
-  - type: markdown
-    id: important_note
-    markdown: |
-      ## Swiss German is not a written language!
-
-      Unfortunately, there are *no rules* on how to write Swiss German.
-
-      For this course, we will be relying on how a person in Bern would **Text their friends**. 
-      It is impossible to include *all possible spellings*, so sometimes you might be shown that you're wrong even when you're **correct**.
-
-      This is partly due to me not thinking the programming through. Maybe in the future I'll upgrade it. For now, I'll say **sorry!**
-
-      If you find a mistake, let me know. There is always a **skip button** except the last exercise in case you get stuck.
-
-    images:
-      - "data/assets/images/writing.jpg"
 
   - type: introduce_word
     id: word_bitte
