@@ -14,9 +14,12 @@ steps:
 
       - The **course language** is **English**.
       - The **target language** is **Bernese Swiss German** (*Bärndütsch*).
-      - We also show **Standard German** side by side.
+      - As often as possible, there will also be **Standard German** side by side.
 
-      You can author new lessons by writing YAML files like this one.
+      The Course gives explanations in between.
+
+      IMPORTANT: Sometimes the *solution* displays also contain **helpful explanations**.
+
     images:
       - "data/assets/images/bern.jpg"
 
@@ -30,6 +33,10 @@ steps:
 
       For this course, we will be relying on how a person in Bern would **Text their friends**. 
       It is impossible to include *all possible spellings*, so sometimes you might be shown that you're wrong even when you're **correct**.
+
+      This is partly due to me not thinking the programming through. Maybe in the future I'll upgrade it. For now, I'll say **sorry!**
+
+      If you find a mistake, let me know. There is always a **skip button** except the last exercise in case you get stuck.
 
     images:
       - "data/assets/images/writing.jpg"
@@ -201,27 +208,16 @@ steps:
     pairs:
       - left:
           original: "Hi"
-          helper: "Hallo"
         right:
           target: "Hallo / Tschau / Sälü"
       - left:
-          original: "Yes"
-          helper: "Ja"
-        right:
-          target: "Ja"
-      - left:
           original: "Bye"
-          helper: "Tschüss"
         right:
           target: "Tschüss / Tschou / Sälü"
       - left:
           original: "How are you?"
         right:
           target: "Wie geit's?"
-      - left:
-          original: "No"
-        right:
-          target: "Nei"
       - left:
           original: "See you later!"
         right:

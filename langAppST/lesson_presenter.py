@@ -169,6 +169,7 @@ def render_order(step: dict):
     original_sentence = sentence_data.get("question", None)
     helper_sentence = sentence_data.get("helper", None)
     if not st.session_state["order_tokens"]:
+        st.session_state["correct_order"] = step["tokens"]
         tokens = step["tokens"]
         random.shuffle(tokens)
         st.session_state["order_tokens"] = tokens
@@ -177,7 +178,7 @@ def render_order(step: dict):
         tokens = st.session_state["order_tokens"]
         used_tokens = st.session_state["used_tokens"]
 
-    solutions = step["tokens"]
+    solutions = st.session_state["correct_order"]
 
     audio = step.get("audio", None)
     images = step.get("images", None)
@@ -234,7 +235,6 @@ def render_order(step: dict):
             else:
                 st.success("Correct ✅")
             play_correct()
-            st.session_state["enter_to_continue"] = True
             st.session_state["order_tokens"] = []
             st.session_state["used_tokens"] = []
             st.session_state["order_answer"] = []

@@ -12,10 +12,8 @@ COURSES_ROOT = Path("data") / "courses"
 DEFAULT_TARGET_SIZE = (350, 300)
 
 def autoplay_sound(sound_path):
-    cols = st.columns([7,1,7])
-    with cols[1]:
-        with st.expander("", width=1):
-            st.audio(sound_path, autoplay=True)
+    with st.container(key=f"sound_fx_{sound_path}", width=1):
+        st.audio(sound_path, autoplay=True)
 
 def play_correct():
     autoplay_sound("data/assets/audio/correct_exercise.wav")
@@ -77,12 +75,23 @@ def load_lessons(course_id : str):
 
 @st.cache_data(show_spinner=False)
 def load_lesson_content(course_id : str, lesson_id : str):
+
     course_dir = COURSES_ROOT / course_id
     lesson_yaml_p = course_dir / "lessons" / str(lesson_id + ".yaml") 
     lesson_dict = read_yaml(lesson_yaml_p)
+
     return lesson_dict
 
 def get_course(course_id : str):
     course_yaml = COURSES_ROOT / course_id / "course.yaml"
     course_dict = read_yaml(course_yaml)
     return course_dict
+
+def find_new_exercises(lesson_dict : dict):
+    included_steps = ["cloze", "order", "translate_type", "listen_type", "true_false", "match"]
+    steps = []
+
+    for step in lesson_dict["steps"]:
+        if step["type"] in included_steps:
+            steps.append(step)
+    return steps

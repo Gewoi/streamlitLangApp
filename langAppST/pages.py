@@ -2,37 +2,75 @@ from __future__ import annotations
 
 import streamlit as st
 from .content import get_course
-from .content import load_courses, load_lessons, load_lesson_content, play_complete
+from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
-import hashlib
 
 
+def login(email: str, password: str, supabase : ProgressStore):
+    return supabase.supabase.auth.sign_in_with_password({
+        "email": email,
+        "password": password
+    })
 
-users = st.secrets["users"]
+def signup(email: str, password: str, supabase : ProgressStore):
+    return supabase.supabase.auth.sign_up({
+        "email": email,
+        "password": password
+    })
 
-def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode()).hexdigest()
 
-def check_login(username, password):
-    if username not in users:
-        return False
-    return hash_password(password) == users[username]
+def logout(supabase : ProgressStore):
+    supabase.supabase.auth.sign_out()
+    st.session_state.clear()
 
-def login_page():
-    with st.form(key="login"):
-        username = st.text_input("Username")
+
+def login_page(supabase : ProgressStore):
+    st.title("Welcome!")
+
+    mode = st.radio(
+        "Account",
+        ["Login", "Create Account"],
+        horizontal=True,
+    )
+
+    with st.form("auth_form"):
+        email = st.text_input("Email")
         password = st.text_input("Password", type="password")
-
-        submitted = st.form_submit_button("Login")
+        if mode == "Create Account":
+            password_repeat = st.text_input("Repeat Password", type="password")
         
-    if submitted:
-        if check_login(username, password):
-            st.session_state.logged_in = True
-            st.session_state.user = username
-            st.rerun()
-        else:
-            st.error("Invalid username or password")
+        submit = st.form_submit_button(mode)
+
+    if submit:
+        try:
+            if mode == "Login":
+                result = login(email, password, supabase)
+            elif mode == "Create Account":
+                if password == password_repeat:
+                    result = signup(email, password, supabase)
+                    st.success("✅ Account created! Please check your email to confirm your account before logging in.")
+                    st.info("After confirming, come back here and log in.")
+                    return
+                else:
+                    st.error("Passwords not the same!")
+                    return
+
+            if not result.user:
+                st.error("Authentication failed.")
+                return
+
+            # Store user in session
+            else:
+                st.session_state["user"] = result.user
+                st.session_state["session"] = result.session
+                st.session_state["logged_in"] = True
+
+                st.success("Logged in successfully!")
+                st.rerun()
+
+        except Exception as e:
+            st.error(str(e))
 
 def homepage():
     st.title("Language App")
@@ -68,7 +106,7 @@ def course_page(course_id : str, store : ProgressStore):
             st.divider()
             current_section = lesson["section"]
             st.title(current_section)
-        completed_condition = store.check_lesson_completed(st.session_state["user"], course_id, lesson["id"])
+        completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
         with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
             if completed_condition:
                 st.caption("Completed✅")
@@ -78,13 +116,41 @@ def course_page(course_id : str, store : ProgressStore):
                 st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
                 clear_lesson_sessionstate()
                 st.session_state["step_idx"] = 0
-                st.session_state["new_words"] = lesson.get("new_words", {})
+                st.session_state["lesson_dict"] = lesson
+                st.session_state["new_words"] = find_new_exercises(lesson)
                 st.rerun()
 
-def player(course_id : str, lesson_id : str):
-    course_dict = get_course(course_id)
-    lesson_dict = load_lesson_content(course_id, lesson_id)
+    with st.sidebar:
+        st.title("Recommended Lesson:")
+        rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
+        if rec_lesson_id:
+            rec_lesson = load_lesson_content(course_id, rec_lesson_id)
+            with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
+                st.markdown(f"### {rec_lesson["title"]}", text_alignment="center")
+                st.markdown(rec_lesson["description"], text_alignment="center")
+                if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}_rec"):
+                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : rec_lesson_id}
+                    clear_lesson_sessionstate()
+                    st.session_state["step_idx"] = 0
+                    st.session_state["lesson_dict"] = load_lesson_content(course_id, rec_lesson_id)
+                    st.rerun()
+        else:
+            st.write("No recommendations yet")
+        with st.container(border=True, key=f"lesson_REPETITON_rec"):
+            st.markdown(f"### Repetition", text_alignment="center")
+            st.markdown("Repeat a random selection of exercises from your completed lessons.", text_alignment="center")
+            if st.button(label="Start Lesson", width="stretch", key=f"start_REPETITION_rec"):
+                st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                clear_lesson_sessionstate()
+                st.session_state["step_idx"] = 0
+                st.session_state["lesson_dict"] = store.generate_word_repetition(st.session_state["user"].id, course_id)
+                st.rerun()
 
+        
+
+def player(course_id : str, lesson_id : str, store : ProgressStore):
+    course_dict = get_course(course_id)
+    lesson_dict = st.session_state["lesson_dict"]
     step_idx = st.session_state["step_idx"]
 
     top_left, top_mid, top_right = st.columns([2, 3.5, 1], vertical_alignment="bottom")
@@ -126,16 +192,12 @@ def player(course_id : str, lesson_id : str):
     
         if b3.button("Next ➡", disabled=next_disabled, width="stretch"):
             st.session_state["step_idx"] += 1
-            st.session_state["enter_to_continue"] = False
             st.rerun()
     else:
         if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
-            st.session_state["enter_to_continue"] = False
             st.session_state["nav"] = {"page": "finish", "course_id": course_id, "current_lesson": lesson_id}
             st.rerun()
             
-
-    #TODO: Insert a progress bar of sorts
 
 def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
     with st.container(border=True):
@@ -146,7 +208,8 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         play_complete()
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
-            store.lesson_completed(st.session_state["user"], course_id, lesson_id, st.session_state["mistakes"], st.session_state["new_words"])
+            if not lesson_id == "REPETITION":
+                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"], st.session_state["new_words"])
             clear_lesson_sessionstate()
             st.rerun()
 
@@ -160,5 +223,7 @@ def clear_lesson_sessionstate():
     st.session_state["used_tokens"] = []
     st.session_state["order_answer"] = []
     st.session_state["mistakes"] = 0
-    st.session_state["new_words"] = {}
+    st.session_state["new_words"] = []
     st.session_state["take_over_answer"] = ""
+    st.session_state["lesson_dict"] = {}
+    st.session_state["correct_order"] = []

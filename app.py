@@ -1,6 +1,7 @@
 import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
+from supabase import create_client, Client
 
 st.set_page_config(
     page_title="MyLangApp",
@@ -24,6 +25,10 @@ css ="""
     background: #9b8c2a;
     background: linear-gradient(153deg, rgba(155, 140, 42, 0.08) 0%, rgba(189, 189, 57, 0.15) 46%, rgba(219, 237, 83, 0.08) 100%);
 }
+
+[class*="sound_fx"]{
+    display: none
+}
 """
 
 st.html(f"<style>{css}</style>")
@@ -35,28 +40,39 @@ if "logged_in" not in st.session_state:
 if "user" not in st.session_state:
     st.session_state.user = None
 
-logged_in = st.session_state["logged_in"]
+@st.cache_resource
+def connect_supabase():
+    supabase = ProgressStore()
+    return supabase
+
+store = connect_supabase()
 
 #TODO: Take out before releasing!
-if True:
-    logged_in = True
-    st.session_state["user"] = "guest"
+if True and not st.session_state["logged_in"]:
+    result = store.supabase.auth.sign_in_with_password({
+        "email": "dev@test.local",
+        "password": "password123"
+    })
+    st.session_state["user"] = result.user
+    st.session_state["session"] = result.session
+    st.session_state["logged_in"] = True
+
+logged_in = st.session_state["logged_in"]
 
 if logged_in:
     with st.sidebar:
         st.title("Settings")
 
-store = ProgressStore()
 nav = st.session_state.get("nav") or ({"page" : "home"} if logged_in else {"page" : "login"})
 
 page = nav.get("page")
 if page == "login":
-    pages.login_page()
+    pages.login_page(store)
 elif page == "home":
     pages.homepage()
 elif page == "course_page":
     pages.course_page(nav.get("course_id"), store)
 elif page == "lesson":
-    pages.player(nav.get("course_id"), nav.get("current_lesson"))
+    pages.player(nav.get("course_id"), nav.get("current_lesson"), store)
 elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), store)
