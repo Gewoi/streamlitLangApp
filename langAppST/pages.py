@@ -138,7 +138,7 @@ def course_page(course_id : str, store : ProgressStore):
                     st.rerun()
         else:
             st.write("No recommendations yet")
-        if store.get_known_words != []:
+        if store.get_known_words(st.session_state["user"].id, course_id):
             st.subheader("Repeat Random Exercises")
             with st.container(border=True, key=f"lesson_REPETITON_rec"):
                 st.markdown(f"### Repetition", text_alignment="center")
