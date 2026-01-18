@@ -8,10 +8,17 @@ from .progress_handler import ProgressStore
 
 
 def login(email: str, password: str, supabase : ProgressStore):
-    return supabase.supabase.auth.sign_in_with_password({
+    result = supabase.supabase.auth.sign_in_with_password({
         "email": email,
         "password": password
     })
+    if result.session:
+        st.session_state["supabase_session"] = {
+            "access_token": result.session.access_token,
+            "refresh_token": result.session.refresh_token,
+        }
+    return result
+
 
 def signup(email: str, password: str, supabase : ProgressStore):
     return supabase.supabase.auth.sign_up({
@@ -239,6 +246,7 @@ def clear_lesson_sessionstate():
     st.session_state["take_over_answer"] = ""
     st.session_state["lesson_dict"] = {}
     st.session_state["correct_order"] = []
+    st.session_state["last_pair"] = []
 
 def reset_select_sessionstate():
     st.session_state["order_tokens"] = []

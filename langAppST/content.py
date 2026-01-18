@@ -16,19 +16,23 @@ def autoplay_sound(sound_path):
     with st.container(key=f"sound_fx_{random.randint(0,4000)}", width=1):
         st.audio(sound_path, autoplay=True)
 
+@st.cache_data(show_spinner=False)
 def play_correct():
     autoplay_sound("data/assets/audio/correct_exercise.wav")
 
+@st.cache_data(show_spinner=False)
 def play_wrong():
     autoplay_sound("data/assets/audio/wrong_exercise.wav")
 
+@st.cache_data(show_spinner=False)
 def play_match_correct():
     autoplay_sound("data/assets/audio/match_correct.wav")
 
+@st.cache_data(show_spinner=False)
 def play_complete():
     autoplay_sound("data/assets/audio/lesson_done.wav")
 
-
+@st.cache_data(show_spinner=False)
 def contain_cv2(img, target_w, target_h, allow_upscale=False):
     h, w = img.shape[:2]
 
@@ -45,7 +49,7 @@ def contain_cv2(img, target_w, target_h, allow_upscale=False):
     resized = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
     return resized
 
-
+@st.cache_data(show_spinner=False)
 def resize_image(img_path, target_size = DEFAULT_TARGET_SIZE):
     image = cv2.imread(img_path)
     img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)

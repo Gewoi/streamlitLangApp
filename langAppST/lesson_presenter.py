@@ -44,6 +44,7 @@ def render_step(step : dict):
     st.warning(f"Unknown step type: {stype!r}")
     return StepOutcome(can_go_next=True)
 
+@st.fragment
 def render_markdown(step : dict):
     st.markdown(step.get("markdown", "no markdown found"), unsafe_allow_html=True)
 
@@ -63,7 +64,7 @@ def render_markdown(step : dict):
 
     return StepOutcome(can_go_next=True)
 
-
+@st.fragment
 def render_introduce_word(step : dict):
     word = step["word"]
 
@@ -95,7 +96,7 @@ def render_introduce_word(step : dict):
     return StepOutcome(can_go_next=True)
 
 
-
+@st.fragment
 def render_cloze(step: dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -164,6 +165,7 @@ def render_cloze(step: dict):
 
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_order(step: dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -241,6 +243,7 @@ def render_order(step: dict):
             st.error("Not quite. Try again.")
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_translate_type(step : dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -292,7 +295,7 @@ def render_translate_type(step : dict):
     return StepOutcome(can_go_next=False)
 
 
-
+@st.fragment
 def render_listen_type(step : dict):
     sol_display = step.get("solution_display", None)
     
@@ -334,6 +337,7 @@ def render_listen_type(step : dict):
 
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_match(step : dict):
     pairs = step["pairs"]
     all_buttons = []
@@ -365,7 +369,10 @@ def render_match(step : dict):
             break
     
     def give_css_selected(elm, lang : str):
-        key = f"selected_match_{elm[lang]}" if elm[lang] == match_sel_btn else elm[lang]
+        if elm[lang] in st.session_state["last_pair"]:
+            key = f"order_button_sel_{elm[lang]}"
+        else:
+            key = f"selected_match_{elm[lang]}" if elm[lang] == match_sel_btn else elm[lang]
         return key
 
     def check_buttons(elm, lang : str):
@@ -374,12 +381,14 @@ def render_match(step : dict):
                 st.session_state["pressed_match_buttons"] += [elm[lang], match_sel_btn]
                 st.session_state["match_sel_btn"] = None
                 play_match_correct()
+                st.session_state["last_pair"] = [corresponding_btn, match_sel_btn]
                 st.rerun()
             else:
                 st.session_state["match_sel_btn"] = None
                 play_wrong()
                 st.rerun()
         else:
+            st.session_state["last_pair"] = []
             st.session_state["match_sel_btn"] = elm[lang]
             st.rerun()
 

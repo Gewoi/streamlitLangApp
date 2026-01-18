@@ -7,68 +7,19 @@ from streamlit_extras.bottom_container import bottom
 st.set_page_config(
     page_title="MyLangApp",
     page_icon="🗣",
+    initial_sidebar_state="auto"
 )
-css ="""
-                div[data-testid="stToolbar"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stDecoration"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stStatusWidget"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                #MainMenu {
-                visibility: hidden;
-                height: 0%;
-                }
-                header {
-                visibility: hidden;
-                height: 0%;
-                }
-                footer {
-                visibility: hidden;
-                height: 0%;
-                }
-[class*="bkg_image_bern"]{
-    background-image: url("https://kursaal-bern.ch/fileadmin/inhalte/Bilder/Ueber_Uns/Stories/Das-Perfekte-Wochenende-in-Bern/Kursaal-Bern_Ueber-Uns_Stories_Das-Perfekte-Wochenende-in-Bern_Zytglogge.jpg");
-    background-size: 100%; 
-    background-position-x: center;
-    background-position-y: 60%;
-    background-color: rgba(255, 255, 255, 0.93);
-    background-blend-mode: lighten;
-} 
-[class*="finished_lesson"]{
-    background: #2c9b2a;
-    background: linear-gradient(90deg, rgba(44, 155, 42, 0.21) 0%, rgba(66, 189, 57, 0.41) 46%, rgba(83, 237, 147, 0.25) 100%);
-}
 
-[class*="selected_match"]{
-    background: #9b8c2a;
-    background: linear-gradient(153deg, rgba(155, 140, 42, 0.08) 0%, rgba(189, 189, 57, 0.15) 46%, rgba(219, 237, 83, 0.08) 100%);
-}
+st.html('''
+       <script>
+        window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => e.setAttribute("style", "display: none;"));
+      </script>
+    ''')
 
-[class*="sound_fx"]{
-    display: none
-}
+with open('stylesheet.css') as f:
+    css_file = f.read()
 
-[data-testid='stHeaderActionElements'] {
-    display: none;
-}
-
-.st-key-logout_btn{
-margin-left: auto;
-    margin-right: 0;
-}
-"""
-
-st.html(f"<style>{css}</style>")
+st.html(f"<style>{css_file}</style>")
 
 
 @st.cache_resource
@@ -140,11 +91,8 @@ elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), store)
 
 
-with bottom():
-    cols = st.columns(3, vertical_alignment="bottom")
-    with cols[0]:
-        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
-    with cols[1]:
-        if logged_in:
-            if st.button("Logout", type="primary", key="logout_btn"):
-                logout(store)
+with st.sidebar.container(key="sidebar_bottom"):
+    st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
+    if logged_in:
+        if st.button("Logout", type="primary", key="logout_btn"):
+            logout(store)
