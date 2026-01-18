@@ -31,12 +31,12 @@ store = connect_supabase()
 
 def restore_session():
     if "supabase_session" in st.session_state:
-        store.auth.set_session(
+        store.supabase.auth.set_session(
             st.session_state["supabase_session"]["access_token"],
             st.session_state["supabase_session"]["refresh_token"],
         )
 
-        user = store.auth.get_user()
+        user = store.supabase.auth.get_user()
         if user:
             st.session_state["user"] = user.user
             st.session_state["logged_in"] = True
