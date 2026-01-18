@@ -247,6 +247,7 @@ def clear_lesson_sessionstate():
     st.session_state["lesson_dict"] = {}
     st.session_state["correct_order"] = []
     st.session_state["last_pair"] = []
+    st.session_state["match_sound"] = ""
 
 def reset_select_sessionstate():
     st.session_state["order_tokens"] = []
