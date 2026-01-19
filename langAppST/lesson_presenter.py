@@ -23,6 +23,15 @@ def mistake_made():
     st.session_state["mistakes"] += 1
     play_wrong()
 
+def submitted_exercise(sol_display : str = ""):
+    if sol_display:
+        st.success(sol_display)
+    else:
+        st.success("Correct ✅")
+    play_correct()
+    return StepOutcome(can_go_next=True)
+
+
 def render_step(step : dict):
     stype = str(step.get("type", "markdown"))
     if stype == "markdown":
@@ -44,7 +53,7 @@ def render_step(step : dict):
     st.warning(f"Unknown step type: {stype!r}")
     return StepOutcome(can_go_next=True)
 
-
+@st.fragment
 def render_markdown(step : dict):
     st.markdown(step.get("markdown", "no markdown found"), unsafe_allow_html=True)
 
@@ -64,7 +73,7 @@ def render_markdown(step : dict):
 
     return StepOutcome(can_go_next=True)
 
-
+@st.fragment
 def render_introduce_word(step : dict):
     word = step["word"]
 
@@ -95,7 +104,7 @@ def render_introduce_word(step : dict):
 
     return StepOutcome(can_go_next=True)
 
-
+@st.fragment
 def render_cloze(step: dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -164,6 +173,7 @@ def render_cloze(step: dict):
 
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_order(step: dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -230,17 +240,18 @@ def render_order(step: dict):
 
     if submitted:
         if st.session_state["order_answer"] == solutions:
-            if sol_display:
-                st.success(sol_display)
-            else:
-                st.success("Correct ✅")
-            play_correct()
-            return StepOutcome(can_go_next=True)
+            st.session_state["exercise_done"] = True
+            st.rerun()
         else:
             mistake_made()
             st.error("Not quite. Try again.")
+
+    if st.session_state["exercise_done"]:
+        return submitted_exercise(sol_display)
+    
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_translate_type(step : dict):
     sentence_data = step["sentence"]
     original_sentence = sentence_data.get("question", None)
@@ -279,18 +290,18 @@ def render_translate_type(step : dict):
     
     if submitted:
         if comparison_string(answer_type) in caseIns_solutions:
-            if sol_display:
-                st.success(sol_display)
-            else:
-                st.success("Correct ✅")
-            play_correct()
-            return StepOutcome(can_go_next=True)
+            st.session_state["exercise_done"] = True
+            st.rerun()
         else:
             mistake_made()
             st.error("Not quite. Try again.")
 
+    if st.session_state["exercise_done"]:
+        return submitted_exercise(sol_display)
+
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_listen_type(step : dict):
     sol_display = step.get("solution_display", None)
     
@@ -320,18 +331,18 @@ def render_listen_type(step : dict):
     
     if submitted:
         if comparison_string(answer_listen) in caseIns_solutions:
-            if sol_display:
-                st.success(sol_display)
-            else:
-                st.success("Correct ✅")
-            play_correct()
-            return StepOutcome(can_go_next=True)
+            st.session_state["exercise_done"] = True
+            st.rerun()
         else:
             mistake_made()
             st.error("Not quite. Try again.")
 
+    if st.session_state["exercise_done"]:
+        return submitted_exercise(sol_display)
+
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_match(step : dict):
     pairs = step["pairs"]
     all_buttons = []
@@ -403,13 +414,16 @@ def render_match(step : dict):
         play_wrong()
     st.session_state["match_sound"] = ""
 
-    if len(st.session_state["pressed_match_buttons"]) == len(all_buttons):
-        st.success("Correct ✅")
-        play_correct()
-        return StepOutcome(can_go_next=True)
+    if len(st.session_state["pressed_match_buttons"]) == len(all_buttons) and not st.session_state["exercise_done"]:
+        st.session_state["exercise_done"] = True
+        st.rerun()
+
+    if st.session_state["exercise_done"]:
+        return submitted_exercise()
 
     return StepOutcome(can_go_next=False)
 
+@st.fragment
 def render_true_false(step: dict):
     audio = step.get("audio", None)
     images = step.get("images", None)
@@ -434,11 +448,6 @@ def render_true_false(step: dict):
 
     def check_answer(label):
         if answer == label:
-            if sol_display:
-                st.success(sol_display)
-            else:
-                st.success("Correct ✅")
-            play_correct()
             return True
         else:
             mistake_made()
@@ -456,5 +465,10 @@ def render_true_false(step: dict):
         correct = check_answer(false_label)
 
     if correct:
-        return StepOutcome(can_go_next=True)
+        st.session_state["exercise_done"] = True
+        st.rerun()
+    
+    if st.session_state["exercise_done"]:
+        return submitted_exercise(sol_display)    
+    
     return StepOutcome(can_go_next=False)

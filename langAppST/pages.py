@@ -176,6 +176,7 @@ def player(course_id : str, lesson_id : str, store : ProgressStore):
     present_container = st.container(border=True, gap="small")
     with present_container:
         outcome = render_step(current_step)
+
             
 
     b1, b2, b3 = st.columns(3)
@@ -185,10 +186,7 @@ def player(course_id : str, lesson_id : str, store : ProgressStore):
 
     if b1.button("⬅ Back", disabled=back_disabled):
         st.session_state["step_idx"] -= 1
-        st.session_state["order_tokens"] = []   
-        st.session_state["used_tokens"] = []
-        st.session_state["order_answer"] = []
-        st.session_state["correct_order"] = []
+        reset_select_sessionstate()
         st.rerun()
 
     if not last_condition:
@@ -237,9 +235,11 @@ def clear_lesson_sessionstate():
     st.session_state["correct_order"] = []
     st.session_state["last_pair"] = []
     st.session_state["match_sound"] = ""
+    st.session_state["exercise_done"] = False
 
 def reset_select_sessionstate():
     st.session_state["order_tokens"] = []
     st.session_state["used_tokens"] = []
     st.session_state["order_answer"] = []
     st.session_state["correct_order"] = []
+    st.session_state["exercise_done"] = False
