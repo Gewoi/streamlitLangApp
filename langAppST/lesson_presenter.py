@@ -57,7 +57,7 @@ def highlight_differences(input_str, candidates, similarity_threshold=0.5):
         if opcode == 'equal':
             md_output.append(input_str[a0:a1])
         elif opcode == 'replace':
-            md_output.append(f"~~{input_str[a0:a1]}~~**{best_match[b0:b1]}**")
+            md_output.append(f"**{best_match[b0:b1]}**")
         elif opcode == 'delete':
             md_output.append(f"~~{input_str[a0:a1]}~~")
         elif opcode == 'insert':
