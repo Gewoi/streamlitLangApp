@@ -1,0 +1,52 @@
+id: 04_polite_introductions
+order: 4
+title: "👩‍🦳Polite Introductions"
+description: "Introduce yourself to strangers, people of status and elderly people."
+estimated_minutes: 0
+section: Basics
+
+steps:
+  - type: markdown
+    id: step_c39226
+    markdown: |
+      ## Polite Form
+
+
+      In Switzerland, we often use a *polite form*. You usually do this with the following
+      people:
+
+
+      - Strangers in some settings (usually work related)
+
+      - People of status (for example a professor when you''re a student often)
+
+      - Elderly people
+
+
+      It is often acceptable to just skip using this form with a lot of people. However,
+      some people (especially *elderly people*) can get **offended** when it isn''t
+      used with them. So let''s look at it!'
+    images:
+      - "data/assets/images/polite_intro.jpg"
+  - type: introduce_word
+    id: step_4b955f
+    word: Grüessech
+    translation:
+      en: Greetings
+      de: Grüss Gott (kind of)
+    images:
+      - "data/assets/images/old_guy_handshake.jpg"
+    audio: "data/assets/audio/gruessech.wav"
+
+  - type: cloze
+    id: step_b8457d
+    prompt: Fill in the missing Bernese word (answer in Bärndütsch).
+    sentence:
+      question: Greetings, mister Marti!
+      helper: Grüsse, Herr Marti!
+      target: ["", "Herr Marti!"]
+    answers: ["Grüessech"]
+    solution_display: "✅ Correct! \n\nIf we greet someone in a *polite* way, we say\
+      \ **grüessech**."
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"

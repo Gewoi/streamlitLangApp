@@ -9,6 +9,7 @@ from string import ascii_letters
 from .content import resize_image, play_correct, play_wrong, play_match_correct
 
 import random
+import difflib
 
 @dataclass
 class StepOutcome:
@@ -18,6 +19,51 @@ def comparison_string(input_string : str):
     result = ''.join([letter for letter in input_string if letter in ascii_letters])
     result = result.casefold()
     return result
+
+def highlight_differences(input_str, candidates, similarity_threshold=0.5):
+    """
+    Finds the closest string from candidates to input_str.
+    Returns a Markdown string highlighting differences.
+    
+    Parameters:
+        input_str (str): The string to compare.
+        candidates (list[str]): List of candidate strings.
+        similarity_threshold (float): Minimum similarity ratio to consider a match (0-1).
+    
+    Returns:
+        str | None: Markdown string highlighting differences, or None if no close match.
+    """
+    if not candidates:
+        return None
+    
+    # Find the closest match
+    best_match = None
+    highest_ratio = 0
+    
+    for candidate in candidates:
+        ratio = difflib.SequenceMatcher(None, input_str, candidate).ratio()
+        if ratio > highest_ratio:
+            highest_ratio = ratio
+            best_match = candidate
+    
+    # If nothing is similar enough, return None
+    if highest_ratio < similarity_threshold:
+        return None
+    
+    # Highlight differences
+    md_output = []
+    s = difflib.SequenceMatcher(None, input_str, best_match)
+    for opcode, a0, a1, b0, b1 in s.get_opcodes():
+        if opcode == 'equal':
+            md_output.append(input_str[a0:a1])
+        elif opcode == 'replace':
+            md_output.append(f"~~{input_str[a0:a1]}~~**{best_match[b0:b1]}**")
+        elif opcode == 'delete':
+            md_output.append(f"~~{input_str[a0:a1]}~~")
+        elif opcode == 'insert':
+            md_output.append(f"**{best_match[b0:b1]}**")
+    
+    return ''.join(md_output)
 
 def mistake_made():
     st.session_state["mistakes"] += 1
@@ -160,7 +206,11 @@ def render_cloze(step: dict):
             st.rerun()
         else:
             mistake_made()
-            st.error("Not quite. Try again.")
+            result = highlight_differences(answer, caseIns_solutions)
+            if result:
+                st.error(f"Not quite: {result}")
+            else:
+                st.error("Not quite. Try again.")
 
     if not st.session_state["take_over_answer"] == "":
         if sol_display:
@@ -294,7 +344,11 @@ def render_translate_type(step : dict):
             st.rerun()
         else:
             mistake_made()
-            st.error("Not quite. Try again.")
+            result = highlight_differences(answer_type, solutions)
+            if result:
+                st.error(f"Not quite: {result}")
+            else:
+                st.error("Not quite. Try again.")
 
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)
@@ -335,7 +389,11 @@ def render_listen_type(step : dict):
             st.rerun()
         else:
             mistake_made()
-            st.error("Not quite. Try again.")
+            result = highlight_differences(answer_listen, solutions)
+            if result:
+                st.error(f"Not quite: {result}")
+            else:
+                st.error("Not quite. Try again.")
 
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)
