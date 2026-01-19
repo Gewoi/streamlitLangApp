@@ -1,8 +1,6 @@
 import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
-from supabase import create_client, Client
-from streamlit_extras.bottom_container import bottom
 
 st.set_page_config(
     page_title="MyLangApp",
@@ -29,19 +27,20 @@ def connect_supabase():
 
 store = connect_supabase()
 
-def restore_session():
-    if "supabase_session" in st.session_state:
-        store.supabase.auth.set_session(
-            st.session_state["supabase_session"]["access_token"],
-            st.session_state["supabase_session"]["refresh_token"],
-        )
 
-        user = store.supabase.auth.get_user()
-        if user:
-            st.session_state["user"] = user.user
-            st.session_state["logged_in"] = True
+def check_session():
+    """Check if there's an active session"""
+    try:
+        # Get current session from Supabase
+        session = store.supabase.auth.get_session()
+        if session:
+            st.session_state.user = session.user
+            st.session_state.logged_in = True
             return True
-
+    except:
+        pass
+    
+    st.session_state.user = None
     return False
 
 def logout(supabase : ProgressStore):
@@ -50,15 +49,13 @@ def logout(supabase : ProgressStore):
     st.rerun()
 
 if "logged_in" not in st.session_state:
-    st.session_state.logged_in = restore_session()
+    st.session_state.logged_in = False
 
 if "guest" not in st.session_state:
     st.session_state.guest = False
 
-if "user" not in st.session_state:
-    st.session_state.user = None
-
-
+if not st.session_state["logged_in"]:
+    check_session()
 
 if not st.session_state["logged_in"] and st.session_state["guest"]:
     result = store.supabase.auth.sign_in_with_password({
@@ -68,6 +65,7 @@ if not st.session_state["logged_in"] and st.session_state["guest"]:
     st.session_state["user"] = result.user
     st.session_state["session"] = result.session
     st.session_state["logged_in"] = True
+    st.rerun()
 
 logged_in = st.session_state["logged_in"]
 
@@ -75,8 +73,14 @@ if logged_in:
     with st.sidebar:
         st.title("Settings")
         
-    
-nav = st.session_state.get("nav") or ({"page" : "home"} if logged_in else {"page" : "login"})
+if "nav" not in st.session_state:
+    st.session_state["nav"] = {"page": "home"} if logged_in else {"page": "login"}
+else:
+    # If we just logged in (session restored) but nav is still on login page, redirect to home
+    if logged_in and st.session_state["nav"].get("page") == "login":
+        st.session_state["nav"] = {"page": "home"}
+
+nav = st.session_state["nav"]
 
 page = nav.get("page")
 if page == "login":

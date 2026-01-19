@@ -8,23 +8,31 @@ from .progress_handler import ProgressStore
 
 
 def login(email: str, password: str, supabase : ProgressStore):
-    result = supabase.supabase.auth.sign_in_with_password({
-        "email": email,
-        "password": password
-    })
-    if result.session:
-        st.session_state["supabase_session"] = {
-            "access_token": result.session.access_token,
-            "refresh_token": result.session.refresh_token,
-        }
-    return result
+    try:
+        response = supabase.supabase.auth.sign_in_with_password({
+            "email": email,
+            "password": password
+        })
+        st.session_state.user = response.user
+        st.session_state["logged_in"] = True
+        return True
+    except Exception as e:
+        st.error(f"Login failed: {str(e)}")
+        return False
 
 
-def signup(email: str, password: str, supabase : ProgressStore):
-    return supabase.supabase.auth.sign_up({
-        "email": email,
-        "password": password
-    })
+
+def signup(email, password, store :ProgressStore):
+    try:
+        response = store.supabase.auth.sign_up({
+            "email": email,
+            "password": password
+        })
+        st.session_state.user = response.user
+        return True
+    except Exception as e:
+        st.error(f"Signup failed: {str(e)}")
+        return False
 
 
 def login_page(supabase : ProgressStore):
@@ -44,36 +52,17 @@ def login_page(supabase : ProgressStore):
         submit = st.form_submit_button(mode)
 
     if submit:
-        try:
-            if mode == "Login":
-                result = login(email, password, supabase)
-            elif mode == "Create Account":
-                if password == password_repeat:
-                    result = signup(email, password, supabase)
-                    if not result.user:
-                        st.error("Something went wrong. Probably user already exists.")
+        if mode == "Login":
+            if login(email, password, supabase):
+                st.success("✅ Logged In!")
+                st.rerun()
+        elif mode == "Create Account":
+            if password == password_repeat:
+                if signup(email, password, supabase):
                     st.success("✅ Account created! Please check your email to confirm your account before logging in.")
                     st.info("After confirming, come back here and log in.")
-                    return
-                else:
-                    st.error("Passwords not the same!")
-                    return
-
-            if not result.user:
-                st.error("Authentication failed.")
-                return
-
-            # Store user in session
             else:
-                st.session_state["user"] = result.user
-                st.session_state["session"] = result.session
-                st.session_state["logged_in"] = True
-
-                st.success("Logged in successfully!")
-                st.rerun()
-
-        except Exception as e:
-            st.error(str(e))
+                st.error("Passwords not the same!")
     
     st.space("small")
 
