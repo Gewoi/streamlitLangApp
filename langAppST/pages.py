@@ -186,19 +186,16 @@ def player(course_id : str, lesson_id : str, store : ProgressStore):
 
     if b1.button("⬅ Back", disabled=back_disabled):
         st.session_state["step_idx"] -= 1
-        reset_select_sessionstate()
-        st.rerun()
+        reset_select_sessionstate_and_rerun()
 
     if not last_condition:
         if b2.button("Skip"):
             st.session_state["step_idx"] += 1
-            reset_select_sessionstate()
-            st.rerun()
+            reset_select_sessionstate_and_rerun()
     
         if b3.button("Next ➡", disabled=next_disabled, width="stretch"):
             st.session_state["step_idx"] += 1
-            reset_select_sessionstate()
-            st.rerun()
+            reset_select_sessionstate_and_rerun()
     else:
         if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
             st.session_state["nav"] = {"page": "finish", "course_id": course_id, "current_lesson": lesson_id}
@@ -237,9 +234,16 @@ def clear_lesson_sessionstate():
     st.session_state["match_sound"] = ""
     st.session_state["exercise_done"] = False
 
-def reset_select_sessionstate():
+def reset_select_sessionstate_and_rerun():
     st.session_state["order_tokens"] = []
     st.session_state["used_tokens"] = []
     st.session_state["order_answer"] = []
     st.session_state["correct_order"] = []
     st.session_state["exercise_done"] = False
+    st.session_state["last_pair"] = []
+    st.session_state["pressed_match_buttons"] = []
+    st.session_state["match_sel_btn"] = None
+    st.session_state["left"] = []
+    st.session_state["right"] = []
+    st.session_state["match_sound"] = ""
+    st.rerun()

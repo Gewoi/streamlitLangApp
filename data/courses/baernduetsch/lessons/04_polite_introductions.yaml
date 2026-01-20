@@ -1,52 +1,193 @@
 id: 04_polite_introductions
-order: 4
-title: "👩‍🦳Polite Introductions"
+title: "👵🏽 Polite Introductions"
 description: "Introduce yourself to strangers, people of status and elderly people."
-estimated_minutes: 0
+estimated_minutes: 10
 section: Basics
 
 steps:
   - type: markdown
-    id: step_c39226
+    id: markdown_0
     markdown: |
       ## Polite Form
-
-
-      In Switzerland, we often use a *polite form*. You usually do this with the following
-      people:
-
-
+      
+      
+      In Switzerland, we often use a *polite form*. You usually do this with the following people:
+      
       - Strangers in some settings (usually work related)
-
       - People of status (for example a professor when you''re a student often)
-
       - Elderly people
-
-
-      It is often acceptable to just skip using this form with a lot of people. However,
-      some people (especially *elderly people*) can get **offended** when it isn''t
-      used with them. So let''s look at it!'
+      
+      It is often acceptable to just skip using this form with a lot of people. However, some people (especially *elderly people*) can get **offended** when it isn'tused with them. So let's look at it!
     images:
       - "data/assets/images/polite_intro.jpg"
+
   - type: introduce_word
-    id: step_4b955f
-    word: Grüessech
+    id: introduce_word_1
+    word: "Grüessech"
     translation:
-      en: Greetings
-      de: Grüss Gott (kind of)
+      en: "Greetings (formal)"
+      de: "Guten Tag (closest)"
     images:
       - "data/assets/images/old_guy_handshake.jpg"
     audio: "data/assets/audio/gruessech.wav"
 
   - type: cloze
-    id: step_b8457d
-    prompt: Fill in the missing Bernese word (answer in Bärndütsch).
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
     sentence:
-      question: Greetings, mister Marti!
-      helper: Grüsse, Herr Marti!
-      target: ["", "Herr Marti!"]
-    answers: ["Grüessech"]
-    solution_display: "✅ Correct! \n\nIf we greet someone in a *polite* way, we say\
-      \ **grüessech**."
+      question: "Greetings, mister Marti!"
+      helper: "Guten Tag, Herr Marti!"
+      target: ["", ", Herr Marti!"]
+    answers: ["grüessech", "gruessech", "guete tag"]
+    solution_display: |
+      ✅ Correct! Greeting someone politely is **Grüessech**.
+      
+      We say **Herr** for *Mister*, and **Frou** for *Miss*.
     images:
       - "data/assets/images/old_guy_half_wave.jpg"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Greetings, miss Schmid!"
+      helper: "Guten Tag, Frau Schmid!"
+    tokens: ["Grüessech,", "Frou", "Schmid!"]
+    solution_display: |
+      ✅ Correct!
+      
+      We say **Herr** for *Mister* and **Frou** for *Miss*.
+
+  - type: match
+    id: match_4
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Mister"
+        right: "Herr"
+      - left: "Miss"
+        right: "Frou"
+      - left: "Greetings"
+        right: "Grüessech"
+
+  - type: markdown
+    id: markdown_5
+    markdown: |
+      ## Grüessech vs. Grüezi
+      
+      In Bern, the correct way to greet someone formally is **Grüessech**.
+      
+      You might have heard of **Grüezi**; this is how it is said in *Zürich*. Switzerland has many dialects that vary between them.
+      
+      But don't worry! Once you understand one, the other ones will be easy to understand too!
+      
+      Here, we'll focus on **Bärndütsch** (Bernese Swiss German); therefore *Grüezi* unfortunately does not count as a correct answer.
+    images:
+      - "data/assets/images/zueri.jpg"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Wie geits öich, Herr Marti?"
+    translation:
+      en: "How are you? (formal)"
+      de: "Wie geht es Ihnen?"
+    images:
+      - "data/assets/images/old_guy_handshake.jpg"
+    audio: "data/assets/audio/wiegeitseuchherrmarti.wav"
+
+  - type: markdown
+    id: markdown_7
+    markdown: |
+      When asking how someone is doing *in the polite form*, we add **Öich** at the end.
+      
+      Don't get confused: The Germans use *Ihnen* here. But we use **Öich**!
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/wiegeitseuchherrmarti.wav"
+    text: "This person is using the **informal** way to ask how he's doing."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      At the end of the *formal* way, we say **Öich**! The *informal* way would just be **Wie geit's? / Wie geit's dir?**, without the **Öich**.
+
+  - type: translate_type
+    id: translate_type_9
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "How are you, miss Schmid?"
+      helper: "Wie geht es Ihnen, Frau Schmid?"
+    answers:
+      ["Wie geits öich, frou schmid?", "wie geit's öich, frou schmid?"]
+    solution_display: |
+      ✅ Correct!
+      
+      Very good! This is how you ask *politely* how someone is doing: Use **Öich**!
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "U öich? / Und öich?"
+    translation:
+      en: "And you? (formal)"
+      de: "Und Ihnen?"
+    images:
+      - "data/assets/images/old_people_conv_garden.jpg"
+    audio: "data/assets/audio/ueuch.wav"
+
+  - type: match
+    id: match_11
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "and"
+        right: "u / und"
+      - left: "How are you? (formal)"
+        right: "Wie geits öich?"
+      - left: "Mister"
+        right: "Herr"
+      - left: "Miss"
+        right: "Frou"
+
+  - type: markdown
+    id: markdown_12
+    markdown: |
+      ## "And"
+      
+      There are two was to say *and* in Bärndütsch:
+      
+      - **U**
+      - **Und**
+      
+      Bot of them are more or less equivalent, so choose whichever you like!
+    images:
+      - "data/assets/images/cool_plus.jpg"
+
+  - type: true_false
+    id: true_false_13
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ciaowiegeitsdirguetueuch.wav"
+    text: "Here, **only the younger person** is using the *polite* form. (I apologize for the performance)"
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      Often, when you use the *polite* form towards elderly people, they will still use the *informal* form toward you. But you should **still use the *polite*** form unless they make it clear it's ok not to!
+      
+      (Yes I think that's annoying too)
+
+  - type: match
+    id: match_14
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Greetings"
+        right: "Grüessech"
+      - left: "And you? (formal)"
+        right: "U öich? / Und öich?"
+      - left: "Mister"
+        right: "Herr"
+      - left: "Miss"
+        right: "Frou"
+      - left: "How are you? (formal)"
+        right: "Wie geits öich?"

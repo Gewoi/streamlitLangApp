@@ -152,19 +152,11 @@ steps:
     id: match_basic
     prompt: "Match the translations (English → Bernese)."
     pairs:
-      - left:
-          original: "I am ___"
-        right:
-          target: "I bi dr/d ___"
-      - left:
-          original: "My name is ___"
-        right:
-          target: "I heisse ___"
-      - left:
-          original: "What's your name?"
-        right:
-          target: "Wie heissisch du?"
-      - left:
-          original: "Nice to meet you!"
-        right:
-          target: "Fröit mi!"
+      - left: "I am ___"
+        right: "I bi dr/d ___"
+      - left: "My name is ___"
+        right: "I heisse ___"
+      - left: "What's your name?"
+        right: "Wie heissisch du?"
+      - left: "Nice to meet you!"
+        right: "Fröit mi!"

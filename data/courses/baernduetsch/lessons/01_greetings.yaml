@@ -1,5 +1,4 @@
 id: 01_greetings
-order: 1
 title: "👋 Greetings & Politeness"
 description: "Say hello, ask how someone is, and be polite."
 estimated_minutes: 8
@@ -224,23 +223,13 @@ steps:
     id: match_basic
     prompt: "Match the translations (English → Bernese)."
     pairs:
-      - left:
-          original: "Hi"
-        right:
-          target: "Hallo / Tschau / Sälü"
-      - left:
-          original: "Bye"
-        right:
-          target: "Tschüss / Tschou / Sälü"
-      - left:
-          original: "How are you?"
-        right:
-          target: "Wie geit's?"
-      - left:
-          original: "See you later!"
-        right:
-          target: "Bis später!"
-      - left:
-          original: "good"
-        right:
-          target: "guet"
+      - left: "Hi"
+        right: "Hallo / Tschau / Sälü"
+      - left: "Bye"
+        right: "Tschüss / Tschou / Sälü"
+      - left: "How are you?"
+        right: "Wie geit's?"
+      - left: "See you later!"
+        right: "Bis später!"
+      - left: "good"
+        right: "guet"

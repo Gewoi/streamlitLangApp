@@ -405,8 +405,8 @@ def render_match(step : dict):
     pairs = step["pairs"]
     all_buttons = []
     for pair in pairs:
-        all_buttons.append(pair["right"]["target"])
-        all_buttons.append(pair["left"]["original"])
+        all_buttons.append(pair["right"])
+        all_buttons.append(pair["left"])
     if not st.session_state["left"]:
         left = [el["left"] for el in pairs]
         random.shuffle(left)
@@ -425,24 +425,24 @@ def render_match(step : dict):
     match_sel_btn = st.session_state["match_sel_btn"]
     corresponding_btn = ""
     for pair in pairs:
-        if pair["left"]["original"] == match_sel_btn:
-            corresponding_btn = pair["right"]["target"]
+        if pair["left"] == match_sel_btn:
+            corresponding_btn = pair["right"]
             break
-        elif pair["right"]["target"] == match_sel_btn:
-            corresponding_btn = pair["left"]["original"]
+        elif pair["right"] == match_sel_btn:
+            corresponding_btn = pair["left"]
             break
     
-    def give_css_selected(elm, lang : str):
-        if elm[lang] in st.session_state["last_pair"]:
-            key = f"order_button_sel_{elm[lang]}"
+    def give_css_selected(elm, idx):
+        if elm in st.session_state["last_pair"]:
+            key = f"order_button_sel_{elm}_{idx}"
         else:
-            key = f"selected_match_{elm[lang]}" if elm[lang] == match_sel_btn else elm[lang]
+            key = f"selected_match_{elm}_{idx}" if elm == match_sel_btn else elm
         return key
 
-    def check_buttons(elm, lang : str):
+    def check_buttons(elm):
         if match_sel_btn:
-            if elm[lang] == corresponding_btn:
-                st.session_state["pressed_match_buttons"] += [elm[lang], match_sel_btn]
+            if elm == corresponding_btn:
+                st.session_state["pressed_match_buttons"] += [elm, match_sel_btn]
                 st.session_state["match_sel_btn"] = None
                 st.session_state["match_sound"] = "correct"
                 st.session_state["last_pair"] = [corresponding_btn, match_sel_btn]
@@ -453,18 +453,18 @@ def render_match(step : dict):
                 st.rerun()
         else:
             st.session_state["last_pair"] = []
-            st.session_state["match_sel_btn"] = elm[lang]
+            st.session_state["match_sel_btn"] = elm
             st.rerun()
 
     cols = st.columns([2,1,2], gap="medium")
     for elm in left:
-        disable_cond = elm["original"] in pressed_match_btns or elm["original"] == match_sel_btn
-        if cols[0].button(label =elm["original"], width="stretch", disabled=disable_cond, key = give_css_selected(elm, "original")):
-            check_buttons(elm, "original")
+        disable_cond = elm in pressed_match_btns or elm == match_sel_btn
+        if cols[0].button(label=elm, width="stretch", disabled=disable_cond, key = give_css_selected(elm, st.session_state["step_idx"])):
+            check_buttons(elm)
     for elm in right:
-        disable_cond = elm["target"] in pressed_match_btns or elm["target"] == match_sel_btn
-        if cols[2].button(label =elm["target"], width="stretch", disabled=disable_cond, key = give_css_selected(elm, "target")):
-            check_buttons(elm, "target")
+        disable_cond = elm in pressed_match_btns or elm == match_sel_btn
+        if cols[2].button(label=elm, width="stretch", disabled=disable_cond, key = give_css_selected(elm, st.session_state["step_idx"])):
+            check_buttons(elm)
 
     if st.session_state["match_sound"] == "correct":
         play_match_correct()

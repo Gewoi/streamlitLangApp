@@ -1,0 +1,106 @@
+id: 05_a_short_conversation
+title: "A Short Conversation"
+description: "Listen to a short conversation and answer some questions about it."
+estimated_minutes: 10
+section: Basics
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      **Herr Marti**: Tschau, wie geits?
+      
+      **Fritz**: Guet, u öich?
+      
+      **Herr Marti**: Guet, merci! Wie heissisch du?
+      
+      **Fritz**: Fritz!
+      
+      **Herr Marti**: Ah! I bi dr Herr Marti, fröit mi!
+    images:
+      - "data/assets/images/polite_intro.jpg"
+    audio: "data/assets/audio/conversation_introduction.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am mister Marti, nice to meet you!"
+      helper: "Ich bin Herr Marti, freut mich!"
+    tokens: ["I", "bi", "dr", "Herr", "Marti,", "fröit", "mi!"]
+    solution_display: |
+      ✅ Correct! 
+      
+      When introducing yourself in a *formal* way, you also say **I bi dr Herr** *last name* / **I bi d Frou** *last name*.
+
+  - type: true_false
+    id: true_false_2
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/conversation_introduction.wav"
+    text: "**Fritz** is using the *polite* form, while **Herr Marti** is using the *informal* form."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      Often an older person will still use *informal* while you use the *polite* form. You can see it here from the **öich** in **Wie geits öich?** (*How are you?*, formal).
+
+  - type: listen_type
+    id: listen_type_3
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/froitmi.wav"
+    answers: ["Fröit mi"]
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Nice to meet you is **fröit mi**, both in *polite* and *informal*
+
+  - type: translate_type
+    id: translate_type_4
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "What is your name?"
+      helper: "Wie heisst du?"
+    answers:
+      ["Wie heissisch du?"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      You can ask someone informally what their name is with **wie heissisch du**?
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "And you? (formal)"
+      helper: "Und Ihnen?"
+      target: ["", " öich?"]
+    answers: ["U", "Und"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say both **u** or **und** for *and*.
+    images:
+      - "data/assets/images/cool_plus.jpg"
+
+  - type: match
+    id: match_6
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "And you? (formal)"
+        right: "U öich?"
+      - left: "Mister"
+        right: "Herr"
+      - left: "Miss"
+        right: "Frou"
+      - left: "Nice to meet you!"
+        right: "Fröit mi!"
+      - left: "What is your name? (informal)"
+        right: "Wie heissisch du?"
+      - left: "Hello"
+        right: "Hallo / Tschau / Sälü"
+      - left: "Thank you!"
+        right: "Merci"

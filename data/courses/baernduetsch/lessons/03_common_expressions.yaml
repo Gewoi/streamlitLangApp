@@ -1,5 +1,4 @@
 id: 03_common_expressions
-order: 3
 title: "👍 Common Expressions"
 description: "How to say yes, no, thanks, please and sorry."
 estimated_minutes: 8
@@ -75,7 +74,7 @@ steps:
 
   - type: cloze
     id: cloze_geitsguetjamerci
-    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    prompt: "Fill in the missing word (answer in Bärndütsch)."
     sentence:
       question: "Are you doing good? - Yes, thanks!"
       helper: "Geht's gut? - Ja, danke!"
@@ -90,7 +89,7 @@ steps:
 
   - type: listen_type
     id: listen_neimerci
-    prompt: "Listen and type what you hear (Bernese)."
+    prompt: "Listen and type what you hear (Bärndütsch)."
     audio: "data/assets/audio/neimerci.wav"
     answers: ["nei, merci"]
     images:
@@ -137,7 +136,7 @@ steps:
 
   - type: cloze
     id: cloze_hoi
-    prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
     sentence:
       question: "Sorry, no thanks!"
       helper: "Entschuldigung, nein danke!"
@@ -179,7 +178,7 @@ steps:
 
   - type: order
     id: order_wiegeits
-    prompt: "Put the words in the correct order (Bernese)."
+    prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
       question: "Are you doing good? - Yes, thank you!"
     tokens: ["Geits", "guet?", "Ja,", "merci!"]
@@ -188,25 +187,15 @@ steps:
 
   - type: match
     id: match_basic
-    prompt: "Match the translations (English → Bernese)."
+    prompt: "Match the translations (English → Bärndütsch)."
     pairs:
-      - left:
-          original: "Yes"
-        right:
-          target: "Ja"
-      - left:
-          original: "No"
-        right:
-          target: "Nei"
-      - left:
-          original: "Thanks"
-        right:
-          target: "Merci / Danke"
-      - left:
-          original: "Please / You're Welcome"
-        right:
-          target: "Bitte"
-      - left:
-          original: "Are you doing good?"
-        right:
-          target: "Geit's guet?"
+      - left: "Yes"
+        right: "Ja"
+      - left: "No"
+        right: "Nei"
+      - left: "Thanks"
+        right: "Merci / Danke"
+      - left: "Please / You're Welcome"
+        right: "Bitte"
+      - left: "Are you doing good?"
+        right: "Geit's guet?"
