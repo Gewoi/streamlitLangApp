@@ -433,10 +433,11 @@ def render_match(step : dict):
             break
     
     def give_css_selected(elm):
+        step_idx = st.session_state["step_idx"]
         if elm in st.session_state["last_pair"]:
-            key = f"order_button_sel_{elm}"
+            key = f"order_button_sel_{elm}_{step_idx}"
         else:
-            key = f"selected_match_{elm}" if elm == match_sel_btn else elm
+            key = f"selected_match_{elm}_{step_idx}" if elm == match_sel_btn else f"{elm}_{step_idx}"
         return key
 
     def check_buttons(elm):
@@ -459,11 +460,11 @@ def render_match(step : dict):
     cols = st.columns([2,1,2], gap="medium")
     for elm in left:
         disable_cond = elm in pressed_match_btns or elm == match_sel_btn
-        if cols[0].button(label=elm, width="stretch", disabled=disable_cond, key = give_css_selected(elm)):
+        if cols[0].button(label=str(elm), width="stretch", disabled=disable_cond, key = give_css_selected(elm)):
             check_buttons(elm)
     for elm in right:
         disable_cond = elm in pressed_match_btns or elm == match_sel_btn
-        if cols[2].button(label=elm, width="stretch", disabled=disable_cond, key = give_css_selected(elm)):
+        if cols[2].button(label=str(elm), width="stretch", disabled=disable_cond, key = give_css_selected(elm)):
             check_buttons(elm)
 
     if st.session_state["match_sound"] == "correct":
