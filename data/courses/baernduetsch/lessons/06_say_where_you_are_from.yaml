@@ -1,0 +1,119 @@
+id: 06_say_where_you_are_from
+title: "Say Where You Are From"
+description: "Let people know where you come from."
+estimated_minutes: 10
+section: Basics
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "I chume vo ___ / I chume us ___"
+    translation:
+      en: "I am from ___"
+      de: "Ich komme aus ___"
+    images:
+      - "data/assets/images/world_pins.jpg"
+    audio: "data/assets/audio/ichumeus_vo.wav"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am from Germany."
+      helper: "Ich komme aus Deutschland."
+      target: ["I", " Dütschland."]
+    answers: ["chume vo", "chume us"]
+    solution_display: |
+      Correct!
+      
+      You can use either **us** (*out of*, *from*) or **vo** (just *from*).
+    images:
+      - "data/assets/images/pointing_map.jpg"
+
+  - type: true_false
+    id: true_false_3
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ichumeusdrschwyz.wav"
+    text: "This person is from **Germany**"
+    answer: "False"
+    solution_display: |
+      Correct!
+      
+      This person is saying they're from **Switzerland**. Note that **Schwyz** (*Switzerland*) requires the article **dr**. Only a few places need that, and **Schwyz** is one of them!
+
+  - type: listen_type
+    id: listen_type_2
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ichumeusdrschwyz.wav"
+    answers: ["I chume us dr schwyz", "I chume usdr schwyz", "i chume us dr schwiz", "i chume usdr schwiz"]
+    images:
+      - "data/assets/images/swissflag_boat.jpg"
+    solution_display: |
+      Correct!
+      
+      Some places, most prominently **Switzerland itself**, need an article. This is why we say **us dr Schwyz** (*from / out of Switzerland*). Some other examples are the *USA* (**us de USA**), and some Swiss Cantons (**usem Wallis**, meaning *from / out of the Wallis*).
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am from Poland."
+      helper: "Ich komme aus Polen."
+    tokens: ["I", "chume", "us", "Pole."]
+    solution_display: |
+      Correct!
+      
+      **Pole** is pronounced *pol-ä*.
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Vo wo bisch du? / Vo wo chunnsch du?"
+    translation:
+      en: "Where are you from?"
+      de: "Von wo kommst du? / Woher kommst du?"
+    images:
+      - "data/assets/images/question_microphone.jpg"
+    audio: "data/assets/audio/vowobischduvowochunnschdu.wav"
+
+  - type: true_false
+    id: true_false_6
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/vowochunnschdupole.wav"
+    text: "The asked person is from **Germany**."
+    answer: "False"
+    solution_display: |
+      Correct!
+      
+      This person is from *Poland*, or how we say here, *Pole*.
+
+  - type: translate_type
+    id: translate_type_7
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Where are you from?"
+      helper: "Von wo kommst du? / Woher kommst du?"
+    answers:
+      ["Vo wo bisch du?", "Vo wo chunnsch du?", "Vo wo bisch?", "Vo wo chunnsch?"]
+    images:
+      - "data/assets/images/world_pins.jpg"
+    solution_display: |
+      Correct!
+      
+      Just like with **Wie geits?** (*How are you?*) earlier, you can *leave out the *du**. However, this is often a bit less polite.
+
+  - type: match
+    id: match_8
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "from"
+        right: "vo"
+      - left: "out of / from"
+        right: "us"
+      - left: "Germany"
+        right: "Dütschland"
+      - left: "from Switzerland"
+        right: "us dr Schwiz"
+      - left: "from Poland"
+        right: "us Pole"
+      - left: "Where are you from?"
+        right: "Vo wo chunnsch du?"
