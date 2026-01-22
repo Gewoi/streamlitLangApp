@@ -21,7 +21,7 @@ steps:
     sentence:
       question: "I am from Germany."
       helper: "Ich komme aus Deutschland."
-      target: ["I", " Dütschland."]
+      target: ["I ", " Dütschland."]
     answers: ["chume vo", "chume us"]
     solution_display: |
       Correct!

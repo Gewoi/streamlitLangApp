@@ -1,5 +1,5 @@
 id: 07_the_verb_to_do
-title: "The Verb *to do*"
+title: "🚶‍♀️‍➡️ The Verb *to do*"
 description: "Learn about simple, regular verbs in singular person, with the example of the verb *to do*."
 estimated_minutes: 10
 section: Sentence Building
@@ -24,7 +24,7 @@ steps:
       
       | **English** |  | **Bärndütsch** |  |
       | --- | --- | --- | --- |
-      | I | *do* | ** I / Ig** | **mach*e*** |
+      | I | *do* | **I / Ig** | **mach*e*** |
       | You | *do* | **Du** | **mach*sch*** |
       | He / She / It | *does* | **Är / Si / Äs** | **mach*t***|
       
@@ -154,11 +154,6 @@ steps:
       Correct!
       
       **Öppis** means *something*.
-
-  - type: listen_type
-    id: listen_type_12
-    prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: ""
 
   - type: match
     id: match_13

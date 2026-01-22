@@ -88,8 +88,8 @@ steps:
     id: introduce_word_6
     word: "Wie geits öich, Herr Marti?"
     translation:
-      en: "How are you? (formal)"
-      de: "Wie geht es Ihnen?"
+      en: "How are you, mister Marti? (formal)"
+      de: "Wie geht es Ihnen, Herr Marti?"
     images:
       - "data/assets/images/old_guy_handshake.jpg"
     audio: "data/assets/audio/wiegeitseuchherrmarti.wav"

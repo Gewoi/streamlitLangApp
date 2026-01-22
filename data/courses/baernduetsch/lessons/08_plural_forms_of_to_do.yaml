@@ -1,0 +1,53 @@
+id: 01_plural_forms_of_to_do
+title: "‍👯Plural Forms of To Do"
+description: "Discover the forms for *we*, *you* (plural) and *they* for the verb *to do*."
+estimated_minutes: 10
+section: Sentence Building
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Mir mache das!"
+    translation:
+      en: "We do that! / We will do that!"
+      de: "Wir machen das!"
+    audio: "data/assets/audio/mirmachedas.wav"
+    images:
+      - "data/assets/images/group_run.jpg"
+
+  - type: translate_type
+    id: translate_type_1
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "We"
+      helper: "Wir"
+    answers: ["mir"]
+    images:
+      - "data/assets/images/group_selfie.jpg"
+    solution_display: |
+      Correct!
+
+      In Bärndütsch, *we* is **mir**.
+
+  - type: markdown
+    id: markdown_2
+    markdown: |
+      ## Plural Forms
+      
+      Again, **mache** (*to do*) is a regular verb, so most of the other forms will follow the same patterns as it. 
+      
+      Now, the *plural* forms of the verb are:
+      
+      | **English** |  | **Bärndütsch** |  |
+      | --- | --- | --- | --- |
+      | We | *do* | **Mir** | **mach*e*** |
+      | You (pl.) | *do* | **Dir** | **mach*it*** / **mach*et*** |
+      | They | *do* | **Si** | **mach*e***|
+      
+      Note that we use **Si** for both the *singular *she** and for the *plural *they**. This might seem confusing at first, but you can always tell what is meant **from context**.
+      
+      After **Si**:
+      - If the verb ends with *-t*, we're talking about **she**
+      - If the verb ends with *-e*, we're talking about **they**
+    images:
+      - "data/assets/images/big_group.jpg"

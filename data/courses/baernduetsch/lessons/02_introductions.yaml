@@ -40,7 +40,7 @@ steps:
     sentence:
       question: "My name is Angela"
       helper: "Mein Name ist Angela"
-      target: [" ", ", Angela"]
+      target: [" ", " Angela"]
     answers: ["i heisse", "i bi d"]
     solution_display: |
       ✅ Correct! You can either say **i heisse** or **i bi ___**
