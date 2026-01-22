@@ -1,5 +1,5 @@
 id: 06_say_where_you_are_from
-title: "Say Where You Are From"
+title: "🗺 Say Where You Are From"
 description: "Let people know where you come from."
 estimated_minutes: 10
 section: Basics
@@ -27,6 +27,7 @@ steps:
       Correct!
       
       You can use either **us** (*out of*, *from*) or **vo** (just *from*).
+      
     images:
       - "data/assets/images/pointing_map.jpg"
 
@@ -40,6 +41,7 @@ steps:
       Correct!
       
       This person is saying they're from **Switzerland**. Note that **Schwyz** (*Switzerland*) requires the article **dr**. Only a few places need that, and **Schwyz** is one of them!
+      
 
   - type: listen_type
     id: listen_type_2
@@ -52,6 +54,7 @@ steps:
       Correct!
       
       Some places, most prominently **Switzerland itself**, need an article. This is why we say **us dr Schwyz** (*from / out of Switzerland*). Some other examples are the *USA* (**us de USA**), and some Swiss Cantons (**usem Wallis**, meaning *from / out of the Wallis*).
+      
 
   - type: order
     id: order_4
@@ -64,6 +67,7 @@ steps:
       Correct!
       
       **Pole** is pronounced *pol-ä*.
+      
 
   - type: introduce_word
     id: introduce_word_5
@@ -86,6 +90,23 @@ steps:
       
       This person is from *Poland*, or how we say here, *Pole*.
 
+  - type: match
+    id: match_9
+    prompt: "Match the translations (English → Bärndütsch); guess the countries!"
+    pairs:
+      - left: "Germany"
+        right: "Dütschland"
+      - left: "Switzerland"
+        right: "d Schwyz"
+      - left: "Poland"
+        right: "Pole (Polä)"
+      - left: "Italy"
+        right: "Italie"
+      - left: "Austria"
+        right: "Östriich"
+      - left: "France"
+        right: "Frankriich"
+
   - type: translate_type
     id: translate_type_7
     prompt: "Translate the following Sentence."
@@ -100,6 +121,7 @@ steps:
       Correct!
       
       Just like with **Wie geits?** (*How are you?*) earlier, you can *leave out the *du**. However, this is often a bit less polite.
+      
 
   - type: match
     id: match_8

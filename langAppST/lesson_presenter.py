@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import streamlit as st
-import streamlit_extras as ste
 import os
 from dataclasses import dataclass
 import pathlib as Path

@@ -1,0 +1,181 @@
+id: 07_the_verb_to_do
+title: "The Verb *to do*"
+description: "Learn about simple, regular verbs in singular person, with the example of the verb *to do*."
+estimated_minutes: 10
+section: Sentence Building
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "I mache _"
+    translation:
+      en: "I do _ / I make _"
+      de: "Ich mache _"
+    images:
+      - "data/assets/images/pottery.jpg"
+    audio: "data/assets/audio/imache.wav"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Regular Verbs, Singular
+      
+      Most verbs follow a fairly regular structure. Let's look at **mache** (pronounced a bit like *machä*). It conjugates the following way:
+      
+      | **English** | --- | **Bärndütsch** | --- |
+      | I | *do* | ** I / Ig** | **mach*e* ** |
+      | You | *do* | **Du** | **mach*sch* ** |
+      | He / She / It | *does* | **Är / Si / Äs** | **mach*t* **|
+      
+      A lot of verbs conjugate the same way in singular. 
+      
+      Not that there's two ways to say *I*: **I** and **Ig**. Both of them are equivalent, use whichever you like!
+
+  - type: translate_type
+    id: translate_type_2
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "You do."
+      helper: "Du machst."
+    answers:
+      ["Du machsch"]
+    images:
+      - "data/assets/images/pointing_you.jpg"
+    solution_display: |
+      Correct!
+      
+      Most verbs used with **du** will end with **-sch**.
+
+  - type: listen_type
+    id: listen_type_3
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dumachsch.wav"
+    answers: ["du machsch"]
+    images:
+      - "data/assets/images/woman_painting.jpg"
+    solution_display: |
+      Correct!
+      
+      Most verbs used with **du** will end with **-sch**.
+
+  - type: match
+    id: match_4
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I"
+        right: "I / Ig"
+      - left: "You"
+        right: "Du"
+      - left: "He"
+        right: "Är"
+      - left: "She"
+        right: "Si"
+      - left: "It"
+        right: "Äs"
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Was macht si?"
+    translation:
+      en: "What is she doing?"
+      de: "Was macht sie?"
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/wasmachtsi.wav"
+
+  - type: markdown
+    id: markdown_6
+    markdown: |
+      ## Word Order
+      
+      You might have already seen it with **Wie geits dir?** and now with **Was macht si?**:
+      
+      - If we have a question, we *flip the order*; the **verb** comes first, and then the **pronoun**.
+      
+      This is a feature of regular German too, so you might be familiar with this; it works the same in Bärndütsch!
+
+  - type: listen_type
+    id: listen_type_7
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/wasmachter.wav"
+    answers: ["was macht är", "was machter"]
+    images:
+      - "data/assets/images/guy_pottery.jpg"
+    solution_display: |
+      Correct!
+      
+      This person is asking *What is he doing?*. Sometimes you'll hear it shortened to **Was machter?**, but both of these are equivalent!
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/wasmachschdu.wav"
+    text: "They're asking you **how you are**."
+    answer: "False"
+    solution_display: |
+      Correct!
+      
+      This person is saying **Was machsch du?**, which is **What* are you doing?*.
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "Äs macht öppis!"
+    translation:
+      en: "It's doing something!"
+      de: "Es macht etwas!"
+    images:
+      - "data/assets/images/pointing_distance.jpg"
+    audio: "data/assets/audio/esmachtoeppis.wav"
+
+  - type: markdown
+    id: markdown_10
+    markdown: |
+      ## Öppis
+      
+      The word for *something* is **Öppis** in Bärndütsch.
+      
+      A lot of words in Bärndütsch are very similar to the German ones. But a few, often quite *commonly used words*, are **different**.
+      
+      **Öppis** is the prime example for that. And it is fun to say!
+      
+      **I mache öppis** <-> *I'm doing something*
+    images:
+      - "data/assets/images/random_objects.jpg"
+
+  - type: order
+    id: order_11
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He's doing something!"
+      helper: "Er macht etwas!"
+    tokens: ["Är", "macht", "öppis!"]
+    solution_display: |
+      Correct!
+      
+      **Öppis** means *something*.
+
+  - type: listen_type
+    id: listen_type_12
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: ""
+
+  - type: match
+    id: match_13
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I do / make"
+        right: "I mache"
+      - left: "You do / make"
+        right: "Du machsch"
+      - left: "He does / makes"
+        right: "Är macht"
+      - left: "She does / makes"
+        right: "Si macht"
+      - left: "It does / makes "
+        right: "Äs macht"
+      - left: "What are you doing?"
+        right: "Was machsch du?"
+      - left: "What is she doing?"
+        right: "Was macht si?"
+      - left: "Something"
+        right: "Öppis"

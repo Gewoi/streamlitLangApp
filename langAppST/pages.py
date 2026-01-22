@@ -108,8 +108,12 @@ def course_page(course_id : str, store : ProgressStore):
             st.title(body=f"{current_section}", text_alignment="center")
         completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
         with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
+            cols = st.columns(3, vertical_alignment="top")
             if completed_condition:
-                st.caption("Completed✅")
+                with cols[0]:
+                    st.caption("Completed✅")
+            with cols[2]:
+                st.caption(f"Time: ~{lesson["estimated_minutes"]} min.", text_alignment="right")
             st.markdown(f"### {lesson["title"]}", text_alignment="center")
             st.markdown(lesson["description"], text_alignment="center")
             if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}"):
