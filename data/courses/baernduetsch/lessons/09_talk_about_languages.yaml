@@ -40,7 +40,7 @@ steps:
       - left: "Du"
         right: "redsch / redisch"
       - left: "Är / Si / Äs"
-        right: "red / redet"
+        right: "redt / redet"
 
   - type: markdown
     id: markdown_3
