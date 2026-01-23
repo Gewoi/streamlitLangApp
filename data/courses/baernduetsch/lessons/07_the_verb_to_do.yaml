@@ -1,7 +1,7 @@
 id: 07_the_verb_to_do
 title: "🚶‍♀️‍➡️ The Verb *to do*"
 description: "Learn about simple, regular verbs in singular person, with the example of the verb *to do*."
-estimated_minutes: 10
+estimated_minutes: 3
 section: Sentence Building
 
 steps:
@@ -22,15 +22,20 @@ steps:
       
       Most verbs follow a fairly regular structure. Let's look at **mache** (pronounced a bit like *machä*). It conjugates the following way:
       
+      <center>
+      
       | **English** |  | **Bärndütsch** |  |
       | --- | --- | --- | --- |
       | I | *do* | **I / Ig** | **mach*e*** |
       | You | *do* | **Du** | **mach*sch*** |
       | He / She / It | *does* | **Är / Si / Äs** | **mach*t***|
       
+      </center>
+      
       A lot of verbs conjugate the same way in singular. 
       
       Not that there's two ways to say *I*: **I** and **Ig**. Both of them are equivalent, use whichever you like!
+      
 
   - type: translate_type
     id: translate_type_2
@@ -46,6 +51,7 @@ steps:
       Correct!
       
       Most verbs used with **du** will end with **-sch**.
+      
 
   - type: listen_type
     id: listen_type_3
@@ -106,6 +112,17 @@ steps:
       Correct!
       
       This person is asking *What is he doing?*. Sometimes you'll hear it shortened to **Was machter?**, but both of these are equivalent!
+      
+
+  - type: introduce_word
+    id: introduce_word_14
+    word: "Was"
+    translation:
+      en: "What"
+      de: "Was"
+    images:
+      - "data/assets/images/question_mark.jpg"
+    audio: "data/assets/audio/was.wav"
 
   - type: true_false
     id: true_false_8
@@ -140,8 +157,20 @@ steps:
       **Öppis** is the prime example for that. And it is fun to say!
       
       **I mache öppis** <-> *I'm doing something*
+      
     images:
       - "data/assets/images/random_objects.jpg"
+
+  - type: match
+    id: match_13
+    prompt: "Match the pronoun with the correct verb form!"
+    pairs:
+      - left: "I / Ig"
+        right: "mache"
+      - left: "Du"
+        right: "machsch"
+      - left: "Är / Si / Äs"
+        right: "macht"
 
   - type: order
     id: order_11
@@ -154,6 +183,21 @@ steps:
       Correct!
       
       **Öppis** means *something*.
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "What is he doing? Something."
+      helper: "Was macht er? Etwas."
+    answers:
+      ["was macht är öppis", "was machter öppis"]
+    images:
+      - "data/assets/images/guy_with_headphones.jpg"
+    solution_display: |
+      Correct!
+      
+      **Was** means *what*, and **öppis** means something. Important: In a question, the *verb* and the *pronoun* **switch places**!
 
   - type: match
     id: match_13

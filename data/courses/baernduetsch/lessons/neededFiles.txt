@@ -9,3 +9,7 @@ wasmachter.wav
 wasmachschdu.wav
 esmachtoeppis.wav
 mirmachedas.wav
+simacheöppis.wav
+wasmachesi.wav
+iredebaernduetsch.wav
+mirredeitalienisch.wav

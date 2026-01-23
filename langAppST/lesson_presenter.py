@@ -502,7 +502,7 @@ def render_true_false(step: dict):
                     st.image(resize_image(img))
     
     st.space("medium")
-    st.markdown(f"### {display_text}", text_alignment="center")
+    st.markdown(f"{display_text}", text_alignment="center")
 
     def check_answer(label):
         if answer == label:

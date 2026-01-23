@@ -1,0 +1,214 @@
+id: 09_talk_about_languages
+title: "✈️ Talk about Languages"
+description: "Tell people which language you speak, and ask them what language they speak."
+estimated_minutes: 3
+section: Building Sentences
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "I rede Bärndütsch"
+    translation:
+      en: "I speak Bernese German"
+      de: "Ich spreche Berndeutsch"
+    images:
+      - "data/assets/images/bern.jpg"
+    audio: "data/assets/audio/iredebaernduetsch.wav"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## The verb **rede**
+      
+      The verb **rede** is also a regular verb; it means *to speak*, but also *to talk*.
+      
+      Note: In German, there are the two words *reden* (to talk) and *sprechen* (to speak). In Bärndütsch, **we use *rede* for both**.
+      
+      **I rede Dütsch** <-> I speak German
+      **I rede mit ihm** <-> I talk to him
+      
+      The conjugation follows the same pattern as **mache**, so we'll look at that next!
+    images:
+      - "data/assets/images/conversation_bubble.jpg"
+
+  - type: match
+    id: match_2
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "rede"
+      - left: "Du"
+        right: "redsch / redisch"
+      - left: "Är / Si / Äs"
+        right: "red / redet"
+
+  - type: markdown
+    id: markdown_3
+    markdown: |
+      ## A buffer
+      
+      You might have seen that there's two possibilities to say *He talks*:
+      - **Är redt**
+      - **Är redet**
+      
+      Both are **correct**! Sometimes, we add an additional vower when there's too many consonants following each other, just for *ease of speaking*.
+    images:
+      - "data/assets/images/swissflag_boat.jpg"
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She talks."
+      helper: "Sie spricht."
+      target: ["Si ", "."]
+    answers: ["redt", "redet"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can use both **redt** and **redet**, whichever you prefer.
+    images:
+      - "data/assets/images/old_people_conv_garden.jpg"
+
+  - type: match
+    id: match_5
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "Mir"
+        right: "rede *(we)*"
+      - left: "Dir"
+        right: "redet / redit"
+      - left: "Si"
+        right: "rede *(they)*"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We talk English."
+      helper: "Wir reden Englisch."
+    tokens: ["Mir", "rede", "Änglisch."]
+    solution_display: |
+      ✅ Correct!
+      
+      *English* is **Änglisch**, and *England* is **Ängland**.
+
+  - type: listen_type
+    id: listen_type_7
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/iredebaernduetsch.wav"
+    answers: ["i rede bärndütsch", "i redä bärndütsch"]
+    images:
+      - "data/assets/images/guy_with_headpones.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *I speak Bernese German*.
+
+  - type: cloze
+    id: cloze_8
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "They speak High German"
+      helper: "Sie sprechen Hochdeutsch"
+      target: ["Si ", " hochdütsch."]
+    answers: ["rede", "redä"]
+    solution_display: |
+      ✅ Correct!
+      
+      In Switzerland, we call the *official* German, like they speak in Germany, **hochdütsch** (*high German*).
+    images:
+      - "data/assets/images/berlin_cards.jpg"
+
+  - type: markdown
+    id: markdown_11
+    markdown: |
+      ## County -> Language
+      
+      To get from the *country* to the *name of the language*, you generally add an **-isch** to the main part of the word. *In some cases*, you also add a connective *-n*:
+      
+      - **Spanie** -> ***Spanisch***
+      - **Italie** -> ***Italiänisch***
+      - **Pole** -> ***Polnisch***
+      
+      If the country name ends with **land**, you remove that part:
+      
+      - **Ängland** -> ***Änglisch***
+      - **Russland** -> ***Russisch***
+      
+      A special case is *German*:
+      
+      - **Dütschland** -> ***Dütsch***
+    images:
+      - "data/assets/images/world_pins.jpg"
+
+  - type: match
+    id: match_9
+    prompt: "Match the country to the language!"
+    pairs:
+      - left: "Dütschland"
+        right: "Dütsch"
+      - left: "Ängland"
+        right: "Änglisch"
+      - left: "Pole"
+        right: "Polnisch"
+      - left: "Spanie"
+        right: "Spanisch"
+      - left: "Italie"
+        right: "Italiänisch"
+
+  - type: listen_type
+    id: listen_type_10
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirredeitalienisch.wav"
+    answers: ["mir rede italienisch", "mir rede italiänisch"]
+    images:
+      - "data/assets/images/colloseum.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means that we speak *Italian* together.
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am from Poland. We speak Polish."
+      helper: "Ich komme aus Polen. Wir sprechen Polnisch."
+    tokens: ["I", "bi", "us", "Pole.", "Mir", "rede", "Polnisch."]
+    solution_display: |
+      ✅ Correct!
+      
+      To get from country name to name of the language, you usually add **-isch** after the stem of the word; sometimes with an **-n** in between to make it flow better!
+
+  - type: match
+    id: match_13
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I speak"
+        right: "I rede / Ig rede"
+      - left: "You (sing.) talk"
+        right: "Du redsch / Du redisch"
+      - left: "She talks"
+        right: "Si redt / Si redet"
+      - left: "We speak"
+        right: "Mir rede"
+      - left: "You (pl.) speak"
+        right: "Dir redet / Dir redit"
+      - left: "They talk"
+        right: "Si rede"
+
+  - type: match
+    id: match_14
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Polish"
+        right: "Polnisch"
+      - left: "Italian"
+        right: "Italiänisch"
+      - left: "German"
+        right: "Dütsch"
+      - left: "Standard German"
+        right: "Hochdütsch"
+      - left: "Bernese German"
+        right: "Bärndütsch"

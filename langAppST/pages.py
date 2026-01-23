@@ -193,13 +193,17 @@ def player(course_id : str, lesson_id : str, store : ProgressStore):
         reset_select_sessionstate_and_rerun()
 
     if not last_condition:
-        if b2.button("Skip"):
-            st.session_state["step_idx"] += 1
-            reset_select_sessionstate_and_rerun()
-    
-        if b3.button("Next ➡", disabled=next_disabled, width="stretch"):
-            st.session_state["step_idx"] += 1
-            reset_select_sessionstate_and_rerun()
+        with b2:
+            with st.container(horizontal_alignment="center"):
+                if st.button("Skip"):
+                    st.session_state["step_idx"] += 1
+                    reset_select_sessionstate_and_rerun()
+
+        with b3:    
+            with st.container(horizontal_alignment="right"):
+                if st.button("Next ➡", disabled=next_disabled):
+                    st.session_state["step_idx"] += 1
+                    reset_select_sessionstate_and_rerun()
     else:
         if b3.button(label="Finish Lesson", type="primary", disabled=next_disabled):
             st.session_state["nav"] = {"page": "finish", "course_id": course_id, "current_lesson": lesson_id}

@@ -1,7 +1,7 @@
 id: 01_plural_forms_of_to_do
-title: "‍👯Plural Forms of To Do"
+title: "‍👯Plural Forms of *to do*"
 description: "Discover the forms for *we*, *you* (plural) and *they* for the verb *to do*."
-estimated_minutes: 10
+estimated_minutes: 3
 section: Sentence Building
 
 steps:
@@ -11,9 +11,9 @@ steps:
     translation:
       en: "We do that! / We will do that!"
       de: "Wir machen das!"
-    audio: "data/assets/audio/mirmachedas.wav"
     images:
       - "data/assets/images/group_run.jpg"
+    audio: "data/assets/audio/mirmachedas.wav"
 
   - type: translate_type
     id: translate_type_1
@@ -21,13 +21,15 @@ steps:
     sentence:
       question: "We"
       helper: "Wir"
-    answers: ["mir"]
+    answers:
+      ["mir"]
     images:
       - "data/assets/images/group_selfie.jpg"
     solution_display: |
       Correct!
-
+      
       In Bärndütsch, *we* is **mir**.
+      
 
   - type: markdown
     id: markdown_2
@@ -38,11 +40,15 @@ steps:
       
       Now, the *plural* forms of the verb are:
       
+      <center>
+      
       | **English** |  | **Bärndütsch** |  |
       | --- | --- | --- | --- |
       | We | *do* | **Mir** | **mach*e*** |
       | You (pl.) | *do* | **Dir** | **mach*it*** / **mach*et*** |
       | They | *do* | **Si** | **mach*e***|
+      
+      </center>
       
       Note that we use **Si** for both the *singular *she** and for the *plural *they**. This might seem confusing at first, but you can always tell what is meant **from context**.
       
@@ -51,3 +57,86 @@ steps:
       - If the verb ends with *-e*, we're talking about **they**
     images:
       - "data/assets/images/big_group.jpg"
+
+  - type: match
+    id: match_3
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "We"
+        right: "Mir"
+      - left: "You (pl.)"
+        right: "Dir"
+      - left: "They"
+        right: "Si"
+
+  - type: match
+    id: match_4
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "We do"
+        right: "Mir mache"
+      - left: "You do"
+        right: "Dir machit / Dir machet"
+      - left: "They do"
+        right: "Si mache"
+
+  - type: listen_type
+    id: listen_type_5
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/simacheöppis.wav"
+    answers: ["si mache öppis", "sie mache öppis"]
+    images:
+      - "data/assets/images/cheers.jpg"
+    solution_display: |
+      Correct!
+      
+      In Bärndütsch, we say **si** for *they*.
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Nüt"
+    translation:
+      en: "Nothing"
+      de: "Nichts"
+    images:
+      - "data/assets/images/x_sign.jpg"
+    audio: "data/assets/audio/nuet.wav"
+
+  - type: translate_type
+    id: translate_type_7
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "You (pl.) are doing nothing!"
+      helper: "Ihr macht nichts!"
+    answers:
+      ["Dir machet nüt", "Dir machit nüt"]
+    images:
+      - "data/assets/images/pointing_you.jpg"
+    solution_display: |
+      Correct!
+      
+      *You* (pl.) is **dir**, and *nothing* is **nüt**.
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/wasmachesi.wav"
+    text: "This person is asking what **she** is doing."
+    answer: "False"
+    solution_display: |
+      Correct!
+      
+      They're saying **Was mache si**. If you have **mach*e*** and **si**, the **si** means *they* (and not *she*).
+
+  - type: match
+    id: match_9
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "We do"
+        right: "Mir mache"
+      - left: "You (pl.) do"
+        right: "Dir machet / Dir machit"
+      - left: "They do"
+        right: "Si mache"
+      - left: "Nothing"
+        right: "nüt"
