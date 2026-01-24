@@ -1,7 +1,8 @@
 import streamlit as st
 
-import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
+from streamlit_local_storage import LocalStorage
+import langAppST.pages as pages
 from langAppST.pages import local_storage
 
 

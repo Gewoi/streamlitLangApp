@@ -6,15 +6,28 @@ from .content import load_courses, load_lessons, load_lesson_content, play_compl
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 
+from streamlit_local_storage import LocalStorage
 
-def login(email: str, password: str, supabase : ProgressStore):
+local_storage = LocalStorage()
+
+def login(email: str, password: str):
+    from supabase import create_client
+    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
     try:
-        response = supabase.supabase.auth.sign_in_with_password({
+        response = temp_client.auth.sign_in_with_password({
             "email": email,
             "password": password
         })
+        # Store user info in session_state (per-user), not in shared client
         st.session_state.user = response.user
-        st.session_state["logged_in"] = True
+        st.session_state.access_token = response.session.access_token
+        st.session_state.logged_in = True
+
+        # Persist tokens to browser storage
+        local_storage.setItem("auth", {
+                    "access_token": response.session.access_token,
+                    "refresh_token": response.session.refresh_token
+                })
         return True
     except Exception as e:
         st.error(f"Login failed: {str(e)}")
@@ -22,9 +35,11 @@ def login(email: str, password: str, supabase : ProgressStore):
 
 
 
-def signup(email, password, store :ProgressStore):
+def signup(email, password):
+    from supabase import create_client
+    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
     try:
-        response = store.supabase.auth.sign_up({
+        response = temp_client.auth.sign_up({
             "email": email,
             "password": password
         })
@@ -35,7 +50,7 @@ def signup(email, password, store :ProgressStore):
         return False
 
 
-def login_page(supabase : ProgressStore):
+def login_page():
     st.title("Welcome!")
     mode = st.radio(
         "Account",
@@ -53,12 +68,12 @@ def login_page(supabase : ProgressStore):
 
     if submit:
         if mode == "Login":
-            if login(email, password, supabase):
+            if login(email, password):
                 st.success("✅ Logged In!")
                 st.rerun()
         elif mode == "Create Account":
             if password == password_repeat:
-                if signup(email, password, supabase):
+                if signup(email, password):
                     st.success("✅ Account created! Please check your email to confirm your account before logging in.")
                     st.info("After confirming, come back here and log in.")
             else:
