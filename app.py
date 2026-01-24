@@ -3,6 +3,8 @@ from __future__ import annotations
 import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
+from langAppST.pages import local_storage
+
 
 st.set_page_config(
     page_title="LangApp",
@@ -88,7 +90,7 @@ elif page == "home":
 elif page == "course_page":
     pages.course_page(nav.get("course_id"), store)
 elif page == "lesson":
-    pages.player(nav.get("course_id"), nav.get("current_lesson"), store)
+    pages.player(nav.get("course_id"), nav.get("current_lesson"))
 elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), store)
 

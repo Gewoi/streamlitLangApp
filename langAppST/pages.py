@@ -154,7 +154,7 @@ def course_page(course_id : str, store : ProgressStore):
 
         
 
-def player(course_id : str, lesson_id : str, store : ProgressStore):
+def player(course_id : str, lesson_id : str):
     course_dict = get_course(course_id)
     lesson_dict = st.session_state["lesson_dict"]
     step_idx = st.session_state["step_idx"]
