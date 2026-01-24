@@ -1,15 +1,6 @@
 ichumeus_vo.wav
-ichumeusdrschwyz.wav
 vowobischduvowochunnschdu.wav
 vowochunnschdupole.wav
 imache.wav
 dumachsch.wav
 wasmachtsi.wav
-wasmachter.wav
-wasmachschdu.wav
-esmachtoeppis.wav
-mirmachedas.wav
-simacheoeppis.wav
-wasmachesi.wav
-iredebaernduetsch.wav
-mirredeitalienisch.wav
