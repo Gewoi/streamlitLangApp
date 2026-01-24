@@ -5,7 +5,7 @@ import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
 
 st.set_page_config(
-    page_title="MyLangApp",
+    page_title="LangApp",
     page_icon="🗣",
     initial_sidebar_state="auto"
 )
@@ -70,10 +70,6 @@ if not st.session_state["logged_in"] and st.session_state["guest"]:
     st.rerun()
 
 logged_in = st.session_state["logged_in"]
-
-if logged_in:
-    with st.sidebar:
-        st.title("Settings")
         
 if "nav" not in st.session_state:
     st.session_state["nav"] = {"page": "home"} if logged_in else {"page": "login"}
