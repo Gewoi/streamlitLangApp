@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
