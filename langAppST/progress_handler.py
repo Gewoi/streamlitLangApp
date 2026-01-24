@@ -30,7 +30,7 @@ class ProgressStore:
 
         #to make sure we don't add the same stuff twice
         for word in new_words:
-            if word not in completed_list:
+            if word["id"] not in completed_list:
                 completed_list.append(word)
         self.supabase.table("lesson_progress").upsert(
             {
