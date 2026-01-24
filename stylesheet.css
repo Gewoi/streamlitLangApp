@@ -13,8 +13,15 @@ height: 0%;
     background-position-y: 60%;
     background-color: rgba(255, 255, 255, 0.93);
     background-blend-mode: lighten;
-    color: black;
 } 
+
+@media (prefers-color-scheme: dark){
+    [class*="bkg_image_bern"]{
+        background-color: rgba(0, 0, 0, 0.7);
+        background-blend-mode: darken;
+    } 
+}
+
 [class*="finished_lesson"]{
     background: #2c9b2a;
     background: linear-gradient(90deg, rgba(44, 155, 42, 0.21) 0%, rgba(66, 189, 57, 0.41) 46%, rgba(83, 237, 147, 0.25) 100%);
@@ -42,6 +49,13 @@ height: 0%;
 @keyframes myAnimation {
   from {background-color: 	rgba(102, 255, 102, .6);}
   to {background-color: white;}
+}
+
+@media (prefers-color-scheme: dark){
+    @keyframes myAnimation {
+        from {background-color: 	rgba(102, 255, 102, .6);}
+        to {background-color: black;}
+      }
 }
 
 [class*="order_button_sel"]{
