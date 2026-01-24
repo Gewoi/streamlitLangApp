@@ -5,18 +5,22 @@ from datetime import datetime, timezone, timedelta
 import streamlit as st
 import random
 
+@st.cache_resource
+def get_supabase_client():
+    """Returns an UNAUTHENTICATED Supabase client - shared is fine"""
+    from supabase import create_client
+    url = st.secrets["SUPABASE_URL"]
+    key = st.secrets["SUPABASE_KEY"]
+    return create_client(url, key)
+
+
 class ProgressStore:
 
     def __init__(self):
         self._initialize_db()
 
     def _initialize_db(self):
-        self.supabase = self.init_connection()
-
-    def init_connection(self):
-        url = st.secrets["SUPABASE_URL"]
-        key = st.secrets["SUPABASE_KEY"]
-        return create_client(url, key)
+        self.supabase = get_supabase_client()
     
     def lesson_completed(self, user_id: str, course_id: str, lesson_id: str, mistakes_made : int, new_words : list| None= None) -> None:
         if st.session_state["guest"]:

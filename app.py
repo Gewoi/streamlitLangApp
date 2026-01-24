@@ -1,7 +1,7 @@
 import streamlit as st
-from langAppST.progress_handler import ProgressStore
 import langAppST.pages as pages
 from langAppST.pages import local_storage
+from langAppST.progress_handler import ProgressStore
 
 
 st.set_page_config(
@@ -31,22 +31,45 @@ store = connect_supabase()
 
 
 def check_session():
-    """Check if there's an active session"""
+    auth = local_storage.getItem("auth")
+    
+    if not auth or not auth.get("refresh_token"):
+        st.session_state.user = None
+        st.session_state.logged_in = False
+        return False
+    
     try:
-        # Get current session from Supabase
-        session = store.supabase.auth.get_session()
-        if session:
-            st.session_state.user = session.user
-            st.session_state.logged_in = True
-            return True
+        from supabase import create_client
+        temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
+        
+        # Use refresh token to get a new session
+        response = temp_client.auth.refresh_session(auth["refresh_token"])
+        
+        st.session_state.user = response.user
+        st.session_state.logged_in = True
+        
+        # Update tokens
+        local_storage.setItem("auth", {
+            "access_token": response.session.access_token,
+            "refresh_token": response.session.refresh_token
+        })
+        return True
+    except:
+        local_storage.deleteItem("auth")
+        st.session_state.user = None
+        st.session_state.logged_in = False
+        return False
+
+def logout():
+    from supabase import create_client
+    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
+    
+    try:
+        temp_client.auth.sign_out()
     except:
         pass
     
-    st.session_state.user = None
-    return False
-
-def logout(supabase : ProgressStore):
-    supabase.supabase.auth.sign_out()
+    local_storage.deleteItem("auth")
     st.session_state.clear()
     st.rerun()
 
@@ -82,13 +105,13 @@ nav = st.session_state["nav"]
 
 page = nav.get("page")
 if page == "login":
-    pages.login_page(store)
+    pages.login_page()
 elif page == "home":
     pages.homepage()
 elif page == "course_page":
     pages.course_page(nav.get("course_id"), store)
 elif page == "lesson":
-    pages.player(nav.get("course_id"), nav.get("current_lesson"))
+    pages.player(nav.get("course_id"), nav.get("current_lesson"), store)
 elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), store)
 
@@ -97,4 +120,4 @@ with st.sidebar.container(key="sidebar_bottom"):
     st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
     if logged_in:
         if st.button("Logout", type="primary", key="logout_btn"):
-            logout(store)
+            logout()

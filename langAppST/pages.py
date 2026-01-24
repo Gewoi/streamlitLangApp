@@ -5,7 +5,6 @@ from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
-
 from streamlit_local_storage import LocalStorage
 
 local_storage = LocalStorage()
@@ -169,7 +168,7 @@ def course_page(course_id : str, store : ProgressStore):
 
         
 
-def player(course_id : str, lesson_id : str):
+def player(course_id : str, lesson_id : str, store : ProgressStore):
     course_dict = get_course(course_id)
     lesson_dict = st.session_state["lesson_dict"]
     step_idx = st.session_state["step_idx"]
