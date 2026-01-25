@@ -83,7 +83,7 @@ steps:
   - type: listen_type
     id: listen_type_5
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/simacheöppis.wav"
+    audio: "data/assets/audio/simacheoeppis.wav"
     answers: ["si mache öppis", "sie mache öppis"]
     images:
       - "data/assets/images/cheers.jpg"

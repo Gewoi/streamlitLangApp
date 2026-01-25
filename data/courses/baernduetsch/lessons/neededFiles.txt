@@ -1,8 +1,1 @@
-ichumeus_vo.wav
-gruessech.wav
-vowobischdu_vowochunnschdu.wav
-vowochunnschdu_pole.wav 
-nuet.wav
-jagaern.wav
-eskafi_jagaern.wav
-vowochoemitdir.wav
+geitsguet_jamerci.wav
