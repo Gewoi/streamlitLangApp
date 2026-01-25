@@ -6,24 +6,17 @@ from .content import load_courses, load_lessons, load_lesson_content, play_compl
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 
-def login(email: str, password: str, local_storage):
-    from supabase import create_client
-    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
+
+def login(email: str, password: str):
     try:
-        response = temp_client.auth.sign_in_with_password({
+        response = st.session_state["supabase"].supabase.auth.sign_in_with_password({
             "email": email,
             "password": password
         })
-        # Store user info in session_state (per-user), not in shared client
         st.session_state.user = response.user
-        st.session_state.access_token = response.session.access_token
         st.session_state.logged_in = True
-
-        # Persist tokens to browser storage
-        local_storage.setItem("auth", {
-                    "access_token": response.session.access_token,
-                    "refresh_token": response.session.refresh_token
-                })
+        
+        st.session_state["just_logged_in"] = {"access_token": response.session.access_token, "refresh_token": response.session.refresh_token}
         return True
     except Exception as e:
         st.error(f"Login failed: {str(e)}")
@@ -32,10 +25,8 @@ def login(email: str, password: str, local_storage):
 
 
 def signup(email, password):
-    from supabase import create_client
-    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
     try:
-        response = temp_client.auth.sign_up({
+        response = st.session_state["supabase"].supabase.auth.sign_up({
             "email": email,
             "password": password
         })
@@ -46,7 +37,7 @@ def signup(email, password):
         return False
 
 
-def login_page(local_storage):
+def login_page():
     st.title("Welcome!")
     mode = st.radio(
         "Account",
@@ -64,7 +55,7 @@ def login_page(local_storage):
 
     if submit:
         if mode == "Login":
-            if login(email, password, local_storage):
+            if login(email, password):
                 st.success("✅ Logged In!")
                 st.rerun()
         elif mode == "Create Account":
