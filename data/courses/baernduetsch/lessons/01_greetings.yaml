@@ -2,22 +2,22 @@ id: 01_greetings
 title: "👋 Greetings & Politeness"
 description: "Say hello, ask how someone is, and be polite."
 estimated_minutes: 3
-section : Basics
+section: Basics
 
 steps:
   - type: markdown
     id: intro
     markdown: |
       ## How this course works
-
+      
       - The **course language** is **English**.
       - The **target language** is **Bernese Swiss German** (*Bärndütsch*).
       - As often as possible, there will also be **Standard German** side by side.
-
+      
       The Course gives explanations in between.
-
+      
       IMPORTANT: Sometimes the *solution* displays also contain **helpful explanations**.
-
+      
     images:
       - "data/assets/images/bern.jpg"
 
@@ -25,22 +25,22 @@ steps:
     id: important_note
     markdown: |
       ## Swiss German is not a written language!
-
+      
       Unfortunately, there are *no rules* on how to write Swiss German.
-
+      
       For this course, we will be relying on how a person in Bern would **Text their friends**. 
       It is impossible to include *all possible spellings*, so sometimes you might be shown that you're wrong even when you're **correct**.
-
+      
       This is partly due to me not thinking the programming through. Maybe in the future I'll upgrade it. For now, I'll say **sorry!**
-
+      
       If you find a mistake, let me know. There is always a **skip button** except the last exercise in case you get stuck.
-
+      
     images:
       - "data/assets/images/writing.jpg"
 
   - type: introduce_word
     id: word_hallo
-    word : "Hallo / Tschau / Sälü"
+    word: "Hallo / Tschau / Sälü"
     translation:
       en: "Hello"
       de: "Hallo"
@@ -52,13 +52,16 @@ steps:
     id: explanation_greeting
     markdown: |
       ## Greetings
-
+      
       There are different ways to **greet someone**. 
-
+      
       Very common is the German **Hallo**.
-
+      
       We also have **Tschou** (or **Tschau**, adapted from the Italian *Ciao*),
       and **Sälü** (from the French *Salut*).
+      
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
 
   - type: cloze
     id: cloze_hoi
@@ -75,9 +78,21 @@ steps:
     images:
       - "data/assets/images/woman_waving.jpg"
 
+  - type: listen_type
+    id: listen_type_17
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/hoi.wav"
+    answers: ["Hallo tschau sälü", "hallo tschou sälü", "hallo tschau säli", "hallo tschou säli"]
+    images:
+      - "data/assets/images/handshake_cafe.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      The three main greetings we use are **hallo**, **tschau"" (or **tschou**) and **sälü** (or **säli**).
+
   - type: introduce_word
     id: wiegeits_intr
-    word : "Wie geit's? / Wie geit's dr?"
+    word: "Wie geit's? / Wie geit's dr?"
     translation:
       en: "How are you?"
       de: "Wie geht's?"
@@ -104,11 +119,7 @@ steps:
       question: "Hello, how are you?"
       helper: "Hallo, wie geht es dir?"
     answers:
-      ["hallo wie geits",  "hallo wie geits dr", "hallo wie geits dir",
-      "tschau wie geits", "tschau wie geits dr", "tschau wie geits dir",
-      "tschou wie geits", "tschou wie geits dr", "tschou wie geits dir",
-      "sälü wie geits", "sälü wie geits dr", "sälü wie geits dir"]
-    
+      ["hallo wie geits", "hallo wie geits dr", "hallo wie geits dir", "tschau wie geits", "tschau wie geits dr", "tschau wie geits dir", "tschou wie geits", "tschou wie geits dr", "tschou wie geits dir", "sälü wie geits", "sälü wie geits dr", "sälü wie geits dir"]
     images:
       - "data/assets/images/hoi.jpg"
     solution_display: |
@@ -117,7 +128,7 @@ steps:
       You can add the **dir/dr** if you're talking to a friend, but it's not necessary.
 
   - type: listen_type
-    id: listen_hoi
+    id: listen_type_12
     prompt: "Listen and type what you hear (Bernese)."
     audio: "data/assets/audio/saeliwigeits.wav"
     answers: ["sälü wie geits", "säli wie geits"]
@@ -129,8 +140,8 @@ steps:
       **Sälü** is one of the ways we say *Hello*
 
   - type: introduce_word
-    id: wiegeits_intr
-    word : "Tschüss / Tschau / Sälü"
+    id: tschüss_tschau_säli
+    word: "Tschüss / Tschau / Sälü"
     translation:
       en: "Bye!"
       de: "Tschüss!"
@@ -141,8 +152,8 @@ steps:
   - type: true_false
     id: verabschiedung
     prompt: "What do you think is said?"
-    audio : "data/assets/audio/saeliwigeits.wav"
-    text : "This person is saying goodbye."
+    audio: "data/assets/audio/saeliwigeits.wav"
+    text: "This person is saying goodbye."
     answer: "False"
     solution_display: |
       ✅ Correct! 
@@ -159,7 +170,6 @@ steps:
       helper: "Tschüss!"
     answers:
       ["Tschüss", "Tschou", "Tschau", "Sälü"]
-    
     images:
       - "data/assets/images/wavinghand_curtain.jpg"
     solution_display: |
@@ -167,30 +177,80 @@ steps:
       
       You can say bye in multiple ways, like **Tschüss**, **Tschau** or **Sälü**; similar to greetings.
 
+  - type: match
+    id: match_18
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Hello"
+        right: "Hallo / Tschau / Sälü"
+      - left: "Bye"
+        right: "Tschüss / Tschau / Sälü"
+      - left: "How are you?"
+        right: "Wie geits?"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "How are you? "
+      helper: "Wie geht's?"
+      target: ["Wie ", " dir?"]
+    answers: ["geits", "geit's"]
+    solution_display: |
+      ✅ Correct!
+      
+      You could also leave the **dir/dr** at the end away and just say **Wie geits?**.
+    images:
+      - "data/assets/images/old_people_conv_garden.jpg"
+
   - type: introduce_word
     id: bisspeter_intr
-    word : "Bis später!"
+    word: "Bis später! / Bis speter!"
     translation:
       en: "See you later!"
       de: "Bis später!"
     images:
       - "data/assets/images/woman_waving.jpg"
     audio: "data/assets/audio/bisspeter.wav"
-  
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Bye, see you later!"
+      helper: "Tschüss, bis später!"
+    tokens: ["Tschau,", "bis", "speter!"]
+    solution_display: |
+      ✅ Correct!
+      
+      Some people say the **ä** a bit more aggressively, like *spÄter**, but a softer **speter** is more common!
+
   - type: true_false
     id: verabschiedung_oder begrüssung
     prompt: "What do you think is said?"
-    audio : "data/assets/audio/tschussbisspeter.wav"
-    text : "This person is saying goodbye."
+    audio: "data/assets/audio/tschussbisspeter.wav"
+    text: "This person is saying goodbye."
     answer: "True"
     solution_display: |
       ✅ Correct! 
       
       **Tschüss** is one of the ways we say *Bye*, and **bis später** means *see you later* (literally: *until later*).
 
+  - type: listen_type
+    id: listen_type_21
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/tschussbisspeter.wav"
+    answers: ["Tschüss, bis speter", "Tschüss, bis später"]
+    images:
+      - "data/assets/images/wavinghand_curtain.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This is how you would say goodbye to someone you'll see again that day!
+
   - type: introduce_word
     id: guet
-    word : "Guet"
+    word: "Guet"
     translation:
       en: "Good"
       de: "Gut"
@@ -199,25 +259,30 @@ steps:
     audio: "data/assets/audio/guet.wav"
 
   - type: cloze
-    id: cloze_hoi
+    id: cloze_guet
     prompt: "Fill in the missing Bernese word (answer in Bärndütsch)."
     sentence:
       question: "How are you doing? - Good!"
       helper: "Wie geht's? - Gut"
       target: ["Wie geits? - ", "!"]
     answers: ["guet"]
+    solution_display: |
+      ✅ Correct!
+      
+      We say **guet** for *good*, and for *bad*, we say **schlächt**.
     images:
       - "data/assets/images/conversation_casual.jpg"
 
-  # - type: pronounce
-  #   id: pronounce_merci
-  #   prompt: "Listen, then record yourself saying the Bernese phrase."
-  #   reference_text:
-  #     de_ch: "Merci viu mau"
-  #     de: "Vielen Dank"
-  #     en: "Thanks a lot"
-  #   reference_audio: "assets/audio/merci_viu_mau.wav"
-  #   pass_score: 70
+  - type: listen_type
+    id: listen_type_22
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/guet.wav"
+    images:
+      - "data/assets/images/cool_plus.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Guet** means *good*.
 
   - type: match
     id: match_basic

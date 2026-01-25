@@ -61,7 +61,7 @@ def read_yaml(path: Path) -> dict:
         data = yaml.safe_load(f) or {}
     return data
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl="1d")
 def load_courses():
     course_list = []
     for course_yaml in sorted(COURSES_ROOT.glob("*/course.yaml")):
@@ -69,7 +69,7 @@ def load_courses():
         course_list.append(course_data)
     return course_list
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl="1d")
 def load_lessons(course_id : str):
     course_dir = COURSES_ROOT / course_id
     lesson_list = []
@@ -78,7 +78,7 @@ def load_lessons(course_id : str):
         lesson_list.append(lesson_data)
     return lesson_list
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl="1d")
 def load_lesson_content(course_id : str, lesson_id : str):
 
     course_dir = COURSES_ROOT / course_id
