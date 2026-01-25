@@ -5,11 +5,8 @@ from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
-from streamlit_local_storage import LocalStorage
 
-local_storage = LocalStorage()
-
-def login(email: str, password: str):
+def login(email: str, password: str, local_storage):
     from supabase import create_client
     temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
     try:
@@ -49,7 +46,7 @@ def signup(email, password):
         return False
 
 
-def login_page():
+def login_page(local_storage):
     st.title("Welcome!")
     mode = st.radio(
         "Account",
@@ -67,7 +64,7 @@ def login_page():
 
     if submit:
         if mode == "Login":
-            if login(email, password):
+            if login(email, password, local_storage):
                 st.success("✅ Logged In!")
                 st.rerun()
         elif mode == "Create Account":

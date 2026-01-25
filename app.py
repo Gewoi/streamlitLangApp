@@ -1,6 +1,10 @@
 import streamlit as st
+from streamlit_local_storage import LocalStorage
+
+local_storage = LocalStorage()
+
+
 import langAppST.pages as pages
-from langAppST.pages import local_storage
 from langAppST.progress_handler import ProgressStore
 
 
@@ -61,15 +65,21 @@ def check_session():
         return False
 
 def logout():
-    from supabase import create_client
-    temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
-    
+    # First, clear browser storage (before any rerun)
     try:
+        local_storage.deleteItem("auth")
+    except:
+        pass
+    
+    # Then sign out from Supabase
+    try:
+        from supabase import create_client
+        temp_client = create_client(st.secrets["SUPABASE_URL"], st.secrets["SUPABASE_KEY"])
         temp_client.auth.sign_out()
     except:
         pass
     
-    local_storage.deleteItem("auth")
+    # Clear session state and rerun last
     st.session_state.clear()
     st.rerun()
 
@@ -105,7 +115,7 @@ nav = st.session_state["nav"]
 
 page = nav.get("page")
 if page == "login":
-    pages.login_page()
+    pages.login_page(local_storage)
 elif page == "home":
     pages.homepage()
 elif page == "course_page":
