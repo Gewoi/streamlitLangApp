@@ -88,7 +88,7 @@ steps:
     solution_display: |
       ✅ Correct!
       
-      The three main greetings we use are **hallo**, **tschau"" (or **tschou**) and **sälü** (or **säli**).
+      The three main greetings we use are **hallo**, **tschau** (or **tschou**) and **sälü** (or **säli**).
 
   - type: introduce_word
     id: wiegeits_intr
@@ -192,7 +192,7 @@ steps:
     id: cloze_19
     prompt: "Fill in the missing words (answer in Bärndütsch)."
     sentence:
-      question: "How are you? "
+      question: "How are you?"
       helper: "Wie geht's?"
       target: ["Wie ", " dir?"]
     answers: ["geits", "geit's"]
@@ -223,7 +223,7 @@ steps:
     solution_display: |
       ✅ Correct!
       
-      Some people say the **ä** a bit more aggressively, like *spÄter**, but a softer **speter** is more common!
+      Some people say the **ä** a bit more aggressively, like **sp*ä*ter**, but a softer **speter** is more common!
 
   - type: true_false
     id: verabschiedung_oder begrüssung
@@ -277,6 +277,7 @@ steps:
     id: listen_type_22
     prompt: "Listen and type what you hear (Bärndütsch)."
     audio: "data/assets/audio/guet.wav"
+    answers: ["guet"]
     images:
       - "data/assets/images/cool_plus.jpg"
     solution_display: |
@@ -295,6 +296,6 @@ steps:
       - left: "How are you?"
         right: "Wie geit's?"
       - left: "See you later!"
-        right: "Bis später!"
+        right: "Bis speter!"
       - left: "good"
         right: "guet"
