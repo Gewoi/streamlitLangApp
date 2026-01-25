@@ -100,3 +100,25 @@ def find_new_exercises(lesson_dict : dict):
         if step["type"] in included_steps:
             steps.append(step)
     return steps
+
+def create_section_repetition(course_id : str, section : str):
+    included_steps = ["cloze", "order", "translate_type", "listen_type", "true_false", "match"]
+
+    lesson_list = load_lessons(course_id)
+    possible_exercises = []
+    for lesson in lesson_list:
+        if lesson["section"] == section:
+            for step in lesson["steps"]:
+                if step["type"] in included_steps:
+                    possible_exercises.append(step)
+
+    number = min(len(possible_exercises), 10)
+    random.shuffle(possible_exercises)
+    chosen_exercises = possible_exercises[:number]
+
+    lesson_dict = {"id": "REPETITION","title": "Repeat some Words!", "description": "Repeat a random selection of words", "steps" : []}
+
+    for exercise in chosen_exercises:
+        lesson_dict["steps"].append(exercise)
+    
+    return lesson_dict

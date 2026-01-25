@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 from .content import get_course
-from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises
+from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises, create_section_repetition
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 
@@ -105,6 +105,16 @@ def course_page(course_id : str, store : ProgressStore):
 
     for lesson in lesson_list:
         if (not lesson["section"] == current_section) and (lesson["section"] in sections):
+            if not current_section == "":
+                with st.container(border=True, key=f"section_finish_{current_section}"):
+                    st.markdown(f"### 🧠Test your {current_section} knowledge!", text_alignment="center")
+                    st.markdown(f"Repeat some exercises from the section {current_section}", text_alignment="center")
+                    if st.button(label="Repeat", width="stretch", key=f"start_section_rep_{current_section}"):
+                        st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                        clear_lesson_sessionstate()
+                        st.session_state["step_idx"] = 0
+                        st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
+                        st.rerun()
             st.divider()
             current_section = lesson["section"]
             st.title(body=f"{current_section}", text_alignment="center")

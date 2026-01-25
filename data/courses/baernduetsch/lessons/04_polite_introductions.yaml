@@ -1,7 +1,7 @@
 id: 04_polite_introductions
 title: "👵🏽 Polite Introductions"
 description: "Introduce yourself to strangers, people of status and elderly people."
-estimated_minutes: 3
+estimated_minutes: 4
 section: Basics
 
 steps:
@@ -84,6 +84,18 @@ steps:
     images:
       - "data/assets/images/zueri.jpg"
 
+  - type: listen_type
+    id: listen_type_15
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/gruessech.wav"
+    answers: ["grüessech"]
+    images:
+      - "data/assets/images/old_guy_handshake.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Grüessech** is how you politely greet someone.
+
   - type: introduce_word
     id: introduce_word_6
     word: "Wie geits öich, Herr Marti?"
@@ -102,6 +114,15 @@ steps:
       Don't get confused: The Germans use *Ihnen* here. But we use **Öich**!
     images:
       - "data/assets/images/old_guy_half_wave.jpg"
+
+  - type: match
+    id: match_16
+    prompt: "Match the form!"
+    pairs:
+      - left: "Wie geits dir?"
+        right: "informal"
+      - left: "Wie geits öich?"
+        right: "formal"
 
   - type: true_false
     id: true_false_8
@@ -137,19 +158,6 @@ steps:
       - "data/assets/images/old_people_conv_garden.jpg"
     audio: "data/assets/audio/ueuch.wav"
 
-  - type: match
-    id: match_11
-    prompt: "Match the translations (English → Bärndütsch)."
-    pairs:
-      - left: "and"
-        right: "u / und"
-      - left: "How are you? (formal)"
-        right: "Wie geits öich?"
-      - left: "Mister"
-        right: "Herr"
-      - left: "Miss"
-        right: "Frou"
-
   - type: markdown
     id: markdown_12
     markdown: |
@@ -164,6 +172,19 @@ steps:
     images:
       - "data/assets/images/cool_plus.jpg"
 
+  - type: match
+    id: match_11
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "and"
+        right: "u / und"
+      - left: "How are you? (formal)"
+        right: "Wie geits öich?"
+      - left: "Mister"
+        right: "Herr"
+      - left: "Miss"
+        right: "Frou"
+
   - type: true_false
     id: true_false_13
     prompt: "What do you think is said?"
@@ -176,6 +197,27 @@ steps:
       Often, when you use the *polite* form towards elderly people, they will still use the *informal* form toward you. But you should **still use the *polite*** form unless they make it clear it's ok not to!
       
       (Yes I think that's annoying too)
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Mister and Miss Schmid."
+      helper: "Herr und Frau Schmid."
+    tokens: ["Herr", "und", "Frou", "Schmid"]
+
+  - type: translate_type
+    id: translate_type_18
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Yes and no."
+      helper: "Ja und nein."
+    answers:
+      ["Ja u nei", "ja und nei"]
+    images:
+      - "data/assets/images/yes_no.jpg"
+    solution_display: |
+      ✅ Correct!
 
   - type: match
     id: match_14
@@ -191,3 +233,5 @@ steps:
         right: "Frou"
       - left: "How are you? (formal)"
         right: "Wie geits öich?"
+      - left: "and"
+        right: "u / und"

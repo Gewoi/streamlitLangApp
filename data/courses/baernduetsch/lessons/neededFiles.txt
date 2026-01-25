@@ -1,4 +1,8 @@
 ichumeus_vo.wav
+gruessech.wav
 vowobischduvowochunnschdu.wav
 vowochunnschdupole.wav 
 nuet.wav
+jagaern.wav
+eskafi_jagaern.wav
+vowochoemitdir.wav

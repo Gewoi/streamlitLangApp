@@ -1,7 +1,7 @@
 id: 06_say_where_you_are_from
 title: "🗺 Say Where You Are From"
 description: "Let people know where you come from."
-estimated_minutes: 3
+estimated_minutes: 2
 section: Basics
 
 steps:
@@ -24,10 +24,9 @@ steps:
       target: ["I ", " Dütschland."]
     answers: ["chume vo", "chume us"]
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       You can use either **us** (*out of*, *from*) or **vo** (just *from*).
-      
     images:
       - "data/assets/images/pointing_map.jpg"
 
@@ -38,10 +37,21 @@ steps:
     text: "This person is from **Germany**"
     answer: "False"
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       This person is saying they're from **Switzerland**. Note that **Schwyz** (*Switzerland*) requires the article **dr**. Only a few places need that, and **Schwyz** is one of them!
+
+  - type: order
+    id: order_10
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am from Switzerland."
+      helper: "Ich komme aus der Schweiz."
+    tokens: ["I", "chume", "us", "dr", "Schwyz."]
+    solution_display: |
+      ✅ Correct!
       
+      **Schwyz** is an exception in that it needs an *article*; other countries do not need that.
 
   - type: listen_type
     id: listen_type_2
@@ -51,10 +61,9 @@ steps:
     images:
       - "data/assets/images/swissflag_boat.jpg"
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       Some places, most prominently **Switzerland itself**, need an article. This is why we say **us dr Schwyz** (*from / out of Switzerland*). Some other examples are the *USA* (**us de USA**), and some Swiss Cantons (**usem Wallis**, meaning *from / out of the Wallis*).
-      
 
   - type: order
     id: order_4
@@ -64,10 +73,9 @@ steps:
       helper: "Ich komme aus Polen."
     tokens: ["I", "chume", "us", "Pole."]
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       **Pole** is pronounced *pol-ä*.
-      
 
   - type: introduce_word
     id: introduce_word_5
@@ -86,7 +94,7 @@ steps:
     text: "The asked person is from **Germany**."
     answer: "False"
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       This person is from *Poland*, or how we say here, *Pole*.
 
@@ -118,10 +126,70 @@ steps:
     images:
       - "data/assets/images/world_pins.jpg"
     solution_display: |
-      Correct!
+      ✅ Correct!
       
       Just like with **Wie geits?** (*How are you?*) earlier, you can *leave out the *du**. However, this is often a bit less polite.
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "Vo wo chömit dir?"
+    translation:
+      en: "Where are you from? (plural or polite)"
+      de: "Von wo kommen Sie? (polite) / Von wo kommt ihr? (plural)"
+    images:
+      - "data/assets/images/conference_handshake.jpg"
+    audio: "data/assets/audio/vowochoemitdir.wav"
+
+  - type: markdown
+    id: markdown_11
+    markdown: |
+      ## Now formal!
       
+      If you want to ask someone where they are from, it can sometimes make sense to use the *polite* form. This happens to be the same as for **asking multiple people** where they are from.
+      
+      For that, you ask:
+      
+      - **Vo wo chömit dir?**
+      
+      The **dir** here refers to *second person plural*. It might be a bit confusing, because we already has a **dir** in **Wie geits dir?** (*How are you?*). It will all make more sense soon; just know for now that here, it refers to *you (pl.)* or, in standard German, *Sie (polite)*.
+    images:
+      - "data/assets/images/question_microphone.jpg"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Where are you from? (pl)"
+      helper: "Woher kommt ihr?"
+    tokens: ["Vo", "wo", "chömit", "dir?"]
+    solution_display: |
+      ✅ Correct!
+      
+      To ask in the plural or polite form where people are/someone is from, we say **Vo wo chömit dir?**.
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Where are you from? (polite) - From Switzerland!"
+      helper: "Woher kommen Sie? - Aus der Schweiz!"
+      target: ["Vo wo chömit dir? - Us ", "."]
+    answers: ["dr schwyz", "dr schwiz"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Schwyz** needs the article.
+
+  - type: true_false
+    id: true_false_15
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/vowochunnschdupole.wav"
+    text: "This person is asking in the **polite** form."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying **Vo wo chunnsch du?**, which is informal.
 
   - type: match
     id: match_8
@@ -137,5 +205,7 @@ steps:
         right: "us dr Schwiz"
       - left: "from Poland"
         right: "us Pole"
-      - left: "Where are you from?"
+      - left: "Where are you from? (informal)"
         right: "Vo wo chunnsch du?"
+      - left: "Where are you from? (formal)"
+        right: "Vo wo chömit dir?"

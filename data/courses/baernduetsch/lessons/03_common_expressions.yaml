@@ -1,13 +1,13 @@
 id: 03_common_expressions
 title: "👍 Common Expressions"
 description: "How to say yes, no, thanks, please and sorry."
-estimated_minutes: 3
-section : Basics
+estimated_minutes: 5
+section: Basics
 
 steps:
   - type: introduce_word
     id: word_mercidanke
-    word : "Merci / Danke"
+    word: "Merci / Danke"
     translation:
       en: "Thanks, Thank you"
       de: "Danke"
@@ -15,32 +15,41 @@ steps:
       - "data/assets/images/thankyou.jpg"
     audio: "data/assets/audio/mercidanke.wav"
 
-
   - type: markdown
     id: exp_mercidanke
     markdown: |
       There are two ways to say *thanks* in Bernese German:
-
+      
       - **Merci** (like in French)
       - **Danke** (like in German)
-
+      
       Merci is more common, but both work great!
 
-      
   - type: translate_type
     id: translate_merci
     prompt: "Translate the following Sentence"
     sentence:
       question: "Thank you, Angela"
       helper: "Danke, Angela"
-    images:
-      - "data/assets/images/girl_smiling.jpg"
     answers:
       ["Merci, angela", "Danke, angela"]
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+
+  - type: true_false
+    id: true_false_16
+    prompt: "What do you think?"
+    audio: "data/assets/audio/mercidanke.wav"
+    text: "To thank someone, you can say both **Danke** and **Merci**"
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      Both of them are equivalent, but you will hear **Merci** more often.
 
   - type: introduce_word
     id: word_janei
-    word : "Ja / Nei"
+    word: "Ja / Nei"
     translation:
       en: "Yes / No"
       de: "Ja / Nein"
@@ -48,24 +57,48 @@ steps:
       - "data/assets/images/yes_no.jpg"
     audio: "data/assets/audio/ja_nei.wav"
 
+  - type: cloze
+    id: cloze_17
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Yes, my name is Dennis."
+      helper: "Ja, ich heisse Dennis."
+      target: ["", ", i heisse Dennis."]
+    answers: ["ja"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ja** means *yes*, and **nei** means *no*.
+    images:
+      - "data/assets/images/guy_with_headphones.jpg"
+
   - type: markdown
     id: geitsguet_exp
     markdown: |
       Another common way of asking *how someone is doing* is:
-
+      
       #### Geit's guet?
       (*Are you doing good?* or, literally, *Is it going good*)
-
+      
       You will hear this quite frequently instead of the **Wie geit's?** you already know.
-
     images:
       - "data/assets/images/woman_asking.jpg"
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "Geits guet? - Ja, merci!"
+    translation:
+      en: "Are you doing good? - Yes, thanks!"
+      de: "Geht's gut? - Ja, danke!"
+    images:
+      - "data/assets/images/polite_intro.jpg"
+    audio: "data/assets/audio/geitsguetjamerci.wav"
 
   - type: true_false
     id: geitsguet_tf
     prompt: "What do you think is said?"
-    audio : "data/assets/audio/geitsguetja.wav"
-    text : "This person is **doing well**"
+    audio: "data/assets/audio/geitsguetja.wav"
+    text: "This person is **doing well**"
     answer: "True"
     solution_display: |
       ✅ Correct! 
@@ -82,7 +115,7 @@ steps:
     answers: ["danke", "merci"]
     solution_display: |
       ✅ Correct! 
-
+      
       You can say both **Danke** and **Merci**.
     images:
       - "data/assets/images/conversation_casual.jpg"
@@ -101,7 +134,7 @@ steps:
 
   - type: introduce_word
     id: word_entschuldigung
-    word : "Tschuldigung / Entschuldigung / Sorry"
+    word: "Tschuldigung / Entschuldigung / Sorry"
     translation:
       en: "Sorry"
       de: "Entschuldigung"
@@ -113,20 +146,33 @@ steps:
     id: tschuldigung_exp
     markdown: |
       The most formal version of an apology is **entschuldigung**.
-
+      
       Often, we leave the first part off and instead just say **tschuldigung**.
-
+      
       These days, it also extremely common to say **sorry**.
+      
+
+  - type: match
+    id: match_19
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Thanks"
+        right: "Merci / Danke"
+      - left: "Yes"
+        right: "Ja"
+      - left: "No"
+        right: "Nei"
+      - left: "Sorry"
+        right: "Tschuldigung"
 
   - type: translate_type
-    id: translate_geitsguet
+    id: translate_sry
     prompt: "Translate the following Sentence"
     sentence:
       question: "Sorry"
       helper: "Entschuldigung"
     answers:
       ["Tschuldigung", "Entschuldigung", "Sorry"]
-    
     images:
       - "data/assets/images/sorry.jpg"
     solution_display: |
@@ -135,7 +181,7 @@ steps:
       You can say **tschuldigung**, **entschuldigung** or simply **sorry**.
 
   - type: cloze
-    id: cloze_hoi
+    id: cloze_nemerci
     prompt: "Fill in the missing words (answer in Bärndütsch)."
     sentence:
       question: "Sorry, no thanks!"
@@ -149,10 +195,9 @@ steps:
     images:
       - "data/assets/images/no.jpg"
 
-
   - type: introduce_word
     id: word_bitte
-    word : "Bitte"
+    word: "Bitte"
     translation:
       en: "Please / You're Welcome"
       de: "Bitte"
@@ -168,7 +213,6 @@ steps:
       helper: "Ja bitte!"
     answers:
       ["ja bitte"]
-    
     images:
       - "data/assets/images/thumbs_up.jpg"
     solution_display: |
@@ -176,11 +220,45 @@ steps:
       
       **Bitte** can mean both *please* and *you're welcome*.
 
+  - type: markdown
+    id: markdown_20
+    markdown: |
+      ## Yes, please!
+      
+      To ask for something politely, *yes, please*, you can say one of two things:
+      
+      - **Ja, gärn** is more common
+      - **Ja, bitte** also works
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+
+  - type: introduce_word
+    id: introduce_word_21
+    word: "Ja, gärn!"
+    translation:
+      en: "Yes, please!"
+      de: "Ja, gerne!"
+    images:
+      - "data/assets/images/waiter_drinks.jpg"
+    audio: "data/assets/audio/jagaern.wav"
+
+  - type: true_false
+    id: true_false_22
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/eskafi_jagaern.wav"
+    text: "This person would **like a coffee**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The waiter asked **Äs Kafi?** (*A coffee?*), and the customer replied with **Ja, gärn!** (*Yes, please*).
+
   - type: order
     id: order_wiegeits
     prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
       question: "Are you doing good? - Yes, thank you!"
+      helper: ""
     tokens: ["Geits", "guet?", "Ja,", "merci!"]
     solution_display: |
       ✅ Correct!
@@ -199,3 +277,5 @@ steps:
         right: "Bitte"
       - left: "Are you doing good?"
         right: "Geit's guet?"
+      - left: "Yes, please!"
+        right: "Ja, gärn!"
