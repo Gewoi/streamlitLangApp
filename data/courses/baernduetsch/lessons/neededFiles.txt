@@ -1,7 +1,7 @@
 ichumeus_vo.wav
 gruessech.wav
-vowobischduvowochunnschdu.wav
-vowochunnschdupole.wav 
+vowobischdu_vowochunnschdu.wav
+vowochunnschdu_pole.wav 
 nuet.wav
 jagaern.wav
 eskafi_jagaern.wav

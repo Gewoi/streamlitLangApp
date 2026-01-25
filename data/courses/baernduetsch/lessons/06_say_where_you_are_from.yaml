@@ -85,12 +85,12 @@ steps:
       de: "Von wo kommst du? / Woher kommst du?"
     images:
       - "data/assets/images/question_microphone.jpg"
-    audio: "data/assets/audio/vowobischduvowochunnschdu.wav"
+    audio: "data/assets/audio/vowobischdu_vowochunnschdu.wav"
 
   - type: true_false
     id: true_false_6
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/vowochunnschdupole.wav"
+    audio: "data/assets/audio/vowochunnschdu_pole.wav"
     text: "The asked person is from **Germany**."
     answer: "False"
     solution_display: |
@@ -183,7 +183,7 @@ steps:
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/vowochunnschdupole.wav"
+    audio: "data/assets/audio/vowochunnschdu_pole.wav"
     text: "This person is asking in the **polite** form."
     answer: "False"
     solution_display: |
