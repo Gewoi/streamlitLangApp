@@ -1,0 +1,194 @@
+id: 10_introduction_to_nouns
+title: "🏠 Introduction to Nouns"
+description: "Learn some important nouns in their singular form, and their corresponding articles."
+estimated_minutes: 3
+section: Sentence Building
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Dr Bahnhof"
+    translation:
+      en: "The train station"
+      de: "Der Bahnhof"
+    images:
+      - "data/assets/images/trainstation.jpg"
+    audio: "data/assets/audio/drbahnhof.wav"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Articles
+      
+      **Nouns** in Bärndütsch, just like in German, have a *grammatical gender*: **masculine**, **feminine**, or **neuter**. 
+      
+      You might be familiar with the *German* forms. In Bärndütsch, it works pretty much exactly the same; if you know the *grammatical gender* of a word in Standard German, you in almost all cases also know it in Bärndütsch.
+      
+      They are:
+      
+      | Type | German | **Bärndütsch** | Example |
+      | --- | --- | --- | --- |
+      | masculine | der | **dr** | ***dr* Bahnhof** (*the train station*) |
+      | feminine | die | **d** | ***d* Straas** (*the street*) |
+      | neuter | das | **ds** | ***ds* Huus** (*the house*) |
+      
+      So, they are **dr**, **d**, and **ds**. Don't worry if you get them wrong sometimes, you're still perfectly understandable if you mix them up occasionally!
+    images:
+      - "data/assets/images/laptop_on_table.jpg"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "D Straas"
+    translation:
+      en: "The street"
+      de: "Die Strasse"
+    images:
+      - "data/assets/images/city_street.jpg"
+    audio: "data/assets/audio/dstraas.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Ds Huus"
+    translation:
+      en: "The house"
+      de: "Das Haus"
+    images:
+      - "data/assets/images/house_grass.jpg"
+    audio: "data/assets/audio/dshuus.wav"
+
+  - type: match
+    id: match_4
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Dr"
+        right: "Bahnhof"
+      - left: "Ds"
+        right: "Huus"
+      - left: "D"
+        right: "Straas"
+
+  - type: translate_type
+    id: translate_type_5
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "The house"
+      helper: "Das Haus"
+    answers:
+      ["ds huus"]
+    images:
+      - "data/assets/images/house_grass.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Gramatically, **huus** is *neuter*, so we use **ds**.
+
+  - type: listen_type
+    id: listen_type_6
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dstraas.wav"
+    answers: ["d straas", "d straass"]
+    images:
+      - "data/assets/images/city_street.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Gramatically, **straas** is *feminine*, so we use **d**.
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The train station, the street, the house"
+      helper: "Der Bahnhof, die Strasse, das Haus"
+    tokens: ["Dr", "Bahnhof,", "d", "straas,", "ds", "huus"]
+    solution_display: |
+      ✅ Correct!
+      
+      Now you have an example for all three *grammatical genders*!
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dshuus.wav"
+    text: "**Ds Huus** is *gramatically neuter*."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      We use **ds**, so it is *neuter*.
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "Wo isch ___?"
+    translation:
+      en: "Where is ___? "
+      de: "Wo ist ___?"
+    images:
+      - "data/assets/images/tourists_map.jpg"
+    audio: "data/assets/audio/woisch.wav"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Where is the train station?"
+      helper: "Wo ist der Bahnhof?"
+      target: ["", " dr Bahnhof?"]
+    answers: ["Wo isch"]
+    solution_display: |
+      ✅ Correct!
+      
+      If you ask where something (singular) is, you can use **Wo isch?**.
+    images:
+      - "data/assets/images/pointing_at_map.jpg"
+
+  - type: listen_type
+    id: listen_type_11
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/woischdshuus.wav"
+    answers: ["wo isch ds huus"]
+    images:
+      - "data/assets/images/house_grass.jpg"
+
+  - type: true_false
+    id: true_false_12
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/woischdstraas.wav"
+    text: "**Straas** if *masculine*"
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      We use **d** for **straas**, which is *feminine*.
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Where is the train station?"
+      helper: ""
+    tokens: ["Wo", "isch", "dr", "Bahnhof?"]
+
+  - type: match
+    id: match_14
+    prompt: "Match the grammatical gender!"
+    pairs:
+      - left: "masculine"
+        right: "Bahnhof"
+      - left: "feminine"
+        right: "Straas"
+      - left: "neuter"
+        right: "Huus"
+
+  - type: match
+    id: match_15
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "The trainstation"
+        right: "Dr Bahnhof"
+      - left: "The street"
+        right: "D Straas"
+      - left: "The house"
+        right: "Ds Huus"
+      - left: "Where is ___?"
+        right: "Wo isch ___?"

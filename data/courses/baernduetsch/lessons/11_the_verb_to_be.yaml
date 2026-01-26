@@ -1,0 +1,242 @@
+id: 11_the_verb_to_be
+title: "🧍The Verb *To Be*"
+description: "Learn all the forms of the verb *to be*."
+estimated_minutes: 2
+section: Basics
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## "Sii"
+      
+      You have already encountered some forms of the verb *to be*, for example in **I bi dr/d ___** (*I am ___*) or **Vo wo bisch du?** (*Where are you from?*). Here are all the conjugations of the verb **sii** (*to be*)!
+      
+      | singular | | plural | |
+      | --- | --- | --- | --- |
+      | I / Ig | **bi** | Mir | **si** |
+      | Du | **bisch** | Dir | **sit**|
+      | Är / Si / Äs | **isch** | Si | **si** |
+      
+      Two things stand out:
+      
+      - This is quite different from *Standard German*, but it still somewhat follows the form for regular verbs we established.
+      - For *they*, both words look the same when written out: **Si** (*they*) **si** (*are*). The pronounciation is a bit different though!
+      	- *They*: **Si** is more flat, like **sy** or **se** almost; in English like the beginning of the word *sit*
+      	- *are*: **si** is a very "pointy" *i*, like the English word **see**
+      
+      You'll hear what I mean in the next exercise!
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: introduce_word
+    id: introduce_word_1
+    word: "Si si"
+    translation:
+      en: "They are"
+      de: "Sie sind"
+    images:
+      - "data/assets/images/group_selfie.jpg"
+    audio: "data/assets/audio/sisi.wav"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am Dennis"
+      helper: "Ich bin Dennis"
+      target: ["I ", " dr Dennis."]
+    answers: ["bi"]
+    solution_display: |
+      ✅ Correct!
+      
+      *I am* is *I bi*; when you introduce yourself with your name, you also need an article **dr/d**.
+    images:
+      - "data/assets/images/guy_with_headphones.jpg"
+
+  - type: listen_type
+    id: listen_type_3
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/vowobischdu.wav"
+    answers: ["Vo wo bisch du"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Here, the person is asking *Where are you from?*. **Du bisch** means *you (singular) are*.
+
+  - type: match
+    id: match_4
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "bi"
+      - left: "Du"
+        right: "bisch"
+      - left: "Är / Si / Äs"
+        right: "isch"
+
+  - type: listen_type
+    id: listen_type_5
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/aesischguet.wav"
+    answers: ["äs isch guet"]
+    images:
+      - "data/assets/images/no.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying *It is good*. Often, in Bärndütsch, this means that *it's enough* and that you should stop!
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl.) are good!"
+      helper: "Ihr seid gut!"
+    tokens: ["Dir", "sit", "guet!"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is a compliment to a bunch of people; they seem to be pretty good right?
+
+  - type: cloze
+    id: cloze_7
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "They are from Germany."
+      helper: "Sie sind aus Deutschland."
+      target: ["", " us Dütschland."]
+    answers: ["Si si", "si sy"]
+    solution_display: |
+      ✅ Correct!
+      
+      The writing is a bit confusing, but they are pronounced differently. Think **Si** (*they*) as in the beginning of *sit*, and **si** (*are*) as the word *see* in English.
+    images:
+      - "data/assets/images/berlin_cards.jpg"
+
+  - type: order
+    id: order_8
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We are from Italy!"
+      helper: "Wir sind aus Italien!"
+    tokens: ["Mir", "si", "us", "Italie!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir si** means *we are*.
+
+  - type: translate_type
+    id: translate_type_9
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "She's good!"
+      helper: "Sie ist gut!"
+    answers:
+      ["Si isch guet"]
+    images:
+      - "data/assets/images/pottery.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      For **är**, **si** and **äs** we use **isch**.
+
+  - type: listen_type
+    id: listen_type_10
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sisi.wav"
+    answers: ["si si", "si sy"]
+    images:
+      - "data/assets/images/big_group.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Pay attention to the pronounciation! This means *they are*.
+
+  - type: match
+    id: match_11
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "Mir"
+        right: "si (we)"
+      - left: "Dir"
+        right: "sit"
+      - left: "Si"
+        right: "si (they)"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am, you are, she is"
+      helper: "Ich bin, du bist, sie ist"
+    tokens: ["I", "bi,", "du", "bisch,", "si", "isch"]
+
+  - type: true_false
+    id: true_false_13
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/sisi.wav"
+    text: "Both **si** (*they*) and **si** (*are*) are pronounced the same."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      Think the beginning of the English word *sit* for **si** (*they*), and the Enlgish word *see* for **si** (*are*).
+
+  - type: listen_type
+    id: listen_type_16
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirsiusdrschwyz.wav"
+    answers: ["Mir si us dr schwyz", "mir si usdr schwyz"]
+    images:
+      - "data/assets/images/swissflag_boat.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir si** is we are, and for **Schwyz**, we need the article!
+
+  - type: true_false
+    id: true_false_15
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aesischguet.wav"
+    text: "This can also mean **it's enough!**"
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying **äs isch guet**, which means *it is good*, but it can also mean *it's enough* ("you should stop now").
+
+  - type: listen_type
+    id: listen_type_17
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ibi_dubisch_siisch.wav"
+    answers: ["i bi du bisch si isch"]
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: listen_type
+    id: listen_type_18
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirsi_dirsit_sisi.wav"
+    answers: ["mir si dir sit si si"]
+    images:
+      - "data/assets/images/big_group.jpg"
+
+  - type: match
+    id: match_14
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I am"
+        right: "I bi"
+      - left: "You are (singular)"
+        right: "Du bisch"
+      - left: "It is"
+        right: "Äs isch"
+      - left: "We are"
+        right: "Mir si"
+      - left: "You are (plural)"
+        right: "Dir sit"
+      - left: "They are"
+        right: "Si si"
