@@ -82,7 +82,7 @@ steps:
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
     audio: "data/assets/audio/dubischgross.wav"
-    answers: ["Du", "bisch", "gross."]
+    answers: ["Du bisch gross"]
     images:
       - "data/assets/images/tall_guy_lake.jpg"
     solution_display: |
@@ -226,7 +226,7 @@ steps:
     id: order_18
     prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
-      question: "You are bad! (at something)"
+      question: "You (pl.) are bad! (at something)"
       helper: "Ihr seid schlecht!"
     tokens: ["Dir", "sit", "schlächt!"]
     solution_display: |
