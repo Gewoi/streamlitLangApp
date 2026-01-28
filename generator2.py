@@ -179,6 +179,8 @@ def export_to_yaml(lesson: Dict) -> str:
                 lines.append('    solution_display: |')
                 for line in solution.split('\n'):
                     lines.append(f'      {line}')
+            if step.get('audio'):
+                lines.append(f'    audio: "{step["audio"]}"')
                     
         elif step_type == 'translate_type':
             lines.append(f'    prompt: "{step.get("prompt", "")}"')
@@ -739,12 +741,17 @@ class OrderStepEditor(BaseStepEditor):
         self.helper_entry = ttk.Entry(frame2, width=50)
         self.helper_entry.pack(side='left', fill='x', expand=True)
         self.helper_entry.insert(0, sentence.get('helper', ''))
-        
+
         # Tokens
         self.tokens_editor = TokensEditor(self)
         self.tokens_editor.pack(fill='x', pady=5)
         self.tokens_editor.set(step_data.get('tokens', []))
         
+        # Audio
+        self.audio_entry = FilePathEntry(self, "Audio:", 'audio')
+        self.audio_entry.pack(fill='x', pady=3)
+        self.audio_entry.set(step_data.get('audio', ''))
+
         # Solution display
         self.solution_text = self.create_labeled_text(self, "Solution text:", 'solution_display', height=4)
     
@@ -1274,6 +1281,7 @@ class LessonEditorApp:
             new_step['prompt'] = 'Put the words in the correct order (Bärndütsch).'
             new_step['sentence'] = {'question': '', 'helper': ''}
             new_step['tokens'] = []
+            new_step['audio'] = ''
             new_step['solution_display'] = ''
         elif step_type == 'translate_type':
             new_step['prompt'] = 'Translate the following Sentence.'
