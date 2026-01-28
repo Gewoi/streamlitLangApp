@@ -177,11 +177,6 @@ def render_cloze(step: dict):
                 for img in images:
                     if os.path.exists(img):
                         st.image(resize_image(img))
-        if audio:
-            if os.path.exists(audio):
-                st.audio(audio, autoplay=True)
-            else:
-                st.info(f"(Missing audio asset: {audio})")
         
         st.space("small")
 
@@ -219,6 +214,11 @@ def render_cloze(step: dict):
             st.success("Correct ✅")
         play_correct()
         st.session_state["take_over_answer"] =  ""
+        if audio:
+            if os.path.exists(audio):
+                st.audio(audio, autoplay=True)
+            else:
+                st.info(f"(Missing audio asset: {audio})")
         return StepOutcome(can_go_next=True)
 
     return StepOutcome(can_go_next=False)
