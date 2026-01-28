@@ -1,4 +1,5 @@
 schlaecht.wav
+wigeits_schlaecht.wav
 gross.wav
 dubischgross.wav
 chlii.wav (klein)
@@ -10,3 +11,19 @@ dirsitjung.wav
 dshuusischgross.wav
 hallo_claudio.wav
 wiegeits_guet.wav
+ichumeuspole.wav
+vowochoemitdir_usdrschwyz.wav
+aermachtoeppis.wav
+siredet.wav
+mirredeaenglisch.wav
+siredehochduetsch.wav
+ichumeuspole_mirredepolnisch.wav
+drbahnhofdstraasdshuus.wav
+ibidrdennis.wav
+dirsitguet.wav
+mirsiusitalie.wav
+mirsischlaecht.wav
+drbahnhofischchlii.wav
+dubischgross_ibichlii.wav
+mirsialt_dirsitjung.wav
+dirsitschlaecht.wav

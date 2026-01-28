@@ -23,6 +23,7 @@ steps:
       helper: "Ich komme aus Deutschland."
       target: ["I ", " Dütschland."]
     answers: ["chume vo", "chume us"]
+    audio: "data/assets/audio/ichumeus_vo.wav"
     solution_display: |
       ✅ Correct!
       
@@ -48,6 +49,7 @@ steps:
       question: "I am from Switzerland."
       helper: "Ich komme aus der Schweiz."
     tokens: ["I", "chume", "us", "dr", "Schwyz."]
+    audio: "data/assets/audio/ichumeusdrschwyz.wav"
     solution_display: |
       ✅ Correct!
       
@@ -72,6 +74,7 @@ steps:
       question: "I am from Poland."
       helper: "Ich komme aus Polen."
     tokens: ["I", "chume", "us", "Pole."]
+    audio: "data/assets/audio/ichumeuspole.wav"
     solution_display: |
       ✅ Correct!
       
@@ -176,6 +179,7 @@ steps:
       helper: "Woher kommen Sie? - Aus der Schweiz!"
       target: ["Vo wo chömit dir? - Us ", "."]
     answers: ["dr schwyz", "dr schwiz"]
+    audio: "data/assets/audio/vowochoemitdir_usdrschwyz.wav"
     solution_display: |
       ✅ Correct!
       

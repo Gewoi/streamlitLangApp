@@ -179,6 +179,7 @@ steps:
       question: "He's doing something!"
       helper: "Er macht etwas!"
     tokens: ["Är", "macht", "öppis!"]
+    audio: "data/assets/audio/aermachtoeppis.wav"
     solution_display: |
       Correct!
       

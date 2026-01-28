@@ -101,6 +101,7 @@ steps:
       question: "The train station, the street, the house"
       helper: "Der Bahnhof, die Strasse, das Haus"
     tokens: ["Dr", "Bahnhof,", "d", "straas,", "ds", "huus"]
+    audio: "data/assets/audio/drbahnhofdstraasdshuus.wav"
     solution_display: |
       ✅ Correct!
       
@@ -135,6 +136,7 @@ steps:
       helper: "Wo ist der Bahnhof?"
       target: ["", " dr Bahnhof?"]
     answers: ["Wo isch"]
+    audio: "data/assets/audio/woisch.wav"
     solution_display: |
       ✅ Correct!
       
@@ -168,6 +170,7 @@ steps:
       question: "Where is the train station?"
       helper: ""
     tokens: ["Wo", "isch", "dr", "Bahnhof?"]
+    audio: "data/assets/audio/woischdrbahnhof.wav"
 
   - type: match
     id: match_14

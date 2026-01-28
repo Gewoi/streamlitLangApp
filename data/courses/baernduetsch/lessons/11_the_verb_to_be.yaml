@@ -53,6 +53,7 @@ steps:
       *I am* is *I bi*; when you introduce yourself with your name, you also need an article **dr/d**.
     images:
       - "data/assets/images/guy_with_headphones.jpg"
+    audio: "data/assets/audio/ibidrdennis.wav"
 
   - type: listen_type
     id: listen_type_3
@@ -96,6 +97,7 @@ steps:
       question: "You (pl.) are good!"
       helper: "Ihr seid gut!"
     tokens: ["Dir", "sit", "guet!"]
+    audio: "data/assets/audio/dirsitguet.wav"
     solution_display: |
       ✅ Correct!
       
@@ -123,6 +125,7 @@ steps:
       question: "We are from Italy!"
       helper: "Wir sind aus Italien!"
     tokens: ["Mir", "si", "us", "Italie!"]
+    audio: "data/assets/audio/mirsiusitalie.wav"
     solution_display: |
       ✅ Correct!
       
@@ -173,6 +176,7 @@ steps:
       question: "I am, you are, she is"
       helper: "Ich bin, du bist, sie ist"
     tokens: ["I", "bi,", "du", "bisch,", "si", "isch"]
+    audio: "data/assets/audio/ibi_dubisch_siisch.wav"
 
   - type: true_false
     id: true_false_13

@@ -63,6 +63,8 @@ steps:
       helper: "Sie spricht."
       target: ["Si ", "."]
     answers: ["redt", "redet"]
+    audio: "data/assets/audio/siredet.wav"
+    
     solution_display: |
       ✅ Correct!
       
@@ -88,6 +90,7 @@ steps:
       question: "We talk English."
       helper: "Wir reden Englisch."
     tokens: ["Mir", "rede", "Änglisch."]
+    audio: "data/assets/audio/mirredeaenglisch.wav"
     solution_display: |
       ✅ Correct!
       
@@ -113,6 +116,7 @@ steps:
       helper: "Sie sprechen Hochdeutsch"
       target: ["Si ", " hochdütsch."]
     answers: ["rede", "redä"]
+    audio: "data/assets/audio/siredehochduetsch.wav"
     solution_display: |
       ✅ Correct!
       
@@ -176,6 +180,7 @@ steps:
       question: "I am from Poland. We speak Polish."
       helper: "Ich komme aus Polen. Wir sprechen Polnisch."
     tokens: ["I", "bi", "us", "Pole.", "Mir", "rede", "Polnisch."]
+    audio: "data/assets/audio/ichumeuspole_mirredepolnisch.wav"
     solution_display: |
       ✅ Correct!
       

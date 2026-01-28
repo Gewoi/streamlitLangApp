@@ -28,6 +28,7 @@ steps:
       For *good*, we say **guet**, and for *bad*, we say **schlächt**.
     images:
       - "data/assets/images/guy_thumbs_down.jpg"
+    audio: "data/assets/audio/wiegeits_schlaecht.wav"
 
   - type: order
     id: order_2
@@ -40,6 +41,7 @@ steps:
       ✅ Correct!
       
       **Mir si schlächt** means *We are bad* (*at something*)
+    audio: "data/assets/audio/mirsischlaecht.wav"
 
   - type: true_false
     id: true_false_3
@@ -73,6 +75,7 @@ steps:
       ✅ Correct!
       
       You can describe things by saying ***noun* isch *adjective***.
+    audio: "data/assets/audio/dshuusischgross.wav"
 
   - type: listen_type
     id: listen_type_6
@@ -109,6 +112,7 @@ steps:
       Note the difference: **Chlii** with a sharp *i* (like in the word *see* in English) means *small*. **Chli**, pronounced almost like "**chle**", means *a little bit* / *some*. We will encounter that one late!
     images:
       - "data/assets/images/old_timey_train.jpg"
+    audio: "data/assets/audio/drbahnhofischchlii.wav"
 
   - type: order
     id: order_9
@@ -121,6 +125,7 @@ steps:
       ✅ Correct!
       
       Also here, **chlii** can mean *short* and *small*, both for objects and people. With children, **chlii** can also mean *young*.
+    audio: "data/assets/audio/dubischgross_ibichlii.wav"
 
   - type: introduce_word
     id: introduce_word_10
@@ -179,6 +184,7 @@ steps:
       ✅ Correct!
       
       In these descriptive sentences (***noun* sii *adjective***), you just use the regular form of the adjective.
+    audio: "data/assets/audio/mirsialt_dirsitjung.wav"
 
   - type: true_false
     id: true_false_15
@@ -225,6 +231,7 @@ steps:
       ✅ Correct!
       
       **Dir sit** is plural *you are*, and **schlächt** means *bad*.
+    audio: "data/assets/audio/dirsitschlaecht.wav"
 
   - type: translate_type
     id: translate_type_19
