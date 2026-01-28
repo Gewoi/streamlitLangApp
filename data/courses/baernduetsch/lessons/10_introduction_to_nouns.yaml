@@ -180,6 +180,14 @@ steps:
       - left: "neuter"
         right: "Huus"
 
+  - type: listen_type
+    id: listen_type_12
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/woischdrbahnhof.wav"
+    answers: ["wo isch dr bahnhof"]
+    images:
+      - "data/assets/images/tourists_map.jpg"
+
   - type: match
     id: match_15
     prompt: "Match the translations (English → Bärndütsch)."
