@@ -1,0 +1,274 @@
+id: 12_simple_adjectives
+title: "🎛 Simple Adjectives"
+description: "Learn some simple adjectives like bad, good, big, small, etc."
+estimated_minutes: 3
+section: Sentence Building
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Schlächt"
+    translation:
+      en: "Bad"
+      de: "Schlecht"
+    images:
+      - "data/assets/images/thumbs_down.jpg"
+    audio: "data/assets/audio/schlaecht.wav"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "How are you doing? - Bad."
+      helper: "Wie geht's? - Schlecht."
+      target: ["Wie geits? - ", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      For *good*, we say **guet**, and for *bad*, we say **schlächt**.
+    images:
+      - "data/assets/images/guy_thumbs_down.jpg"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We are bad."
+      helper: "Wir sind schlecht."
+    tokens: ["Mir", "si", "schlächt."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir si schlächt** means *We are bad* (*at something*)
+
+  - type: true_false
+    id: true_false_3
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/wiegeits.wav"
+    text: "You can answer this question with **guet** or **schlächt**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      Depending on how you're doing you can say **guet** (*good*) or **schlächt** (*bad*).
+
+  - type: introduce_word
+    id: introduce_word_4
+    word: "gross"
+    translation:
+      en: "big"
+      de: "gross"
+    images:
+      - "data/assets/images/skyscrapers.jpg"
+    audio: "data/assets/audio/gross.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The house is big."
+      helper: "Das Haus ist gross."
+    tokens: ["Ds", "Huus", "isch", "gross."]
+    solution_display: |
+      ✅ Correct!
+      
+      You can describe things by saying ***noun* isch *adjective***.
+
+  - type: listen_type
+    id: listen_type_6
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dubischgross.wav"
+    answers: ["Du", "bisch", "gross."]
+    images:
+      - "data/assets/images/tall_guy_lake.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *you are tall*. Note that **gross** means both *big* and *tall*, but **not** *fat* or *heavy* (like *big* in English sometimes does).
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "Chlii"
+    translation:
+      en: "Small"
+      de: "Klein"
+    images:
+      - "data/assets/images/small_flower.jpg"
+    audio: "data/assets/audio/chlii.wav"
+
+  - type: cloze
+    id: cloze_8
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "The train station is small."
+      helper: "Der Bahnhof ist klein."
+      target: ["Dr Bahnhof isch ", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      Note the difference: **Chlii** with a sharp *i* (like in the word *see* in English) means *small*. **Chli**, pronounced almost like "**chle**", means *a little bit* / *some*. We will encounter that one late!
+    images:
+      - "data/assets/images/old_timey_train.jpg"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You are tall. I am short."
+      helper: "Du bist gross. Ich bin klein."
+    tokens: ["Du", "bisch", "gross.", "I", "bi", "chlii."]
+    solution_display: |
+      ✅ Correct!
+      
+      Also here, **chlii** can mean *short* and *small*, both for objects and people. With children, **chlii** can also mean *young*.
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "jung"
+    translation:
+      en: "young"
+      de: "jung"
+    images:
+      - "data/assets/images/kids_faces.jpg"
+    audio: "data/assets/audio/jung.wav"
+
+  - type: translate_type
+    id: translate_type_11
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I am young!"
+      helper: "Ich bin jung!"
+    answers:
+      ["I bi jung"]
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Jung** means *young*. It does **not** mean *new*, for that we have *nöi*.
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "alt"
+    translation:
+      en: "old"
+      de: "alt"
+    images:
+      - "data/assets/images/old_tv.jpg"
+    audio: "data/assets/audio/alt.wav"
+
+  - type: true_false
+    id: true_false_13
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/sisialt.wav"
+    text: "This person says that **they (pl.) are old**"
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The person is saying **Si si alt**, which means *they are old*.
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We are old, you (pl.) are young."
+      helper: "Wir sind alt, ihr seid jung."
+    tokens: ["Mir", "si", "alt,", "dir", "sit", "jung."]
+    solution_display: |
+      ✅ Correct!
+      
+      In these descriptive sentences (***noun* sii *adjective***), you just use the regular form of the adjective.
+
+  - type: true_false
+    id: true_false_15
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dstraasischalt.wav"
+    text: "The street is **newly made**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      The person is saying **D straas isch alt**, which means *the street is old*.
+
+  - type: match
+    id: match_16
+    prompt: "Match the opposite adjectives!"
+    pairs:
+      - left: "guet"
+        right: "schlächt"
+      - left: "gross"
+        right: "chlii"
+      - left: "alt"
+        right: "jung"
+
+  - type: listen_type
+    id: listen_type_17
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/aerischchlii.wav"
+    answers: ["Är isch chlii"]
+    images:
+      - "data/assets/images/mannequin_sizes.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *He is small*.
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You are bad! (at something)"
+      helper: "Ihr seid schlecht!"
+    tokens: ["Dir", "sit", "schlächt!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Dir sit** is plural *you are*, and **schlächt** means *bad*.
+
+  - type: translate_type
+    id: translate_type_19
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "The train station is old."
+      helper: "Der Bahnhof ist alt."
+    answers:
+      ["Dr bahnhof isch alt"]
+    images:
+      - "data/assets/images/old_timey_train.jpg"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dirsitjung.wav"
+    answers: ["Dir sit jung"]
+    images:
+      - "data/assets/images/kids_faces.jpg"
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dshuusischgross.wav"
+    text: "The house is **big**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      **Gross** means big!
+
+  - type: match
+    id: match_22
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "big"
+        right: "gross"
+      - left: "chlii"
+        right: "small"
+      - left: "good"
+        right: "guet"
+      - left: "bad"
+        right: "schlächt"
+      - left: "old"
+        right: "alt"
+      - left: "young"
+        right: "jung"
