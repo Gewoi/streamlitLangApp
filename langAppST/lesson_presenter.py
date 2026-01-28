@@ -64,8 +64,9 @@ def highlight_differences(input_str, candidates, similarity_threshold=0.5):
     
     return ''.join(md_output)
 
-def mistake_made():
+def mistake_made(step : dict):
     st.session_state["mistakes"] += 1
+    st.session_state["step_append"] = step
     play_wrong()
 
 def submitted_exercise(sol_display : str = ""):
@@ -204,12 +205,12 @@ def render_cloze(step: dict):
             st.session_state["take_over_answer"] = str(goal_sentence_arr[0] + answer + goal_sentence_arr[1])
             st.rerun()
         else:
-            mistake_made()
+            mistake_made(step)
             result = highlight_differences(answer, caseIns_solutions)
             if result:
                 st.error(f"Not quite: {result}")
             else:
-                st.error("Not quite. Try again.")
+                st.error(f"Not quite. A possible solution is: **{solutions[0]}**")
 
     if not st.session_state["take_over_answer"] == "":
         if sol_display:
@@ -292,8 +293,8 @@ def render_order(step: dict):
             st.session_state["exercise_done"] = True
             st.rerun()
         else:
-            mistake_made()
-            st.error("Not quite. Try again.")
+            mistake_made(step)
+            st.error(f"Not quite. The solution is: **{solutions}**")
 
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)
@@ -342,12 +343,12 @@ def render_translate_type(step : dict):
             st.session_state["exercise_done"] = True
             st.rerun()
         else:
-            mistake_made()
+            mistake_made(step)
             result = highlight_differences(answer_type, solutions)
             if result:
                 st.error(f"Not quite: {result}")
             else:
-                st.error("Not quite. Try again.")
+                st.error(f"Not quite. A possible solution is: **{solutions[0]}**")
 
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)
@@ -387,12 +388,12 @@ def render_listen_type(step : dict):
             st.session_state["exercise_done"] = True
             st.rerun()
         else:
-            mistake_made()
+            mistake_made(step)
             result = highlight_differences(answer_listen, solutions)
             if result:
                 st.error(f"Not quite: {result}")
             else:
-                st.error("Not quite. Try again.")
+                st.error(f"Not quite. A possible solution is: **{solutions[0]}**")
 
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)
@@ -508,7 +509,7 @@ def render_true_false(step: dict):
         if answer == label:
             return True
         else:
-            mistake_made()
+            mistake_made(step)
             st.error("Not quite. Try again.")
             return False
 

@@ -136,6 +136,19 @@ def course_page(course_id : str, store : ProgressStore):
                 st.session_state["new_words"] = find_new_exercises(lesson)
                 st.rerun()
 
+        
+        #For last section on the page
+        if current_section == sections[-1] and lesson == lesson_list[-1]:
+            with st.container(border=True, key=f"section_finish_{current_section}"):
+                st.markdown(f"### 🧠Test your {current_section} knowledge!", text_alignment="center")
+                st.markdown(f"Repeat some exercises from the section {current_section}", text_alignment="center")
+                if st.button(label="Repeat", width="stretch", key=f"start_section_rep_{current_section}"):
+                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                    clear_lesson_sessionstate()
+                    st.session_state["step_idx"] = 0
+                    st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
+                    st.rerun()
+
     with st.sidebar:
         st.title("Recommended Lesson:")
         rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
@@ -164,10 +177,12 @@ def course_page(course_id : str, store : ProgressStore):
                     st.session_state["lesson_dict"] = store.generate_word_repetition(st.session_state["user"].id, course_id)
                     st.rerun()
 
-        
 
 def player(course_id : str, lesson_id : str, store : ProgressStore):
     course_dict = get_course(course_id)
+    if "step_append" in st.session_state:
+        st.session_state["lesson_dict"]["steps"].append(st.session_state["step_append"])
+        del st.session_state["step_append"]
     lesson_dict = st.session_state["lesson_dict"]
     step_idx = st.session_state["step_idx"]
 

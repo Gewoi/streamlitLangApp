@@ -17,6 +17,8 @@ steps:
       The Course gives explanations in between.
       
       IMPORTANT: Sometimes the *solution* displays also contain **helpful explanations**.
+
+      If you make a mistake during an exercise, it will be added at the end of the lesson so you can practice again!
       
     images:
       - "data/assets/images/bern.jpg"
