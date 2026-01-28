@@ -137,9 +137,13 @@ elif page == "lesson":
 elif page == "finish":
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), st.session_state["supabase"])
 
-
-with st.sidebar.container(key="sidebar_bottom"):
-    st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
-    if logged_in:
-        if st.button("Logout", type="primary", key="logout_btn"):
-            logout()
+if page == "login":
+    st.space("small")
+    st.divider()
+    st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️")
+else:
+    with st.sidebar.container(key="sidebar_bottom"):
+        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
+        if logged_in:
+            if st.button("Logout", type="primary", key="logout_btn"):
+                logout()

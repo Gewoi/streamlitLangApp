@@ -46,8 +46,8 @@ height: 0%;
 }
 
 [class*="sidebar_bottom"] {
-        position: absolute;
-        bottom: 10px;
+        position: sticky;
+        bottom: 5px;
     }
 
 

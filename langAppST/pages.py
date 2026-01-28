@@ -70,7 +70,7 @@ def login_page():
 
     st.divider()
     st.caption("Use the app as a guest. Your progress will not be saved, and you will not get recommended lessons and repetitions.")
-    if st.button("Continue as Guest"):
+    if st.button("Continue as Guest", width="stretch"):
         st.session_state["guest"] = True
         st.rerun()
 
@@ -93,8 +93,9 @@ def homepage():
                 
 
 def course_page(course_id : str, store : ProgressStore):
-    st.title("Select Lesson")
-    st.markdown("Pick a lesson!")
+    st.title("Select Lesson",text_alignment="center")
+    st.markdown("Pick a lesson!", text_alignment="center")
+    st.caption("Check out the sidebar to repeat the lesson you remember the least, or try to get a random selection of exercises to train with!")
 
     course_dict = get_course(course_id)
     sections = course_dict["sections"]
