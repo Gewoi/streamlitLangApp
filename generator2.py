@@ -163,6 +163,8 @@ def export_to_yaml(lesson: Dict) -> str:
                 lines.append('    images:')
                 for img in step['images']:
                     lines.append(f'      - "{img}"')
+            if step.get('audio'):
+                lines.append(f'    audio: "{step["audio"]}"')
                     
         elif step_type == 'order':
             lines.append(f'    prompt: "{step.get("prompt", "")}"')
@@ -681,6 +683,11 @@ class ClozeStepEditor(BaseStepEditor):
         self.after_entry.pack(side='left')
         self.after_entry.insert(0, target[1] if len(target) > 1 else '')
         
+        # Audio
+        self.audio_entry = FilePathEntry(self, "Audio:", 'audio')
+        self.audio_entry.pack(fill='x', pady=3)
+        self.audio_entry.set(step_data.get('audio', ''))
+
         # Answers
         self.answers_editor = AnswersEditor(self)
         self.answers_editor.pack(fill='x', pady=5)
@@ -1261,6 +1268,7 @@ class LessonEditorApp:
             new_step['sentence'] = {'question': '', 'helper': '', 'target': ['', '']}
             new_step['answers'] = []
             new_step['solution_display'] = ''
+            new_step['audio'] = ''
             new_step['images'] = []
         elif step_type == 'order':
             new_step['prompt'] = 'Put the words in the correct order (Bärndütsch).'
