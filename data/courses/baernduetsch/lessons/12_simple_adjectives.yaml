@@ -22,6 +22,7 @@ steps:
       question: "How are you doing? - Bad."
       helper: "Wie geht's? - Schlecht."
       target: ["Wie geits? - ", "."]
+    answers: ["schlächt"]
     solution_display: |
       ✅ Correct!
       
@@ -106,6 +107,7 @@ steps:
       question: "The train station is small."
       helper: "Der Bahnhof ist klein."
       target: ["Dr Bahnhof isch ", "."]
+    answers: ["chlii"]
     solution_display: |
       ✅ Correct!
       
