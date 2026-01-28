@@ -162,6 +162,7 @@ steps:
       question: "Where are you from? (pl)"
       helper: "Woher kommt ihr?"
     tokens: ["Vo", "wo", "chömit", "dir?"]
+    audio: "data/assets/audio/vowochoemitdir.wav"
     solution_display: |
       ✅ Correct!
       

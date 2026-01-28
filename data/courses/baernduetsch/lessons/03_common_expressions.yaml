@@ -260,6 +260,7 @@ steps:
       question: "Are you doing good? - Yes, thank you!"
       helper: ""
     tokens: ["Geits", "guet?", "Ja,", "merci!"]
+    audio: "data/assets/audio/geitsguet_jamerci.wav"
     solution_display: |
       ✅ Correct!
 

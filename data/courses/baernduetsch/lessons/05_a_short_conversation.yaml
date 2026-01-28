@@ -79,6 +79,7 @@ steps:
       helper: "Und Ihnen?"
       target: ["", " öich?"]
     answers: ["U", "Und"]
+    audio: "data/assets/audio/ueuch.wav"
     solution_display: |
       ✅ Correct!
       

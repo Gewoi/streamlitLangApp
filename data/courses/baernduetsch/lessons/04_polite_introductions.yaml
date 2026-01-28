@@ -39,6 +39,7 @@ steps:
       helper: "Guten Tag, Herr Marti!"
       target: ["", ", Herr Marti!"]
     answers: ["grüessech", "gruessech", "guete tag"]
+    audio: "data/assets/audio/gruessech.wav"
     solution_display: |
       ✅ Correct! Greeting someone politely is **Grüessech**.
       

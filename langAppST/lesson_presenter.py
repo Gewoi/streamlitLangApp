@@ -255,11 +255,6 @@ def render_order(step: dict):
             for img in images:
                 if os.path.exists(img):
                     st.image(resize_image(img))
-    if audio:
-        if os.path.exists(audio):
-            st.audio(audio, autoplay=True)
-        else:
-            st.info(f"(Missing audio asset: {audio})")
     #TODO: Better formatting!!
 
     st.divider()
@@ -297,6 +292,11 @@ def render_order(step: dict):
             st.error(f"Not quite. The solution is: **{solutions}**")
 
     if st.session_state["exercise_done"]:
+        if audio:
+            if os.path.exists(audio):
+                st.audio(audio, autoplay=True)
+            else:
+                st.info(f"(Missing audio asset: {audio})")
         return submitted_exercise(sol_display)
     
     return StepOutcome(can_go_next=False)

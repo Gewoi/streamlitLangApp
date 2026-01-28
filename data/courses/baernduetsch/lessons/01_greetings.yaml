@@ -73,6 +73,7 @@ steps:
       helper: "Hallo, Claudio!"
       target: [" ", ", Claudio!"]
     answers: ["hallo", "sälü", "tschau", "tschou"]
+    audio: "data/assets/audio/hallo_claudio.wav"
     solution_display: |
       ✅ Correct! **Hallo** means hello.
       
@@ -109,6 +110,7 @@ steps:
       question: "How are you?"
       helper: "Wie geht's dir?"
     tokens: ["Wie", "geit's", "dr?"]
+    audio: "data/assets/audio/wiegeits.wav"
     solution_display: |
       ✅ Correct! 
       
@@ -198,6 +200,7 @@ steps:
       helper: "Wie geht's?"
       target: ["Wie ", " dir?"]
     answers: ["geits", "geit's"]
+    audio: "data/assets/audio/wiegeits.wav"
     solution_display: |
       ✅ Correct!
       
@@ -222,6 +225,7 @@ steps:
       question: "Bye, see you later!"
       helper: "Tschüss, bis später!"
     tokens: ["Tschau,", "bis", "speter!"]
+    audio: "data/assets/audio/tschussbisspeter.wav"
     solution_display: |
       ✅ Correct!
       
@@ -268,6 +272,7 @@ steps:
       helper: "Wie geht's? - Gut"
       target: ["Wie geits? - ", "!"]
     answers: ["guet"]
+    audio: "data/assets/audio/wiegeits_guet.wav"
     solution_display: |
       ✅ Correct!
       

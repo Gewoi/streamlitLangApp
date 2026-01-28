@@ -102,6 +102,7 @@ steps:
       question: "What's your name?"
       helper: "Wie heisst du?"
     tokens: ["Wie", "heissisch", "du?"]
+    audio: "data/assets/audio/wieheissischdu.wav"
     solution_display: |
       ✅ Correct!
 
