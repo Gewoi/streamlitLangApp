@@ -282,4 +282,4 @@ def reset_select_sessionstate_and_rerun():
     st.session_state["left"] = []
     st.session_state["right"] = []
     st.session_state["match_sound"] = ""
-    st.rerun()
+    st.rerun(scope="app")

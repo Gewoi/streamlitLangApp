@@ -15,7 +15,7 @@ DEFAULT_TARGET_SIZE = (350, 300)
 
 def autoplay_sound(sound_path):
     with st.container(key=f"sound_fx_{random.randint(0,4000)}", width=1):
-        audio_no_download(sound_path, autoplay=True)
+        audio_no_download(sound_path, autoplay=True, key=sound_path)
 
 @st.cache_data(show_spinner=False)
 def play_correct():

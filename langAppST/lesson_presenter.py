@@ -83,7 +83,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
             audio = step["audio"]
             if audio:
                 if os.path.exists(audio):
-                    audio_no_download(audio, autoplay=True)
+                    audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state["step_idx"]}")
                 else:
                     st.info(f"(Missing audio asset: {audio})")
     return StepOutcome(can_go_next=True)
@@ -112,6 +112,7 @@ def render_step(step : dict):
 
 @st.fragment
 def render_markdown(step : dict):
+    _ = st.session_state.get("fragment_refresh", 0)
     st.markdown(step.get("markdown", "no markdown found"), unsafe_allow_html=True)
 
     images = step.get("images", [])
@@ -124,7 +125,7 @@ def render_markdown(step : dict):
 
     if audio:
         if os.path.exists(audio):
-            audio_no_download(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True, key=f"audio_markdown_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -132,6 +133,7 @@ def render_markdown(step : dict):
 
 @st.fragment
 def render_introduce_word(step : dict):
+    _ = st.session_state.get("fragment_refresh", 0)
     word = step["word"]
 
     original = step["translation"]["en"] or None
@@ -149,7 +151,7 @@ def render_introduce_word(step : dict):
     
     if audio:
         if os.path.exists(audio):
-            audio_no_download(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True, key=f"audio_intro_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -178,7 +180,7 @@ def render_cloze(step: dict):
     audio = step.get("audio",None)
     images = step.get("images",None)
     #st.space("small")
-    with st.form("answer", border=False):
+    with st.form(f"form_answer_cloze_{st.session_state["step_idx"]}", border=False):
         if original_sentence:
             st.markdown(f"__{original_sentence}__", text_alignment="center")
         if helper_sentence:
@@ -201,7 +203,7 @@ def render_cloze(step: dict):
         else:
             st.markdown(f"### {st.session_state["take_over_answer"]}", text_alignment="center")
 
-        answer = st.text_input("answer_cloze", autocomplete="off", label_visibility="hidden", value="")
+        answer = st.text_input(f"answer_cloze_{st.session_state["step_idx"]}", autocomplete="off", label_visibility="hidden", value="")
         submitted = st.form_submit_button("Check", width="stretch")
 
 
@@ -228,7 +230,7 @@ def render_cloze(step: dict):
         time.sleep(.65)
         if audio:
             if os.path.exists(audio):
-                audio_no_download(audio, autoplay=True)
+                audio_no_download(audio, autoplay=True, key=f"audio_cloze_{st.session_state["step_idx"]}")
             else:
                 st.info(f"(Missing audio asset: {audio})")
         return StepOutcome(can_go_next=True)
@@ -292,7 +294,7 @@ def render_order(step: dict):
                 st.session_state["order_answer"] += [tokens[i]]
                 st.rerun()
     st.divider()
-    with st.form("answer", border=False):
+    with st.form(f"answer_order_{st.session_state["step_idx"]}", border=False):
         submitted = st.form_submit_button("Check", width="stretch", shortcut="enter")
 
     if submitted:
@@ -325,7 +327,7 @@ def render_translate_type(step : dict):
     images = step.get("images", None)
 
     #st.space("small")
-    with st.form("answer", border=False):
+    with st.form(f"form_answer_translate_{st.session_state["step_idx"]}", border=False):
         if original_sentence:
             st.markdown(f"### {original_sentence}", text_alignment="center")
         if helper_sentence:
@@ -337,11 +339,11 @@ def render_translate_type(step : dict):
                         st.image(resize_image(img))
         if audio:
             if os.path.exists(audio):
-                audio_no_download(audio, autoplay=True)
+                audio_no_download(audio, autoplay=True, key=f"audio_translate_{st.session_state["step_idx"]}")
             else:
                 st.info(f"(Missing audio asset: {audio})")
 
-        answer_type = st.text_input("answer_type", label_visibility="hidden", autocomplete="off", value = "")
+        answer_type = st.text_input(f"answer_type_{st.session_state["step_idx"]}", label_visibility="hidden", autocomplete="off", value = "")
         
         submitted = st.form_submit_button("Check", width="stretch")
     
@@ -375,18 +377,18 @@ def render_listen_type(step : dict):
     images = step.get("images", None)
 
     #st.space("small")
-    with st.form("answer", border=False):
+    with st.form(f"form_answer_listen_{st.session_state["step_idx"]}", border=False):
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
                     if os.path.exists(img):
                         st.image(resize_image(img))
         if os.path.exists(audio):
-            audio_no_download(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True, key=f"audio_listen_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 
-        answer_listen = st.text_input("answer_listen", label_visibility="hidden", autocomplete="off", value = "")
+        answer_listen = st.text_input(f"answer_listen_{st.session_state["step_idx"]}", label_visibility="hidden", autocomplete="off", value = "")
         
         submitted = st.form_submit_button("Check", width="stretch")
     
@@ -500,7 +502,7 @@ def render_true_false(step: dict):
 
     if audio:
         if os.path.exists(audio):
-            audio_no_download(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
     if images:
