@@ -58,7 +58,7 @@ steps:
   - type: listen_type
     id: listen_type_3
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/vowobischdu.wav"
+    audio: "data/assets/audio/vowobischdu_vowochunnschdu.wav"
     answers: ["Vo wo bisch du"]
     images:
       - "data/assets/images/woman_asking.jpg"
