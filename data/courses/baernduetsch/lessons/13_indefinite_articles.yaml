@@ -1,0 +1,354 @@
+id: 13_indefinite_articles
+title: "🅰 Indefinite Articles"
+description: "Learn about indefinite articles like *ä*, *äs*, as well as **das/ds** (*this*). "
+estimated_minutes: 3
+section: Simple Concepts
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## Ä und Äs
+      
+      In Bärndütsch, we have two versions of the indefinite article *a*:
+      
+      - **Ä**: For *masculine* and *feminine* nouns
+      	- ***Ä* Bahnhof**, ***Ä* Straas**
+      - **Äs**: For *neuter* nouns
+      	- ***Äs* Huus***
+      
+      You can alternatively also write them as **e** and **es**; through the course, you'll probably see me use this more often.
+      
+      This is a bit different from German, where *ein* is for masculine and neuter, and *eine* is for feminine. Here, the neuter ones get their own indefinite article. Let's look at some examples!
+    images:
+      - "data/assets/images/letter_a.jpg"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Ä Maa"
+    translation:
+      en: "A man"
+      de: "Ein Mann"
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
+    audio: "data/assets/audio/aemaa.wav"
+
+  - type: match
+    id: match_1
+    prompt: "Match the indefinite articles!"
+    pairs:
+      - left: "Ä"
+        right: "Maa"
+      - left: "Äs"
+        right: "Huus"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Ä Frou"
+    translation:
+      en: "A woman"
+      de: "Eine Frau"
+    images:
+      - "data/assets/images/woman_waving_two.jpg"
+    audio: "data/assets/audio/aefrou.wav"
+
+  - type: true_false
+    id: true_false_4
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aemaaundaefrou.wav"
+    text: "**Maa** and **Frou** use **different** indefinite articles."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      Both for *masculine* and *feminine* nouns we use **Ä**.
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "A man and a woman."
+      helper: "Ein Mann und eine Frau."
+      target: ["", " und e Frou."]
+    answers: ["ä maa", "ä maah"]
+    audio : "data/assets/audio/aemaaundaefrou.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      **Maa** and **Frou** both use the same indefinite article!
+    images:
+      - "data/assets/images/man_woman_bw.jpg"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Äs Chind"
+    translation:
+      en: "A child"
+      de: "Ein Kind"
+    images:
+      - "data/assets/images/kid_with_toy.jpg"
+    audio: "data/assets/audio/aeschind.wav"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "A woman and a child."
+      helper: "Eine Frau und ein Kind."
+    audio : "data/assets/audio/aefrouundaeschind.wav"
+    tokens: ["Ä", "Frou", "und", "äs", "chind."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Chind** is *neuter* and therefore had the indefinite article **äs**.
+
+  - type: match
+    id: match_8
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "A man"
+        right: "Ä Maa"
+      - left: "A woman"
+        right: "Ä Frou"
+      - left: "A child"
+        right: "Äs chind"
+
+  - type: markdown
+    id: markdown_9
+    markdown: |
+      ## Connecting: I bine Maa
+      
+      A unique thing in Switzerland (and specifically in Bärndütsch): We often do not like to say **two strongly pronounced vowels next to each other**!
+      
+      What happens when we have those to close to each other is that we **add an *n*** and **connect** the words, especially with short expressions like **ä/äs**.
+      
+      In practice this looks as follows:
+      
+      - *I bi ä maa* -> **I bine maa**
+      - *I bi ä frou* -> **I bine frou**
+      - *I bi äs chind* -> **I bines chind**
+      
+      But not in:
+      
+      - *Du bisch ä Frou*
+      
+      Because the vowels are nicely separated here!
+      
+      This is **not** *absolutely* necessary, nobody will be confused when you say it like in the first row. But it is very typical in Bärndütsch when you hear it!
+      
+      We will go into a bit more detail on these *connections* in the next lesson.
+    images:
+      - "data/assets/images/chain.jpg"
+
+  - type: match
+    id: match_10
+    prompt: "Match the missing word"
+    pairs:
+      - left: "I ___ Maa"
+        right: "bine"
+      - left: "I ___ Chind"
+        right: "bines"
+      - left: "Du ___ Frou"
+        right: "bisch ä"
+
+  - type: true_false
+    id: true_false_11
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ibinemaa.wav"
+    text: "He's saying that **he is a man**"
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      When we have two strong vowels close to each other, we often add **-n** and **connect the words**.
+
+  - type: cloze
+    id: cloze_12
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am a child"
+      helper: "Ich bin ein Kind"
+      target: ["I ", " chind."]
+    answers: ["bines", "bi äs"]
+    audio : "data/assets/audio/ibineschind.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      Generally, when you can connect the words, you want to do it; but instead of **bines** you could also say **bi äs** and you would be totally fine!
+    images:
+      - "data/assets/images/kid_with_toy.jpg"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "Das isch äs Huus"
+    translation:
+      en: "This is a house"
+      de: "Das ist ein Haus"
+    images:
+      - "data/assets/images/house_grass.jpg"
+    audio: "data/assets/audio/dasischaeshuus.wav"
+
+  - type: markdown
+    id: markdown_14
+    markdown: |
+      ## This is...
+      
+      To say *this* or *that*, we say **das**. You can use it at the beginning of a sentence (**Das isch äs Huus**) or at the end of it to say *that* (**I gseh das** <-> *I see that*).
+      
+      If you really want to distinguish between *this* and *that*, you can specify it with **hie** (*here*) and **dört** (*there*).
+      
+      - **Das *hie* isch ä Bahnhof** (*This here is a train station*)
+      - **Das *dört* isch äs Huus** (*That there is a house*)
+    images:
+      - "data/assets/images/pointing_distance.jpg"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "hie"
+    translation:
+      en: "here"
+      de: "hier"
+    images:
+      - "data/assets/images/pointing_map.jpg"
+    audio: "data/assets/audio/hie.wav"
+
+  - type: introduce_word
+    id: introduce_word_16
+    word: "dört / dert"
+    translation:
+      en: "there"
+      de: "dort"
+    images:
+      - "data/assets/images/pointing_distance.jpg"
+    audio: "data/assets/audio/doert_dert.wav"
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "This is big!"
+      helper: "Das ist gross!"
+    tokens: ["Das", "isch", "gross!"]
+    audio : "data/assets/audio/dasischgross.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      **Das** means *this/that*.
+
+  - type: translate_type
+    id: translate_type_18
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "This is old!"
+      helper: "Das ist alt!"
+    answers:
+      ["Das isch alt", "Das hie isch alt"]
+    images:
+      - "data/assets/images/old_house.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      If you wanna specify that something is closeby, you can also say **Das (noun) hie**, and if you mean something away, you can say **Das (noun) dört!**
+
+  - type: listen_type
+    id: listen_type_19
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dasischguet.wav"
+    answers: ["das isch guet"]
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *this/that is good*
+
+  - type: cloze
+    id: cloze_20
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "That over there is a house!"
+      helper: "Das dort ist ein Haus!"
+      target: ["Das ", " isch es Huus."]
+    answers: ["dört", "dert"]
+    audio : "data/assets/audio/dasdoertischeshuus.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      For *there*, you can use both **dört** and **dert**; it's the same word, but depending on where people grew up in Bern they have preferences!
+    images:
+      - "data/assets/images/house_grass.jpg"
+
+  - type: listen_type
+    id: listen_type_21
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dashieischestraas.wav"
+    answers: ["das hie isch ä straas", "das hie isch e straas"]
+    images:
+      - "data/assets/images/city_street.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      *This here is a street*. You can write **ä** or **e** for the indefinite article.
+
+  - type: true_false
+    id: true_false_22
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dasdoertischeshuus.wav"
+    text: "The house they're talking about is **right here**"
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying **Das *dört*** which means *that (over there)*, so we can assume that this house is something they're pointing at, perhaps from a distance.
+
+  - type: cloze
+    id: cloze_23
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am here."
+      helper: "Ich bin hier."
+      target: ["I bi ", "."]
+    answers: ["hie", "hiä"]
+    audio : "data/assets/audio/ibihie.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      **Hie** means *here*, and **dört/dert** means there!
+    images:
+      - "data/assets/images/woman_waving.jpg"
+
+  - type: translate_type
+    id: translate_type_24
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "You are there!"
+      helper: "Du bist dort!"
+    answers:
+      ["Du bisch dört", "du bisch dert", "du bisch derte"]
+    images:
+      - "data/assets/images/pointing_distance.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Dört/dert** means *there*, and **hie** means *here*.
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "This/That"
+        right: "Das"
+      - left: "This here"
+        right: "Das hie"
+      - left: "That there"
+        right: "Das dört / Das dert"
+      - left: "here"
+        right: "hie"
+      - left: "there"
+        right: "dört / dert"
+      - left: "A man"
+        right: "Ä Maa"
+      - left: "A woman"
+        right: "Ä Frou"
+      - left: "A child"
+        right: "Äs chind"

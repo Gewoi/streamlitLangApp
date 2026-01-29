@@ -8,6 +8,7 @@ description: |
 sections: 
   - Basics
   - Sentence Building
+  - Simple Concepts
 from_language: en
 target_language: de_ch
 secondary_language: de
