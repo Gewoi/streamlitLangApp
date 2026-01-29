@@ -202,6 +202,18 @@ steps:
     images:
       - "data/assets/images/pointing_distance.jpg"
 
+  - type: listen_type
+    id: listen_type_19
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dasischguet.wav"
+    answers: ["das isch guet"]
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *this/that is good*
+
   - type: introduce_word
     id: introduce_word_15
     word: "hie"
@@ -221,6 +233,47 @@ steps:
     images:
       - "data/assets/images/pointing_distance.jpg"
     audio: "data/assets/audio/doert_dert.wav"
+
+  - type: match
+    id: match_extra_22
+    prompt: "Match the translation"
+    pairs:
+      - left: "here"
+        right: "hie"
+      - left: "there"
+        right: "dört / dert"
+
+  - type: cloze
+    id: cloze_extre_22
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Here is a train station."
+      helper: "Hier ist ein Bahnhof."
+      target: ["", " isch ä bahnhof."]
+    answers: ["hie", "hiä"]
+    audio : "data/assets/audio/hieischebahnhof.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      **Hie** means *here*.
+    images:
+      - "data/assets/images/trainstation.jpg"
+
+  - type: cloze
+    id: cloze_20
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "That over there is a house!"
+      helper: "Das dort ist ein Haus!"
+      target: ["Das ", " isch es Huus."]
+    answers: ["dört", "dert"]
+    audio : "data/assets/audio/dasdoertischeshuus.wav"
+    solution_display: |
+      ✅ Correct!
+      
+      For *there*, you can use both **dört** and **dert**; it's the same word, but depending on where people grew up in Bern they have preferences!
+    images:
+      - "data/assets/images/house_grass.jpg"
 
   - type: order
     id: order_17
@@ -249,34 +302,6 @@ steps:
       ✅ Correct!
       
       If you wanna specify that something is closeby, you can also say **Das (noun) hie**, and if you mean something away, you can say **Das (noun) dört!**
-
-  - type: listen_type
-    id: listen_type_19
-    prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dasischguet.wav"
-    answers: ["das isch guet"]
-    images:
-      - "data/assets/images/thumbs_up.jpg"
-    solution_display: |
-      ✅ Correct!
-      
-      This means *this/that is good*
-
-  - type: cloze
-    id: cloze_20
-    prompt: "Fill in the missing words (answer in Bärndütsch)."
-    sentence:
-      question: "That over there is a house!"
-      helper: "Das dort ist ein Haus!"
-      target: ["Das ", " isch es Huus."]
-    answers: ["dört", "dert"]
-    audio : "data/assets/audio/dasdoertischeshuus.wav"
-    solution_display: |
-      ✅ Correct!
-      
-      For *there*, you can use both **dört** and **dert**; it's the same word, but depending on where people grew up in Bern they have preferences!
-    images:
-      - "data/assets/images/house_grass.jpg"
 
   - type: listen_type
     id: listen_type_21
