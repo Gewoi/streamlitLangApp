@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import pathlib as Path
 from string import ascii_letters
 from .content import resize_image, play_correct, play_wrong, play_match_correct
+import time
 
 import random
 import difflib
@@ -69,12 +70,21 @@ def mistake_made(step : dict):
     st.session_state["step_append"] = step
     play_wrong()
 
-def submitted_exercise(sol_display : str = ""):
+def submitted_exercise(sol_display : str = "", step : dict = None):
     if sol_display:
         st.success(sol_display)
     else:
         st.success("Correct ✅")
     play_correct()
+    if step:
+        if step["type"] == "order":
+            time.sleep(.65)
+            audio = step["audio"]
+            if audio:
+                if os.path.exists(audio):
+                    st.audio(audio, autoplay=True)
+                else:
+                    st.info(f"(Missing audio asset: {audio})")
     return StepOutcome(can_go_next=True)
 
 
@@ -214,6 +224,7 @@ def render_cloze(step: dict):
             st.success("Correct ✅")
         play_correct()
         st.session_state["take_over_answer"] =  ""
+        time.sleep(.65)
         if audio:
             if os.path.exists(audio):
                 st.audio(audio, autoplay=True)
@@ -292,12 +303,7 @@ def render_order(step: dict):
             st.error(f"Not quite. The solution is: **{solutions}**")
 
     if st.session_state["exercise_done"]:
-        if audio:
-            if os.path.exists(audio):
-                st.audio(audio, autoplay=True)
-            else:
-                st.info(f"(Missing audio asset: {audio})")
-        return submitted_exercise(sol_display)
+        return submitted_exercise(sol_display, step)
     
     return StepOutcome(can_go_next=False)
 
