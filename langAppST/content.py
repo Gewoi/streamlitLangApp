@@ -4,6 +4,7 @@ import streamlit as st
 import glob
 import cv2
 import random
+from .no_dl_audio import audio_no_download
 
 from pathlib import Path
 import yaml
@@ -14,7 +15,7 @@ DEFAULT_TARGET_SIZE = (350, 300)
 
 def autoplay_sound(sound_path):
     with st.container(key=f"sound_fx_{random.randint(0,4000)}", width=1):
-        st.audio(sound_path, autoplay=True)
+        audio_no_download(sound_path, autoplay=True)
 
 @st.cache_data(show_spinner=False)
 def play_correct():

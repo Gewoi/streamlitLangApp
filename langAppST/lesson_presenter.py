@@ -7,6 +7,7 @@ import pathlib as Path
 from string import ascii_letters
 from .content import resize_image, play_correct, play_wrong, play_match_correct
 import time
+from .no_dl_audio import audio_no_download
 
 import random
 import difflib
@@ -82,7 +83,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
             audio = step["audio"]
             if audio:
                 if os.path.exists(audio):
-                    st.audio(audio, autoplay=True)
+                    audio_no_download(audio, autoplay=True)
                 else:
                     st.info(f"(Missing audio asset: {audio})")
     return StepOutcome(can_go_next=True)
@@ -123,7 +124,7 @@ def render_markdown(step : dict):
 
     if audio:
         if os.path.exists(audio):
-            st.audio(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -148,7 +149,7 @@ def render_introduce_word(step : dict):
     
     if audio:
         if os.path.exists(audio):
-            st.audio(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -227,7 +228,7 @@ def render_cloze(step: dict):
         time.sleep(.65)
         if audio:
             if os.path.exists(audio):
-                st.audio(audio, autoplay=True)
+                audio_no_download(audio, autoplay=True)
             else:
                 st.info(f"(Missing audio asset: {audio})")
         return StepOutcome(can_go_next=True)
@@ -336,7 +337,7 @@ def render_translate_type(step : dict):
                         st.image(resize_image(img))
         if audio:
             if os.path.exists(audio):
-                st.audio(audio, autoplay=True)
+                audio_no_download(audio, autoplay=True)
             else:
                 st.info(f"(Missing audio asset: {audio})")
 
@@ -381,7 +382,7 @@ def render_listen_type(step : dict):
                     if os.path.exists(img):
                         st.image(resize_image(img))
         if os.path.exists(audio):
-            st.audio(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -499,7 +500,7 @@ def render_true_false(step: dict):
 
     if audio:
         if os.path.exists(audio):
-            st.audio(audio, autoplay=True)
+            audio_no_download(audio, autoplay=True)
         else:
             st.info(f"(Missing audio asset: {audio})")
     if images:

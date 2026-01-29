@@ -67,3 +67,7 @@ height: 0%;
     animation-name: myAnimation;
     animation-duration: 1s;
 }
+
+audio::-webkit-media-controls-overflow-button {
+    display: none !important;
+}
