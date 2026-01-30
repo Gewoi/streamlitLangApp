@@ -1,7 +1,243 @@
 id: 14_the_verb_to_have
-title: "The Verb *To Have*"
+title: "🤳The Verb *To Have*"
 description: "Learn the conjugations of the word **haa**, which means *to have*, and  how to use it!"
 estimated_minutes: 4
 section: Simple Concepts
 
 steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## Haa (to have)
+      
+      The verb **haa** (*to have*) is a bit irregular, just like the word **sii** (*to be*). It's forms are the following:
+
+      <center>
+      | singular | | plural | |
+      | --- | --- | --- | --- |
+      | I / Ig | **ha** | Mir | **hei** |
+      | Du | **hesch** | Dir | **heit**|
+      | Är / Si / Äs | **hett** | Si | **hei** |
+      </center>
+      
+      The verb **haa** is used very frequently; you'll encounter it often when we look at the **past tense**.
+    images:
+      - "data/assets/images/have_fun.jpg"
+
+  - type: match
+    id: match_7
+    prompt: "Match the singular conjugations!"
+    pairs:
+      - left: "I / Ig "
+        right: "ha"
+      - left: "Du"
+        right: "hesch"
+      - left: "Är / Si / Äs"
+        right: "hett"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I have something!"
+      helper: "Ich habe etwas!"
+      target: ["I ", " öppis!"]
+    answers: ["ha"]
+    solution_display: |
+      ✅ Correct!
+      
+      **I ha** means *I have*.
+    images:
+      - "data/assets/images/kid_with_toy.jpg"
+    audio: "data/assets/audio/ihaoeppis.wav"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The woman has a house."
+      helper: "Die Frau hat ein Haus."
+    tokens: ["D", "Frou", "hett", "äs", "huus."]
+    audio: "data/assets/audio/dfrouhetteshuus.wav"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You have this."
+      helper: "Du hast das."
+      target: ["Du ", " das."]
+    answers: ["hesch"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Du hesch** means *you have*.
+    images:
+      - "data/assets/images/pointing_you.jpg"
+    audio: "data/assets/audio/duheschdas.wav"
+
+  - type: match
+    id: match_4
+    prompt: "Match the singular conjugations."
+    pairs:
+      - left: "I / Ig"
+        right: "ha"
+      - left: "Du"
+        right: "hesch"
+      - left: "Är / Si / Äs"
+        right: "hett"
+
+  - type: match
+    id: match_8
+    prompt: "Match the plural conjugations!"
+    pairs:
+      - left: "Mir"
+        right: "hei (*we*)"
+      - left: "Dir"
+        right: "heit"
+      - left: "Si"
+        right: "hei (*they*)"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They have something!"
+      helper: "Sie haben etwas!"
+    tokens: ["Si", "hei", "öppis."]
+    solution_display: |
+      ✅ Correct!
+      
+      For both **mir** (*we*) and **si** (*they*), we  use **hei**.
+    audio: "data/assets/audio/siheioeppis.wav"
+
+  - type: listen_type
+    id: listen_type_6
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/heitdirdas.wav"
+    answers: ["Heit dir das?"]
+    images:
+      - "data/assets/images/girl_shopping.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: For questions, the verb comes before the subject!
+
+  - type: translate_type
+    id: translate_type_9
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "We have a house!"
+      helper: "Wir haben ein Haus!"
+    answers:
+      ["Mir hei es huus", "Mir hei äs huus"]
+    images:
+      - "data/assets/images/house_grass.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir hei** means *we have*.
+
+  - type: match
+    id: match_10
+    prompt: "Match all the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "ha"
+      - left: "Du"
+        right: "hesch"
+      - left: "Är / Si / Äs"
+        right: "hett"
+      - left: "Mir"
+        right: "hei (*we*)"
+      - left: "Dir"
+        right: "heit"
+      - left: "Si"
+        right: "hei (*they*)"
+
+  - type: true_false
+    id: true_false_11
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihaneshuus.wav"
+    text: "This  person **has a house**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      Note that here, we have a *connecting *-n** again because of **a** and **ä** being next to each other!
+      *I ha äs/es huus* -> I ***ha-n-es*** huus -> **I hanes huus**
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We have a kid."
+      helper: "Wir haben ein Kind."
+    tokens: ["Mir", "hei", "äs", "Chind."]
+    solution_display: |
+      ✅ Correct!
+      
+      Note that here, we don't need the connecting **-n**, because **i** and **ä** are different enough to not cause any problems to the flow of the sentence.
+    audio: "data/assets/audio/mirheiaeschind.wav"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "Was hesch? / Was hesch du?"
+    translation:
+      en: "What do you have? / What's wrong? "
+      de: "Was hast du?"
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/washesch_washeschdu.wav"
+
+  - type: markdown
+    id: markdown_14
+    markdown: |
+      ## Was hesch?
+      
+      **Was hesch?** directly means *What do  you have?*. If you hear a Swiss person say this, it can have a few meanings though:
+      
+      - Just *What do you have (to say, to do, etc.)?*
+      - *What's wrong?* / *What's the problem?*
+    images:
+      - "data/assets/images/question_mark.jpg"
+
+  - type: true_false
+    id: true_false_15
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/wiegeits_schlaecht_ohnei_washesch.wav"
+    text: "The person answering is **doing good**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They responded to **Wie geits?** with **schlächt**, so they're not doing good.
+      The person asking then continued with **Was hesch?**, which here means **What's wrong?**.
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He has a house."
+      helper: "Er hat ein Haus."
+    tokens: ["Är", "hett", "es", "huus."]
+    audio: "data/assets/audio/aerhetteshuus.wav"
+
+  - type: match
+    id: match_17
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I have"
+        right: "I ha"
+      - left: "You have (sing.)"
+        right: "Du hesch"
+      - left: "She has"
+        right: "Si hett"
+      - left: "We have"
+        right: "Mir hei"
+      - left: "You have (pl.)"
+        right: "Dir heit"
+      - left: "They have"
+        right: "Si hei"
+      - left: "What do you have? / What's wrong?"
+        right: "Was hesch?"
