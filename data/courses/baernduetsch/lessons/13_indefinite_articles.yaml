@@ -12,9 +12,9 @@ steps:
       
       In Bärndütsch, we have two versions of the indefinite article *a*:
       
-      - **Ä**: For *masculine* and *feminine* nouns
+      - **Ä/E**: For *masculine* and *feminine* nouns
       	- ***Ä* Bahnhof**, ***Ä* Straas**
-      - **Äs**: For *neuter* nouns
+      - **Äs/Es**: For *neuter* nouns
       	- ***Äs* Huus***
       
       You can alternatively also write them as **e** and **es**; through the course, you'll probably see me use this more often.
@@ -61,7 +61,7 @@ steps:
     solution_display: |
       ✅ Correct!
       
-      Both for *masculine* and *feminine* nouns we use **Ä**.
+      Both for *masculine* and *feminine* nouns we use **Ä/E**.
 
   - type: cloze
     id: cloze_5
@@ -70,7 +70,7 @@ steps:
       question: "A man and a woman."
       helper: "Ein Mann und eine Frau."
       target: ["", " und e Frou."]
-    answers: ["ä maa", "ä maah"]
+    answers: ["ä maa", "ä maah", "e maa", "e maah"]
     audio : "data/assets/audio/aemaaundaefrou.wav"
     solution_display: |
       ✅ Correct!
@@ -120,13 +120,13 @@ steps:
       
       A unique thing in Switzerland (and specifically in Bärndütsch): We often do not like to say **two strongly pronounced vowels next to each other**!
       
-      What happens when we have those to close to each other is that we **add an *n*** and **connect** the words, especially with short expressions like **ä/äs**.
+      What happens when we have those to close to each other is that we **add an *n*** and **connect** the words, especially with short expressions like **ä/äs**. Think of it like inserting it *between* the two vowels.
       
       In practice this looks as follows:
       
-      - *I bi ä maa* -> **I bine maa**
-      - *I bi ä frou* -> **I bine frou**
-      - *I bi äs chind* -> **I bines chind**
+      - *I bi ä/e maa* -> I ***bi-n-e*** maa -> **I bine maa**
+      - *I bi ä/e frou* -> I ***bi-n-e*** frou -> **I bine frou**
+      - *I bi äs/es chind* -> I ***bi-n-es*** chind -> **I bines chind**
       
       But not in:
       
@@ -136,7 +136,7 @@ steps:
       
       This is **not** *absolutely* necessary, nobody will be confused when you say it like in the first row. But it is very typical in Bärndütsch when you hear it!
       
-      We will go into a bit more detail on these *connections* in the next lesson.
+      We will go into a bit more detail on these *connections* in a dedicated lesson; this serves more as an introduction to them.
     images:
       - "data/assets/images/chain.jpg"
 
@@ -160,7 +160,7 @@ steps:
     solution_display: |
       ✅ Correct!
       
-      When we have two strong vowels close to each other, we often add **-n** and **connect the words**.
+      When we have two strong vowels close to each other, we often add **-n** and **connect the words**. Think of it as **I *bi-n-e* maa**.
 
   - type: cloze
     id: cloze_12
@@ -169,7 +169,7 @@ steps:
       question: "I am a child"
       helper: "Ich bin ein Kind"
       target: ["I ", " chind."]
-    answers: ["bines", "bi äs"]
+    answers: ["bines", "bi äs", "bi es"]
     audio : "data/assets/audio/ibineschind.wav"
     solution_display: |
       ✅ Correct!
