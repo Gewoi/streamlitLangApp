@@ -714,6 +714,7 @@ class ClozeStepEditor(BaseStepEditor):
             'answers': self.answers_editor.get(),
             'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
             'images': self.images_editor.get(),
+            'audio': self.audio_entry.get()
         }
 
 
@@ -764,6 +765,7 @@ class OrderStepEditor(BaseStepEditor):
             },
             'tokens': self.tokens_editor.get(),
             'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
+            'audio': self.audio_entry.get()
         }
 
 
