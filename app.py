@@ -54,7 +54,6 @@ def get_auth():
 def clear_auth():
     if "auth" in cookie_manager:
         del cookie_manager["auth"]
-        cookie_manager.save()
 
 if "just_logged_in" in st.session_state:
     save_auth(st.session_state.just_logged_in["access_token"], st.session_state.just_logged_in["refresh_token"])
@@ -87,13 +86,15 @@ def logout():
     clear_auth()
     
     # Sign out from Supabase
-    try:
-        st.session_state["supabase"].supbase.auth.sign_out()
-    except:
-        pass
+
+    st.session_state["supabase"].supabase.auth.sign_out()
     
-    st.session_state.clear()
-    st.rerun()
+    
+    cookie_manager.save()
+    st.session_state["logged_in"] = False
+    st.session_state["user"] = None
+    st.session_state["guest"] = False
+    st.session_state["nav"] = {"page": "login"}
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -145,5 +146,4 @@ else:
     with st.sidebar.container(key="sidebar_bottom"):
         st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
         if logged_in:
-            if st.button("Logout", type="primary", key="logout_btn"):
-                logout()
+            st.button("Logout", type="primary", key="logout_btn", on_click=logout)

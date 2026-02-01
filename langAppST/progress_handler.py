@@ -19,20 +19,12 @@ class ProgressStore:
     def _initialize_db(self):
         self.supabase = get_supabase_client()
     
-    def lesson_completed(self, user_id: str, course_id: str, lesson_id: str, mistakes_made : int, new_words : list| None= None) -> None:
+    def lesson_completed(self, user_id: str, course_id: str, lesson_id: str, mistakes_made : int) -> None:
         if st.session_state["guest"]:
             return 0
-
-        if new_words is None:
-            new_words = []
         
         now = datetime.now(timezone.utc).isoformat()
-        completed_list = self.get_known_words(user_id=user_id, course_id=course_id)
 
-        #to make sure we don't add the same stuff twice
-        for word in new_words:
-            if word not in completed_list:
-                completed_list.append(word)
         self.supabase.table("lesson_progress").upsert(
             {
                 "user_id": user_id,
@@ -45,15 +37,6 @@ class ProgressStore:
             on_conflict="user_id,course_id,lesson_id",
         ).execute()
 
-        # ---- Upsert user_stats
-        self.supabase.table("user_stats").upsert(
-            {
-                "user_id": user_id,
-                "course_id": course_id,
-                "known_words": completed_list,   # JSONB, no dumps()
-            },
-            on_conflict="user_id,course_id",
-        ).execute()
             
     def check_lesson_completed(self, user_id: str, course_id: str, lesson_id : str):
         if st.session_state["guest"]:
@@ -86,25 +69,25 @@ class ProgressStore:
             .execute()
         )
 
-    def get_known_words(self, user_id: str, course_id: str):
+    def get_completed_lessons(self, user_id: str, course_id: str):
         """
         Returns known_words dict.
         """
         if st.session_state["guest"]:
             return []
         response = (
-            self.supabase.table("user_stats")
-            .select("known_words")
+            self.supabase.table("lesson_progress")
+            .select("lesson_id")
             .eq("user_id", user_id)
             .eq("course_id", course_id)
-            .maybe_single()
             .execute()
         )
 
         if not response:
             return []
 
-        return response.data.get("known_words", []) or []
+        output = [lesson["lesson_id"] for lesson in response.data]
+        return output or []
 
     def get_recommended_lesson(self, user_id, course_id):
         if st.session_state["guest"]:
@@ -144,21 +127,3 @@ class ProgressStore:
                 recommended_lesson_id = lesson["lesson_id"]
 
         return recommended_lesson_id
-    
-    def generate_word_repetition(self,user_id, course_id) -> dict:
-        if st.session_state["guest"]:
-            return None
-        known_words_temp = self.get_known_words(user_id=user_id, course_id=course_id)
-
-        number = min(len(known_words_temp), 10)
-
-
-        random.shuffle(known_words_temp)
-        chosen_words = known_words_temp[:number]
-
-        lesson_dict = {"id": "REPETITION","title": "Repeat some Words!", "description": "Repeat a random selection of words", "steps" : []}
-
-        for exercise in chosen_words:
-            lesson_dict["steps"].append(exercise)
-        
-        return lesson_dict

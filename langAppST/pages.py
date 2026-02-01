@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 from .content import get_course
-from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises, create_section_repetition
+from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises, create_section_repetition, generate_word_repetition
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 
@@ -45,7 +45,7 @@ def login_page():
         horizontal=True,
     )
 
-    with st.form("auth_form"):
+    with st.form("auth_form", enter_to_submit=True):
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
         if mode == "Create Account":
@@ -103,80 +103,85 @@ def course_page(course_id : str, store : ProgressStore):
     lesson_list = load_lessons(course_id)
 
     current_section = ""
+    with st.spinner("Loading Lessons..."):
+        for lesson in lesson_list:
+            if (not lesson["section"] == current_section) and (lesson["section"] in sections):
+                if not current_section == "":
+                    with st.container(border=True, key=f"section_finish_{current_section}"):
+                        st.markdown(f"### 🧠Test your {current_section} knowledge!", text_alignment="center")
+                        st.markdown(f"Repeat some exercises from the section {current_section}", text_alignment="center")
+                        if st.button(label="Repeat", width="stretch", key=f"start_section_rep_{current_section}"):
+                            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                            clear_lesson_sessionstate()
+                            st.session_state["step_idx"] = 0
+                            st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
+                            st.rerun()
+                st.divider()
+                current_section = lesson["section"]
+                st.title(body=f"{current_section}", text_alignment="center")
+            completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
+            with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
+                cols = st.columns(3, vertical_alignment="top")
+                if completed_condition:
+                    with cols[0]:
+                        st.caption("Completed✅")
+                with cols[2]:
+                    st.caption(f"Time: ~{lesson["estimated_minutes"]} min.", text_alignment="right")
+                st.markdown(f"### {lesson["title"]}", text_alignment="center")
+                st.markdown(lesson["description"], text_alignment="center")
+                if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}"):
+                    with st.spinner("Loading lesson..."):
+                        st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
+                        clear_lesson_sessionstate()
+                        st.session_state["step_idx"] = 0
+                        st.session_state["lesson_dict"] = lesson
+                        st.session_state["new_words"] = find_new_exercises(lesson)
+                        st.rerun()
 
-    for lesson in lesson_list:
-        if (not lesson["section"] == current_section) and (lesson["section"] in sections):
-            if not current_section == "":
+            
+            #For last section on the page
+            if current_section == sections[-1] and lesson == lesson_list[-1]:
                 with st.container(border=True, key=f"section_finish_{current_section}"):
                     st.markdown(f"### 🧠Test your {current_section} knowledge!", text_alignment="center")
                     st.markdown(f"Repeat some exercises from the section {current_section}", text_alignment="center")
                     if st.button(label="Repeat", width="stretch", key=f"start_section_rep_{current_section}"):
-                        st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
-                        clear_lesson_sessionstate()
-                        st.session_state["step_idx"] = 0
-                        st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
-                        st.rerun()
-            st.divider()
-            current_section = lesson["section"]
-            st.title(body=f"{current_section}", text_alignment="center")
-        completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
-        with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
-            cols = st.columns(3, vertical_alignment="top")
-            if completed_condition:
-                with cols[0]:
-                    st.caption("Completed✅")
-            with cols[2]:
-                st.caption(f"Time: ~{lesson["estimated_minutes"]} min.", text_alignment="right")
-            st.markdown(f"### {lesson["title"]}", text_alignment="center")
-            st.markdown(lesson["description"], text_alignment="center")
-            if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}"):
-                st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : lesson["id"]}
-                clear_lesson_sessionstate()
-                st.session_state["step_idx"] = 0
-                st.session_state["lesson_dict"] = lesson
-                st.session_state["new_words"] = find_new_exercises(lesson)
-                st.rerun()
-
-        
-        #For last section on the page
-        if current_section == sections[-1] and lesson == lesson_list[-1]:
-            with st.container(border=True, key=f"section_finish_{current_section}"):
-                st.markdown(f"### 🧠Test your {current_section} knowledge!", text_alignment="center")
-                st.markdown(f"Repeat some exercises from the section {current_section}", text_alignment="center")
-                if st.button(label="Repeat", width="stretch", key=f"start_section_rep_{current_section}"):
-                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
-                    clear_lesson_sessionstate()
-                    st.session_state["step_idx"] = 0
-                    st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
-                    st.rerun()
-
-    with st.sidebar:
-        st.title("Recommended Lesson:")
-        rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
-        if rec_lesson_id:
-            rec_lesson = load_lesson_content(course_id, rec_lesson_id)
-            with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
-                st.markdown(f"### {rec_lesson["title"]}", text_alignment="center")
-                st.markdown(rec_lesson["description"], text_alignment="center")
-                if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}_rec"):
-                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : rec_lesson_id}
-                    clear_lesson_sessionstate()
-                    st.session_state["step_idx"] = 0
-                    st.session_state["lesson_dict"] = load_lesson_content(course_id, rec_lesson_id)
-                    st.rerun()
-        else:
-            st.write("No recommendations yet")
-        if store.get_known_words(st.session_state["user"].id, course_id):
-            st.subheader("Repeat Random Exercises")
-            with st.container(border=True, key=f"lesson_REPETITON_rec"):
-                st.markdown(f"### Repetition", text_alignment="center")
-                st.markdown("Repeat a random selection of exercises from your completed lessons.", text_alignment="center")
-                if st.button(label="Start Lesson", width="stretch", key=f"start_REPETITION_rec"):
-                    st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
-                    clear_lesson_sessionstate()
-                    st.session_state["step_idx"] = 0
-                    st.session_state["lesson_dict"] = store.generate_word_repetition(st.session_state["user"].id, course_id)
-                    st.rerun()
+                        with st.spinner("Loading lesson..."):
+                            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                            clear_lesson_sessionstate()
+                            st.session_state["step_idx"] = 0
+                            st.session_state["lesson_dict"] = create_section_repetition(course_id, current_section)
+                            st.rerun()
+    with st.spinner("Loading recommendations..."):
+        with st.sidebar:
+            st.title("Recommended Lesson:")
+            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
+            if rec_lesson_id:
+                rec_lesson = load_lesson_content(course_id, rec_lesson_id)
+                with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
+                    st.markdown(f"### {rec_lesson["title"]}", text_alignment="center")
+                    st.markdown(rec_lesson["description"], text_alignment="center")
+                    if st.button(label="Start Lesson", width="stretch", key=f"start_{lesson['id']}_rec"):
+                        with st.spinner("Perparing repetition..."):
+                            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : rec_lesson_id}
+                            clear_lesson_sessionstate()
+                            st.session_state["step_idx"] = 0
+                            st.session_state["lesson_dict"] = load_lesson_content(course_id, rec_lesson_id)
+                            st.rerun()
+            else:
+                st.write("No recommendations yet")
+            if store.get_completed_lessons(st.session_state["user"].id, course_id):
+                st.subheader("Repeat Random Exercises")
+                with st.container(border=True, key=f"lesson_REPETITON_rec"):
+                    st.markdown(f"### Repetition", text_alignment="center")
+                    st.markdown("Repeat a random selection of exercises from your completed lessons.", text_alignment="center")
+                    if st.button(label="Start Lesson", width="stretch", key=f"start_REPETITION_rec"):
+                        with st.spinner("Perparing repetition..."):
+                            st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
+                            clear_lesson_sessionstate()
+                            st.session_state["step_idx"] = 0
+                            completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
+                            st.session_state["lesson_dict"] = generate_word_repetition(course_id, completed_lessons)
+                            st.rerun()
 
 
 def player(course_id : str, lesson_id : str, store : ProgressStore):

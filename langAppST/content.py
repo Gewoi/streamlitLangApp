@@ -123,3 +123,31 @@ def create_section_repetition(course_id : str, section : str):
         lesson_dict["steps"].append(exercise)
     
     return lesson_dict
+
+def generate_word_repetition(course_id, completed_lessons) -> dict:
+
+    included_steps = ["cloze", "order", "translate_type", "listen_type", "true_false", "match"]
+
+    if st.session_state["guest"]:
+        return None
+
+    lesson_list = load_lessons(course_id)
+    possible_exercises = []
+    for lesson in lesson_list:
+        if lesson["id"] in completed_lessons:
+            for step in lesson["steps"]:
+                if step["type"] in included_steps:
+                    possible_exercises.append(step)
+
+
+    number = min(len(possible_exercises), 10)
+
+    random.shuffle(possible_exercises)
+    chosen_words = possible_exercises[:number]
+
+    lesson_dict = {"id": "REPETITION","title": "Repeat some Words!", "description": "Repeat a random selection of words", "steps" : []}
+
+    for exercise in chosen_words:
+        lesson_dict["steps"].append(exercise)
+    
+    return lesson_dict
