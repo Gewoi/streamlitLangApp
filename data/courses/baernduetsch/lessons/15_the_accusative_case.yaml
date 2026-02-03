@@ -1,0 +1,25 @@
+id: 15_the_accusative_case
+title: "The Accusative Case"
+description: "Learn about what the accusative case is, how and when it is used, and realize that Bärndütsch does it in a simpler way than Hochdütsch."
+estimated_minutes: 5
+section: Simple Concepts
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## The Accusative: Who "*receives*" the action?
+      
+      If you already know some Hochdütsch, you might know that it has different *cases*. This is a grammatical concept that English also has somewhat: You don't say *I see he*, but rather ***I see him***. This is already an example of the *accusative* case!
+      
+      So far you've seen nouns and pronouns in the *nominative* case; this is the one you'll find in dictionaries too. It describes who *takes* an action in the sentence:
+      
+      - **Ds Huus**, **D Frou**, ... **isch**  ...
+      - **I mache öppis**
+      
+      This is the one you'll always learn first. A simple rule of thumb: If, in your sentence, something or someone is ***taking* an action** (*actively* or just *describing* what it is and what it looks like), then you use the **nominative** case!
+      
+      - **Är isch gross** (**Är** is nominative, we're describing him!)
+      - **Si macht öppis** (**Si** is nominative, she is *taking an action*)
+    images:
+      - "data/assets/images/pointing_you.jpg"
