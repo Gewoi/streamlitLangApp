@@ -1,6 +1,6 @@
 id: 15_the_accusative_case
-title: "The Accusative Case"
-description: "Learn about what the accusative case is, how and when it is used, and realize that Bärndütsch does it in a simpler way than Hochdütsch."
+title: "🫵 The Accusative Case"
+description: "Learn about what the accusative case is, how and when it is used, and realize that Bärndütsch does it in a simpler way than Hochdütsch. In addition: The verb *to see*."
 estimated_minutes: 5
 section: Simple Concepts
 
@@ -8,9 +8,11 @@ steps:
   - type: markdown
     id: markdown_0
     markdown: |
-      ## The Accusative: Who "*receives*" the action?
+      ## Cases: Nominative and Accusative
       
       If you already know some Hochdütsch, you might know that it has different *cases*. This is a grammatical concept that English also has somewhat: You don't say *I see he*, but rather ***I see him***. This is already an example of the *accusative* case!
+      
+      #### Nominative: Who *takes* the action?
       
       So far you've seen nouns and pronouns in the *nominative* case; this is the one you'll find in dictionaries too. It describes who *takes* an action in the sentence:
       
@@ -21,5 +23,135 @@ steps:
       
       - **Är isch gross** (**Är** is nominative, we're describing him!)
       - **Si macht öppis** (**Si** is nominative, she is *taking an action*)
+      
+    images:
+      - "data/assets/images/board_names.jpg"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Accusative: Who "*receives*" the action?
+      
+      Let's take the example from before: You don't say *I see he*, but rather ***I see him***.
+      
+      In Bärndütsch, you would say **I gseh *ihn*** (and NOT **I gseh är**). **Är** is sort of the *receiver* of the action, in some sense the *target* of it. **That's when we use the accusative: *ihn***. Same with **I gseh ds Huus**: **ds Huus** *receives* the action (or is the *target* of it*), and is therefore in the **accusative**. 
+      
+      You might have just thought "But that looks exactly the same as the nomiative case right?". And you're right: In Bärndütsch, *articles and nouns *don't change* in the accusative*! That's already a whole lot simpler.
+      
+    images:
+      - "data/assets/images/house_grass.jpg"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "I gseh ä Straas."
+    translation:
+      en: "I see a street."
+      de: "Ich sehe eine Strasse."
+    images:
+      - "data/assets/images/view_big_building.jpg"
+    audio: "data/assets/audio/igsehestraas.wav"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I see the train station."
+      helper: "Ich sehe den Bahnhof."
+    tokens: ["I", "gseh", "dr", "Bahnhof."]
+    solution_display: |
+      ✅ Correct!
+      
+      In Bärndütsch, *articles* and *nouns* **do not change in the accusative**. This is different than Hochdütsch, where we would now say *den Bahnhof* instead of *der Bahnhof*. Bärndütsch makes this a bit easier!
+    audio: "data/assets/audio/igsehdrbahnhof.wav"
+
+  - type: markdown
+    id: markdown_4
+    markdown: |
+      ## Personal pronouns in the accusative
+      
+      What does change however are the personal pronouns. Again, same as English: You don't say *she sees I*, but rather *she sees me*. In Bärndütsch, we would say **si gseht *mi***.
+      
+      Here's a list of all of the singular ones:
+      
+      <center>
+      
+      | singular | **sing. acc.**| *Example* |
+      | --- | --- | --- |
+      | I /Ig | **mi** | **Du gsehsch *mi*** (*you see me*) |
+      | Du | **di** | **I gseh *di*** (*I see you*) |
+      | Är | **ne / ihn** | **Si gseht *ne / ihn*** (*she sees him*) |
+      | Si | **se / si** | **Är gseht *se / si*** (*he sees her*) |
+      | Äs | **s** | **I gseh *s*** or **I *gseh's*** (*I see it*) |
+      
+      </center>
+      
+      Very commonly, you'll use **ne** or **se** for *him* or *her*.
+      
+      - **I gseh ne** (*I see him*)
+      - **Du gsehsch se** (*You see her*)
     images:
       - "data/assets/images/pointing_you.jpg"
+
+  - type: match
+    id: match_5
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "gseh"
+      - left: "Du"
+        right: "gsehsch"
+      - left: "Är / Si / Äs"
+        right: "gseht"
+
+  - type: cloze
+    id: cloze_6
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You see her."
+      helper: "Du siehst sie."
+      target: ["Du gsehsch ", "."]
+    answers: ["se", "si"]
+    solution_display: |
+      ✅ Correct!
+      
+      In the accusative (*receiving* the action), **si** turns to **se** (or **si**).
+    images:
+      - "data/assets/images/woman_waving.jpg"
+    audio: "data/assets/audio/dugsehschse.wav"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He sees it."
+      helper: "Er sieht es."
+    tokens: ["Är", "gseht", "s."]
+    solution_display: |
+      ✅ Correct!
+      
+      In the accusative, **äs** turns to **s** (which can be appended to the verb, like **gseht's**, or treated as its own thing).
+    audio: "data/assets/audio/aergsehts.wav"
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/igsehsedört.wav"
+    text: "The *her* referred to here is **closeby**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person said **I gseh se dört!**, which means *I see her tere!*
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you see him here?"
+      helper: "Siehst du es hier?"
+    tokens: ["Gsehsch", "du", "ne", "hie?"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can use both **ne** or **ihn** for *him*.
+    audio: "data/assets/audio/gsehschdunehie.wav"
