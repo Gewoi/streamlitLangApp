@@ -1,0 +1,242 @@
+id: 16_order_at_a_cafe
+title: "🥐 Order at a Cafè"
+description: "Learn how to order food and drinks"
+estimated_minutes: 4
+section: Getting Food
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "I hätti gärn ..."
+    translation:
+      en: "I would like ..."
+      de: "Ich hätte gerne ..."
+    images:
+      - "data/assets/images/ordering_cafe_1.jpg"
+    audio: "data/assets/audio/ihaettigaern.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I would  please like a coffe."
+      helper: "Ich hätte gerne einen Kaffee."
+    tokens: ["I", "hätti", "gärn", "äs", "Kafi."]
+    solution_display: |
+      ✅ Correct!
+      
+      **I hätti gärn ... ** is the simplest way to order something. The **gärn** in here works kind of like *please*, so you don't necessarily need to say **bitte** at the end (but a lot of people still do).
+    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Äs Kafi"
+    translation:
+      en: "A coffee"
+      de: "Ein Kaffee"
+    images:
+      - "data/assets/images/coffee_millk.jpg"
+    audio: "data/assets/audio/aeskafi.wav"
+
+  - type: true_false
+    id: true_false_3
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/eskafi_jagaern.wav"
+    text: "This person **would like a coffee**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      You've already seen earlier: **Ja gärn** means *yes please*.
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+    answers: ["I hätti gärn es kafi", "I hätti gärn es kaffi", "I hätti gärn äs kafi", "I hätti gärn äs kaffi"]
+    images:
+      - "data/assets/images/ordering_cafe_2.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *I would like a coffee, please* (the **gärn** sort of functions as the *please*).
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Was hättit dir gärn?"
+    translation:
+      en: "What would you like? (formal)"
+      de: "Was hätten Sie gerne?"
+    images:
+      - "data/assets/images/ordering_table_2.jpg"
+    audio: "data/assets/audio/washaettitdirgaern.wav"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "What would you like? (formal)"
+      helper: "Wäs hätten Sie gerne?"
+    tokens: ["Was", "hättit", "dir", "gärn?"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is, generally, how you want to ask people what they would like if you work in a restaurant (especially older folks, the younger ones you can use the informal way that we'll look at later!)
+    audio: "data/assets/audio/washaettitdirgaern.wav"
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "Äs Gipfeli"
+    translation:
+      en: "A croissant"
+      de: "Ein Croissant"
+    images:
+      - "data/assets/images/croissant.jpg"
+    audio: "data/assets/audio/aesgipfeli.wav"
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.wav"
+    text: "This person would like **a coffee and a croissant**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      To the question **Was hättit dir gärn?** (*What would you like? (formal)* ), they responded **Äs Kafi und äs Gipfeli, bitte** (*A coffee and a croissant, please*).
+
+  - type: translate_type
+    id: translate_type_9
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "A croissant"
+      helper: "Ein croissant"
+    answers:
+      ["Äs Gipfeli", "Es Gipfeli"]
+    images:
+      - "data/assets/images/croissant.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This is a very typical Swiss term. A lot of people here love their **Gipfeli** in the morning.
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "Guete Morge!"
+    translation:
+      en: "Good Morning!"
+      de: "Guten Morgen!"
+    images:
+      - "data/assets/images/girl_bed_getting_up.jpg"
+    audio: "data/assets/audio/guetemorge.wav"
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Good Morning!"
+      helper: "Guten Morgen!"
+      target: ["Guete ", "!"]
+    answers: ["Morge"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is what you say in the morning to greet someone!
+    images:
+      - "data/assets/images/breakfast.jpg"
+    audio: "data/assets/audio/guetemorge.wav"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Good Morning! I would like a croissant, please."
+      helper: "Guten Morgen! Ich hätte gerne ein Croissant."
+    tokens: ["Guete", "Morge!", "I", "hätti", "gärn", "es", "Gipfeli."]
+    solution_display: |
+      ✅ Correct!
+      
+      If you enter a bakery early in the morning in Bern, you will hear this all the time.
+    audio: "data/assets/audio/guetemorge_ihaettigaernaesgipfeli.wav"
+
+  - type: translate_type
+    id: translate_type_13
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "What  would you like? (formal)"
+      helper: "Was hätten Sie gerne?"
+    answers:
+      ["Was hättit dir gärn?"]
+    images:
+      - "data/assets/images/ordering_cafe_1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: The *formal* way is with using **dir** (2nd person plural). Note that we do not use the *accusative*, **dir** is the subject, not the "*receiver*" of an action.
+
+  - type: introduce_word
+    id: introduce_word_14
+    word: "Was hättisch du gärn?"
+    translation:
+      en: "What would you like? (informal)"
+      de: "Was hättest du gerne?"
+    images:
+      - "data/assets/images/ordering_table_1.jpg"
+    audio: "data/assets/audio/washaettischdugaern.wav"
+
+  - type: cloze
+    id: cloze_15
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What would you like? (informal) - A coffe and a croissant, please."
+      helper: "Was hättest du gerne? - Einen Kaffee und ein Croissant, bitte."
+      target: ["Was ", "? - Es Kafi und es Gipfeli, bitte."]
+    answers: ["hättisch du gärn"]
+    solution_display: |
+      ✅ Correct! 
+      
+      **Was hättit dir gärn?** is the *formal* form, but when you talk to someone you know or generally someone your age, you can use the informal: **Was hättisch du gärn?**
+    images:
+      - "data/assets/images/ordering_cafe_1.jpg"
+    audio: "data/assets/audio/washaettischdugaern_eskafiundesgipfelibitte.wav"
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "What would you like? (informal)"
+      helper: "Was hättest du gerne?"
+    tokens: ["Was", "hättisch", "du", "gärn?"]
+    audio: "data/assets/audio/washaettischdugaern.wav"
+
+  - type: true_false
+    id: true_false_17
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.wav"
+    text: "This person is using the **formal** form to ask the guest what they would like."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They asked **Was hättit dir gärn?**. *Informal* would be **Was hättisch du gärn?**.
+
+  - type: match
+    id: match_18
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "A coffee"
+        right: "Äs Kafi"
+      - left: "A croissant"
+        right: "Äs Gipfeli"
+      - left: "Good Morning!"
+        right: "Guete Morge!"
+      - left: "I would like ..."
+        right: "I hätti gärn ..."
+      - left: "Yes, please"
+        right: "Ja, gärn"
+      - left: "No, thanks"
+        right: "Nei, danke"
+      - left: "*Formal*: What would you like?"
+        right: "Was hättit dir gärn?"
+      - left: "*Informal*: What would you like?"
+        right: "Was hättisch du gärn?"

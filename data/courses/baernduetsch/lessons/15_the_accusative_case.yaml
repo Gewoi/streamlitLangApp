@@ -135,7 +135,7 @@ steps:
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/igsehsedört.wav"
+    audio: "data/assets/audio/igsehsedoert.wav"
     text: "The *her* referred to here is **closeby**."
     answer: "False"
     solution_display: |
@@ -155,3 +155,196 @@ steps:
       
       You can use both **ne** or **ihn** for *him*.
     audio: "data/assets/audio/gsehschdunehie.wav"
+
+  - type: translate_type
+    id: translate_type_10
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Does he see me?"
+      helper: "Sieht er mich?"
+    answers:
+      ["Gseht är mi?", "Gsehter mi?"]
+    images:
+      - "data/assets/images/tall_guy_lake.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: In a question sentence, the order is flipped to *verb->subject*.
+
+  - type: listen_type
+    id: listen_type_11
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/igsehdi.wav"
+    answers: ["I gseh di"]
+    images:
+      - "data/assets/images/hideandseek.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Di** is the *accusative* form of **du**.
+
+  - type: match
+    id: match_13
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "I / Ig"
+        right: "gseh"
+      - left: "Du"
+        right: "gsehsch"
+      - left: "Är / Si / Äs"
+        right: "gseht"
+
+  - type: match
+    id: match_14
+    prompt: "Match the accusative forms."
+    pairs:
+      - left: "I / Ig"
+        right: "mi"
+      - left: "Du"
+        right: "di"
+      - left: "Är"
+        right: "ihn / ne"
+      - left: "Si"
+        right: "si / se"
+      - left: "Äs"
+        right: "-s"
+
+  - type: markdown
+    id: markdown_12
+    markdown: |
+      ## Personal pronouns in the accusative: Plural
+      
+      Again, same as English: You don't say *I see they*, but rather *I see them*. In Bärndütsch, we would say **I gseh *se***. Note: **Se** is again the same, just like **si** (*she*) and **si** (*they*); it's mostly obvious from context what you mean though.
+      
+      Here's a list of all of the plural ones:
+      
+      <center>
+      
+      | singular | **sing. acc.**| *Example* |
+      | --- | --- | --- |
+      | Mir | **üs** | **Du gsehsch *üs*** (*you see us*) |
+      | Dir | **öich / nech** | **I gseh *öich*** or **I gseh *nech*** (*I see you*) |
+      | Si | **se** | **Si gseht *se*** (*she sees them*) |
+      
+      </center>
+      
+      You'll notice something: You already heard **öich** before in the *polite form*. That's because the polite form is just the same form as **dir** (so, to be polite to someone, you would call them *you (pl.)*-> **dir**!
+      Example:
+      
+      - *How are you (pl.)?* -> **Wie geits öich?** (to multiple people)
+      - *How are you (formal)?* -> **Wie geits öich?** (to an older person, for example)
+    images:
+      - "data/assets/images/polite_intro.jpg"
+
+  - type: match
+    id: match_15
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "gseh (*we*)"
+      - left: "Dir"
+        right: "gseht"
+      - left: "Si"
+        right: "gseh (*they*)"
+
+  - type: cloze
+    id: cloze_16
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We see you (pl.)!"
+      helper: "Wir sehen euch!"
+      target: ["Mir ", "!"]
+    answers: ["Mir gseh öich", "mir gseh nech", "mir gsehnech"]
+    solution_display: |
+      ✅ Correct!
+      
+      The accusative of *you* (pl.) is **öich** or **nech**. You can technically write the **nech** as an attachment to the word (**I gsehnech**), but either way is perfectly fine!
+    images:
+      - "data/assets/images/group_back_beach.jpg"
+    audio: "data/assets/audio/mirgsehnech.wav"
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They see us!"
+      helper: "Sie sehen uns!"
+    tokens: ["Si", "gseh", "üs!"]
+    solution_display: |
+      ✅ Correct!
+      
+      For *we* (**mir**), we use **üs** in the accusative.
+    audio: "data/assets/audio/sigsehues.wav"
+
+  - type: cloze
+    id: cloze_18
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "He sees them!"
+      helper: "Er sieht sie!"
+      target: ["Är gseht ", "."]
+    answers: ["se", "si"]
+    solution_display: |
+      ✅ Correct!
+      
+      For **si** (*they*), the accusative is **se**. This is kind of the same as for **si** (*she*). Usually the context clears this up! (not here though)
+    images:
+      - "data/assets/images/guy_transtation.jpg"
+    audio: "data/assets/audio/aergsehtse.wav"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We see you all and you all see us."
+      helper: "Wir sehen euch und ihr seht uns."
+      target: ["Mir gseh öich u ", "."]
+    answers: ["dir gseht üs", "dir gsehtnis"]
+    images:
+      - "data/assets/images/football_standoff.jpg"
+    audio: "data/assets/audio/mirgsehoeichudirgsehtues.wav"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/gsehschduues.wav"
+    answers: ["Gsesch du üs?"]
+    images:
+      - "data/assets/images/guy_trainstation.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *do you see us?*.
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/igsehnech.wav"
+    text: "This person is encountering **one person**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct! 
+      
+      This person is saying **I gseh nech** (or **I gseh öich**), which means *I see you (pl.)*!
+
+  - type: match
+    id: match_22
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "gseh (*we*)"
+      - left: "Dir"
+        right: "gseht"
+      - left: "Si"
+        right: "gseh (*they*)"
+
+  - type: match
+    id: match_23
+    prompt: "Match the accusative forms."
+    pairs:
+      - left: "Mir"
+        right: "Üs"
+      - left: "Dir"
+        right: "Öich / Nech"
+      - left: "Si"
+        right: "se"
