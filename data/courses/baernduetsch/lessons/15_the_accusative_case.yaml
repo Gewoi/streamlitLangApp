@@ -254,7 +254,7 @@ steps:
       question: "We see you (pl.)!"
       helper: "Wir sehen euch!"
       target: ["Mir ", "!"]
-    answers: ["Mir gseh öich", "mir gseh nech", "mir gsehnech"]
+    answers: ["gseh öich", "gseh nech", "gsehnech"]
     solution_display: |
       ✅ Correct!
       
