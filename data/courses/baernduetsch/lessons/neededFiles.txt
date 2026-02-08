@@ -1,1 +1,12 @@
-aesgipfeli.wav
+brot.wav
+chaes.wav
+brotuchaes.wav
+schoggi.wav
+ihaettigaernesschoggigipfeli.wav
+wasser.wav
+aesglaswasser.wav
+ihaettigaernesglaswasser.wav
+wii.wav
+aesglaswii.wav
+washaettitdirgaern_esglaswasserbitte.wav
+ihaettigaernesglaswii.wav

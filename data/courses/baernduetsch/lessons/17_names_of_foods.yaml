@@ -1,0 +1,220 @@
+id: 17_names_of_foods
+title: "🍲 Names of Foods"
+description: "Learn the names of some foods in Bärndütsch."
+estimated_minutes: 2
+section: Getting Food
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Brot"
+    translation:
+      en: "Bread"
+      de: "Brot"
+    images:
+      - "data/assets/images/bread.jpg"
+    audio: "data/assets/audio/brot.wav"
+
+  - type: listen_type
+    id: listen_type_1
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/brot.wav"
+    answers: ["brot"]
+    images:
+      - "data/assets/images/bread.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Brot** means *bread* in Bärndütsch, just like in Hochdeutsch.
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Chääs"
+    translation:
+      en: "Cheese"
+      de: "Käse"
+    images:
+      - "data/assets/images/cheese.jpg"
+    audio: "data/assets/audio/chaes.wav"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Bread and cheese."
+      helper: "Brot und Käse."
+    tokens: ["Brot", "u", "chääs."]
+    solution_display: |
+      ✅ Correct!
+      
+      Bread and cheese (**Brot u Chääs**) is a very typical Swiss dinner. On simple weekdays, a lot of families don't cook and just have bread, assorted cheeses and some small vegetables maybe.
+    audio: "data/assets/audio/brotucheas.wav"
+
+  - type: introduce_word
+    id: introduce_word_4
+    word: "Schoggi"
+    translation:
+      en: "Chocolate"
+      de: "Schokolade"
+    images:
+      - "data/assets/images/chocolate.jpg"
+    audio: "data/assets/audio/schoggi.wav"
+
+  - type: translate_type
+    id: translate_type_5
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Chocolate"
+      helper: "Schokolade"
+    answers:
+      ["Schoggi"]
+    images:
+      - "data/assets/images/chocolate.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Switzerland is famous for it's **Schoggi**, and it's a word you'll hear thrown around often!
+
+  - type: true_false
+    id: true_false_6
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihaettigaernaesschoggigipfeli.wav"
+    text: "This person would like a **chocolate croissant**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is ordering a **Schoggigipfeli**, which is a type of croissant that has chocolate on the inside. You'll often see filled croissants.
+      
+      Other examples include: 
+      - **Schinkegipfeli** (croissant with ham)
+      - **Nussgipfel/i** (croissant with nuts)
+
+  - type: match
+    id: match_7
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Cheese"
+        right: "Chääs"
+      - left: "Bread"
+        right: "Brot"
+      - left: "Chocolate"
+        right: "Schoggi"
+      - left: "Chocolate Croissant"
+        right: "Schoggigipfeli"
+      - left: "Croissant"
+        right: "Gipfeli"
+      - left: "Coffee"
+        right: "Kafi"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "Wasser"
+    translation:
+      en: "Water"
+      de: "Wasser"
+    images:
+      - "data/assets/images/water_pour.jpg"
+    audio: "data/assets/audio/wasser.wav"
+
+  - type: cloze
+    id: cloze_9
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "A glass of water"
+      helper: "Ein Glas Wasser"
+      target: ["Äs Glas ", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Wasser** is the way we say *water* in Bärndütsch.
+      
+      If you would like a glass of water, you say **Äs Glas Wasser** (**Äs Glas** <-> *A glass*).
+    audio: "data/assets/audio/aesglaswasser.wav"
+
+  - type: order
+    id: order_10
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I would like a glass of water."
+      helper: "Ich hätte gerne ein Glas Wasser."
+    tokens: ["I", "hätti", "gärn", "es", "glas", "Wasser."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Äs Glas Wasser** means *a glass of water*.
+    audio: "data/assets/audio/ihaettigaernaesglaswasser.wav"
+
+  - type: translate_type
+    id: translate_type_11
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Bread and cheese"
+      helper: "Brot und Käse"
+    images:
+      - "data/assets/images/bread_and_cheese.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      A very typical Swiss dinner.
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "Wii"
+    translation:
+      en: "Wine"
+      de: "Wein"
+    images:
+      - "data/assets/images/wine_glasses.jpg"
+    audio: "data/assets/audio/wii.wav"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "A glass of wine"
+      helper: "Ein Glas Wein."
+    tokens: ["Äs", "Glas", "Wii."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Wii** is *wine*, and **äs glas** means *a glass (of)*.
+    audio: "data/assets/audio/aesglaswii.wav"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What would you like? (formal) - A glass of water please."
+      helper: "Was hätten Sie gerne? - Ein Glas Wasser, bitte."
+      target: ["Was hättit dir gärn? - ", ", bitte."]
+    answers: ["Es glas wasser", "äs glas wasser"]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/ordering_table_1.jpg"
+    audio: "data/assets/audio/washaettitdirgaern_esglaswasserbitte.wav"
+
+  - type: order
+    id: order_15
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I would like a glass of wine."
+      helper: "Ich hätte gerne ein Glas Wein."
+    tokens: ["I", "hätti", "gärn", "es", "Glas", "Wii."]
+    audio: "data/assets/audio/ihaettigaernesglaswii.wav"
+
+  - type: match
+    id: match_16
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "A Glass"
+        right: "Äs Glas"
+      - left: "Water"
+        right: "Wasser"
+      - left: "Wine"
+        right: "Wii"
+      - left: "Cheese"
+        right: "Chääs"
+      - left: "Chocolate"
+        right: "Schoggi"
