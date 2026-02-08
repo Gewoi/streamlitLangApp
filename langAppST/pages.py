@@ -253,7 +253,7 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             if not lesson_id == "REPETITION":
-                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"], st.session_state["new_words"])
+                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"])
             clear_lesson_sessionstate()
             st.rerun()
 
