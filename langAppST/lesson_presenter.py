@@ -144,9 +144,8 @@ def render_introduce_word(step : dict):
 
     for img in images or []:
         with st.container(horizontal_alignment="center"):
-            for img in images:
-                if os.path.exists(img):
-                    st.image(resize_image(img))
+            if os.path.exists(img):
+                st.image(resize_image(img))
 
     
     if audio:

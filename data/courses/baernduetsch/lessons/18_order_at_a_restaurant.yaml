@@ -1,0 +1,286 @@
+id: 18_order_at_a_restaurant
+title: "🍽 Order at a Restaurant"
+description: "Learn some phrases that are important for ordering food at a restaurant, and some names of meals."
+estimated_minutes: 4
+section: Getting Food
+
+steps:
+  - type: cloze
+    id: cloze_0
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I would like a soup please."
+      helper: "Ich hätte gerne eine Suppe."
+      target: ["I", "ä suppe."]
+    answers: ["hätti gärn", "hätti gern", "haetti gaern"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Suppe** means *soup*.
+    images:
+      - "data/assets/images/soup.jpg"
+    audio: "data/assets/audio/ihaettigaernesuppe.wav"
+
+  - type: true_false
+    id: true_false_1
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/washaettitdirgaern_esuppebitte.wav"
+    text: "The person asking is using the **informal** form."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They asked **Was hättit dir gärn?**; the informal way would be **Was hättisch du gärn?**. The other person replied with **Ä suppe, bitte**, which means *a soup, please*.
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Für mi"
+    translation:
+      en: "For me"
+      de: "Für mich"
+    images:
+      - "data/assets/images/point_self.jpg"
+    audio: "data/assets/audio/fuermi.wav"
+
+  - type: markdown
+    id: markdown_3
+    markdown: |
+      ## Für + *accusative*
+      
+      Some prepositions are **always** followed by a certain case. A great example is **für** (*for*): It is always followed by a noun or pronoun in the *accusative*. So anytime you see **für**, remember to use the *accusative* right after!
+      
+      Some examples:
+      - **Für *mi*** (and not *für i*) <-> *For me*
+      - **Das isch für *di*** <-> *This is for you*
+      - **Das isch für *d chatz*** (remember that nouns do not change in the accusative in Bärndütsch) <-> *This is for the cat*
+      
+      So very important: **Für** is always followed by *accusative*!
+      
+    images:
+      - "data/assets/images/giving_gift.jpg"
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What would you like? - For me a coffee, please."
+      helper: "Was hätten Sie gerne? - Für mich einen Kaffee, bitte."
+      target: ["Was hättit dir gärn? - ", " mi es kafi bitte"]
+    answers: ["Für"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Für mi** means *for me*; after **für**, you always have the accusative!
+    images:
+      - "data/assets/images/ordering_cafe_1.jpg"
+    audio: "data/assets/audio/washaettitdirgaern_fuermieskafibitte.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "And for you? (formal)"
+      helper: "Und für Sie?"
+    tokens: ["U", "für", "öich?"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is ususally how someone will ask you what you'd like after they asked someone else. Notice how we also have the *accusative*: **U für *öich***?
+    audio: "data/assets/audio/ufueroeich.wav"
+
+  - type: match
+    id: match_6
+    prompt: "Match the corresponding end of the phrase."
+    pairs:
+      - left: "*Formal*: U für ..."
+        right: "öich"
+      - left: "*Informal*: U für ..."
+        right: "di"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "And for you? (formal) - For me a soup, please."
+      helper: "Und für Sie? - Für mich eine Suppe, bitte."
+    tokens: ["U", "für", "öich? -", "Für", "mi", "e", "Suppe,", "bitte."]
+    solution_display: |
+      ✅ Correct!
+      
+      Notice the *accusative* after **für**: **U für *öich*?**, **Für *mi* ...** .
+    audio: "data/assets/audio/ufueroeich_fuermiesuppebitte.wav"
+
+  - type: listen_type
+    id: listen_type_8
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ihaettigaernesuppe.wav"
+    answers: ["I hätti gärn e suppe", "I haetti gaern e suppe", "I hätti gärn ä suppe", "I haetti gaern ae suppe"]
+    images:
+      - "data/assets/images/soup.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying that they would like a soup.
+
+  - type: cloze
+    id: cloze_9
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "For him, a coffee please."
+      helper: "Für ihn einen Kaffee, bitte."
+      target: ["Für ", " es kafi, bitte."]
+    answers: ["ihn", "ne"]
+    solution_display: |
+      ✅ Correct!
+      
+      Again, we use the *accusative* after **für**. It is important to note that **ihn** is more correct here than **ne**, because we specifically *emphasize* that it's *for him* by putting it at the start of the sentence. But both works, **ihn** just sounds a tad nicer.
+    images:
+      - "data/assets/images/ordering_table_3.jpg"
+    audio: "data/assets/audio/fuerihneskafibitte.wav"
+
+  - type: true_false
+    id: true_false_10
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/washaettitdirgaern_eskafibitte_ufueroeich_fuermiesglaswasser.wav"
+    text: "Both of them are ordering **drinks**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The first person said **Es kafi, bitte** (*a coffee, please*), and the second person said **Für mi es Glas Wasser** (*for me, a glas of water*).
+
+  - type: translate_type
+    id: translate_type_11
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "A coffee for her, please."
+      helper: "Einen Kaffee für sie, bitte."
+    answers:
+      ["Äs Kafi für si, bitte.", "Gärn es Kafi für si.", "Es Kafi für si, bitte.", "Äs Kafi für se, bitte.", "Gärn es Kafi für se.", "Es Kafi für se, bitte.", "Äs Kafi fürse, bitte."]
+    images:
+      - "data/assets/images/ordering_table_1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Here, you use **für si**. **Für se** is technically also correct, but when you put emphasis on it we usually use **si** (and with **är** we use **ihn** for emphasis, like before).
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "For me a soup and for her a coffee."
+      helper: "Für mich eine Suppe und für sie einen Kaffee."
+    tokens: ["Für", "mi", "ä Suppe", "und", "für si", "äs Kafi."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/fuermiesuppeundfuersieskafi.wav"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "Ä Salat"
+    translation:
+      en: "A salad"
+      de: "Ein Salat"
+    images:
+      - "data/assets/images/salad.jpg"
+    audio: "data/assets/audio/aesalat.wav"
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "For me (please) a salad."
+      helper: "Für mich gerne einen Salat."
+    tokens: ["Für", "mi", "gärn", "ä", "Salat."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Gärn** takes the role of *please* here.
+    audio: "data/assets/audio/fuermigaernesalat.wav"
+
+  - type: match
+    id: match_15
+    prompt: "Match the food names."
+    pairs:
+      - left: "Salad"
+        right: "Salat"
+      - left: "Bread"
+        right: "Brot"
+      - left: "Soup"
+        right: "Suppe"
+      - left: "Cheese"
+        right: "Chääs"
+
+  - type: introduce_word
+    id: introduce_word_16
+    word: "Rösti"
+    translation:
+      en: "Rösti / Hash Browns"
+      de: "Rösti"
+    images:
+      - "data/assets/images/roesti.jpg"
+    audio: "data/assets/audio/roesti.wav"
+
+  - type: introduce_word
+    id: introduce_word_17
+    word: "Fondue"
+    translation:
+      en: "Fondue"
+      de: "Fondue"
+    images:
+      - "data/assets/images/fondue.jpg"
+    audio: "data/assets/audio/fondue.wav"
+
+  - type: markdown
+    id: markdown_21
+    markdown: |
+      ## Typically Swiss
+      
+      Both **Rösti** and **Fondue** are very typical Swiss dishes!
+      
+      - **Rösti** is grated potatoes that are fried in a pan, usually with a lot of butter and salt. Sometimes you'll put cheese or other things on top of it!
+      - **Fondue** is molten cheese that you have in a pot (a **caquelon) in the middle of the table. You then take bread on long forks and dip it in the cheese!
+      
+      Generally, **Fondue** is mostly only eaten in winter.
+    images:
+      - "data/assets/images/roesti.jpg"
+      - "data/assets/images/fondue.jpg"
+
+  - type: cloze
+    id: cloze_18
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I would like the Rösti."
+      helper: ""
+      target: ["I hätti gärn d ", "."]
+    answers: ["Rösti"]
+    images:
+      - "data/assets/images/roesti.jpg"
+    audio: "data/assets/audio/ihaettigaerndroesti.wav"
+
+  - type: listen_type
+    id: listen_type_19
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/aesfondue.wav"
+    answers: ["Äs fondue", "Es fondue"]
+    images:
+      - "data/assets/images/correct.jpg"
+
+  - type: match
+    id: match_20
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "for"
+        right: "für *(+ acc.)*"
+      - left: "And for you?"
+        right: "U für öich?"
+      - left: "For me ..."
+        right: "Für mi ..."
+      - left: "Soup"
+        right: "Suppe"
+      - left: "Salad"
+        right: "Salat"
+      - left: "Rösti / Hash Browns"
+        right: "Rösti"
+      - left: "fondue"
+        right: "Fondue"
