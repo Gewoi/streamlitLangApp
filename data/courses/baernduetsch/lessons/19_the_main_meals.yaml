@@ -132,6 +132,7 @@ steps:
       question: "Are you eating dinner?"
       helper: "Isst du zu Abend?"
       target: ["Issisch du ", "?"]
+    answers: ["Znacht"]
     solution_display: |
       ✅ Correct!
       
@@ -297,7 +298,7 @@ steps:
         right: "issisch"
       - left: "Är / Si / Äs"
         right: "isst"
-      - left: "Mit "
+      - left: "Mir "
         right: "ässe (*we*)"
       - left: "Dir"
         right: "ässit"

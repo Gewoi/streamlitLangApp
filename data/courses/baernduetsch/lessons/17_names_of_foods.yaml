@@ -48,7 +48,7 @@ steps:
       ✅ Correct!
       
       Bread and cheese (**Brot u Chääs**) is a very typical Swiss dinner. On simple weekdays, a lot of families don't cook and just have bread, assorted cheeses and some small vegetables maybe.
-    audio: "data/assets/audio/brotucheas.wav"
+    audio: "data/assets/audio/brotuchaes.wav"
 
   - type: introduce_word
     id: introduce_word_4
@@ -124,6 +124,7 @@ steps:
       question: "A glass of water"
       helper: "Ein Glas Wasser"
       target: ["Äs Glas ", "."]
+    answers: ["Wasser"]
     solution_display: |
       ✅ Correct!
       
@@ -138,12 +139,12 @@ steps:
     sentence:
       question: "I would like a glass of water."
       helper: "Ich hätte gerne ein Glas Wasser."
-    tokens: ["I", "hätti", "gärn", "es", "glas", "Wasser."]
+    tokens: ["I", "hätti", "gärn", "es", "Glas", "Wasser."]
     solution_display: |
       ✅ Correct!
       
       **Äs Glas Wasser** means *a glass of water*.
-    audio: "data/assets/audio/ihaettigaernaesglaswasser.wav"
+    audio: "data/assets/audio/ihaettigaernesglaswasser.wav"
 
   - type: translate_type
     id: translate_type_11
@@ -151,6 +152,7 @@ steps:
     sentence:
       question: "Bread and cheese"
       helper: "Brot und Käse"
+    answers: ["Brot u chääs", "Brot u chäs"]
     images:
       - "data/assets/images/bread_and_cheese.jpg"
     solution_display: |

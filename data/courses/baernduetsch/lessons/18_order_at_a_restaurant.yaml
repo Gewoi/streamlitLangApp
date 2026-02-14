@@ -11,7 +11,7 @@ steps:
     sentence:
       question: "I would like a soup please."
       helper: "Ich hätte gerne eine Suppe."
-      target: ["I", "ä suppe."]
+      target: ["I ", " ä suppe."]
     answers: ["hätti gärn", "hätti gern", "haetti gaern"]
     solution_display: |
       ✅ Correct!
