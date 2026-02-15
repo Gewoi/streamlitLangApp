@@ -1,7 +1,7 @@
 id: 18_order_at_a_restaurant
 title: "🍽 Order at a Restaurant"
 description: "Learn some phrases that are important for ordering food at a restaurant, and some names of meals."
-estimated_minutes: 4
+estimated_minutes: 5
 section: Getting Food
 
 steps:
@@ -176,6 +176,40 @@ steps:
     audio: "data/assets/audio/fuermiesuppeundfuersieskafi.wav"
 
   - type: introduce_word
+    id: introduce_word_22
+    word: "Ä guete!"
+    translation:
+      en: "Enjoy your meal!"
+      de: "Guten Appetit!"
+    images:
+      - "data/assets/images/kid_eating.jpg"
+    audio: "data/assets/audio/eguete.wav"
+
+  - type: markdown
+    id: markdown_23
+    markdown: |
+      ## Ä guete!
+      
+      You hear this phrase quite often: In group settings before eating, when you get your order at the restaurant, when you see someone eating, etc. It is very customary in Bärndütsch to wish someone a good meal, and we do this by saying **Ä guete!**, which literally means *a good one*. 
+      
+      So, next time you share a meal with someone, start it by saying **Ä guete**!
+    images:
+      - "data/assets/images/group_meal.jpg"
+
+  - type: translate_type
+    id: translate_type_24
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Enjoy your meal!"
+      helper: "Guten Appetit!"
+    answers:
+      ["Ä guete", "E guete"]
+    images:
+      - "data/assets/images/group_meal.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: introduce_word
     id: introduce_word_13
     word: "Ä Salat"
     translation:
@@ -242,6 +276,7 @@ steps:
       - **Fondue** is molten cheese that you have in a pot (a **caquelon) in the middle of the table. You then take bread on long forks and dip it in the cheese!
       
       Generally, **Fondue** is mostly only eaten in winter.
+      
     images:
       - "data/assets/images/roesti.jpg"
       - "data/assets/images/fondue.jpg"
@@ -284,3 +319,5 @@ steps:
         right: "Rösti"
       - left: "fondue"
         right: "Fondue"
+      - left: "Enjoy your meal!"
+        right: "Ä guete!"

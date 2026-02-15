@@ -47,6 +47,7 @@ steps:
       | Är / Si / Äs | **isst** | **Si isst e Salat** (*She's eating a salad*)|
       
       </center>
+      
     images:
       - "data/assets/images/guy_eating.jpg"
 
@@ -182,6 +183,7 @@ steps:
       | Si | **ässe** | **Si ässe Znacht** (*They're eating dinner*)|
       
       </center>
+      
 
   - type: match
     id: match_13
@@ -234,7 +236,7 @@ steps:
     id: introduce_word_18
     word: "Znüni / Zvieri"
     translation:
-      en: "Morning Snack / Afternoon Snach"
+      en: "Morning Snack / Afternoon Snack"
       de: ""
     images:
       - "data/assets/images/croissant.jpg"
@@ -259,6 +261,7 @@ steps:
       	- This is a small meal in the afternoon hours, sometime around 4pm.
       
       These are some typically Bärndütsch terms you'll hear sometimes, so now you know what the are: Two additional meals for the day!
+      
     images:
       - "data/assets/images/group_meal.jpg"
 
@@ -287,6 +290,50 @@ steps:
         right: "ässit"
       - left: "Si"
         right: "ässe (*they*)"
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Breakfast, lunch and dinner."
+      helper: "Frühstück, Mittagessen und Abendessen."
+    answers:
+      ["Zmorge, Zmittag u Znacht.", "Zmorge, Zmittag und Znacht."]
+    images:
+      - "data/assets/images/group_meal.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Those are the three main meals.
+
+  - type: cloze
+    id: cloze_23
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We are eating a morning snack."
+      helper: ""
+      target: ["Mir ässe ", "."]
+    answers: ["Znüni", "Znueni"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Znüni** is a very Swiss word for a morning snack; it literally translates to *to nine (9)*, refering to 9am (although it's usually eaten a bit after that.
+    images:
+      - "data/assets/images/croissant.jpg"
+    audio: "data/assets/audio/miraesseznueni.wav"
+
+  - type: order
+    id: order_24
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He's eating an afternoon snack."
+      helper: ""
+    tokens: ["Är", "isst", "Zvieri."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Zvieri** is a common term for an afternoon snack; it literally translates to *to four (4)*, refering to 4pm.
+    audio: "data/assets/audio/aerisstzvieri.wav"
 
   - type: match
     id: match_21
