@@ -1,0 +1,113 @@
+id: 20_ordering_at_the_coffee_shop
+title: "🧋Ordering at the Coffee Shop"
+description: "Listen to a short conversation where two people order at a coffee shop, and answer some questions about it!"
+estimated_minutes: 3
+section: Getting Food
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      **Barista**: Guete Morge! Was hättit dir gärn?
+      
+      **Customer 1**: I hätti gärn es Kafi.
+      
+      **Barista**: Guet, eis Kafi... U für öich?
+      
+      **Customer 2**: Äs Kafi und es Gipfeli, bitte!
+      
+      **Barista**: Ok, i däm Fall zwöi Kafi und eis Gipfeli. Ei Momänt!
+      
+      ...
+      
+      **Barista**: So, für öich: Zwöi Kafi u eis Gipfeli. E guete u bis speter!
+    images:
+      - "data/assets/images/ordering_cafe_3.jpg"
+    audio: "data/assets/audio/conv_cafe.wav"
+
+  - type: true_false
+    id: true_false_1
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/conv_cafe.wav"
+    text: "It is currently **Morning**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The Barista greets them with **Guete Morge**, wishing them a good morning!
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "What would you like? (formal)"
+      helper: "Was hätten Sie gerne?"
+    tokens: ["Was", "hättit", "dir", "gärn?"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is the formal way of asking someone what they would like.
+    audio: "data/assets/audio/washaettitdirgaern.wav"
+
+  - type: true_false
+    id: true_false_3
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+    text: "This person would like **something to eat**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      **I hätti gärn es Kafi** means *I would like a coffee, please*.
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ufueroeich.wav"
+    answers: ["U für öich?", "Und für öich?", "U fuer oeich?", "Und fuer oeich?"]
+    images:
+      - "data/assets/images/ordering_table_1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *And for you? (formal)*.
+
+  - type: true_false
+    id: true_false_5
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/conv_cafe.wav"
+    text: "In the end, the order is **two coffees and one croissant**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      *Customer 1* ordered just **äs Kafi**, while *Customer 2* ordered **äs Kafi und es Gipfeli**.
+
+  - type: listen_type
+    id: listen_type_6
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/eguete.wav"
+    answers: ["Ä guete", "E guete"]
+    images:
+      - "data/assets/images/croissant.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *enjoy your meal*.
+
+  - type: match
+    id: match_7
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Good morning"
+        right: "Guete morge"
+      - left: "Enjoy your meal"
+        right: "Ä guete"
+      - left: "And for you? (formal)"
+        right: "U für öich?"
+      - left: "A coffee"
+        right: "Äs Kafi"
+      - left: "A croissant"
+        right: "Äs Gipfeli"
+      - left: "See you later!"
+        right: "Bis speter!"
