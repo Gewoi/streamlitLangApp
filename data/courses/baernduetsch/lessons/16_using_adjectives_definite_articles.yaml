@@ -1,0 +1,270 @@
+id: 16_using_adjectives_definite_articles
+title: "🐾 Using Adjectives: Definite Articles"
+description: "Learn how to use adjectives before nouns, and some new nouns along the way."
+estimated_minutes: 4
+section: Simple Concepts
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Ds Tier"
+    translation:
+      en: "The Animal"
+      de: "Ds Tier"
+    images:
+      - "data/assets/images/cow_1.jpg"
+    audio: "data/assets/audio/dstier.wav"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I see the animal!"
+      helper: "Ich sehe das Tier!"
+      target: ["I gseh ds ", "!"]
+    answers: ["Tier"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ds Tier** means an animal; it is *neuter*.
+    images:
+      - "data/assets/images/cat_1.jpg"
+    audio: "data/assets/audio/igsehdstier.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Ds *grosse* Tier"
+    translation:
+      en: "The big animal"
+      de: "Das grosses Tier"
+    images:
+      - "data/assets/images/cow_1.jpg"
+    audio: "data/assets/audio/dsgrossetier.wav"
+
+  - type: markdown
+    id: markdown_3
+    markdown: |
+      ## Adjust the Adjective!
+      
+      Like in other languages, *adjectives adjust to the grammatical gender*; that is also the case in Bärndütsch! The rules are not too complicated, but there are some things to consider. Let's look at how you adjust the endings when you use a *definite article*:
+      
+      <center>
+      
+      | grammatical gender | *big* | example |
+      | --- | --- | --- |
+      | *masculine* | **gross** | **Dr gross Bahnhof** |
+      | *feminine* | **gross*i*** | **Di gross*i* Straas** |
+      | *neuter* | **gross*e*** | **Ds gross*e* Tier** |
+      
+      </center>
+      
+      An important thing to note here: If we use an adjective, the *feminine* article **D** now turns into **Di (grossi Straas)**! This is a small thing that's a bit irregular in Bärndütsch, so just keep an eye out for that.
+      
+      One cool thing to know here is that *these don't change in the accusative*. So you can use the same form:
+      
+      - **Ds grosse Tier** -> **I gseh ds grosse Tier** (*acusative*)
+      
+      This makes Bärndütsch less complicated than Hochdütsch and everything a tad easier!
+      
+      Just remember, for adjectives with a **definite** article (**ä, äs**):
+      
+      - *masculine* -> *same*
+      - *feminine* -> **-i** + **Di** (instead of **D**)
+      - *neuter* -> **-e**
+      
+    images:
+      - "data/assets/images/book_table.jpg"
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I see the big animal!"
+      helper: "Ich sehe das grosse Tier!"
+      target: ["I gseh ds ", " Tier!"]
+    answers: ["grosse"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Tier** is *neuter*, so we use **ds**. If we use an adjective to describe it *before the noun*, we add **-e** to it, hence: **I gseh ds grosse Tier!**.
+    images:
+      - "data/assets/images/cow_1.jpg"
+    audio: "data/assets/audio/igsehdsgrossetier.wav"
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "D Pflanze"
+    translation:
+      en: "The plant"
+      de: "Die Pflanze"
+    images:
+      - "data/assets/images/plant_1.jpg"
+    audio: "data/assets/audio/dpflanze.wav"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I have the big plant."
+      helper: "Ich habe die grosse Pflanze."
+    tokens: ["I", "ha", "di", "grossi", "Pflanze."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Pflanze** is *feminine*, so when we put an adjective *before the noun*, we add **-i**: **Di grossi Pflanze**.
+      
+      Note here: After **haa** (*to have*), we use the *accusative*! The plant is the "*receiver*/*target*" here. But in Bärndütsch, unlike in Hochdütsch, the noun and adjective stay the same as in the *nominative*, so you don't need to worry about adjusting anything!
+    audio: "data/assets/audio/ihadigrossipflanze.wav"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The big animal and the big plant."
+      helper: "Das grosse Tier und die grosse Pflanze."
+    tokens: ["Ds", "grosse", "Tier", "u", "di", "grossi", "Pflanze."]
+    solution_display: |
+      ✅ Correct!
+      
+      Here you see a *neuter* noun (**ds gross*e* Tier**) and a *feminine* noun (**di gross*i* Pflanze**) and how theirn adjectives change! Next, we wanna look at a *masculine* noun.
+    audio: "data/assets/audio/dsgrossetierudigrossipflanze.wav"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "Dr Bärg"
+    translation:
+      en: "The mountain"
+      de: "Der Berg"
+    images:
+      - "data/assets/images/mountain_1.jpg"
+    audio: "data/assets/audio/drbaerg.wav"
+
+  - type: cloze
+    id: cloze_9
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "The big mountain."
+      helper: "Der grosse Berg."
+      target: ["Dr ", "."]
+    answers: ["gross Bärg", "gross Baerg"]
+    solution_display: |
+      ✅ Correct!
+      
+      When we have a *masculine* noun with a definite article, we don't change the adjective from its basic form: **Dr gross Bärg**.
+    images:
+      - "data/assets/images/mountain_2.jpg"
+    audio: "data/assets/audio/drgrossbaerg.wav"
+
+  - type: order
+    id: order_10
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you see the young man there?"
+      helper: "Siehst du den jungen Mann dort?"
+    tokens: ["Gsehsch", "du", "dr", "jung", "Maa", "dert?"]
+    solution_display: |
+      ✅ Correct!
+      
+      For question, we *change the order of verb and subject* (here **du**)!
+    audio: "data/assets/audio/gsehschdudrjungmaadert.wav"
+
+  - type: translate_type
+    id: translate_type_11
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "The old woman."
+      helper: "Die alte Frau."
+    answers:
+      ["Di alti Frou"]
+    images:
+      - "data/assets/images/old_woman.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Frou** is *feminine*, so we add **-i** to the basic form of the adjective. Also: For *feminine* words, when we *use and adjective before the noun*, the article **di** (instead of **d**).
+
+  - type: true_false
+    id: true_false_12
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/igsehdsgrossetier.wav"
+    text: "For a *neuter* noun like **Tier** we **do not change the adjective**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      For a *neuter* noun, we add **-e** to the adjective if we use it before the noun! Only for *masculine* nouns, we do not actually change the adjective before the noun.
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I have the small plant."
+      helper: "Ich sehe die kleine Pflanze."
+    tokens: ["I", "gseh", "di", "chliini", "Pflanze."]
+    solution_display: |
+      ✅ Correct!
+      
+      It is *feminine*, so wie add **-i** and change the *definite article* to **di**. NOTE HERE: As you might know, we do not like similar sounding *vowels* right next to eacht other. This is why we add an **n** in **chliini**: It flows better like this!
+    audio: "data/assets/audio/igsehdichliinipflanze.wav"
+
+  - type: match
+    id: match_15
+    prompt: "Match the grammatical gender!"
+    pairs:
+      - left: "Dr chlii"
+        right: "Bahnhof"
+      - left: "Ds chliine"
+        right: "Huus"
+      - left: "Di chliini"
+        right: "Straas"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I see the small animal there!"
+      helper: "Ich sehe das kleine Tier dort!"
+      target: ["I gseh ", " dört!"]
+    answers: ["ds chliine Tier", "ds chline Tier"]
+    solution_display: |
+      ✅ Correct!
+      
+      Same thing here: We add an **n** to not have the two similar sounding vowels next to each other!
+    images:
+      - "data/assets/images/cat_1.jpg"
+    audio: "data/assets/audio/igsehdschliinetierdoert.wav"
+
+  - type: listen_type
+    id: listen_type_17
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/drgrossbaergudrchliimaa.wav"
+    answers: ["Dr gross Bärg u dr chlii Maa.", "Dr gross Bärg u dr chlii Maah."]
+    images:
+      - "data/assets/images/guy_mountain.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *the big mountain and the small man*.
+
+  - type: listen_type
+    id: listen_type_18
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dialtipflanzeudijungifrou.wav"
+    answers: ["Di alti Pflanze u di jungi Frou"]
+    images:
+      - "data/assets/images/woman_plants.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *the old plant and the young woman*.
+
+  - type: match
+    id: match_16
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Ds grosse"
+        right: "Tier"
+      - left: "Dr gross"
+        right: "Bärg"
+      - left: "Di grossi"
+        right: "Pflanze"
