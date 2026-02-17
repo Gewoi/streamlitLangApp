@@ -1,0 +1,24 @@
+id: 24_using_adjectives_indefinite_articles
+title: "Using Adjectives: Indefinite Articles"
+description: "Learn how to use adjective when the come after an indefinite article, and learn some new nouns and adjectives along the way."
+estimated_minutes: 4
+section: Simple Concepts
+
+steps:
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You are a tall human!"
+      helper: "Du bist ein grosser Mensch!"
+    tokens: ["Du", "bisch", "ä", "grosse", "Mönsch!"]
+    solution_display: |
+      ✅ Correct!
+      
+      If we use an indefinite article, the adjective also adjusts a bit. We will look into that a bit now!
+    audio: "data/assets/audio/dubischegrossemoensch.wav"
+
+  - type: markdown
+    id: markdown_3
+    markdown: |
+      

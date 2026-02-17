@@ -1,0 +1,135 @@
+id: 17_more_nouns_and_plurals
+title: "More Nouns and Plurals"
+description: "Learn how plurals are formed."
+estimated_minutes: 3
+section: Simple Concepts
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "D Männer"
+    translation:
+      en: "The men"
+      de: "Die Männer"
+    images:
+      - "data/assets/images/group_men.jpg"
+    audio: "data/assets/audio/dmaenner.wav"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Do you see the men?"
+      helper: "Siehst du die Männer?"
+      target: ["Gsehsch du ", "?"]
+    answers: ["d Männer", "d Maenner"]
+    solution_display: |
+      ✅ Correct!
+      
+      **D Männer** is the plural of **dr Maa**.
+    images:
+      - "data/assets/images/group_men_photo.jpg"
+    audio: "data/assets/audio/gsehschdudmaenner.wav"
+
+  - type: markdown
+    id: markdown_2
+    markdown: |
+      ## Plurals: They all use the article *D*
+      
+      The plural forms in Bärndütsch have a few rules to them, so let's get the simplest one out of the way: All of them have the article **d** in front of them, no exceptions!
+      
+      - **D Männer** (*the men*)
+      - **D Froue** (*the women*)
+      - **D Chinder** (*the kids*)
+      
+      We'll now look at some plural forms, and see some patterns that they follow. The very simplest ones we can already mention here, but **they don't apply all the time**! Very basically, in a lot of cases, you will:
+      
+      - add **-e** for *masculine* nouns 
+      	- **Dr Mönsch** (*the human*) -> **D Mönsche**
+      	- **Dr Tisch** (*the table*) -> **D Tische**
+      - add **-e** for *feminine* nouns; *unless* they already end in **e**. Then, the plural stays the same as the singular!
+      	- **D Frou** (*the woman*) -> **D Froue**
+      	- **D Wohnig** (*the apartment*) -> **D Wohnige**
+      	- **D Lampe** (*the lamp*) -> **D Lampe** (stays the same!)
+      - add **-er**, **-e**, **-s** or **nothing** for *neuter* nouns
+      	- **Ds Chind** (*the kid*) -> **D Chinder**
+      	- **Ds Bett** (*the bed*) -> **D Bett / D Bette**
+      	- **Ds Instrumänt** (*the instrument*) -> **D Instrumänt**
+      	- **Ds Velo** (*the bike*) -> **D Velos**
+      
+      There are some more rules here, but you **don't need to memorize them**! We will introduce plural forms when they come so you can pick them up as you go without learning too many rules!
+    images:
+      - "data/assets/images/book_table.jpg"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Dr Mönsch / D Mönsche"
+    translation:
+      en: "The human / The humans"
+      de: "Der Mensch / Die Menschen"
+    images:
+      - "data/assets/images/group_run.jpg"
+    audio: "data/assets/audio/drmoensch_dmoensche.wav"
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Yes, we are humans!"
+      helper: "Ja, wir sind Menschen!"
+    tokens: ["Ja,", "mir", "si", "Mönsche!"]
+    solution_display: |
+      ✅ Correct!
+      
+      In this case, the plural form just adds an **-e** at the end.
+    audio: "data/assets/audio/jamirsimoensche.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The women and the children."
+      helper: "Die Frauen und die Kinder."
+    tokens: ["D", "Froue", "u", "d", "Chinder."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Froue** is the plural of **Frou**, and **Chinder** is the plural of **Chind**.
+    audio: "data/assets/audio/dfroueudchinder.wav"
+
+  - type: translate_type
+    id: translate_type_6
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "The men, the women and the children."
+      helper: "Die Männer, die Frauen und die Kinder."
+    answers:
+      ["D Männer, d Froue u d Chinder.", "D Männer, d Froue u d Chind", "D Maenner, d Froue u d Chinder", "D Maenner, d Froue u d Chind"]
+    images:
+      - "data/assets/images/big_group.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Those are some very common plural forms!
+
+  - type: listen_type
+    id: listen_type_7
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dchindersihie.wav"
+    answers: ["D Chinder si hie.", "D Chind si hie."]
+    images:
+      - "data/assets/images/kids_faces.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *the children are here*.
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "D Hüser"
+    translation:
+      en: "The houses"
+      de: "Die Häuser"
+    images:
+      - "data/assets/images/houses.jpg"
+    audio: "data/assets/audio/dhueser.wav"
