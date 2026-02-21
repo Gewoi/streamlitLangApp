@@ -1,5 +1,5 @@
 id: 17_more_nouns_and_plurals
-title: "More Nouns and Plurals"
+title: "➕ More Nouns and Plurals"
 description: "Learn how plurals are formed."
 estimated_minutes: 2
 section: Simple Concepts
@@ -173,7 +173,7 @@ steps:
     id: order_12
     prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
-      question: "We see streets and houses."
+      question: "We see houses and streets."
       helper: "Wir sehen Häuser und Strassen."
     tokens: ["Mir", "gseh", "Hüser", "u", "Strasse"]
     solution_display: |
@@ -186,7 +186,7 @@ steps:
     id: translate_type_13
     prompt: "Translate the following Sentence."
     sentence:
-      question: "Humans, streets and people."
+      question: "Humans, houses and streets."
       helper: "Menschen, Häuser und Strassen."
     answers:
       ["Mönsche, Hüser u Strasse.", "Mönsche, Hüser und Strasse."]
