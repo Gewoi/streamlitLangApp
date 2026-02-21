@@ -21,4 +21,249 @@ steps:
   - type: markdown
     id: markdown_3
     markdown: |
+      ## Adjust the Adjective!
       
+      You have already seen how adjectives change when you have a *definite* article in front of them:
+      
+      - **Dr gross Maa** (*The tall man*)
+      - **Di gross*i* Frou** (*The tall woman*)
+      - **Ds gross*e* Chind** (*The tall child*)
+      
+      If you have an *indefinite* article, the adjective also adjusts, but a bit differently. Here's how the word **gross** adjusts:
+      
+      <center>
+            
+      | grammatical gender | *big* | example |
+      | --- | --- | --- |
+      | *masculine* | **gross*e*** | **Ä gross*e* Bahnhof** |
+      | *feminine* | **gross*i*** | **Ä gross*i* Pflanze** |
+      | *neuter* | **gross*es*** | **Äs gross*es* Tier** |
+            
+      </center>
+      
+      So, as a general rule for adjectives after *indefinite articles*, remember this:
+      - *masculine* -> **-e**
+      - *feminine* -> **-i**
+      - *neuter* -> **-es** *or* **-s**
+      
+      For the neuter case: We more *generally use *-s**. The **-es** usually comes at the end when the adjective already ends in an **s**.
+    images:
+      - "data/assets/images/book_table.jpg"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I see a big house there!"
+      helper: "Ich sehe ein grosses Haus dort!"
+      target: ["I gseh äs ", " Huus dert!"]
+    answers: ["grosses"]
+    solution_display: |
+      ✅ Correct!
+      
+      For *neuter*, the adjective generally ends with **-es** after an *indefinite* article.
+    images:
+      - "data/assets/images/view_big_building.jpg"
+    audio: "data/assets/audio/igsehesgrosseshuusdert.wav"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I would like a big cappuccino please."
+      helper: "Ich hätte gerne einen grossen Cappuccino."
+    tokens: ["I", "hätti", "gärn", "ä", "grosse", "Cappuccino."]
+    solution_display: |
+      ✅ Correct!
+      
+      If the noun is *masculine*, which **Cappuccino** is (sometimes, these things are even among Swiss people, do don't fret if you get them wrong sometimes!), the adjective is **gross*e***.
+    audio: "data/assets/audio/ihaettigaernegrossecappuccino.wav"
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dasischegrossipflanze.wav"
+    answers: ["Das isch e grossi Pflanze.", "Das isch ä grossi Pflanze."]
+    images:
+      - "data/assets/images/woman_smelling_big_plant.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      If you have a *feminine* noun, the adjective after the *indefinite* article gets a **-i**.
+
+  - type: match
+    id: match_7
+    prompt: "Match the forms after an *indefinite* article!"
+    pairs:
+      - left: "*masculine*"
+        right: "gross**e**"
+      - left: "*feminine*"
+        right: "gross**i**"
+      - left: "*neuter*"
+        right: "gross**es**"
+
+  - type: markdown
+    id: markdown_5
+    markdown: |
+      ## Chliine, Chliini, Chliises
+      
+      Once again, we **do not like similar vowels after one another** in Bärndütsch. This also sometimes affects the endings of adjectives. A great example for that is **chlii** (*small*):
+      
+      - *masculine* -> **chlii*ne***: **Ä chliine Maa** (*a small man*)
+      - *feminine* -> **chlii*ni***: **Ä chliini Frou** (*a small woman*)
+      - *neuter* -> **chlii*ses***: **Äs chliises Chind** (*a small child*)
+      
+      For the *neuter* case, we actually insert an **s** instead of the **n**
+      The more you use Bärndütsch, the more intuitive this will become.
+    images:
+      - "data/assets/images/mannequin_sizes.jpg"
+
+  - type: true_false
+    id: true_false_6
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/fuermigaerneschliiseskafi.wav"
+    text: "This person would like a **small coffee**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They said: **Für mi gärn es chliises Kafi**, which  means they would like a *small coffee*. The adjective takes the form **chliises** here (*indefinite* article, and *neuter*).
+
+  - type: order
+    id: order_8
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I would like a small soup, please."
+      helper: "Ich hätte gerne eine kleine Suppe."
+    tokens: ["I", "hätti", "gärn", "ä", "chliini", "Suppe."]
+    solution_display: |
+      ✅ Correct!
+      
+      The adjective **chlii** turns to **chliini** here because we have an *indefinite* article and a *feminine* noun.
+    audio: "data/assets/audio/ihaettigaernechliinisuppe.wav"
+
+  - type: cloze
+    id: cloze_9
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "For me a small cappuccino please."
+      helper: "Für mich einen kleinen Cappuccino, bitte."
+      target: ["Für mi ", " Cappuccino, bitte."]
+    answers: ["ä chliine", "e chliine"]
+    solution_display: |
+      ✅ Correct!
+      
+      For *masculine*, after *indefinite* article, we use **chliine**.
+    images:
+      - "data/assets/images/coffee.jpg"
+    audio: "data/assets/audio/fuermiechliinecappuccinobitte.wav"
+
+  - type: match
+    id: match_12
+    prompt: "Match the forms after an *indefinite* article!"
+    pairs:
+      - left: "*masculine*"
+        right: "chlii**ne**"
+      - left: "*feminine*"
+        right: "chlii**ni**"
+      - left: "*neuter*"
+        right: "chlii**ses**"
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "Äs Bier"
+    translation:
+      en: "A beer"
+      de: "Ein Bier"
+    images:
+      - "data/assets/images/beer.jpg"
+    audio: "data/assets/audio/aesbier.wav"
+
+  - type: true_false
+    id: true_false_11
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aesgrossesbierbitte.wav"
+    text: "This person would like **a small beer**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying: **Äs grosses Bier, bitte** which means *A big beer, please*.
+
+  - type: translate_type
+    id: translate_type_13
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "For me a big beer, please."
+      helper: "Für mich ein grosses Bier, bitte."
+    answers:
+      ["Für mi es grosses Bier, bitte.", "Für mi gärn es grosses Bier.", "Fuer mi es grosses Bier, bitte.", "Fuer mi gaern es grosses Bier."]
+    images:
+      - "data/assets/images/beer.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: listen_type
+    id: listen_type_14
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/miraesseesgrosseszmittag.wav"
+    answers: ["Mir ässe äs grosses Zmittag", "Mir aesse aes grosses Zmittag", "Mir ässe es grosses Zmittag", "Mir aesse es grosses Zmittag"]
+    images:
+      - "data/assets/images/meal_group.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *We're eating a big lunch*.
+
+  - type: markdown
+    id: markdown_15
+    markdown: |
+      ## Names for beer sizes in Switzerland
+      
+      You might know that Germany has different names for different amounts of beer (A **Mass** for 1l or a **Stiefel** for 2l, for example). So do we in Switzerland! I'll list the most common ones out for you here so you've heard them:
+      
+      <center>
+      
+      | amount | name |
+      | --- | --- |
+      | 0.2l | **Herrgöttli** |
+      | 0.3l | **Stange / Chübeli** |
+      | 0.5l | **Grosses / Halber / Chübel** |
+      
+      </center>
+      
+      You would order them using an *indefinite* article. In example sentences, this looks as follows:
+      
+      - **Äs Herrgöttli, bitte.** (*a 0.2l beer, please*)
+      - **Für mi e Stange.** (*for me, a 0.3l beer*)
+      - **I hätti gärn e Halber** / **I hätti gärn es grosses Bier** (*I would like a 0.5l beer*)
+      
+      I won't expect you to memorize all of them, but now you've heard them at least once in case you want to start using them!
+    images:
+      - "data/assets/images/beer.jpg"
+
+  - type: match
+    id: match_16
+    prompt: "Quick matching exercise for beer sizes:"
+    pairs:
+      - left: "Herrgöttli"
+        right: "0.2l"
+      - left: "Stange"
+        right: "0.3l"
+      - left: "Halber"
+        right: "0.5l"
+
+  - type: match
+    id: match_17
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "A small coffee"
+        right: "Äs chliises Kafi"
+      - left: "A big cappuccino"
+        right: "Ä grosse Cappuccino"
+      - left: "A small soup"
+        right: "Ä chliini Suppe"
+      - left: "A tall man"
+        right: "Ä grosse Maa"
+      - left: "Beer"
+        right: "Bier"
