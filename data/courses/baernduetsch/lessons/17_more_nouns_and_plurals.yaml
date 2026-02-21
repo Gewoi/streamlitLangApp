@@ -1,7 +1,7 @@
 id: 17_more_nouns_and_plurals
 title: "More Nouns and Plurals"
 description: "Learn how plurals are formed."
-estimated_minutes: 3
+estimated_minutes: 2
 section: Simple Concepts
 
 steps:
@@ -58,6 +58,7 @@ steps:
       	- **Ds Velo** (*the bike*) -> **D Velos**
       
       There are some more rules here, but you **don't need to memorize them**! We will introduce plural forms when they come so you can pick them up as you go without learning too many rules!
+      
     images:
       - "data/assets/images/book_table.jpg"
 
@@ -133,3 +134,97 @@ steps:
     images:
       - "data/assets/images/houses.jpg"
     audio: "data/assets/audio/dhueser.wav"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you see the houses there?"
+      helper: "Siehst du die Häuser dort?"
+    tokens: ["Gsehsch", "du", "d", "Hüser", "dert?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **D Hüser** is technically in the accusative, but we use the same forms in Bärndütsch, so you don't need to worry about that at all!
+    audio: "data/assets/audio/gsehschdudhueserdert.wav"
+
+  - type: true_false
+    id: true_false_10
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/moenscheheihueser.wav"
+    text: "They're saying that **animals have houses**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying **Mönsche hei Hüser**, which means *Humas have houses*.
+
+  - type: introduce_word
+    id: introduce_word_11
+    word: "D Strasse"
+    translation:
+      en: "The streets"
+      de: "Die Strassen"
+    images:
+      - "data/assets/images/highway_crossroads.jpg"
+    audio: "data/assets/audio/dstrasse.wav"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We see streets and houses."
+      helper: "Wir sehen Häuser und Strassen."
+    tokens: ["Mir", "gseh", "Hüser", "u", "Strasse"]
+    solution_display: |
+      ✅ Correct!
+      
+      In the plural form, **Straas** gets closer to its German counterpart and more emphasis on the double s: **Strasse**. Note that an **-e** at the end, as you've already heard a few times now, is pronounced more like an **-ä**.
+    audio: "data/assets/audio/mirgsehhueserustrasse.wav"
+
+  - type: translate_type
+    id: translate_type_13
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Humans, streets and people."
+      helper: "Menschen, Häuser und Strassen."
+    answers:
+      ["Mönsche, Hüser u Strasse.", "Mönsche, Hüser und Strasse."]
+    images:
+      - "data/assets/images/city_evening.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: match
+    id: match_14
+    prompt: "Match the translations!"
+    pairs:
+      - left: "Humans"
+        right: "Mönsche"
+      - left: "Men"
+        right: "Männer"
+      - left: "Women"
+        right: "Froue"
+      - left: "Children"
+        right: "Chinder"
+      - left: "Houses"
+        right: "Hüser"
+      - left: "Streets"
+        right: "Strasse"
+
+  - type: match
+    id: match_15
+    prompt: "Match the singular to the plural."
+    pairs:
+      - left: "Maa"
+        right: "Männer"
+      - left: "Frou"
+        right: "Froue"
+      - left: "Chind"
+        right: "Chinder"
+      - left: "Huus"
+        right: "Hüser"
+      - left: "Straas"
+        right: "Strasse"
+      - left: "Mönsch"
+        right: "Mönsche"
