@@ -1,7 +1,358 @@
 id: 24_the_verb_to_go
 title: "🚶‍♀️‍➡️The Verb *To Go*"
-description: "Learn about the verb **gaa** (*to go*), and say where you're going with it."
-estimated_minutes: 3
+description: "Learn about the verb **gaah** (*to go*), and say where you're going with it."
+estimated_minutes: 6
 section: Appointments
 
 steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## Gaah: *To go*
+      
+      In Bärdütsch, the verb *to go* is **gaah**. You can write it with or without the **h** at the end; I prefer it with as it's a bit clearer.
+      
+      This is another one  of those verbs that is a bit more irregular! Here are the signular forms:
+      
+      <center>
+      
+      | *pronoun* | *gaah* | *example sentence* |
+      | --- | --- | --- |
+      | I / Ig | **gah** | **I gah hei** (*I go home*) |
+      | Du | **geisch** | **Du geisch furt** (*You go away*) |
+      | Är / Si / Äs | **geit** | **Är geit jetzt** (*He's going now*) |
+      
+      </center>
+      
+      You've already seen **geit** in **Geit's guet?** (*are you doing good?*), and now you know its literal translation: *Is it going well?*.
+      
+      We'll do some exercises with those, introduce a few new words along the way, and then look at the plural forms!
+    images:
+      - "data/assets/images/city_evening.jpg"
+
+  - type: match
+    id: match_9
+    prompt: "Match the cojugations."
+    pairs:
+      - left: "I / Ig "
+        right: "gah"
+      - left: "Du"
+        right: "geisch"
+      - left: "Är / Si / Äs"
+        right: "geit"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She's going home."
+      helper: "Sie geht nach Hause."
+      target: ["Si ", " hei."]
+    answers: ["geit"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Gaah** in third person is **geit**, so *she's going* is **si geit**.
+    images:
+      - "data/assets/images/woman_waving_two.jpg"
+    audio: "data/assets/audio/sigeithei.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Hei"
+    translation:
+      en: "(to) home"
+      de: "nach Hause"
+    images:
+      - "data/assets/images/house_grass.jpg"
+    audio: "data/assets/audio/hei.wav"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I go home now. Bye!"
+      helper: "Ich gehe jetzt nach Hause. Tschüss!"
+    tokens: ["I", "gah", "jetz", "hei.", "Tschau!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **I gah** means *I go*. To say that you're going home, you use **hei**.
+    audio: "data/assets/audio/igahjetzhei_tschau.wav"
+
+  - type: translate_type
+    id: translate_type_4
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Are you going home?"
+      helper: "Gehst du nach Hause?"
+    answers:
+      ["Geisch du hei?"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Du geisch** means *you go*; in a question, the verb comes before the subject!
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Jetz / Jetzt"
+    translation:
+      en: "Now"
+      de: "Jetzt"
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/jetz_jetzt.wav"
+
+  - type: translate_type
+    id: translate_type_6
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I go now. Bye!"
+      helper: "Ich gehe jetzt. Tschüss!"
+    answers:
+      ["I gah jetz. Tschüss!", "I gah jetz. Tschou!", "I gah jetz. Tschau!", "I gah jetz. Sälü!", "I gah jetz. Säli!", "I gah jetzt. Tschüss!", "I gah jetzt. Tschou!", "I gah jetzt. Tschau!", "I gah jetzt. Sälü!"]
+    images:
+      - "data/assets/images/woman_waving.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Jetz** or **jetzt** means *now*. Some people also say **jetze**, but it's they're all equivalent!
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "It's going well, thank you!"
+      helper: "Es geht gut, danke!"
+    tokens: ["Äs", "geit", "guet,", "merci!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Äs geit** means *it goes.
+    audio: "data/assets/audio/aesgeitguetmerci.wav"
+
+  - type: true_false
+    id: true_false_8
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aergeitjetzhei.wav"
+    text: "They're talking about someone who's **going home now**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Är geit jetz hei**, which means *he's going home now.
+
+  - type: match
+    id: match_10
+    prompt: "Match the cojugations."
+    pairs:
+      - left: "I / Ig"
+        right: "gah"
+      - left: "Du"
+        right: "geisch"
+      - left: "Är / Si / Äs"
+        right: "geit"
+
+  - type: markdown
+    id: markdown_11
+    markdown: |
+      ## Gaah: Plural
+      
+      The plural forms are also slightly irregular. Here they are:
+      
+      <center>
+      
+      | *pronoun* | *gaah* | *example sentence* |
+      | --- | --- | --- |
+      | Mir | **göh** | **Mir göh hei** (*We go home*) |
+      | Dir | **göht** | **Dir göht furt** (*You (pl.) go away*) |
+      | Si | **göh** | **Si göh jetzt** (*They're going now*) |
+      
+      </center>
+    images:
+      - "data/assets/images/group_run.jpg"
+
+  - type: match
+    id: match_12
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "göh (*we*)"
+      - left: "Dir"
+        right: "göht"
+      - left: "Si"
+        right: "göh (*they*)"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They're going home now."
+      helper: "Sie gehen jetzt nach Hause."
+    tokens: ["Si", "göh", "jetz", "hei."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Si göh** means *they go / they're going*.
+    audio: "data/assets/audio/sigoehjetzhei.wav"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Are you (pl.) going home?"
+      helper: "Geht ihr nach Hause?"
+      target: ["", " hei?"]
+    answers: ["Göht dir", "Goeht dir"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Dir göht** means *you (pl.) go / you're going*. In a question, we change the order of verb and subject.
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/goehtdirhei.wav"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "Furt / Wäg"
+    translation:
+      en: "Away"
+      de: "Weg"
+    images:
+      - "data/assets/images/pointing_map.jpg"
+    audio: "data/assets/audio/furt_waeg.wav"
+
+  - type: cloze
+    id: cloze_16
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Are they going away?"
+      helper: "Gehen sie weg?"
+      target: ["Göh si ", "?"]
+    answers: ["furt", "wäg", "waeg"]
+    solution_display: |
+      ✅ Correct!
+      
+      Both **furt** and **wäg** mean *away*!
+    images:
+      - "data/assets/images/tourists_map.jpg"
+    audio: "data/assets/audio/goehsifurt_goehsiwaeg.wav"
+
+  - type: translate_type
+    id: translate_type_17
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "We're going away now!"
+      helper: "Wir gehen jetzt weg!"
+    answers:
+      ["Mir göh jetzt wäg!", "Mir göh jetzt furt!"]
+    images:
+      - "data/assets/images/pointing_at_map.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir göh** means *we go*. Pay attention to the order: It's *jetzt wäg / jetzt furt*. The other order is *technically* not wrong (**Mir göh wäg jetzt**), but this way of expressing it is much more common and natural.
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "Glii"
+    translation:
+      en: "Soon"
+      de: "Bald"
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/glii.wav"
+
+  - type: order
+    id: order_19
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We're going home soon. See you later!"
+      helper: "Wir gehen bald nach Hause. Bis später!"
+    tokens: ["Mir", "göh", "glii", "hei.", "Bis", "speter!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Glii** means *soon*; this is a very Swiss term that you'll hear in a couple of dialects. You can technically also use the German *bald*, that works too; but Swiss people will more often use glii!
+    audio: "data/assets/audio/mirgoehgliihei_bisspeter.wav"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/goehtdirglii.wav"
+    answers: ["Göht dir glii?"]
+    images:
+      - "data/assets/images/conference_handshake.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Göht dir glii?** means *are you going soon? / are you leaving soon?*. **Dir** is, as a reminder, also used for the *formal* expression; so it could also mean *Are you (formal) going soon?*.
+
+  - type: cloze
+    id: cloze_21
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Are we leaving soon?"
+      helper: "Gehen wir bald?"
+      target: ["Göh mir ", "?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir göh** is *we go*, and **glii** means *soon*.
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/goehmirglii.wav"
+
+  - type: match
+    id: match_22
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "göh (*we*)"
+      - left: "Dir"
+        right: "göht"
+      - left: "Si"
+        right: "göh (*they*)"
+
+  - type: true_false
+    id: true_false_23
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/mirgoehglii.wav"
+    text: "They are leaving **now**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **mir göh glii**, which means *we go soon*.
+
+  - type: match
+    id: match_24
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "(to) home"
+        right: "hei"
+      - left: "away"
+        right: "furt / wäg"
+      - left: "now"
+        right: "jetz"
+      - left: "soon"
+        right: "glii"
+
+  - type: match
+    id: match_25
+    prompt: "Match the cojugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "gah"
+      - left: "Du"
+        right: "geisch"
+      - left: "Är / Si / Äs"
+        right: "geit"
+      - left: "Mir"
+        right: "göh (*we*)"
+      - left: "Dir"
+        right: "göht"
+      - left: "Si"
+        right: "göh (*they*)"
