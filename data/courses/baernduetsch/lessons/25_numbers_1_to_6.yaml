@@ -110,6 +110,7 @@ steps:
     sentence:
       question: "Three, two, one..."
       helper: "Drei, zwei, eins..."
+    answers: ["Drü, zwöi, eis...", "Drue, Zwoei, Eis..."]
     images:
       - "data/assets/images/rocket.jpg"
     solution_display: |
@@ -229,6 +230,7 @@ steps:
     sentence:
       question: "I have one big plant and three small plants."
       helper: "Ich habe eine grosse Pflanze und drei kleine Pflanzen."
+    answers: ["I ha ei grossi Pflanze u drü chliini Pflanze", "Ig ha ei grossi Pflanze u drü chliini Pflanze"]
     images:
       - "data/assets/images/woman_smelling_big_plant.jpg"
     solution_display: |

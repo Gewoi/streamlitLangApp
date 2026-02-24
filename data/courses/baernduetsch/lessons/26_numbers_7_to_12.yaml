@@ -1,0 +1,197 @@
+id: 26_numbers_7_to_12
+title: "🔟 Numbers 7 to 12"
+description: "Learn the numbers from 7 to 12."
+estimated_minutes: 2
+section: Appointments
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Sibe, Acht, Nün"
+    translation:
+      en: "Seven, Eight, Nine"
+      de: "Sieben, Acht, Neun"
+    images:
+      - "data/assets/images/calculator_7_8_9.jpg"
+    audio: "data/assets/audio/sibeachtnuen.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Seven, Eight, Nine"
+      helper: "Sieben, Acht, Nün"
+    tokens: ["Sibe,", "Acht,", "Nün"]
+    solution_display: |
+      ✅ Correct!
+      
+      Sometimes, people will also write **Nün** as **Nüün**; and similarly **Füf** (5) as **Füüf** and **Drü** (3) as **Drüü**.
+    audio: "data/assets/audio/sibeachtnuen.wav"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We are seven humans."
+      helper: "Wir sind sieben Menschen."
+      target: ["Mir si ", " Mönsche"]
+    answers: ["Sibe"]
+    solution_display: |
+      ✅ Correct!
+      
+      In modern times, when you want to say how many of something there is (two men, three houses, etc.), you can just say **number + plural**.
+    images:
+      - "data/assets/images/group_back_beach.jpg"
+    audio: "data/assets/audio/mirsisibemoensche.wav"
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Seven, eight and nine are numbers."
+      helper: "Sieben, Acht und Neun sind Zahlen."
+      target: ["", " si Zahle."]
+    answers: ["Sibe, Acht u Nün", "Sibe, Acht u Nüün"]
+    solution_display: |
+      ✅ Correct!
+      
+      The word for *number* is **Zahl**, and it's plural is **Zahle**.
+    images:
+      - "data/assets/images/numbers.jpg"
+    audio: "data/assets/audio/sibeachtunuensizahle.wav"
+
+  - type: translate_type
+    id: translate_type_7
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "He has eight kids!"
+      helper: "Er hat acht Kinder!"
+    answers:
+      ["Är hett acht Chind", "Är hett acht Chinder"]
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      That is a lot of kids!
+
+  - type: translate_type
+    id: translate_type_10
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Nine is a small number."
+      helper: "Neun ist eine kleine Zahl."
+    answers:
+      ["Nün isch e chliini Zahl.", "Nüün isch e chliini Zahl.", "Nün isch ä chliini Zahl.", "Nüün isch ä chliini Zahl."]
+    images:
+      - "data/assets/images/housenumber_9.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **E Zahl** means *a number*, **nüün** means *nine* and we say **chliini** because **Zahl** is *neuter* and it comes after an *indefinite* article!
+      
+      Note that the word **Nummer** for *number* also exists; this is used for things like *phone number* (**Telefonnummere**) and specific items (*number 8 on the menu* is **Nummer 8 ufem Menü**).
+
+  - type: listen_type
+    id: listen_type_11
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sibeachtnuen.wav"
+    answers: ["Sibe acht nün", "sibe acht nüün"]
+    images:
+      - "data/assets/images/calculator_7_8_9.jpg"
+
+  - type: match
+    id: match_6
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Seven"
+        right: "Sibe"
+      - left: "Eight"
+        right: "Acht"
+      - left: "Nine"
+        right: "Nün / Nüün"
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "Zää, Elf, Zwölf"
+    translation:
+      en: "Ten, Eleven, Twelve"
+      de: "Zehn, Elf, Zwölf"
+    images:
+      - "data/assets/images/seats_stadium.jpg"
+    audio: "data/assets/audio/zaeelfzwoelf.wav"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The numbers are ten, eleven and twelve."
+      helper: "Die Zahlen sind zehn, elf und zwölf."
+    tokens: ["D", "Zahle", "si", "zää,", "elf", "u", "zwölf."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/dzahlesizaeelfuzwoelf.wav"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "The numbers are seven, ten and twelve."
+      helper: "Die Zahlen sind sibe, zehn und zwölf."
+      target: ["D Zahle si ", "."]
+    answers: ["Sibe, Zää u Zwölf", "Sibe, Zää und Zwölf"]
+    solution_display: |
+      ✅ Correct!
+      
+      The numbers from 7 to 12 are **Sibe, Acht, Nün, Zää, Elf, Zwölf**.
+    images:
+      - "data/assets/images/lottery_wheel.jpg"
+    audio: "data/assets/audio/dzahlesisibezaeuzwoelf.wav"
+
+  - type: true_false
+    id: true_false_15
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/sihettelfpflanze.wav"
+    text: "She has **eleven** plants."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Si hett elf Pflanze**, which means *She has eleven plants*.
+
+  - type: match
+    id: match_16
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Ten"
+        right: "Zää"
+      - left: "Eleven"
+        right: "Elf"
+      - left: "Twelve"
+        right: "Zwölf"
+
+  - type: order
+    id: order_17
+    prompt: "Order the numbers from 7 to 12!"
+    sentence:
+      question: ""
+      helper: ""
+    tokens: ["Sibe", "Acht", "Nün", "Zää", "Elf", "Zwölf"]
+    audio: "data/assets/audio/sibeachtnuenzaehelfzwoelf.wav"
+
+  - type: match
+    id: match_20
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Seven"
+        right: "Sibe"
+      - left: "Eight"
+        right: "Acht"
+      - left: "Nine"
+        right: "Nün"
+      - left: "Ten"
+        right: "Zää"
+      - left: "Eleven"
+        right: "Elf"
+      - left: "Twelve"
+        right: "Zwölf"
