@@ -51,7 +51,7 @@ steps:
       question: "Seven, eight and nine are numbers."
       helper: "Sieben, Acht und Neun sind Zahlen."
       target: ["", " si Zahle."]
-    answers: ["Sibe, Acht u Nün", "Sibe, Acht u Nüün"]
+    answers: ["Sibe, Acht u Nün", "Sibe, Acht und Nüün"]
     solution_display: |
       ✅ Correct!
       
@@ -195,3 +195,13 @@ steps:
         right: "Elf"
       - left: "Twelve"
         right: "Zwölf"
+
+  - type: order
+    id: order_21
+    prompt: "Count from 1 to 12 in Bärndütsch!"
+    sentence:
+      question: ""
+      helper: ""
+    tokens: ["Eis", "Zwöi", "Drü", "Vier", "Füf", "Sächs", "Sibe", "Acht", "Nün", "Zää", "Elf", "Zwölf"]
+    solution_display: |
+      ✅ Correct!
