@@ -1,0 +1,177 @@
+id: 27_talking_about_time
+title: "🕑 Talking About Time"
+description: "Say what time it is and make plans at specific times."
+estimated_minutes: 5
+section: Appointments
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Äs isch vieri."
+    translation:
+      en: "It's four o'clock."
+      de: "Es ist vier Uhr."
+    images:
+      - "data/assets/images/watch_lookat2.jpg"
+    audio: "data/assets/audio/aesischvieri.wav"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "It's four o'clock."
+      helper: "Es ist vier Uhr."
+      target: ["Äs isch ", "."]
+    answers: ["vieri"]
+    solution_display: |
+      ✅ Correct!
+      
+      If it's the *full hour*, you can say **Äs isch + *number*(-i)**.
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/aesischvieri.wav"
+
+  - type: markdown
+    id: markdown_2
+    markdown: |
+      ## *Something is ...* + *Number* = Äs isch *number*(-i)
+      
+      If you say *something is ...* and a number, such as with **time** or giving your **age**, then you use the word *to be* in Bärndütsch:
+      
+      - **Äs isch zwölfi** (*It's twelve o'clock*)
+      - **Si isch drü** (*She's three years old*)
+      
+      Some languages use *to have* for their age, but in Bärndütsch, you use *to be* (**sii**).
+      
+      Another important thing: If you assign a number to something, **all numbers** *except* 1,2 and 3 (**eis**, **zwöi** and **drü**) get an **-i** at then end! 
+      
+      - **Äs isch eis**
+      - **Äs isch zwöi**
+      - **Äs isch drü**
+      - **Äs isch vier*i***
+      - **Äs isch füf*i***
+      - **Äs isch sächs*i***
+      - **Äs isch sibn*i***
+      - ... 
+      
+      Same thing for ages:
+      - **Är isch zwölf*i***
+      - **Si isch drü**
+      
+      So to summarize: For time and age, *one,two and three* stay the same and **all other numbers get a *-i* at the end!**
+    images:
+      - "data/assets/images/numbers.jpg"
+
+  - type: translate_type
+    id: translate_type_3
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "It's five o'clock."
+      helper: "Es ist fünf Uhr."
+    answers:
+      ["Äs isch füfi.", "Äs isch füüfi.", "Es isch füfi.", "Es isch füüfi."]
+    images:
+      - "data/assets/images/watch_lookat3.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      For time and age, all numbers get an **-i** at the end: **Äs isch füfi**.
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/jetztischeis.wav"
+    answers: ["Jetz isch eis.", "Jetzt isch eis."]
+    images:
+      - "data/assets/images/watch_lookat2.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *Now, it's one o'clock*.
+
+  - type: true_false
+    id: true_false_5
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aesischvieri.wav"
+    text: "**All numbers** get an **-i** at the end when we talk about time or age."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      All of them **exept** *one*, *two* and *three* (**eis**, **zwöi** and **drü**).
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Zyt"
+    translation:
+      en: "Time"
+      de: "Zeit"
+    images:
+      - "data/assets/images/clocks.jpg"
+    audio: "data/assets/audio/zyt.wav"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I have time now."
+      helper: "Ich habe jetzt Zeit."
+    tokens: ["I", "ha", "jetz", "Zyt."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Zyt** means *time*. It's a bit of a preference thing if you want to write it with an *i* or a *y*; for consistency, we'll write it with a *y* here!
+    audio: "data/assets/audio/ihajetzzyt.wav"
+
+  - type: translate_type
+    id: translate_type_8
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "It's time!"
+      helper: "Es ist Zeit!"
+    answers:
+      ["Äs isch Zyt!", "Es isch Zyt!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Zyt** means *time*.
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Do you have time now?"
+      helper: "Hast du jetzt Zeit?"
+      target: ["Hesch jetzt ", "?"]
+    answers: ["Zyt"]
+    solution_display: |
+      ✅ Correct!
+      
+      If you want to ask someone if they have time, you can ask **Hesch Zyt?**. If you want to say that you have time, you say **I ha Zyt**.
+    audio: "data/assets/audio/heschjetztzyt.wav"
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "Was isch für Zyt?"
+    translation:
+      en: "What time is it?"
+      de: "Wie spät ist es?"
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/wasischfuerzyt.wav"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What time is it? - It's three o'clock."
+      helper: "Wie spät ist es? - Es ist drei Uhr."
+      target: ["", " - Es isch drü."]
+    answers: ["Was isch für Zyt?", "Was isch fuer Zyt?", "Wi spät isches?"]
+    solution_display: |
+      ✅ Correct!
+      
+      If you want to ask what time it is in Bärndütsch, you say **Was isch für Zyt?**. You could also ask **Wie spät isches?**, which is a bit closer to Hochdütsch.
+    images:
+      - "data/assets/images/watch_lookat2.jpg"
+    audio: "data/assets/audio/wasischfuerzyt_aesischdrue.wav"
