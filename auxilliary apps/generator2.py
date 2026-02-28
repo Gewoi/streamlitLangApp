@@ -211,7 +211,7 @@ def export_to_yaml(lesson: Dict) -> str:
             lines.append(f'      helper: "{step.get("sentence", {}).get("helper", "")}"')
             if step.get('answers'):
                 answers_str = ', '.join(f'"{a}"' for a in step['answers'])
-                lines.append(f'      [{answers_str}]')
+                lines.append(f'    answers: [{answers_str}]')
             if step.get('images'):
                 lines.append('    images:')
                 for img in step['images']:

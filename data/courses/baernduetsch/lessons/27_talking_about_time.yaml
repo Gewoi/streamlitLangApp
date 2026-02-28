@@ -1,7 +1,7 @@
 id: 27_talking_about_time
 title: "🕑 Talking About Time"
-description: "Say what time it is and make plans at specific times."
-estimated_minutes: 5
+description: "Say what time it is."
+estimated_minutes: 4
 section: Appointments
 
 steps:
@@ -59,7 +59,6 @@ steps:
       - **Si isch drü**
       
       So to summarize: For time and age, *one,two and three* stay the same and **all other numbers get a *-i* at the end!**
-      
     images:
       - "data/assets/images/numbers.jpg"
 
@@ -69,8 +68,7 @@ steps:
     sentence:
       question: "It's five o'clock."
       helper: "Es ist fünf Uhr."
-    answers:
-      ["Äs isch füfi.", "Äs isch füüfi.", "Es isch füfi.", "Es isch füüfi."]
+    answers: ["Äs isch füfi.", "Äs isch füüfi.", "Es isch füfi.", "Es isch füüfi."]
     images:
       - "data/assets/images/watch_lookat3.jpg"
     solution_display: |
@@ -130,8 +128,7 @@ steps:
     sentence:
       question: "It's time!"
       helper: "Es ist Zeit!"
-    answers:
-      ["Äs isch Zyt!", "Es isch Zyt!"]
+    answers: ["Äs isch Zyt!", "Es isch Zyt!"]
     solution_display: |
       ✅ Correct!
       
@@ -143,13 +140,13 @@ steps:
     sentence:
       question: "Do you have time now?"
       helper: "Hast du jetzt Zeit?"
-      target: ["Hesch jetzt ", "?"]
+      target: ["Hesch du jetzt ", "?"]
     answers: ["Zyt"]
     solution_display: |
       ✅ Correct!
       
-      If you want to ask someone if they have time, you can ask **Hesch Zyt?**. If you want to say that you have time, you say **I ha Zyt**.
-    audio: "data/assets/audio/heschjetztzyt.wav"
+      If you want to ask someone if they have time, you can ask **Hesch Zyt?** (you can also include the **du**: **Hesch du Zyt?**). If you want to say that you have time, you say **I ha Zyt**.
+    audio: "data/assets/audio/heschdujetztzyt.wav"
 
   - type: introduce_word
     id: introduce_word_9
@@ -159,6 +156,19 @@ steps:
       de: "Wie spät ist es?"
     images:
       - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/wasischfuerzyt.wav"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "What time is it?"
+      helper: "Wie spät ist es?"
+    tokens: ["Was", "isch", "für", "Zyt?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Was isch für Zyt?** means *what time is it?*. You could also say **Wi spät isches?**, like in Hochdütsch; but **Was isch für Zyt?** is a bit more common.
     audio: "data/assets/audio/wasischfuerzyt.wav"
 
   - type: cloze
@@ -176,3 +186,133 @@ steps:
     images:
       - "data/assets/images/watch_lookat2.jpg"
     audio: "data/assets/audio/wasischfuerzyt_aesischdrue.wav"
+
+  - type: choose
+    id: choose_13
+    prompt: "Which of these are *correct* ways to say *how late it is*?"
+    images:
+      - "data/assets/images/clocks.jpg"
+    correct_answers: ["Äs isch vieri.", "Äs isch eis.", "Äs isch drü."]
+    wrong_answers: ["Äs isch eisi.", "Äs isch elf."]
+    solution_display: |
+      ✅ Correct!
+      
+      For *time* and *age*, all numbers *except* **eis**, **zwöi** and **drü** get a **-i** at the end! Note that **zäni** also gets an **n** because of the vowels next to each other.
+
+  - type: introduce_word
+    id: introduce_word_14
+    word: "Äs isch halbi füfi."
+    translation:
+      en: "It's 4:30."
+      de: "Es ist halb fünf."
+    images:
+      - "data/assets/images/timezones.jpg"
+    audio: "data/assets/audio/aesischhalbifuefi.wav"
+
+  - type: cloze
+    id: cloze_15
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "It's half past two."
+      helper: "Es ist halb drei."
+      target: ["Äs isch ", " drü."]
+    answers: ["halbi"]
+    solution_display: |
+      ✅ Correct!
+      
+      To say that it's 2:30, you say **äs isch halbi drü**.
+      
+      NOTE: Bärndütsch and German are different from English! To say 2:30, in English you say *half past two*, so half an hour **after**. But in Bärndütsch, you say **halbi drü**, so like "*half-three*": It refers to half an hour **before** three. Keep that in mind!
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/aesischhalbidrue.wav"
+
+  - type: true_false
+    id: true_false_16
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aesischhalbifuefi.wav"
+    text: "It's currently half **past** five."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      **Halbi füfi** means *half **to** five*, so it's actually 4:30!
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "It's half past one soon."
+      helper: "Es ist bald halb zwei."
+    tokens: ["Äs", "isch", "glii", "halbi", "zwöi."]
+    solution_display: |
+      ✅ Correct!
+      
+      The placement of the **glii** in the sentence is not that important, you could also put it in the end for example (**äs isch halbi zwöi glii**). This solution is the most elegant and common though.
+    audio: "data/assets/audio/aesischgliihalbizwoei.wav"
+
+  - type: translate_type
+    id: translate_type_18
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "What time is it?"
+      helper: "Wie spät ist es?"
+    answers:  ["Was isch für Zyt?", "Was isch für Ziit?", "Was isch fuer Zyt?", "Was isch fuer Ziit?"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What time is it? - It's half past nine."
+      helper: "Wie spät ist es? - Es ist halb zehn."
+      target: ["Was isch für Zyt? - ", ""]
+    answers: ["Es isch halbi zäni", "Es isch halbi zääni", "Äs isch halbi zäni", "Äs isch halbi zääni"]
+    solution_display: |
+      ✅ Correct!
+      
+      Again, we do not like vowels following one anoter if they aren't pronounced smoothly, so we add the **n** in between.
+    images:
+      - "data/assets/images/clocks.jpg"
+    audio: "data/assets/audio/wasischfuerzyt_aesischhalbizaeni.wav"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/aesischhalbinueni.wav"
+    answers: ["Äs isch halbi nüni", "Es isch halbi nüni", "Äs isch halbi nüüni", "Es isch halbi nüüni"]
+    images:
+      - "data/assets/images/conversation_causual.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      The time this refers to is 8:30 (*half **to** nine*).
+
+  - type: choose
+    id: choose_21
+    prompt: "What time are they refering to?"
+    images:
+      - "data/assets/images/city_evening.jpg"
+    correct_answers: ["9:30"]
+    wrong_answers: ["10:00", "10:30", "9:00"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Halbi zäni** means *half past nine* / *half **to** ten*.
+    audio: "data/assets/audio/aesischhalbizaeni.wav"
+
+  - type: match
+    id: match_22
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "It's three o clock."
+        right: "Äs isch drü."
+      - left: "Time"
+        right: "Zyt"
+      - left: "Soon"
+        right: "Glii"
+      - left: "It's half past eleven"
+        right: "Es isch halbi zwölfi"
+      - left: "What time is it?"
+        right: "Was isch für Zyt?"
