@@ -176,11 +176,3 @@ steps:
     images:
       - "data/assets/images/watch_lookat2.jpg"
     audio: "data/assets/audio/wasischfuerzyt_aesischdrue.wav"
-
-  - type: choose
-    id: choose_12
-    prompt: "Choose all correct answers."
-    images:
-      - "data/assets/images/zueri.jpg"
-    correct_answers: ["YAMLALALA", "safdasdfasdfasdf"]
-    wrong_answers: ["dajfasd"]
