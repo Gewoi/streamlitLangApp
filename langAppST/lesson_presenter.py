@@ -545,6 +545,7 @@ def render_true_false(step: dict):
 @st.fragment
 def render_choose(step: dict):
     images = step.get("images", None)
+    audio = step.get("audio", None)
     sol_display = step.get("solution_display", None)
     display_text = step["prompt"]
 
@@ -555,6 +556,11 @@ def render_choose(step: dict):
             for img in images:
                 if os.path.exists(img):
                     st.image(resize_image(img))
+    if audio:
+        if os.path.exists(audio):
+            audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
+        else:
+            st.info(f"(Missing audio asset: {audio})")
 
 
     if st.session_state["order_tokens"] == []:

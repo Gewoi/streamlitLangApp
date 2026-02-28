@@ -200,6 +200,8 @@ def export_to_yaml(lesson: Dict) -> str:
                 lines.append('    solution_display: |')
                 for line in solution.split('\n'):
                     lines.append(f'      {line}')
+            if step.get('audio'):
+                lines.append(f'    audio: "{step["audio"]}"')
 
                     
         elif step_type == 'translate_type':
@@ -833,6 +835,11 @@ class ChooseStepEditor(BaseStepEditor):
         self.images_editor = ImageListEditor(self)
         self.images_editor.pack(fill='x', pady=5)
         self.images_editor.set(step_data.get('images', []))
+
+        # Audio
+        self.audio_entry = FilePathEntry(self, "Audio:", 'audio')
+        self.audio_entry.pack(fill='x', pady=3)
+        self.audio_entry.set(step_data.get('audio', ''))
     
     def get_data(self) -> Dict:
         return {
@@ -841,6 +848,7 @@ class ChooseStepEditor(BaseStepEditor):
             'wrong_answers': self.wrong_tokens_editor.get(),
             'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
             'images': self.images_editor.get(),
+            'audio': self.audio_entry.get()
         }
 
 
@@ -1364,6 +1372,7 @@ class LessonEditorApp:
         elif step_type == 'choose':
             new_step['prompt'] = 'Choose all correct answers.'
             new_step['images'] = []
+            new_step['audio'] = ''
             new_step['correct_answers'] = []
             new_step['wrong_answers'] = []
             new_step['solution_display'] = ''
