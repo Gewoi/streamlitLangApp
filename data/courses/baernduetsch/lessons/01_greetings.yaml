@@ -257,6 +257,13 @@ steps:
       
       This is how you would say goodbye to someone you'll see again that day!
 
+  - type: choose
+    images: 
+      - "data/assets/images/old_guy_half_wave.jpg"
+    prompt: "Choose all the ways to say *Hello*!"
+    correct_answers: ["Hallo", "Tschau", "Sälü"]
+    wrong_answers: ["Bis später", "Tschüss"]
+
   - type: introduce_word
     id: guet
     word: "Guet"

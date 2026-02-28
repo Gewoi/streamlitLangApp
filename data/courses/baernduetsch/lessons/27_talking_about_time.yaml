@@ -59,6 +59,7 @@ steps:
       - **Si isch drü**
       
       So to summarize: For time and age, *one,two and three* stay the same and **all other numbers get a *-i* at the end!**
+      
     images:
       - "data/assets/images/numbers.jpg"
 
@@ -175,3 +176,11 @@ steps:
     images:
       - "data/assets/images/watch_lookat2.jpg"
     audio: "data/assets/audio/wasischfuerzyt_aesischdrue.wav"
+
+  - type: choose
+    id: choose_12
+    prompt: "Choose all correct answers."
+    images:
+      - "data/assets/images/zueri.jpg"
+    correct_answers: ["YAMLALALA", "safdasdfasdfasdf"]
+    wrong_answers: ["dajfasd"]

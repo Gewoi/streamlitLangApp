@@ -31,6 +31,7 @@ STEP_TYPES = {
     'introduce_word': 'Introduce Word',
     'cloze': 'Fill in the Blank (Cloze)',
     'order': 'Word Order',
+    'choose': 'Choose Correct Answers',
     'translate_type': 'Translate & Type',
     'listen_type': 'Listen & Type',
     'true_false': 'True/False',
@@ -181,6 +182,25 @@ def export_to_yaml(lesson: Dict) -> str:
                     lines.append(f'      {line}')
             if step.get('audio'):
                 lines.append(f'    audio: "{step["audio"]}"')
+
+        elif step_type == 'choose':
+            lines.append(f'    prompt: "{step.get("prompt", "")}"')
+            if step.get('images'):
+                lines.append('    images:')
+                for img in step['images']:
+                    lines.append(f'      - "{img}"')
+            if step.get('correct_answers'):
+                correct_str = ', '.join(f'"{t}"' for t in step['correct_answers'])
+                lines.append(f'    correct_answers: [{correct_str}]')
+            if step.get('wrong_answers'):
+                wrong_str = ', '.join(f'"{t}"' for t in step['wrong_answers'])
+                lines.append(f'    wrong_answers: [{wrong_str}]')
+            if step.get('solution_display'):
+                solution = ensure_solution_emoji(step['solution_display'])
+                lines.append('    solution_display: |')
+                for line in solution.split('\n'):
+                    lines.append(f'      {line}')
+
                     
         elif step_type == 'translate_type':
             lines.append(f'    prompt: "{step.get("prompt", "")}"')
@@ -188,7 +208,6 @@ def export_to_yaml(lesson: Dict) -> str:
             lines.append(f'      question: "{step.get("sentence", {}).get("question", "")}"')
             lines.append(f'      helper: "{step.get("sentence", {}).get("helper", "")}"')
             if step.get('answers'):
-                lines.append('    answers:')
                 answers_str = ', '.join(f'"{a}"' for a in step['answers'])
                 lines.append(f'      [{answers_str}]')
             if step.get('images'):
@@ -275,9 +294,22 @@ class ScrollableFrame(ttk.Frame):
         
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
-        
-        # Bind mousewheel
-        canvas.bind_all("<MouseWheel>", lambda e: canvas.yview_scroll(int(-1*(e.delta/120)), "units"))
+
+        def _on_mousewheel(e):
+            # Don't hijack scrolling from text widgets
+            w = e.widget
+            if isinstance(w, (tk.Text, scrolledtext.ScrolledText)):
+                return
+            canvas.yview_scroll(int(-1*(e.delta/120)), "units")
+
+        def _bind_wheel(e):
+            canvas.bind_all("<MouseWheel>", _on_mousewheel)
+
+        def _unbind_wheel(e):
+            canvas.unbind_all("<MouseWheel>")
+
+        self.bind("<Enter>", _bind_wheel)
+        self.bind("<Leave>", _unbind_wheel)
 
 
 class FilePathEntry(ttk.Frame):
@@ -429,13 +461,21 @@ class AnswersEditor(ttk.Frame):
 class TokensEditor(ttk.Frame):
     """Widget for editing ordered tokens (for word order exercises)."""
     
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent, name = "", **kwargs):
         super().__init__(parent, **kwargs)
         
         # Header
         header = ttk.Frame(self)
         header.pack(fill='x')
-        ttk.Label(header, text="Tokens (in order):", width=15, anchor='e').pack(side='left')
+        label_text = ""
+        if name=="correct_answers":
+            label_text = "Correct Answers:"
+        elif name=="wrong_answers":
+            label_text = "Wrong Answers:"
+        else:
+            label_text = "Tokens (in order):"
+
+        ttk.Label(header, text=label_text, width=15, anchor='e').pack(side='left')
         
         self.add_entry = ttk.Entry(header, width=20)
         self.add_entry.pack(side='left', fill='x', expand=True, padx=5)
@@ -767,6 +807,41 @@ class OrderStepEditor(BaseStepEditor):
             'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
             'audio': self.audio_entry.get()
         }
+    
+class ChooseStepEditor(BaseStepEditor):
+    """Editor for word choose steps."""
+    
+    def __init__(self, parent, step_data: Dict, **kwargs):
+        super().__init__(parent, step_data, **kwargs)
+        
+        self.prompt_entry = self.create_labeled_entry(self, "Prompt:", 'prompt')
+
+        # Correct_Tokens
+        self.correct_tokens_editor = TokensEditor(self, "correct_answers")
+        self.correct_tokens_editor.pack(fill='x', pady=5)
+        self.correct_tokens_editor.set(step_data.get('correct_answers', []))
+
+        # Wrong_Tokens
+        self.wrong_tokens_editor = TokensEditor(self, "wrong_answers")
+        self.wrong_tokens_editor.pack(fill='x', pady=5)
+        self.wrong_tokens_editor.set(step_data.get('wrong_answers', []))
+
+        # Solution display
+        self.solution_text = self.create_labeled_text(self, "Solution text:", 'solution_display', height=4)
+
+        # Images
+        self.images_editor = ImageListEditor(self)
+        self.images_editor.pack(fill='x', pady=5)
+        self.images_editor.set(step_data.get('images', []))
+    
+    def get_data(self) -> Dict:
+        return {
+            'prompt': self.prompt_entry.get(),
+            'correct_answers': self.correct_tokens_editor.get(),
+            'wrong_answers': self.wrong_tokens_editor.get(),
+            'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
+            'images': self.images_editor.get(),
+        }
 
 
 class TranslateTypeStepEditor(BaseStepEditor):
@@ -920,6 +995,7 @@ STEP_EDITORS = {
     'introduce_word': IntroduceWordStepEditor,
     'cloze': ClozeStepEditor,
     'order': OrderStepEditor,
+    'choose' : ChooseStepEditor,
     'translate_type': TranslateTypeStepEditor,
     'listen_type': ListenTypeStepEditor,
     'true_false': TrueFalseStepEditor,
@@ -1284,6 +1360,12 @@ class LessonEditorApp:
             new_step['sentence'] = {'question': '', 'helper': ''}
             new_step['tokens'] = []
             new_step['audio'] = ''
+            new_step['solution_display'] = ''
+        elif step_type == 'choose':
+            new_step['prompt'] = 'Choose all correct answers.'
+            new_step['images'] = []
+            new_step['correct_answers'] = []
+            new_step['wrong_answers'] = []
             new_step['solution_display'] = ''
         elif step_type == 'translate_type':
             new_step['prompt'] = 'Translate the following Sentence.'

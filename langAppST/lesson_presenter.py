@@ -107,6 +107,8 @@ def render_step(step : dict):
         return render_match(step)
     if stype == "true_false":
         return render_true_false(step)
+    if stype == "choose":
+        return render_choose(step)
     st.warning(f"Unknown step type: {stype!r}")
     return StepOutcome(can_go_next=True)
 
@@ -534,6 +536,69 @@ def render_true_false(step: dict):
     if correct:
         st.session_state["exercise_done"] = True
         st.rerun()
+    
+    if st.session_state["exercise_done"]:
+        return submitted_exercise(sol_display)    
+    
+    return StepOutcome(can_go_next=False)
+
+@st.fragment
+def render_choose(step: dict):
+    images = step.get("images", None)
+    sol_display = step.get("solution_display", None)
+    display_text = step["prompt"]
+
+    correct_answers = step["correct_answers"]
+    wrong_answers = step["wrong_answers"]
+    if images:
+        with st.container(horizontal_alignment="center"):
+            for img in images:
+                if os.path.exists(img):
+                    st.image(resize_image(img))
+
+
+    if st.session_state["order_tokens"] == []:
+        tokens = list(correct_answers + wrong_answers)
+        random.shuffle(tokens)
+        st.session_state["order_tokens"] = list(tokens)
+        sel_btns = []
+    else:
+        tokens = list(st.session_state["order_tokens"])
+        sel_btns = list(st.session_state["used_tokens"])
+    st.space("small")
+    st.markdown(f"#### {display_text}", text_alignment="center")
+    st.space("small")
+
+    def give_css_sel(button):
+        step_idx = st.session_state["step_idx"]
+        key = f"choose_selected_{button}_{step_idx}" if button in sel_btns else f"{button}_{step_idx}"
+        return key
+    
+    col = st.columns([.3, .4, .3])
+    for word in tokens:
+        if col[1].button(label=word, key=give_css_sel(word), width='stretch'):
+            if word in sel_btns:
+                sel_btns.remove(word)
+                st.session_state["used_tokens"] = sel_btns
+                st.rerun()
+            else:
+                sel_btns.append(word)
+                st.session_state["used_tokens"] = sel_btns
+                st.rerun()
+
+    st.space("medium")
+
+    with st.form(f"answer_choose_{st.session_state["step_idx"]}", border=False):
+        submitted = st.form_submit_button("Check", width="stretch", shortcut="enter")
+
+    if submitted:
+        if sorted(sel_btns) == sorted(correct_answers):
+            st.session_state["exercise_done"] = True
+            st.rerun()
+        else:
+            mistake_made(step)
+            st.session_state["used_tokens"] = []
+            st.error(f"Not quite. The solution is: **{correct_answers}**")
     
     if st.session_state["exercise_done"]:
         return submitted_exercise(sol_display)    
