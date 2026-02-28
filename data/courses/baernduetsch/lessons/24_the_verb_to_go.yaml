@@ -297,6 +297,7 @@ steps:
       question: "Are we leaving soon?"
       helper: "Gehen wir bald?"
       target: ["Göh mir ", "?"]
+    answers: ["glii"]
     solution_display: |
       ✅ Correct!
       

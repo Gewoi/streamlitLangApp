@@ -286,11 +286,11 @@ def render_order(step: dict):
             st.rerun()
     
     
-    cols = st.columns(len(tokens))
-    for i, col in enumerate(cols):
+    cols = st.columns(min(len(tokens),5))
+    for i in range(len(tokens)):
         with cols[i % 5]:
             button_disabled = tokens[i] in used_tokens
-            if st.button(label=tokens[i], disabled=button_disabled):
+            if st.button(label=tokens[i], disabled=button_disabled, width='stretch'):
                 st.session_state["used_tokens"] += [tokens[i]]
                 st.session_state["order_answer"] += [tokens[i]]
                 st.rerun()
