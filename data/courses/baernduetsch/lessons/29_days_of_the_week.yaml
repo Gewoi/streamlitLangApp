@@ -1,0 +1,51 @@
+id: 29_days_of_the_week
+title: "🗓 Days of the Week"
+description: "Learn about the names of the days of the week, and how to say *today*, *tomorrow* and *yesterday*."
+estimated_minutes: 3
+section: Appointments
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Mänti"
+    translation:
+      en: "Monday"
+      de: "Montag"
+    images:
+      - "data/assets/images/monday.jpg"
+    audio: "data/assets/audio/maenti.wav"
+
+  - type: introduce_word
+    id: introduce_word_1
+    word: "Dsischti"
+    translation:
+      en: "Tuesday"
+      de: "Dienstag"
+    images:
+      - "data/assets/images/week_firsthalf.jpg"
+    audio: "data/assets/audio/dsischti.wav"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Monday and Tuesday."
+      helper: "Montag und Dienstag."
+    tokens: ["Mänti", "u", "Dsischti"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mänti** is *Monday*, and **Dischti** is *Tuesday*. Sometimes, people add a **-g** at the end of those (**Mäntig**, **Dsischtig**), but that's not necessary (and depends a bit on where in Bern you are from).
+    audio: "data/assets/audio/maentiudsischti.wav"
+
+  - type: translate_type
+    id: translate_type_3
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Monday and Tuesday."
+      helper: "Montag und Dienstag."
+    answers: ["Mänti u Dsischti.", "Mäntig u Dsischtig."]
+    images:
+      - "data/assets/images/week_firsthalf.jpg"
+    solution_display: |
+      ✅ Correct!
