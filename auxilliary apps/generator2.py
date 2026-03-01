@@ -189,6 +189,7 @@ def export_to_yaml(lesson: Dict) -> str:
                 lines.append('    images:')
                 for img in step['images']:
                     lines.append(f'      - "{img}"')
+            lines.append(f'    single_answer: {str(step.get("single_answer", False)).lower()}')
             if step.get('correct_answers'):
                 correct_str = ', '.join(f'"{t}"' for t in step['correct_answers'])
                 lines.append(f'    correct_answers: [{correct_str}]')
@@ -818,6 +819,11 @@ class ChooseStepEditor(BaseStepEditor):
         
         self.prompt_entry = self.create_labeled_entry(self, "Prompt:", 'prompt')
 
+        single_frame = ttk.Frame(self)
+        single_frame.pack(fill='x', pady=3)
+        ttk.Label(single_frame, text="", width=15).pack(side='left')
+        self.single_answer_var = tk.BooleanVar(value=step_data.get('single_answer', False))
+        ttk.Checkbutton(single_frame, text="Single correct answer only", variable=self.single_answer_var).pack(side='left')
         # Correct_Tokens
         self.correct_tokens_editor = TokensEditor(self, "correct_answers")
         self.correct_tokens_editor.pack(fill='x', pady=5)
@@ -844,6 +850,7 @@ class ChooseStepEditor(BaseStepEditor):
     def get_data(self) -> Dict:
         return {
             'prompt': self.prompt_entry.get(),
+            'single_answer': self.single_answer_var.get(),
             'correct_answers': self.correct_tokens_editor.get(),
             'wrong_answers': self.wrong_tokens_editor.get(),
             'solution_display': self.solution_text.get('1.0', tk.END).rstrip(),
@@ -1371,6 +1378,7 @@ class LessonEditorApp:
             new_step['solution_display'] = ''
         elif step_type == 'choose':
             new_step['prompt'] = 'Choose all correct answers.'
+            new_step['single_answer'] = False
             new_step['images'] = []
             new_step['audio'] = ''
             new_step['correct_answers'] = []

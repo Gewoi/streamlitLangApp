@@ -79,6 +79,20 @@ steps:
     images:
       - "data/assets/images/man_woman_bw.jpg"
 
+  - type: choose
+    id: choose_23
+    prompt: "Which is the correct indefinite article for **Frou**?"
+    single_answer: True
+    images:
+      - "data/assets/images/woman_painting.jpg"
+    correct_answers: ["Ä"]
+    wrong_answers: ["Äs"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Frou** is *feminine*, so we use **ä** (and we also use **ä** for *masculine* nouns).
+    audio: "data/assets/audio/aefrou.wav"
+
   - type: introduce_word
     id: introduce_word_6
     word: "Äs Chind"
@@ -112,6 +126,20 @@ steps:
         right: "Ä Frou"
       - left: "A child"
         right: "Äs chind"
+
+  - type: choose
+    id: choose_21
+    prompt: "Which is the correct indefinite article for **Chind**?"
+    single_answer: True
+    images:
+      - "data/assets/images/kid_with_toy.jpg"
+    correct_answers: ["Äs"]
+    wrong_answers: ["Ä"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Chind** is *neuter*, so we use **äs**.
+    audio: "data/assets/audio/aeschind.wav"
 
   - type: markdown
     id: markdown_9

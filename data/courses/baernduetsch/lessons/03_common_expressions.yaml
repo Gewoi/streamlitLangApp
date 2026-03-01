@@ -151,7 +151,20 @@ steps:
       
       These days, it also extremely common to say **sorry**.
       
-
+  - type: choose
+    id: choose_21
+    prompt: "Choose all ways in which you can say *sorry*."
+    single_answer: False
+    images:
+      - "data/assets/images/sorry.jpg"
+    correct_answers: ["Tschuldigung", "Entschuldigung", "Sorry"]
+    wrong_answers: ["Danke", "Merci", "Sälü"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say **Tschuldigung**, **Entschuldigung** or **Sorry**.
+    audio: "data/assets/audio/tschuldigungsorry.wav"  
+  
   - type: match
     id: match_19
     prompt: "Match the translations (English → Bärndütsch)."

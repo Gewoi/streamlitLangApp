@@ -78,7 +78,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
         st.success("Correct ✅")
     play_correct()
     if step:
-        if step["type"] == "order":
+        if step["type"] == "order" or step["type"] == "choose":
             time.sleep(.65)
             audio = step["audio"]
             if audio:
@@ -544,6 +544,7 @@ def render_true_false(step: dict):
 
 @st.fragment
 def render_choose(step: dict):
+    SINGLE_ANSWER = step.get("single_answer", False)
     images = step.get("images", None)
     audio = step.get("audio", None)
     sol_display = step.get("solution_display", None)
@@ -556,7 +557,7 @@ def render_choose(step: dict):
             for img in images:
                 if os.path.exists(img):
                     st.image(resize_image(img))
-    if audio:
+    if audio and SINGLE_ANSWER:
         if os.path.exists(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
         else:
@@ -580,33 +581,51 @@ def render_choose(step: dict):
         key = f"choose_selected_{button}_{step_idx}" if button in sel_btns else f"{button}_{step_idx}"
         return key
     
-    col = st.columns([.3, .4, .3])
-    for word in tokens:
-        if col[1].button(label=word, key=give_css_sel(word), width='stretch'):
-            if word in sel_btns:
-                sel_btns.remove(word)
-                st.session_state["used_tokens"] = sel_btns
-                st.rerun()
-            else:
-                sel_btns.append(word)
-                st.session_state["used_tokens"] = sel_btns
-                st.rerun()
-
-    st.space("medium")
-
-    with st.form(f"answer_choose_{st.session_state["step_idx"]}", border=False):
-        submitted = st.form_submit_button("Check", width="stretch", shortcut="enter")
-
-    if submitted:
+    def check_answer():
         if sorted(sel_btns) == sorted(correct_answers):
             st.session_state["exercise_done"] = True
             st.rerun()
         else:
             mistake_made(step)
             st.session_state["used_tokens"] = []
+            st.session_state["exercise_done"] = False
             st.error(f"Not quite. The solution is: **{correct_answers}**")
     
+    col = st.columns([.3, .4, .3])
+    for word in tokens:
+        if col[1].button(label=word, key=give_css_sel(word), width='stretch'):
+            #add the redundancy here so that when you click, it doesn't show any weird behavior
+            if SINGLE_ANSWER:
+                if sel_btns == []:
+                    sel_btns.append(word)
+                    st.session_state["used_tokens"] = sel_btns
+                    check_answer()
+                else:
+                    sel_btns.clear()
+                    st.session_state["used_tokens"] = []
+                    sel_btns.append(word)
+                    st.session_state["used_tokens"] = sel_btns
+                    check_answer()              
+            else:
+                if word in sel_btns:
+                    sel_btns.remove(word)
+                    st.session_state["used_tokens"] = sel_btns
+                    st.rerun()
+                else:
+                    sel_btns.append(word)
+                    st.session_state["used_tokens"] = sel_btns
+                    st.rerun()
+
+    st.space("medium")
+    if not SINGLE_ANSWER:
+        with st.form(f"answer_choose_{st.session_state["step_idx"]}", border=False):
+            submitted = st.form_submit_button("Check", width="stretch", shortcut="enter")
+
+    if not SINGLE_ANSWER:
+        if submitted:
+            check_answer()    
+
     if st.session_state["exercise_done"]:
-        return submitted_exercise(sol_display)    
+        return submitted_exercise(sol_display, step)    
     
     return StepOutcome(can_go_next=False)

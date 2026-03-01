@@ -85,6 +85,20 @@ steps:
       
       So, **guet** (*good*) would be a good answer (literally).
 
+  - type: choose
+    id: choose_21
+    prompt: "Choose all ways in which you can say *what your name is*"
+    single_answer: False
+    images:
+      - "data/assets/images/handshake.jpg"
+    correct_answers: ["I bi dr/d ...", "I heisse ..."]
+    wrong_answers: ["Sälü", "Hallo", "Wie geit's?"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say both **I bi dr/d ...** or **I heisse ...**.
+    audio: "data/assets/audio/iheissedennis.wav"
+
   - type: introduce_word
     id: word_wieheissischdu
     word: "Wie heissisch du?"

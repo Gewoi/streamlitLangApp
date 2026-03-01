@@ -97,6 +97,20 @@ steps:
       
       **Grüessech** is how you politely greet someone.
 
+  - type: choose
+    id: choose_22
+    prompt: "How do you greet someone *in a formal way*?"
+    single_answer: True
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
+    correct_answers: ["Grüessech"]
+    wrong_answers: ["Hallo", "Tschau", "Säli"]
+    solution_display: |
+      ✅ Correct!
+      
+      In a *formal* setting or with older people, you say **Grüessech**.
+    audio: "data/assets/audio/gruessech.wav"
+
   - type: introduce_word
     id: introduce_word_6
     word: "Wie geits öich, Herr Marti?"
@@ -198,6 +212,20 @@ steps:
       Often, when you use the *polite* form towards elderly people, they will still use the *informal* form toward you. But you should **still use the *polite*** form unless they make it clear it's ok not to!
       
       (Yes I think that's annoying too)
+
+  - type: choose
+    id: choose_21
+    prompt: "Choose all sentences that use the *polite* form."
+    single_answer: False
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    correct_answers: ["U öich?", "Wi geits öich?"]
+    wrong_answers: ["Wi geits dir?", "U dir?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Dir** and **öich** are the polite pronouns (which are the ones for *you (pl.)*, but we will look at that later).
+    audio: "data/assets/audio/ueuch.wav"
 
   - type: order
     id: order_17

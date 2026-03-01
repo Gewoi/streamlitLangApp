@@ -82,6 +82,20 @@ steps:
       
       Gramatically, **huus** is *neuter*, so we use **ds**.
 
+  - type: choose
+    id: choose_21
+    prompt: "Choose the *masculine* noun."
+    single_answer: True
+    images:
+      - "data/assets/images/writing.jpg"
+    correct_answers: ["Bahnhof"]
+    wrong_answers: ["Straas", "Huus"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Bahnhof** is *masculine*.
+    audio: "data/assets/audio/drbahnhof.wav"
+
   - type: listen_type
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
@@ -117,6 +131,20 @@ steps:
       ✅ Correct!
       
       We use **ds**, so it is *neuter*.
+
+  - type: choose
+    id: choose_22
+    prompt: "Choose the *feminine* noun."
+    single_answer: True
+    images:
+      - "data/assets/images/writing.jpg"
+    correct_answers: ["Straas"]
+    wrong_answers: ["Bahnhof", "Huus"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Straas** is *feminine*.
+    audio: "data/assets/audio/dstraas.wav"
 
   - type: introduce_word
     id: introduce_word_9

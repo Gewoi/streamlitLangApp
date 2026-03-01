@@ -196,6 +196,20 @@ steps:
       
       This person is saying **Vo wo chunnsch du?**, which is informal.
 
+  - type: choose
+    id: choose_21
+    prompt: "How would you ask someone where they're from *in a formal way?*"
+    single_answer: True
+    images:
+      - "data/assets/images/old_guy_handshake.jpg"
+    correct_answers: ["Vo wo chömit dir?"]
+    wrong_answers: ["Vo wo chunnsch du?"]
+    solution_display: |
+      ✅ Correct!
+      
+      When talking to an older person or a stranger of some position, you say **Vo wo chömit dir?**
+    audio: "data/assets/audio/vowochoemitdir.wav"
+
   - type: match
     id: match_8
     prompt: "Match the translations (English → Bärndütsch)."

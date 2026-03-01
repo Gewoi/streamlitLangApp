@@ -292,6 +292,7 @@ steps:
   - type: choose
     id: choose_21
     prompt: "What time are they refering to?"
+    single_answer: True
     images:
       - "data/assets/images/city_evening.jpg"
     correct_answers: ["9:30"]

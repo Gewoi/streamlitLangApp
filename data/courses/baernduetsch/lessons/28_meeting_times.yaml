@@ -1,0 +1,216 @@
+id: 28_meeting_times
+title: "⌚️Meeting Times"
+description: "Say when you have a meeting or an appointment."
+estimated_minutes: 4
+section: Appointments
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Am sibni."
+    translation:
+      en: "At seven."
+      de: "Um sieben Uhr."
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/amsibni.wav"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## *Am* halbi sibni
+      
+      To say *when* something is scheduled / *at what time* something is happening, you just say **Am + time**.
+      
+      So, a few examples:
+      
+      - **Am eis** -> *At one*
+      - **Am halbi vieri** -> *At 3:30*
+      - **Am elfi** -> *At eleven*
+      
+      It's pretty straightforward, you can use this formula in all contexts!
+    images:
+      - "data/assets/images/clock_spinnig.jpg"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "At three, I have time."
+      helper: "Um drei Uhr habe ich Zeit."
+      target: ["", " hani Zyt."]
+    answers: ["Am drü", "Am drüü"]
+    solution_display: |
+      ✅ Correct!
+      
+      To say *at what time*, you just say **am + *time***. In this case: **Am drü**.
+    images:
+      - "data/assets/images/watch_lookat2.jpg"
+    audio: "data/assets/audio/amdruehanizyt.wav"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I see him at nine."
+      helper: "Ich sehe ihn um neun Uhr."
+    tokens: ["I", "gseh", "ihn", "am", "nüni."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/igsehneamnueni.wav"
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirgoehamelfi.wav"
+    answers: ["Mir göh am elfi.", "Mir gö am elfi.", "Mir goeh am elfi.", "Mir goe am elfi."]
+    images:
+      - "data/assets/images/wavinghand_curtain.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *we go / leave at eleven*.
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "D Sitzig / Ds Meeting"
+    translation:
+      en: "The meeting"
+      de: "Die Sitzung / Das Meeting"
+    images:
+      - "data/assets/images/meeting1.jpg"
+    audio: "data/assets/audio/dsitzig_dsmeeting.wav"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (formal) have a meeting at five."
+      helper: "Sie haben ein meeting um fünf uhr."
+    tokens: ["Dir", "heit", "ä", "Sitzig", "am", "füfi."]
+    solution_display: |
+      ✅ Correct!
+      
+      In a *business* context, you can refer to meetings by **Sitzig** or **Meeting**.
+    audio: "data/assets/audio/direitaesitzigamfuefi.wav"
+
+  - type: choose
+    id: choose_7
+    prompt: "When is the meeting?"
+    images:
+      - "data/assets/images/meeting2.jpg"
+    single_answer: true
+    correct_answers: ["10:00"]
+    wrong_answers: ["11:00", "09:00", "12:30"]
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Mir hei e Sitzig am zäni**, which means *we have a meeting at ten*.
+    audio: "data/assets/audio/mirheiaesitzigamzaeni.wav"
+
+  - type: choose
+    id: choose_9
+    prompt: "Which article is used before **Sitzig**?"
+    images:
+      - "data/assets/images/meeting3.jpg"
+    single_answer: true
+    correct_answers: ["Ä"]
+    wrong_answers: ["Äs"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Sitzig** is *feminine*, and therefore we use **Ä**. **Meeting**, on the other hand, is *neuter*, so for that we use **Äs**.
+
+  - type: translate_type
+    id: translate_type_8
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "A big meeting."
+      helper: "Eine grosse Sitzung."
+    answers: ["Ä grossi Sitzig", "E grossi Sitzig", "Äs grosses Meeting", "Es grosses Meeting"]
+    images:
+      - "data/assets/images/meeting1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Sitzig** is *feminine*, so we use **Ä**; **Meeting** is *neuter*, so we use **Äs**.
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "Viertel ab zwöi"
+    translation:
+      en: "Quarter past two"
+      de: "Viertel nach zwei"
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+    audio: "data/assets/audio/viertelabzwoei.wav"
+
+  - type: order
+    id: order_11
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The meeting is at quarter past four."
+      helper: "Die Sitzung ist um Viertel nach vier."
+    tokens: ["D", "Sitzig", "isch", "am", "Viertel", "ab", "vieri."]
+    solution_display: |
+      ✅ Correct!
+      
+      To say *quarter past* in Bärndütsch, say **Viertel ab**.
+    audio: "data/assets/audio/dsitzigischamviertelabvieri.wav"
+
+  - type: cloze
+    id: cloze_12
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "At quarter past one I have time."
+      helper: "Um Viertel nach eins habe ich Zeit."
+      target: ["", " hani Zyt."]
+    answers: ["Am Viertel ab eis", "Am Viertelab eis"]
+    solution_display: |
+      ✅ Correct!
+      
+      You say **Am + time** for *at that time*.
+    images:
+      - "data/assets/images/watch_lookat3.jpg"
+    audio: "data/assets/audio/amviertelabeishanizyt.wav"
+
+  - type: listen_type
+    id: listen_type_13
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirheiesitzigamviertlabzwoei.wav"
+    answers: ["Mir hei e Sitzig am Viertel ab zwöi", "Mir hei ä Sitzig am Viertel ab zwöi", "Mir hei e Sitzig am Viertelab zwöi", "Mir hei ä Sitzig am Viertelab zwöi"]
+    images:
+      - "data/assets/images/meeting3.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *we have a meeting at quarter past two*.
+
+  - type: markdown
+    id: markdown_14
+    markdown: |
+      ## *ab* and *vor* in the context of time
+      
+      To say a time *after* the hour (*quarter past two*, *five past six*) you say ***amount* ab *time***.
+      
+      - **Äs isch Viertel ab füfi** -> *it's quarter past five (5:15)*
+      - **Äs isch füf ab zäni** -> *it's five past ten (10:05)*
+      - **Ds Meeting isch am zää ab nüni** -> *the meetig is at ten past nine (9:10)*
+      
+      To say a time *before* the hour (*quarter to five*, *five to seven*), you use ***amount* vor *time***:
+      
+      - **Es isch Viertel vor nüni** -> *It's quarter to nine (8:45)*
+      - **Äs isch zää vor sibni** -> *It's ten to seven (6:50)*
+      - **Äs isch füf vor eis** -> *It's five to one (12:55)*
+    images:
+      - "data/assets/images/clocks.jpg"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "Viertel vor achti"
+    translation:
+      en: "Quarter to eight (7:45)"
+      de: "Viertel vor acht"
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+    audio: "data/assets/audio/viertelvorachti.wav"
