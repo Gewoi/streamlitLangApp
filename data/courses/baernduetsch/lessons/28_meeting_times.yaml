@@ -29,6 +29,7 @@ steps:
       - **Am elfi** -> *At eleven*
       
       It's pretty straightforward, you can use this formula in all contexts!
+      
     images:
       - "data/assets/images/clock_spinnig.jpg"
 
@@ -139,7 +140,7 @@ steps:
     id: introduce_word_10
     word: "Viertel ab zwöi"
     translation:
-      en: "Quarter past two"
+      en: "Quarter past two (2:15)"
       de: "Viertel nach zwei"
     images:
       - "data/assets/images/clock_spinning.jpg"
@@ -202,6 +203,7 @@ steps:
       - **Es isch Viertel vor nüni** -> *It's quarter to nine (8:45)*
       - **Äs isch zää vor sibni** -> *It's ten to seven (6:50)*
       - **Äs isch füf vor eis** -> *It's five to one (12:55)*
+      
     images:
       - "data/assets/images/clocks.jpg"
 
@@ -214,3 +216,134 @@ steps:
     images:
       - "data/assets/images/clock_spinning.jpg"
     audio: "data/assets/audio/viertelvorachti.wav"
+
+  - type: match
+    id: match_16
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Quarter *to*"
+        right: "Viertel *vor*"
+      - left: "Quarter *past*"
+        right: "Viertel *ab*"
+
+  - type: introduce_word
+    id: introduce_word_17
+    word: "vo ... bis ..."
+    translation:
+      en: "from ... to ..."
+      de: "von ... bis ..."
+    images:
+      - "data/assets/images/clock_sand.jpg"
+    audio: "data/assets/audio/vo_bis.wav"
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "From three til four."
+      helper: "Von drei bis vier."
+    tokens: ["Vo", "drü", "bis", "vieri."]
+    solution_display: |
+      ✅ Correct!
+      
+      To say from when to when something happens, you say **vo ... bis ...**. Use the time names for the numbers (so with **-i** for most of them).
+    audio: "data/assets/audio/vodruebisvieri.wav"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "The meeting is from five to six."
+      helper: "Die Sitzung **geht** von fünf bis sechs."
+      target: ["D Sitzig **geit**", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      Note that in German and Bärndütsch, we say it *goes* from ... to ... for durations! -> **D Sitzig *geit* vo füfi bis sächsi**.
+    images:
+      - "data/assets/images/meeting2.jpg"
+    audio: "data/assets/audio/dsitziggeitvofuefibissaechsi.wav"
+
+  - type: markdown
+    id: markdown_20
+    markdown: |
+      ## Vo ... bis ...
+      
+      The most general way from when to when an event is happening is **Vo ... bis ...**;
+      
+      - **Vo füfi bis sächsi** (*from five to six*)
+      - **Vo sibni bis halbi achti** (*from seven to half past seven* (07:00 - 07:30))
+      
+      Some people will actually say **Vom ... bis am ...**:
+      - **Vom füfi bis am sächsi** (*from five to six*)
+      - **Vom sibni bis am halbi achti** (*from seven to half past seven*)
+      
+      The second one is also correct, and especially from older folks you might hear that too. But we'll focus on the first one, and are just throwing this in here so you know both of them!
+      
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dsitziggeitvofuefibissaechsi.wav"
+    text: "The meeting is from **three to six**"
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying that the meeting is from *five to six* (**D Sitzig geit vo füfi bis sächsi**).
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I'm there at three."
+      helper: "Ich bin um drei Uhr dort."
+    answers: ["I bi am drü dört,", "I bi am drü dert", "I bi am drü derte"]
+    images:
+      - "data/assets/images/woman_phone.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: cloze
+    id: cloze_24
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "When is the meeting? - At twelve."
+      helper: "Wann ist die Sitzung? - Um zwölf Uhr."
+      target: ["Wenn isch d Sitzig? - ", ""]
+    answers: ["Am zwölfi", "Am zwoelfi"]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/meeting3.jpg"
+    audio: "data/assets/audio/wennischdsitzig_amzwoelfi.wav"
+
+  - type: order
+    id: order_25
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "When are you (pl.) going? - From seven to half past eight."
+      helper: "Wann geht ihr? - Von sieben bis halb neun."
+    tokens: ["Wenn", "göht", "dir? -", "Vo", "sibni", "bis", "halbi", "nüni."]
+    audio: "data/assets/audio/wenngoehtdir_vosibnibishalbinueni.wav"
+
+  - type: match
+    id: match_23
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "at three"
+        right: "am drü"
+      - left: "at seven"
+        right: "am sibni"
+      - left: "from two to four"
+        right: "vo zwöi bis vieri"
+      - left: "from six to eleven"
+        right: "vo sächsi bis elfi"
+      - left: "Meeting"
+        right: "Sitzig"
+      - left: "Quarter to eight"
+        right: "Viertel vor achti"
+      - left: "Quarter past nine"
+        right: "Viertel ab nüni"

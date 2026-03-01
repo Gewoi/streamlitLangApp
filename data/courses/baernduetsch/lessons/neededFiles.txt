@@ -1,33 +1,17 @@
-sigeithei.wav
-hei.wav
-igahjetzhei_tschau.wav
-jetz_jetzt.wav
-aesgeitguetmerci.wav
-aergeitjetzhei.wav
-sigoehjetzhei.wav
-goehtdirhei.wav
-furt_waeg.wav
-goehsifurt_goehsiwaeg.wav
-glii.wav
-mirgoehgliihei_bisspeter.wav
-goehtdirglii.wav
-goehmirglii.wav
-mirgoehglii.wav
-eis_zwoei_drue.wav
-igsehzwoeimaennerdoert.wav
-zahl_zahle.wav
-eiszwoeiudruesizahle.wav
-druezwoeieis.wav (so wi countdown)
-vierfuefsaechs.wav
-dzahlesivierfuefusaechs.wav (so wi lotto)
-dzahlesidruesaechsufuef.wav (so wi lotto)
-igsehvierbaerge.wav
-eiszwoeidruevierfuefsaechs.wav
-sibeachtnuen.wav
-mirsisibemoensche.wav
-sibeachtunuensizahle.wav
-zaeelfzwoelf.wav
-dzahlesizaeelfuzwoelf.wav (so wi lotto)
-dzahlesisibezaeuzwoelf.wav (so wi lotto)
-sihettelfpflanze.wav
-sibeachtnuenzaehelfzwoelf.wav
+amsibni.wav
+amdruehanizyt.wav
+igsehneamnueni.wav
+mirgoehamelfi.wav
+dsitzig_dsmeeting.wav
+direitaesitzigamfuefi.wav
+mirheiaesitzigamzaeni.wav
+viertelabzwoei.wav
+dsitzigischamviertelabvieri.wav
+amviertelabeishanizyt.wav
+mirheiesitzigamviertlabzwoei.wav
+viertelvorachti.wav
+vo_bis.wav
+vodruebisvieri.wav
+dsitziggeitvofuefibissaechsi.wav
+wennischdsitzig_amzwoelfi.wav
+wenngoehtdir_vosibnibishalbinueni.wav
