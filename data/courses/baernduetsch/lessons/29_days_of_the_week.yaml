@@ -1,10 +1,20 @@
 id: 29_days_of_the_week
 title: "🗓 Days of the Week"
-description: "Learn about the names of the days of the week, and how to say *today*, *tomorrow* and *yesterday*."
-estimated_minutes: 3
+description: "Learn about the names of the days of the week, and how to say *today* and *tomorrow*."
+estimated_minutes: 5
 section: Appointments
 
 steps:
+  - type: introduce_word
+    id: introduce_word_4
+    word: "Hüt"
+    translation:
+      en: "Today"
+      de: "Heute"
+    images:
+      - "data/assets/images/calendar_pin.jpg"
+    audio: "data/assets/audio/huet.wav"
+
   - type: introduce_word
     id: introduce_word_0
     word: "Mänti"
@@ -14,6 +24,31 @@ steps:
     images:
       - "data/assets/images/monday.jpg"
     audio: "data/assets/audio/maenti.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Today is Monday."
+      helper: "Heute ist Montag."
+    tokens: ["Hüt", "isch", "Mänti."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Hüt** means today, and **Mänti** means *Monday*.
+    audio: "data/assets/audio/huetischmaenti.wav"
+
+  - type: translate_type
+    id: translate_type_6
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Today is Monday."
+      helper: "Heute ist Montag."
+    answers: ["Hüt isch Mänti.", "Huet isch Maenti.", "Hüt isch Mäntig.", "Huet isch Maentig."]
+    images:
+      - "data/assets/images/monday.jpg"
+    solution_display: |
+      ✅ Correct!
 
   - type: introduce_word
     id: introduce_word_1
@@ -49,3 +84,143 @@ steps:
       - "data/assets/images/week_firsthalf.jpg"
     solution_display: |
       ✅ Correct!
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you have time on Tuesday?"
+      helper: "Hast du am Dienstag Zeit?"
+    tokens: ["Hesch", "Zyt", "am", "Dsischti?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Hesch Zyt?** means *do you have time?*; you can leave out the **du** from **Hesch du Zyt?** if you want to!
+    audio: "data/assets/audio/heschzytamdsischti.wav"
+
+  - type: choose
+    id: choose_8
+    prompt: "Which word means *Monday*?"
+    images:
+      - "data/assets/images/monday.jpg"
+    single_answer: true
+    correct_answers: ["Mänti"]
+    wrong_answers: ["Dsischti", "Mittwuch", "Hüt"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mänti** means *Monday*.
+    audio: "data/assets/audio/maenti.wav"
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "Mittwuch"
+    translation:
+      en: "Wednesday"
+      de: "Mittwoch"
+    images:
+      - "data/assets/images/week_firsthalf.jpg"
+    audio: "data/assets/audio/mittwuch.wav"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "When do you have time? - On Wednesday."
+      helper: "Wann hast du Zeit? - Am Mittwoch."
+      target: ["Wenn hesch Zyt? - ", "."]
+    answers: ["Am Mittwuch"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mittwuch** means *Wednesday*. Just like time, if you want to say something is happening *on* or *during* that day, you say **am + *day***: **Am Mittwuch**
+    images:
+      - "data/assets/images/calendar_pin.jpg"
+    audio: "data/assets/audio/wennheschzyt_ammittwuch.wav"
+
+  - type: listen_type
+    id: listen_type_11
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/huetischmittwuch.wav"
+    answers: ["Hüt isch Mittwuch.", "Huet isch Mittwuch."]
+    images:
+      - "data/assets/images/calendar_circles.jpg"
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "Morn"
+    translation:
+      en: "Tomorrow"
+      de: "Morgen"
+    images:
+      - "data/assets/images/closed_seeya_tomorrow.jpg"
+    audio: "data/assets/audio/morn.wav"
+
+  - type: cloze
+    id: cloze_13
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Today is Monday, tomorrow is Tuesday."
+      helper: "Heute ist Montag, morgen ist Dienstag."
+      target: ["Hüt isch Mänti, ", "."]
+    answers: ["Morn isch Dsischti"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Morn** means *tomorrow* and **Dsischti** means *tuesday*.
+    images:
+      - "data/assets/images/calendar_pin.jpg"
+    audio: "data/assets/audio/huetischmaentimornischdsischti.wav"
+
+  - type: true_false
+    id: true_false_14
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/mornischmittwuch.wav"
+    text: "Tomorrow is **Wednesday**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      **Mittwuch** means *Wednesday*, and they're saying **Morn isch Mittwuch** (*tomorrow is Wednesday*).
+
+  - type: match
+    id: match_15
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Monday"
+        right: "Mänti"
+      - left: "Tuesday"
+        right: "Dsischti"
+      - left: "Wednesday"
+        right: "Mittwuch"
+      - left: "Today"
+        right: "Hüt"
+      - left: "Tomorrow"
+        right: "Morn"
+
+  - type: introduce_word
+    id: introduce_word_16
+    word: "Donnsti"
+    translation:
+      en: "Thursday"
+      de: "Donnerstag"
+    images:
+      - "data/assets/images/calendar_circles.jpg"
+    audio: "data/assets/audio/donnsti.wav"
+
+  - type: introduce_word
+    id: introduce_word_17
+    word: "Friti"
+    translation:
+      en: "Friday"
+      de: "Freitag"
+    images:
+      - "data/assets/images/friday.jpg"
+    audio: "data/assets/audio/friti.wav"
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: ""
+      helper: ""
