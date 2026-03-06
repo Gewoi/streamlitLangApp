@@ -15,3 +15,29 @@ vodruebisvieri.wav
 dsitziggeitvofuefibissaechsi.wav
 wennischdsitzig_amzwoelfi.wav
 wenngoehtdir_vosibnibishalbinueni.wav
+huet.wav (hüt, dr hütig tag)
+maenti.wav
+huetischmaenti.wav
+dsischti.wav
+maentiudsischti.wav
+heschzytamdsischti.wav
+mittwuch.wav
+wennheschzyt_ammittwuch.wav
+huetischmittwuch.wav
+morn.wav
+huetischmaentimornischdsischti.wav
+mornischmittwuch.wav
+donnsti.wav
+friti.wav
+donnstiufritisiguet.wav
+huetischdonnstiumornischfriti.wav
+donnsti.wav
+samsti.wav
+sunnti.wav
+heschduamsamstizyt.wav
+gliiischsunnti.wav
+samstiusunnti.wav
+maentidsischtimittwuchudonnsti.wav (da isch am schluss nones u drinne)
+fritisamstiusunnti.wav
+ihahuetumornzyt.wav
+maentidsischtimittwuchdonnstifritisamstisunnti.wav

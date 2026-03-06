@@ -222,5 +222,199 @@ steps:
     id: order_18
     prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
-      question: ""
+      question: "Thursday and Friday are good."
+      helper: "Donnerstag und Freitag sind gut."
+    tokens: ["Donnsti", "u", "Friti", "si", "guet."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Donnsti** is *Thursday* and **Friti** is *Friday*.
+    audio: "data/assets/audio/donnstiufritisiguet.wav"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Today is Thursday and tomorrow is Friday."
+      helper: "Heute ist Donnerstag und morgen ist Freitag."
+      target: ["Hüt isch Donnsti u", "."]
+    answers: ["morn isch Friti", "morn isch Fritig"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Morn** means *tomorrow*, and **Friti** is *Friday*.
+    images:
+      - "data/assets/images/friday.jpg"
+    audio: "data/assets/audio/huetischdonnstiumornischfriti.wav"
+
+  - type: choose
+    id: choose_20
+    prompt: "Which of these means *Thursday*?"
+    single_answer: true
+    correct_answers: ["Donnsti"]
+    wrong_answers: ["Mittwuch", "Dsischti", "Friti"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Donnsti** means *Thursday*.
+    audio: "data/assets/audio/donnsti.wav"
+
+  - type: introduce_word
+    id: introduce_word_21
+    word: "Samsti"
+    translation:
+      en: "Saturday"
+      de: "Samstag"
+    images:
+      - "data/assets/images/saturday.jpg"
+    audio: "data/assets/audio/samsti.wav"
+
+  - type: introduce_word
+    id: introduce_word_22
+    word: "Sunnti"
+    translation:
+      en: "Sunday"
+      de: "Sonntag"
+    images:
+      - "data/assets/images/note_sunday.jpg"
+    audio: "data/assets/audio/sunnti.wav"
+
+  - type: order
+    id: order_23
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you have time on Saturday?"
+      helper: "Hast du am Samstag Zeit?"
+    tokens: ["Hesch", "du", "am", "Samsti", "Zyt?"]
+    audio: "data/assets/audio/heschduamsamstizyt.wav"
+
+  - type: cloze
+    id: cloze_24
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Soon, it's Sunday."
+      helper: "Bald ist Sonntag."
+      target: ["Glii isch ", "."]
+    answers: ["Sunnti", "Sunntig"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Sunnti** means *Sunday*. **Glii isch ...** means *Soon, it's ...*. You don't need a subject like **Äs** here necessarily, although you could say **Glii isch es Sunnti**.
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/gliiischsunnti.wav"
+
+  - type: choose
+    id: choose_25
+    prompt: "Choose the days of the *Weekend*."
+    single_answer: false
+    correct_answers: ["Samsti", "Sunnti"]
+    wrong_answers: ["Mänti", "Dsischti", "Mittwuch", "Donnsti", "Friti"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Samsti** means *Saturday* and **Sunnti** means *Sunday*.
+    audio: "data/assets/audio/samstiusunnti.wav"
+
+  - type: listen_type
+    id: listen_type_26
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/samstiusunnti.wav"
+    answers: ["Samsti u Sunnti", "Samstig u Sunntig."]
+    images:
+      - "data/assets/images/weekend_sign.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *Saturday and Sunday*.
+
+  - type: cloze
+    id: cloze_27
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Monday, Tuesday, Wednesday and Thursday."
+      helper: "Montag, Dienstag, Mittwoch und Donnerstag."
+      target: ["Mänti, Dsischti, ", "."]
+    answers: ["Mittwuch u Donnsti", "Mittwuch u Donnstig"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mittwuch** means *Wednesday* and **Donnsti** means *Thursday*.
+    images:
+      - "data/assets/images/week_firsthalf.jpg"
+    audio: "data/assets/audio/maentidsischtimittwuchudonnsti.wav"
+
+  - type: order
+    id: order_28
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Friday, Saturday and Sunday."
+      helper: "Freitag, Samstag und Sonntag."
+    tokens: ["Friti,", "Samsti", "u", "Sunnti."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Friti** means *Friday*, **Samsti** means *Saturday* and **Sunnti** means *Sunday*.
+    audio: "data/assets/audio/fritisamstiusunnti.wav"
+
+  - type: cloze
+    id: cloze_29
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I have time today and tomorrow."
+      helper: "Ich habe heute und morgen Zeit."
+      target: ["I ha ", " Zyt."]
+    answers: ["hüt u morn", "huet u morn"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Hüt** means *today*, and **morn** means *tomorrow*
+    images:
+      - "data/assets/images/conversation_casual.jpg"
+    audio: "data/assets/audio/ihahuetumornzyt.wav"
+
+  - type: translate_type
+    id: translate_type_30
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Monday and Tuesday."
+      helper: "Montag und Dienstag."
+    answers: ["Mänti u Dsischti.", "Mäntig u Dsischtig.", "Maenti u Dsischti.", "Maentig u Dsischtig."]
+    images:
+      - "data/assets/images/wee_firsthalf.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Mänti** means *Monday* and **Dsischti** means *Tuesday*.
+
+  - type: order
+    id: order_31
+    prompt: "Start with Monday."
+    sentence:
+      question: "Put the weekdays in the correct order!"
       helper: ""
+    tokens: ["Mänti", "Dsischti", "Mittwuch", "Donnsti", "Friti", "Samsti", "Sunnti"]
+    audio: "data/assets/audio/maentidsischtimittwuchdonnstifritisamstisunnti.wav"
+
+  - type: match
+    id: match_32
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Monday"
+        right: "Mänti"
+      - left: "Tuesday"
+        right: "Dsischti"
+      - left: "Wednesday"
+        right: "Mittwuch"
+      - left: "Thursday"
+        right: "Donnsti"
+      - left: "Friday"
+        right: "Friti"
+      - left: "Saturday"
+        right: "Samsti"
+      - left: "Sunday"
+        right: "Sunnti"
+      - left: "today"
+        right: "hüt"
+      - left: "tomorrow"
+        right: "morn"
