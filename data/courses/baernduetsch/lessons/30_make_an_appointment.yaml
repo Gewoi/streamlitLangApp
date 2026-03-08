@@ -1,0 +1,202 @@
+id: 30_make_an_appointment
+title: "Make an Appointment"
+description: "Talk about when you want to meet, ask when someone is free, and say when you aren't available. Learn the verb **chönne** (*can*)."
+estimated_minutes: 5
+section: Appointments
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## Chönne (*to be able to*)
+      
+      The verb **chönne** means *to be able to* or *to be available for* in Bärndütsch. You usually here it in those exact contexts:
+      
+      - **Är cha guet schwümme** (*He can swim well*) -> *to be able to*
+      - **I cha denn** (*I am available then*) -> *to be available for*
+      
+      The conjugations are the following:
+      
+      <center>
+      
+      | pronoun (singular) | **chönne** | pronoun (plural) | **chönne** |
+      | --- | --- | --- | --- |
+      | I / Ig | **cha** | Mir | **chöi** | 
+      | Du | **chasch** | Dir | **chöit** |
+      | Är / Si / Äs | **cha** | Si | **chöi** |
+      
+      <\center>
+    images:
+      - "data/assets/images/group_run.jpg"
+
+  - type: match
+    id: match_1
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "cha"
+      - left: "Du"
+        right: "chasch"
+      - left: "Är / Si / Äs"
+        right: "cha"
+
+  - type: match
+    id: match_2
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "Mir"
+        right: "chöi (*we*)"
+      - left: "Dir"
+        right: "chöit"
+      - left: "Si"
+        right: "chöi (*they*)"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "denn"
+    translation:
+      en: "then"
+      de: "dann"
+    audio: "data/assets/audio/denn.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am available at three."
+      helper: "Ich bin frei um drei Uhr."
+    tokens: ["I", "cha", "am", "drü."]
+    solution_display: |
+      ✅ Correct!
+      
+      To say that *you are available* at a certain time, you say **i cha ...**. To say *I am available then*, you'd say **I cha denn**.
+    audio: "data/assets/audio/ichaamdrue.wav"
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Do you have time at three? - Yes, I am available then."
+      helper: "Hast du um drei Uhr Zeit? - Ja, ich bin dann frei."
+      target: ["Hesch du am drü Zyt? - Ja, ", "."]
+    answers: ["Ja, I cha denn"]
+    solution_display: |
+      ✅ Correct!
+      
+      To say that you're free at a time, you can say **I cha denn**.
+    images:
+      - "data/assets/images/old_people_conv_garden.jpg"
+    audio: "data/assets/audio/heschduamdruezyt_jaichadenn.wav"
+
+  - type: translate_type
+    id: translate_type_6
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Yes, she's available then."
+      helper: "Ja, sie kann dann."
+    answers: ["Ja, si cha denn."]
+    images:
+      - "data/assets/images/woman_painting.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Si cha denn** means *she's available then*.
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "nid"
+    translation:
+      en: "not"
+      de: "nicht"
+    images:
+      - "data/assets/images/x_sign.jpg"
+    audio: "data/assets/audio/nid.wav"
+
+  - type: markdown
+    id: markdown_8
+    markdown: |
+      ## I cha denn nid
+      
+      **Nid** is also very common: It means *not*. So, if you want to say that you can't, you say **I cha *nid***. The **nid** comes after the verb and pronoun; other than that, the prefered order depends a bit on what the sentence is. But don't worry too much, you really can't make huge mistakes here, any positioning still gets the meaning across very well!
+      
+      - **I cha morn nid, sorry** (*I am not available tomorrow, sorry*)
+      - **I cha am Dsischti nid cho** (*I can't come on Tuesday*)
+      - **Är cha nid rede** (*I can't speak*)
+      - **Mir chöi nid guet schwümme** (*We can't swim well*)
+    images:
+      - "data/assets/images/thumbs_down.jpg"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am not available tomorrow, sorry."
+      helper: "Ich kann morgen nicht, sorry."
+    tokens: ["I", "cha", "morn", "nid,", "sorry."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Nid** means *not*, and **I cha** means *I am available* (in this case **i cha nid** = *I am not available*).
+    audio: "data/assets/audio/ichamornnidsorry.wav"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We are not available on Saturday."
+      helper: "Wir können am Samstag nicht."
+      target: ["", " nid."]
+    answers: ["Mir chöi am Samsti", "Mir choei am Samsti", "Mir chöi am Samstig", "Mir choei am Samstig"]
+    solution_display: |
+      ✅ Correct! 
+      
+      In cases like this, the **nid** comes at the end of the sentence. In cases where you talk about an *action* that you're unable to do with a *verb*, that comes at the end: **Dir chöit nid schwümme** (*You (pl.) can't swim*), **Du chasch nid rede** (*You (sing.) can't talk*).
+    images:
+      - "data/assets/images/weekend_sign.jpg"
+    audio: "data/assets/audio/mirchoeiamsamstinid.wav"
+
+  - type: true_false
+    id: true_false_11
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ichamornnidsorry.wav"
+    text: "This person is **available tomorrow**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **I cha morn nid, sorry** which means *I am not available tomorrow, sorry*.
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "Minute / Minute (pl.)"
+    translation:
+      en: "Minute / Minutes"
+      de: "Minute / Minuten"
+    images:
+      - "data/assets/images/clock_white.jpg"
+    audio: "data/assets/audio/minute_minute.wav"
+
+  - type: markdown
+    id: markdown_14
+    markdown: |
+      ## Minute vs Minute
+      
+      **Minute** is a great example for a word that has the same singular and plural forms! Both are pronounced exactly the same and written the same.
+      
+      Generally: Nouns that end with **-e** (and are usually *feminine* therefore) have ***the same plural and singular forms***. Some other examples, that you don't need to remember yet but we'll look at later, are:
+      
+      - **Stäge** (*Stairs*)
+      - **Läbe** (*Life / Lives*)
+      - **Nadle** (*Needle / Needles*)
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "Stund / Stunde"
+    translation:
+      en: "Hour / Hours"
+      de: "Stunde / Stunden"
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+    audio: "data/assets/audio/stund_stunde.wav"
