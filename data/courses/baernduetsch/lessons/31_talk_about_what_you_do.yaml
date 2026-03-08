@@ -5,3 +5,12 @@ estimated_minutes: 4
 section: Jobs
 
 steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Verchöifer / Verchöiferin"
+    translation:
+      en: "Salesperson"
+      de: "Verkäufer / Verkäuferin"
+    images:
+      - "data/assets/images/salesperson.jpg"
+    audio: "data/assets/audio/verchoeifer_verchoeiferin.wav"
