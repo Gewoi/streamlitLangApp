@@ -41,3 +41,17 @@ maentidsischtimittwuchudonnsti.wav (da isch am schluss nones u drinne)
 fritisamstiusunnti.wav
 ihahuetumornzyt.wav
 maentidsischtimittwuchdonnstifritisamstisunnti.wav
+denn.wav
+ichaamdrue.wav
+heschduamdruezyt_jaichadenn.wav
+nid.wav
+ichamornnidsorry.wav
+mirchoeiamsamstinid.wav
+ichamornnidsorry.wav
+minute_minute.wav (sing/plural)
+stund_stunde.wav (sing/plural)
+izaeminute.wav
+wenngeischdu_irestund.wav
+mirgoehizwoeistunde.wav
+irestundischnueni.wav
+ischifuefminuteguet_jaichadenn.wav
