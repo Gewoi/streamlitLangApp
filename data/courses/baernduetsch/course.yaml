@@ -11,6 +11,7 @@ sections:
   - Simple Concepts
   - Getting Food
   - Appointments
+  #- Jobs
 from_language: en
 target_language: de_ch
 secondary_language: de

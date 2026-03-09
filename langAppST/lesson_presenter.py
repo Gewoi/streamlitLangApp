@@ -626,6 +626,10 @@ def render_choose(step: dict):
             check_answer()    
 
     if st.session_state["exercise_done"]:
-        return submitted_exercise(sol_display, step)    
+        if SINGLE_ANSWER:
+            #if submitted without step passed, it won't actually play audio at the solution
+            return submitted_exercise(sol_display)    
+        else:
+            return submitted_exercise(sol_display, step) 
     
     return StepOutcome(can_go_next=False)

@@ -93,7 +93,8 @@ steps:
       ✅ Correct!
       
       In a *business* context, you can refer to meetings by **Sitzig** or **Meeting**.
-    audio: "data/assets/audio/direitaesitzigamfuefi.wav"
+      You could also say **Dir heit am füfi ä Sitzig.**; the order isn't quite as relevant here (some people would even argue that saying the alternative solution is more elegant, but either is correct!).
+    audio: "data/assets/audio/dirheitesitzigamfuefi.wav"
 
   - type: choose
     id: choose_7
@@ -107,7 +108,7 @@ steps:
       ✅ Correct!
       
       They said **Mir hei e Sitzig am zäni**, which means *we have a meeting at ten*.
-    audio: "data/assets/audio/mirheiaesitzigamzaeni.wav"
+    audio: "data/assets/audio/mirheiesitzigamzaeni.wav"
 
   - type: choose
     id: choose_9
@@ -178,7 +179,7 @@ steps:
   - type: listen_type
     id: listen_type_13
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mirheiesitzigamviertlabzwoei.wav"
+    audio: "data/assets/audio/mirheiesitzigamviertelabzwoei.wav"
     answers: ["Mir hei e Sitzig am Viertel ab zwöi", "Mir hei ä Sitzig am Viertel ab zwöi", "Mir hei e Sitzig am Viertelab zwöi", "Mir hei ä Sitzig am Viertelab zwöi"]
     images:
       - "data/assets/images/meeting3.jpg"
@@ -256,6 +257,7 @@ steps:
       question: "The meeting is from five to six."
       helper: "Die Sitzung **geht** von fünf bis sechs."
       target: ["D Sitzig **geit**", "."]
+    answers: ["vo füfi bis sächsi", "vo fuefi bis saechsi"]
     solution_display: |
       ✅ Correct!
       
@@ -300,7 +302,7 @@ steps:
     sentence:
       question: "I'm there at three."
       helper: "Ich bin um drei Uhr dort."
-    answers: ["I bi am drü dört,", "I bi am drü dert", "I bi am drü derte"]
+    answers: ["I bi am drü dört,", "I bi am drü dert", "I bi am drü derte", "i bi dört am drü", "i bi dert am drü"]
     images:
       - "data/assets/images/woman_phone.jpg"
     solution_display: |

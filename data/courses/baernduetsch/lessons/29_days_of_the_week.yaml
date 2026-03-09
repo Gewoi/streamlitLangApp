@@ -237,7 +237,7 @@ steps:
     sentence:
       question: "Today is Thursday and tomorrow is Friday."
       helper: "Heute ist Donnerstag und morgen ist Freitag."
-      target: ["Hüt isch Donnsti u", "."]
+      target: ["Hüt isch Donnsti u ", "."]
     answers: ["morn isch Friti", "morn isch Fritig"]
     solution_display: |
       ✅ Correct!
@@ -257,7 +257,6 @@ steps:
       ✅ Correct!
       
       **Donnsti** means *Thursday*.
-    audio: "data/assets/audio/donnsti.wav"
 
   - type: introduce_word
     id: introduce_word_21
@@ -281,11 +280,15 @@ steps:
 
   - type: order
     id: order_23
-    prompt: "Put the words in the correct order (Bärndütsch)."
+    prompt: "Put the words in the correct order (Bärndütsch, follow the Hochdütsch!)."
     sentence:
       question: "Do you have time on Saturday?"
       helper: "Hast du am Samstag Zeit?"
     tokens: ["Hesch", "du", "am", "Samsti", "Zyt?"]
+    solution_display: |
+      ✅ Correct!
+      
+      You could also say **Hesch du Zyt am Samsti?** or just **Hesch Zyt am Samsti?**; the order of those doesn't quite matter, but this is a bit more elegant.
     audio: "data/assets/audio/heschduamsamstizyt.wav"
 
   - type: cloze

@@ -18,15 +18,14 @@ steps:
       The conjugations are the following:
       
       <center>
-      
+
       | pronoun (singular) | **chönne** | pronoun (plural) | **chönne** |
       | --- | --- | --- | --- |
       | I / Ig | **cha** | Mir | **chöi** | 
       | Du | **chasch** | Dir | **chöit** |
       | Är / Si / Äs | **cha** | Si | **chöi** |
       
-      <\center>
-      
+    audio: "data/assets/audio/choenne_conjugation.wav"
     images:
       - "data/assets/images/group_run.jpg"
 
@@ -35,11 +34,11 @@ steps:
     prompt: "Match the conjugations!"
     pairs:
       - left: "I / Ig"
-        right: "cha"
+        right: "cha (*I*)"
       - left: "Du"
         right: "chasch"
       - left: "Är / Si / Äs"
-        right: "cha"
+        right: "cha (*he/she/it*)"
 
   - type: match
     id: match_2
@@ -80,7 +79,7 @@ steps:
       question: "Do you have time at three? - Yes, I am available then."
       helper: "Hast du um drei Uhr Zeit? - Ja, ich bin dann frei."
       target: ["Hesch du am drü Zyt? - Ja, ", "."]
-    answers: ["Ja, I cha denn"]
+    answers: ["I cha denn"]
     solution_display: |
       ✅ Correct!
       
@@ -207,7 +206,7 @@ steps:
     id: match_16
     prompt: "Match the translations (English → Bärndütsch)."
     pairs:
-      - left: "Minute"
+      - left: "minute"
         right: "Minute"
       - left: "Hour"
         right: "Stund"
@@ -258,7 +257,6 @@ steps:
       ✅ Correct!
       
       The general form to say *in **number** minutes* is **i *number* minute**; the only exception is *one* -> **Ire Minute**. But for *in ten minutes*, it is **i zää minute**.
-    audio: "data/assets/audio/izaeminute.wav"
 
   - type: translate_type
     id: translate_type_19
@@ -291,12 +289,12 @@ steps:
     sentence:
       question: "He is here in two hours."
       helper: "Er ist in zwei Stunden hier."
-    tokens: ["Är", "isch", "i", "zwöi", "Stunde."]
+    tokens: ["Är", "isch", "i", "zwöi", "Stunde", "hie."]
     solution_display: |
       ✅ Correct!
       
       Note that often in Bärndütsch, you'll hear people actually say **i zwöi Stund** instead of **i zwöi Stunde**. Both is correct! We'll focus on the case that's a bit closer to Hochdeutsch.
-    audio: "data/assets/audio/mirgoehizwoeistunde.wav"
+    audio: "data/assets/audio/aerischizwoeistundehie.wav"
 
   - type: listen_type
     id: listen_type_22
@@ -317,7 +315,7 @@ steps:
       question: "Is in five minutes good? - Yes, I am available then."
       helper: "Ist in fünf Minuten gut? - Ja, ich kann dann."
       target: ["Isch ", " guet? - Ja, i cha denn."]
-    answers: ["i füf Minute guet?", "i fuef Minute guet?"]
+    answers: ["i füf Minute", "i fuef Minute"]
     solution_display: |
       ✅ Correct!
       
@@ -345,11 +343,11 @@ steps:
     prompt: "Match the conjugations."
     pairs:
       - left: "I"
-        right: "cha"
+        right: "cha (*I*)"
       - left: "Du"
         right: "chasch"
       - left: "Är / Si / Äs"
-        right: "cha"
+        right: "cha (*he/she/it*)"
       - left: "Mir"
         right: "chöi (*we*)"
       - left: "Dir"
