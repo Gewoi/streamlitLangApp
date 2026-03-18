@@ -22,7 +22,7 @@ steps:
       question: "Our family is big."
       helper: "Unsere Familie ist gross."
       target: ["", " isch gross"]
-    answers: ["Üsi Familie isch gross", "Uesi Familie isch gross"]
+    answers: ["Üsi Familie", "Uesi Familie"]
     solution_display: |
       ✅ Correct!
       
@@ -236,6 +236,7 @@ steps:
     sentence:
       question: "Your (pl) brother and our sister."
       helper: "Euer Bruder und unsere Schwester."
+    answers: ["Öie Brueder und üsi Schwöschter", "Oeie Brueder und uesi Schwoeschter"]
     images:
       - "data/assets/images/siblings_homework.jpg"
     solution_display: |

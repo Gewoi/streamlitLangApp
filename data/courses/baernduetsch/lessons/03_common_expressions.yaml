@@ -65,6 +65,7 @@ steps:
       helper: "Ja, ich heisse Dennis."
       target: ["", ", i heisse Dennis."]
     answers: ["ja"]
+    audio: "data/assets/audio/jaiheissedennis.wav"
     solution_display: |
       ✅ Correct!
       
@@ -113,6 +114,7 @@ steps:
       helper: "Geht's gut? - Ja, danke!"
       target: ["Geit's guet? - Ja,", "!"]
     answers: ["danke", "merci"]
+    audio: "data/assets/audio/geitsguet_jamerci.wav"
     solution_display: |
       ✅ Correct! 
       
@@ -207,6 +209,7 @@ steps:
       You can say **nei, merci** or **nei, danke** to *politely* decline something.
     images:
       - "data/assets/images/no.jpg"
+    audio: "data/assets/audio/tschuldigungneimerci.wav"
 
   - type: introduce_word
     id: word_bitte

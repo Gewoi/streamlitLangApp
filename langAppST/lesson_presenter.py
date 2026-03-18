@@ -80,7 +80,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
     if step:
         if step["type"] == "order" or step["type"] == "choose":
             time.sleep(.65)
-            audio = step["audio"]
+            audio = step.get("audio", None)
             if audio:
                 if os.path.exists(audio):
                     audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state["step_idx"]}")

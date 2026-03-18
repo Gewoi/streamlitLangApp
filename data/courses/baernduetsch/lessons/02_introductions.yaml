@@ -47,6 +47,7 @@ steps:
       In this case, since we have a generally *girl* read name, we use **d** after *i bi*.
     images:
       - "data/assets/images/girl_smiling.jpg"
+    audio: "data/assets/audio/iheisseangela.wav"
 
   - type: order
     id: order_ibidrdennis
@@ -55,6 +56,7 @@ steps:
       question: "I am Dennis"
       helper: ""
     tokens: ["I", "bi", "dr", "Dennis"]
+    audio: "data/assets/audio/ibidrdennis.wav"
     solution_display: |
       ✅ Correct! 
       

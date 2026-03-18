@@ -53,6 +53,7 @@ steps:
     sentence:
       question: "Greetings, miss Schmid!"
       helper: "Guten Tag, Frau Schmid!"
+    audio: "data/assets/audio/gruessechfrouschmid.wav"
     tokens: ["Grüessech,", "Frou", "Schmid!"]
     solution_display: |
       ✅ Correct!
@@ -234,6 +235,7 @@ steps:
       question: "Mister and Miss Schmid."
       helper: "Herr und Frau Schmid."
     tokens: ["Herr", "und", "Frou", "Schmid"]
+    audio: "data/assets/audio/herrundfrouschmid.wav"
 
   - type: translate_type
     id: translate_type_18
