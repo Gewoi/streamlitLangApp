@@ -1,0 +1,358 @@
+id: 31_my_family_singular_possesives
+title: "👪 My Family: Singular Possesives"
+description: "Talk about your family, and learn about possesives."
+estimated_minutes: 4
+section: People
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Mini Mueter"
+    translation:
+      en: "My mother"
+      de: "Meine Mutter"
+    images:
+      - "data/assets/images/middleaged_woman.jpg"
+    audio: "data/assets/audio/minimueter.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I see my mother today."
+      helper: "Ich sehe heute meine Mutter."
+    tokens: ["I", "gseh", "hüt", "mini", "Mueter."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mini Mueter** means *my mother*. **I gseh** means *I see*, and **hüt** means *today*. You could also put the **hüt** at the end of the sentence (**I gseh mini Mueter hüt**), but this solution is usually a bit more elegant.
+    audio: "data/assets/audio/igsehhuetminimueter.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Di Vater"
+    translation:
+      en: "Your father"
+      de: "Dein Vater"
+    images:
+      - "data/assets/images/middleaged_man.jpg"
+    audio: "data/assets/audio/divater.wav"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Your father is here."
+      helper: "Dein Vater ist hier."
+      target: ["", " isch hie."]
+    answers: ["Di Vater"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Di Vater** means *your father*. **Hie** is *here*.
+    images:
+      - "data/assets/images/old_guy_handshake.jpg"
+    audio: "data/assets/audio/divaterischhie.wav"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Sis Chind"
+    translation:
+      en: "His child"
+      de: "Sein Kind"
+    images:
+      - "data/assets/images/kid_with_toy.jpg"
+    audio: "data/assets/audio/sischind.wav"
+
+  - type: choose
+    id: choose_7
+    prompt: "In the phrase *his child*, what possesive is used before *Chind* in Bärndütsch?"
+    images:
+      - "data/assets/images/kid_eating.jpg"
+    single_answer: true
+    correct_answers: ["Sis"]
+    wrong_answers: ["Si", "Sini"]
+    solution_display: |
+      ✅ Correct!
+      
+      For *his* with a *neuter* noun, you use **sis**. We'll look at the rules and forms in the next few slides!
+    audio: "data/assets/audio/sischind.wav"
+
+  - type: markdown
+    id: markdown_4
+    markdown: |
+      ## Possesives
+      
+      Possesives in Bärndütsch are relatively straightforward, especially in the *nominative* and *accusative* cases. At first, we'll focus on the singular forms here.
+      
+      We differentiate between whether the *grammatical object* that you're referig to is grammatically *masculine*, *feminine* or *neuter*. We'll use *first person* as an example:
+      
+      - **Dr Vater** (*the father*, mas.) -> ***Mi* Vater** (*my father*)
+      - **D Mueter** (*the mother*, fem.) -> ***Mini* Mueter** (*my mother*)
+      - **Ds Chind** (*the child*, neu.) -> ***Mis* Chind** (*my child*)
+      
+      So, simply put: *masculine* is the "base" form, *feminine* adds a ***-ni***, and *neuter* an ***-s***!
+      
+      We'll do some quick exercises with those and then we'll look at the other singular forms!
+    images:
+      - "data/assets/images/family_sofa.jpg"
+
+  - type: match
+    id: match_5
+    prompt: "Match the correct possesives (first person singular)."
+    pairs:
+      - left: "Mi"
+        right: "Vater"
+      - left: "Mini"
+        right: "Mueter"
+      - left: "Mis"
+        right: "Chind"
+
+  - type: choose
+    id: choose_8
+    prompt: "How would you say *my father*?"
+    images:
+      - "data/assets/images/middleaged_man.jpg"
+    single_answer: true
+    correct_answers: ["Mi Vater"]
+    wrong_answers: ["Mis Vater", "Mini Vater"]
+    solution_display: |
+      ✅ Correct!
+      
+      For *masculine* nouns, you use **mi**. *Femine nouns would use **mini** (**mini Mueter**, *my mother*), and *neuter* nouns would use **mis** (**mis Chind**, *my child*).
+
+  - type: markdown
+    id: markdown_9
+    markdown: |
+      ## The other sigular forms
+      
+      For the singular forms, you can mostly follow the same scheme:
+      
+      - Base form for *masculine*
+      - **-ni** for *feminine*
+      - **-s** for *neuter*
+      
+      Here are all the "base" forms:
+      
+      <center>
+      
+      | pronoun | possesive | example |
+      | --- | --- | --- |
+      | I / Ig | **Mi** | **Mi Vater** |
+      | Du | **Di** | **Dini Mueter** |
+      | Är | **Si** | **Si Name** (*his name*) |
+      | Si | **Ihre** | **Ihre Vater** |
+      
+      </center>
+      
+      You see the notable exception here already: For **si** (*she*), we actually use **ihre**! The forms follow a similar schema though:
+      
+      - **Ihre** for *masculine* -> **Ihre Vater**
+      - **Ihri** for *feminine* -> **Ihri Mueter**
+      - **Ihres** for *neuter* -> **Ihres Chind**
+    images:
+      - "data/assets/images/family_sofa.jpg"
+
+  - type: match
+    id: match_10
+    prompt: "Match the correct possesives (third person singular, feminine, *her*)"
+    pairs:
+      - left: "Ihre"
+        right: "Vater"
+      - left: "Ihri"
+        right: "Mueter"
+      - left: "Ihres"
+        right: "Chind"
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "His house is big."
+      helper: "Sein Haus ist gross."
+      target: ["", " isch gross."]
+    answers: ["Sis Huus"]
+    solution_display: |
+      ✅ Correct!
+      
+      *His* with a *neuter* object is **sis**.
+    images:
+      - "data/assets/images/house_big.jpg"
+    audio: "data/assets/audio/sishuusischgross.wav"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Your father and your mother are here."
+      helper: "Dein Vater und deine Mutter sind hier."
+    tokens: ["Di", "Vater", "u", "dini", "Mueter", "si", "hie."]
+    solution_display: |
+      ✅ Correct!
+      
+      The base form for *your* is **di**. Use the base form for *masculine* nouns, and add **-ni** for *feminine* nouns.
+    audio: "data/assets/audio/divaterudinimuetersihie.wav"
+
+  - type: listen_type
+    id: listen_type_13
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sinimueterchahuetnid.wav"
+    answers: ["Sini Mueter cha hüt nid.", "Sini Mueter cha huet nid."]
+    images:
+      - "data/assets/images/older_couple_talk.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      *His mother* is **sini Mueter**. This phrase means *his mother can't today / is not available today*.
+
+  - type: true_false
+    id: true_false_14
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihrevaterischhie.wav"
+    text: "**Your** father is here."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're sayig **ihre Vater isch hie**, which means ***her** father is here*.
+
+  - type: markdown
+    id: markdown_15
+    markdown: |
+      ## Possesives for plural forms
+      
+      You've already seen the possesives now when the *object* is singular. But what if we're talking about plural things, like *my parents*, *my houses*, *my plants*, etc.?
+      
+      Well, it's actually really simple: Plural forms are treated the same as *feminine* forms **in all cases**!
+      
+      - *My parents* -> **Mini Eltere**
+      - *Your houses* -> **Dini Hüser**
+      - *Her plants* -> **Ihri Pflanze**
+      
+      So, just remember: Plural forms are treated like *feminine*, and you can use **mini** in front of them!
+    images:
+      - "data/assets/images/woman_plants.jpg"
+
+  - type: translate_type
+    id: translate_type_16
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My children"
+      helper: "Meine Kinder"
+    answers: ["Mini Chinder", "Mini Chind"]
+    images:
+      - "data/assets/images/kids_faces.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      All plural forms are treated like *feminine* nouns, so you can say **mini** (or **dini**, **sini**, **ihri**) in front of them!
+
+  - type: choose
+    id: choose_17
+    prompt: "Choose all correct combinations of *plural* noun and possesive!"
+    single_answer: false
+    correct_answers: ["Mini Hüser", "Mini Chinder"]
+    wrong_answers: ["Mis Hüser", "Mi Hüser", "Mis Chinder", "Mi Chinder"]
+    solution_display: |
+      ✅ Correct!
+      
+      Again, all plural forms are treated like *feminine*!
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "Mini Eltere"
+    translation:
+      en: "My parents"
+      de: "Meine Eltern"
+    images:
+      - "data/assets/images/older_couple.jpg"
+    audio: "data/assets/audio/minieltere.wav"
+
+  - type: order
+    id: order_19
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Your father and your mother are your parents."
+      helper: "Dein Vater und deine Mutter sind deine Eltern."
+    tokens: ["Di Vater", "u", "dini Mueter", "si", "dini Eltere."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Dini Eltere** means *your parents*.
+    audio: "data/assets/audio/divaterudinimuetersidinieltere.wav"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sishuusischchlii.wav"
+    answers: ["Sis huus isch chlii"]
+    images:
+      - "data/assets/images/house_small.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *his house is small*.
+
+  - type: translate_type
+    id: translate_type_21
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Her parents are old."
+      helper: "Ihre Eltern sind alt."
+    answers: ["Ihri eltere si alt."]
+    images:
+      - "data/assets/images/elderly_couple.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Ihri Eltere** means *her parents*, and **alt** means *old*.
+
+  - type: order
+    id: order_22
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "His parents can't tomorrow / His parents aren't available tomorrow"
+      helper: "Seine Eltern können morgen nicht."
+    tokens: ["Sini", "Eltere", "chöi", "morn", "nid."]
+    audio: "data/assets/audio/sinielterechoeimornnid.wav"
+
+  - type: match
+    id: match_23
+    prompt: "Match the possesives!"
+    pairs:
+      - left: "Sis"
+        right: "Huus"
+      - left: "Si"
+        right: "Vater"
+      - left: "Sini"
+        right: "Eltere"
+
+  - type: match
+    id: match_24
+    prompt: "Match the possesives"
+    pairs:
+      - left: "Ihre"
+        right: "Vater"
+      - left: "Ihri"
+        right: "Mueter"
+      - left: "Ihres"
+        right: "Huus"
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Father"
+        right: "Vater"
+      - left: "Mother"
+        right: "Mueter"
+      - left: "Parents"
+        right: "Eltere"
+      - left: "Your house"
+        right: "Dis Huus"
+      - left: "My plant"
+        right: "Mini Pflanze"
+      - left: "His name"
+        right: "Si Name"
+      - left: "Her soup"
+        right: "Ihri Suppe"
