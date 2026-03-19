@@ -1,0 +1,171 @@
+id: 33_describe_the_family
+title: "Describe the Family"
+description: "Learn about some more adjectives and more names of family members."
+estimated_minutes: 5
+section: People
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "fründlech"
+    translation:
+      en: "polite"
+      de: "freundlich"
+    images:
+      - "data/assets/images/handshake_cafe.jpg"
+    audio: "data/assets/audio/feuendlech.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They are polite."
+      helper: "Sie sind freundlich."
+    tokens: ["Si", "si", "fründlech."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/sisifruendlech.wav"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "unfründlech"
+    translation:
+      en: "impolite"
+      de: "unfreundlich"
+    images:
+      - "data/assets/images/guy_thumbs_down.jpg"
+    audio: "data/assets/audio/unfruendlech.wav"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "He is impolite."
+      helper: "Er ist unfreundlich."
+      target: ["Är isch ", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Fründlech** means *polite*, and **unfründlech** means *impolite*.
+    images:
+      - "data/assets/images/no.jpg"
+    audio: "data/assets/audio/aerischunfruendlech.wav"
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "My brother is a polite person (human)."
+      helper: "Mein Bruder ist ein freundlicher Mensch."
+    tokens: ["Mi", "Brueder", "isch", "e", "fründleche", "Mönsch."]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: If you use an adjective *before* a noun, it adjusts. Generally, with some exceptions:
+      - *masculine*: ends with **-e**
+      - *feminine*: ends with **-i**
+      - *neuter*: ends with **-s** or **-es**
+    audio: "data/assets/audio/mibruederischefruendlechemoensch.wav"
+
+  - type: true_false
+    id: true_false_5
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aerischunfruendlech.wav"
+    text: "He is **polite**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Är isch unfründlech**, which means *he is impolite* (**fründlech** would be *polite*).
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Grossvater / Grossmueter"
+    translation:
+      en: "Grandfather / Grandmother"
+      de: "Grossvater / Grossmutter"
+    images:
+      - "data/assets/images/older_couple.jpg"
+    audio: "data/assets/audio/grossvater_grossmueter.wav"
+
+  - type: choose
+    id: choose_7
+    prompt: "***Vater*** and ***Mueter*** are ***Eltere***; can you guess what grandparents are then?"
+    images:
+      - "data/assets/images/older_couple_talk.jpg"
+    single_answer: true
+    correct_answers: ["Grosseltere"]
+    wrong_answers: ["Grandeltere", "Chliieltere"]
+    solution_display: |
+      ✅ Correct!
+      
+      Your **Grossvater** and your **Grossmueter** are your **Grosseltere** (*grandparents*).
+    audio: "data/assets/audio/grosseltere.wav"
+
+  - type: cloze
+    id: cloze_8
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "My grandfather is a polite person (human)."
+      helper: "Mein Grossvater ist ein freundlicher Mensch."
+      target: ["Mi ", " isch e fründleche Mönsch."]
+    answers: ["Grossvater"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Grossvater** is *grandfather*, and **Grossmueter** is *grandmother*.
+    images:
+      - "data/assets/images/old_guy_half_wave.jpg"
+    audio: "data/assets/audio/migrossvaterischefruendlechemoensch.wav"
+
+  - type: match
+    id: match_9
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "grandmother"
+        right: "Grossmueter"
+      - left: "grandfather"
+        right: "Grossvater"
+      - left: "father"
+        right: "Vater"
+      - left: "mother"
+        right: "Mueter"
+      - left: "parents"
+        right: "Eltere"
+      - left: "grandparents"
+        right: "Grosseltere"
+
+  - type: introduce_word
+    id: introduce_word_10
+    word: "glücklech / unglücklech"
+    translation:
+      en: "happy / unhappy"
+      de: "glücklich / unglücklich"
+    images:
+      - "data/assets/images/emotions_icons.jpg"
+    audio: "data/assets/audio/gluecklech_ungluecklech.wav"
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "My sister is happy."
+      helper: "Meine Schwester ist glücklich."
+      target: ["Mini Schwöschter ", "."]
+    answers: ["isch glücklech", "isch gluecklech"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Glücklech** means *happy*, and **unglücklech** means *unhappy*.
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+    audio: "data/assets/audio/minischwoeschterischgluecklech.wav"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am unhappy today."
+      helper: "Ich bin heute unglücklich."
+    tokens: ["I", "bi", "hüt", "unglücklech."]
+    audio: "data/assets/audio/ibihuetungluecklech.wav"
