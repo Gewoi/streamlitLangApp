@@ -1,5 +1,5 @@
 id: 33_describe_the_family
-title: "Describe the Family"
+title: "👉 Describe the Family"
 description: "Learn about some more adjectives and more names of family members."
 estimated_minutes: 5
 section: People
@@ -169,3 +169,173 @@ steps:
       helper: "Ich bin heute unglücklich."
     tokens: ["I", "bi", "hüt", "unglücklech."]
     audio: "data/assets/audio/ibihuetungluecklech.wav"
+
+  - type: markdown
+    id: markdown_17
+    markdown: |
+      ## Luck
+      
+      *Glücklech / unglücklech* also means *lucky / unlucky*! You'll often here Swiss people say: **Das isch unglücklech** (*that is unfortunate / unlucky*).
+      
+      We won't focus on this for now, but it's good if you've already heard it!
+    images:
+      - "data/assets/images/luck.jpg"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "truurig"
+    translation:
+      en: "sad"
+      de: "traurig"
+    images:
+      - "data/assets/images/sad_guy_able.jpg"
+    audio: "data/assets/audio/truurig.wav"
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Are you happy or sad?"
+      helper: "Bist du glücklich oder traurig?"
+    tokens: ["Bisch", "du", "glücklech", "oder", "truurig?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Glücklech** means *happy*, and **truurig** means *sad*.
+    audio: "data/assets/audio/bischdugluecklechodertruurig.wav"
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "A happy family!"
+      helper: "Eine glückliche Familie!"
+    answers: ["E glücklechi Familie!", "Ä glücklechi Familie!", "E gluecklechi Familie!"]
+    images:
+      - "data/assets/images/family_sofa.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Remember, an adjective before a nound adjusts. **Familie** is *feminine*, so we say **glücklech*i***.
+
+  - type: cloze
+    id: cloze_16
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "A sad Monday."
+      helper: "Ein trauriger Montag."
+      target: ["Ä ", " Mänti."]
+    answers: ["truurige"]
+    solution_display: |
+      ✅ Correct!
+      
+      All weekdays are *masculine*! So, when adding an adjective before it, we end it accordingly: **truurig*e***.
+    images:
+      - "data/assets/images/monday.jpg"
+    audio: "data/assets/audio/aetruurigemaenti.wav"
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "müed"
+    translation:
+      en: "tired"
+      de: "müde"
+    images:
+      - "data/assets/images/guy_yawn.jpg"
+    audio: "data/assets/audio/mued.wav"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You are tired."
+      helper: "Du bist müde."
+      target: ["Du bisch ", "."]
+    answers: ["müed"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Müed** means *tired*.
+    images:
+      - "data/assets/images/cat_yawn.jpg"
+    audio: "data/assets/audio/dubischmued.wav"
+
+  - type: listen_type
+    id: listen_type_20
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ibimued.wav"
+    answers: ["I bi müed."]
+    images:
+      - "data/assets/images/guy_yawn.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *I am tired*.
+
+  - type: order
+    id: order_21
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We are tired, we leave now. Bye!"
+      helper: "Wir sind müde, wir gehen jetzt. Tschüss!"
+    tokens: ["Mir", "si", "müed,", "mir", "göh", "jetz.", "Tschüss!"]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/mirsimuedmirgoehjetz_tschuess.wav"
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My gradparents are tired."
+      helper: "Meine Grosseltern sind müde."
+    answers: ["Mini Grosseltere si müed."]
+    images:
+      - "data/assets/images/elderly_couple_tired.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: true_false
+    id: true_false_23
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ibihuetungluecklech.wav"
+    text: "This person is **tired** today?"
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying **i bi hüt unglücklech**, which means *I am unhappy today*.
+
+  - type: match
+    id: match_24
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "tired"
+        right: "müed"
+      - left: "happy"
+        right: "glücklech"
+      - left: "unhappy"
+        right: "unglücklech"
+      - left: "sad"
+        right: "truurig"
+      - left: "polite"
+        right: "fründlech"
+      - left: "impolite"
+        right: "unfründlech"
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Father"
+        right: "Vater"
+      - left: "Mother"
+        right: "Mueter"
+      - left: "Grandfather"
+        right: "Grossvater"
+      - left: "Grandmother"
+        right: "Grossmueter"
+      - left: "Brother"
+        right: "Brueder"
+      - left: "Sister"
+        right: "Schwöschter"
