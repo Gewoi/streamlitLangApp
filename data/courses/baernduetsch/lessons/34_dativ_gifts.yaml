@@ -20,6 +20,7 @@ steps:
       - **Dative**: *to* or *for* who/what the action is taken (*indirect* object)
       
       This might seem a bit confusing at first so we'll explore it step by step!
+      
     images:
       - "data/assets/images/guy_wondering.jpg"
 
@@ -43,6 +44,7 @@ steps:
       You've already seen this in **Wi geits dir?** (*How are you?*). The **Dir** isnt' *you (pl.)* here, it's actually the **Du** in *Dativ*! If you can reasonably add a *to* in front of the English translation of it (*gives **to** me*), then usually it will be in *Dativ* in German.
       
       We'll look at the individual words and forms of this sentence during this lesson!
+      
     images:
       - "data/assets/images/car_keys_pass.jpg"
 
@@ -203,8 +205,99 @@ steps:
 
   - type: introduce_word
     id: introduce_word_13
-    word: "Ds Gäld"
+    word: "Gäld"
     translation:
-      en: "The Money"
-      de: "Das Geld"
-    audio: "data/assets/audio/dsgaeld.wav"
+      en: "Money"
+      de: "Geld"
+    images:
+      - "data/assets/images/swissfranc.jpg"
+    audio: "data/assets/audio/gaeld.wav"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I give him money."
+      helper: "Ich gebe ihm Geld."
+      target: ["I gibe ", "."]
+    answers: ["ihm Gäld", "ihm Gaeld"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ihm** is the *Dativ* of **ar**, and **Gäld** means *money*. **Gäld** does have an article (**Ds Gäld**, *neuter*), but it's often used without an article.
+    images:
+      - "data/assets/images/swissfranc_give.jpg"
+    audio: "data/assets/audio/igibeihmgaeld.wav"
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "He gives me money!"
+      helper: "Er gibt mir Geld!"
+    answers: ["Är git mir Gäld!", "Aer git mir Gaeld!"]
+    images:
+      - "data/assets/images/swissfranc.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You give her money and she gives you a car."
+      helper: "Du gibst ihr Geld und sie gibt dir ein Auto."
+    tokens: ["Du", "gisch", "ihre", "Gäld", "u", "si", "git", "dir", "es", "Outo."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/dugischihregaeld_sigitdiresouto.wav"
+
+  - type: match
+    id: match_17
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "I / Ig"
+        right: "gibe"
+      - left: "Du"
+        right: "gisch"
+      - left: "Är / Si / Äs"
+        right: "git"
+
+  - type: match
+    id: match_18
+    prompt: "Match the dativ cases."
+    pairs:
+      - left: "I / Ig"
+        right: "Mir"
+      - left: "Du"
+        right: "Dir"
+      - left: "Är"
+        right: "Ihm"
+      - left: "Si"
+        right: "Ihre"
+
+  - type: markdown
+    id: markdown_19
+    markdown: |
+      ## **Gää** + *Dativ*: Plural
+      
+      Now, let's look at the *plural* forms and their *Dativ* cases!
+      
+      <center>
+      
+      | pronoun | **gää** | dativ pronoun |
+      | --- | --- | --- |
+      | Mir | **gäbe / gäh** | **üs** |
+      | Dir | **gäbit / gäbet / gäht** | **öich** |
+      | Si | **gäbe / gäh** | **ihne** |
+      
+      </center>
+      
+      For all of them, there are two forms: One with **gäbe** and one with **gäh**. Both are always correct, although generally the **gäh** version is a bit more common.
+      
+      Some examples:
+      - **Si gäh üs nüt** (*They give us nothing*)
+      - **Mir gäh öich es huus** (*We give you a house*)
+      - **Dir gäht ihne öii Pflanze** (*You (pl) give them your plant/s*)
+    images:
+      - "data/assets/images/family_big_dinner.jpg"
