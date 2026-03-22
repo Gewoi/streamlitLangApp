@@ -1,0 +1,210 @@
+id: 34_dativ_gifts
+title: "😌 Dativ: Gifts"
+description: "Learn about another one of the cases, the *Dativ*, and learn the verb **gää** (*to give*)."
+estimated_minutes: 7
+section: People
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## The cases
+      
+      Now, we'll add the last of the cases that is important in **Bärndütsch**! You've already seen:
+      
+      -**Nominative**: *takes* the action (*subject*)
+      -**Accusative**: *recieves* the action, is the *target* of the action (*direct* object)
+      
+      There is **one more** case that is relevant for Bärndütsch:
+      
+      - **Dative**: *to* or *for* who/what the action is taken (*indirect* object)
+      
+      This might seem a bit confusing at first so we'll explore it step by step!
+    images:
+      - "data/assets/images/guy_wondering.jpg"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## A simple example
+      
+      Look at the followig Sentence
+      
+      <center> My brother gives me his car</center>
+      
+      You know that here, *his car* is in the *accusative*: It's the *target* of the action of **giving**. 
+      
+      The car is *given* ***to*** Lena. Therefore, **me** is in *Dativ*! This is the most important use for the Dativ: Someone or something that isn't recieving the action *itself*, but rather someone or something that recieves the consequences of the action.
+      
+      In Bärndütsch, this sentence would be:
+      
+      <center> **Mi Bruder git *mir* sis Outo** </center>
+      
+      You've already seen this in **Wi geits dir?** (*How are you?*). The **Dir** isnt' *you (pl.)* here, it's actually the **Du** in *Dativ*! If you can reasonably add a *to* in front of the English translation of it (*gives **to** me*), then usually it will be in *Dativ* in German.
+      
+      We'll look at the individual words and forms of this sentence during this lesson!
+    images:
+      - "data/assets/images/car_keys_pass.jpg"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "My brother gives me his car."
+      helper: "Mein Bruder gibt mir sein Auto."
+    tokens: ["Mi", "Brueder", "git", "mir", "sis", "Outo."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mi Brueder** is *my brother*, **(är) git** means *(he) gives* and **sis Outo** is *his car*. The **mir** is the Dativ form of first person singular; *me* isn't the target of the action of *giving*, but the one that it is given *to*!
+    audio: "data/assets/audio/mibruedergitmirsisouto.wav"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Ds Outo"
+    translation:
+      en: "The car"
+      de: "Das Auto"
+    images:
+      - "data/assets/images/car1.jpg"
+    audio: "data/assets/audio/dsouto.wav"
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She gives me her car."
+      helper: "Sie gibt mir ihr Auto."
+      target: ["Si git mir ", "."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Outo** is *neuter*, so we use **ihres**. Again, the **mir** here is the *Dativ* of **I / Ig**!
+    images:
+      - "data/assets/images/couple_carkey.jpg"
+    audio: "data/assets/audio/sigitmirihresouto.wav"
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "My father has a car."
+      helper: "Mein Vater hat ein Auto."
+    tokens: ["Mi", "Vater", "hett", "es", "Outo."]
+    solution_display: |
+      ✅ Correct!
+      
+      Now, let's look at the verb **gää** (*to give*) and some *Dativ* forms!
+    audio: "data/assets/audio/mivaterhettesouto.wav"
+
+  - type: markdown
+    id: markdown_6
+    markdown: |
+      ## **Gää** + *Dativ*
+      
+      Let's look at the *singular* forms of the verb **gää** (*to give*), and combine them with the singular *Dativ* forms!
+      
+      <center>
+      
+      | pronoun | **gää** | dativ pronoun |
+      | --- | --- | --- |
+      |I / Ig | **gibe** | **mir** |
+      | Du | **gisch** | **dir** |
+      | Är | **git** | **ihm** |
+      | Si | **git** | **ihre** |
+      
+      When you use **gää**, whoever receives the thing that's given is in Dativ! Some examples:
+      
+      - **I gibe dir es Huus** (*I give you a house*)
+      - **Mini Mueter git mir e Pflanze** (*My mother gives me a plant*)
+      - **Si git ihm zwöi Stund** (*She gives him to hours*)
+      - **Är git ihre nüt** (*He gives her nothing*)
+    images:
+      - "data/assets/images/giving_gift.jpg"
+
+  - type: match
+    id: match_7
+    prompt: "Match the cojugations of **gää**."
+    pairs:
+      - left: "I / Ig"
+        right: "gibe"
+      - left: "Du"
+        right: "gisch"
+      - left: "Är / Si / Äs"
+        right: "git"
+
+  - type: match
+    id: match_8
+    prompt: "Match the *Dativ* pronouns!"
+    pairs:
+      - left: "I / Ig"
+        right: "Mir"
+      - left: "Du"
+        right: "Dir"
+      - left: "Är"
+        right: "Ihm"
+      - left: "Si"
+        right: "Ihre"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You give him your car."
+      helper: "Du gibst ihm dein Auto."
+    tokens: ["Du", "gisch", "ihm", "dis", "Outo."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Du gisch** means **you give**, and **ihm** is the *Dativ* form of **Är**.
+    audio: "data/assets/audio/dugischihmdisouto.wav"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She gives me her car tomorrow."
+      helper: "Sie gibt mir morgen ihr Auto."
+      target: ["", " ihres Outo."]
+    answers: ["Si git mir"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Si git mir** means **she gives (to) me**. Remember, if you can add a *to* in the English sentence before the pronoun, we usually use *Dativ* in Bärdütsch!
+    images:
+      - "data/assets/images/couple_carkey.jpg"
+    audio: "data/assets/audio/sigitmirmornihresouto.wav"
+
+  - type: choose
+    id: choose_11
+    prompt: "**I gibe** ___ **e Suppe**."
+    images:
+      - "data/assets/images/soup.jpg"
+    single_answer: true
+    correct_answers: ["ihm"]
+    wrong_answers: ["ihre", "är", "ihn"]
+    solution_display: |
+      ✅ Correct!
+      
+      The *Dativ* of **är** is **ihm**. **E Suppe** means *a soup*.
+    audio: "data/assets/audio/igibeihmesuppe.wav"
+
+  - type: listen_type
+    id: listen_type_12
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sigitmirnuet.wav"
+    answers: ["Si git mir nüt", "Si git mir nuet."]
+    images:
+      - "data/assets/images/x_sign.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *she gives me nothing*.
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "Ds Gäld"
+    translation:
+      en: "The Money"
+      de: "Das Geld"
+    audio: "data/assets/audio/dsgaeld.wav"
