@@ -5,6 +5,31 @@ from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises, create_section_repetition, generate_word_repetition
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
+from streamlit_supabase_auth import login_form, logout_button
+from types import SimpleNamespace
+
+def login_page():
+    st.title("Welcome!")
+    st.space("small")
+
+    session = login_form(
+        url=st.secrets["SUPABASE_URL"],
+        apiKey=st.secrets["SUPABASE_KEY"],
+        providers=["google"],
+    )
+
+    if session:
+        #so that I can access user.id
+        st.session_state["user"] = SimpleNamespace(**session["user"])
+        st.session_state["logged_in"] = True
+        st.session_state["nav"] ={"page": "home"}
+        st.rerun()
+    
+    st.divider()
+    st.caption("Use the app as a guest. Your progress will not be saved, and you will not get recommended lessons and repetitions.")
+    if st.button("Continue as Guest", width="stretch"):
+        st.session_state["guest"] = True
+        st.rerun()
 
 def homepage():
     st.title("Language App")
