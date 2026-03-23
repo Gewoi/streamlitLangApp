@@ -19,7 +19,11 @@ def login_page():
     )
 
     if session:
-        #so that I can access user.id
+        st.session_state["supabase"].supabase.auth.set_session(
+            session["access_token"],
+            session["refresh_token"]
+        )
+        # to make it easier to access
         st.session_state["user"] = SimpleNamespace(**session["user"])
         st.session_state["logged_in"] = True
         st.session_state["nav"] ={"page": "home"}
@@ -59,6 +63,7 @@ def course_page(course_id : str, store : ProgressStore):
     lesson_list = load_lessons(course_id)
 
     current_section = ""
+    completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
     with st.spinner("Loading Lessons..."):
         for lesson in lesson_list:
             if (not lesson["section"] == current_section) and (lesson["section"] in sections):
@@ -75,7 +80,8 @@ def course_page(course_id : str, store : ProgressStore):
                 st.divider()
                 current_section = lesson["section"]
                 st.title(body=f"{current_section}", text_alignment="center")
-            completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
+            completed_condition = True if lesson["id"] in completed_lessons else False
+            print(completed_condition, lesson["title"])
             with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
                 cols = st.columns(3, vertical_alignment="top")
                 if completed_condition:
@@ -125,7 +131,7 @@ def course_page(course_id : str, store : ProgressStore):
                             st.rerun()
             else:
                 st.write("No recommendations yet")
-            if store.get_completed_lessons(st.session_state["user"].id, course_id):
+            if completed_lessons:
                 st.subheader("Repeat Random Exercises")
                 with st.container(border=True, key=f"lesson_REPETITON_rec"):
                     st.markdown(f"### Repetition", text_alignment="center")
@@ -135,7 +141,6 @@ def course_page(course_id : str, store : ProgressStore):
                             st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
                             clear_lesson_sessionstate()
                             st.session_state["step_idx"] = 0
-                            completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
                             st.session_state["lesson_dict"] = generate_word_repetition(course_id, completed_lessons)
                             st.rerun()
 

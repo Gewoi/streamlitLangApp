@@ -70,9 +70,6 @@ class ProgressStore:
         )
 
     def get_completed_lessons(self, user_id: str, course_id: str):
-        """
-        Returns known_words dict.
-        """
         if st.session_state["guest"]:
             return []
         response = (
@@ -80,6 +77,7 @@ class ProgressStore:
             .select("lesson_id")
             .eq("user_id", user_id)
             .eq("course_id", course_id)
+            .eq("completed", 1)
             .execute()
         )
 
