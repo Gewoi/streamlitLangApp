@@ -13,7 +13,7 @@ steps:
       de: "freundlich"
     images:
       - "data/assets/images/handshake_cafe.jpg"
-    audio: "data/assets/audio/feuendlech.wav"
+    audio: "data/assets/audio/fruendlech.wav"
 
   - type: order
     id: order_1
@@ -43,6 +43,7 @@ steps:
       question: "He is impolite."
       helper: "Er ist unfreundlich."
       target: ["Är isch ", "."]
+    answers: ["unfründlech", "unfruendlech"]
     solution_display: |
       ✅ Correct!
       
