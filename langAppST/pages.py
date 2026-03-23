@@ -6,6 +6,7 @@ from .content import load_courses, load_lessons, load_lesson_content, play_compl
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 from streamlit_supabase_auth import login_form, logout_button
+from types import SimpleNamespace
 
 def login_page():
     st.title("Welcome!")
@@ -18,7 +19,8 @@ def login_page():
     )
 
     if session:
-        st.session_state["user"] = session["user"]
+        #so that I can access user.id
+        st.session_state["user"] = SimpleNamespace(**session["user"])
         st.session_state["logged_in"] = True
         st.session_state["nav"] ={"page": "home"}
         st.rerun()
@@ -73,7 +75,7 @@ def course_page(course_id : str, store : ProgressStore):
                 st.divider()
                 current_section = lesson["section"]
                 st.title(body=f"{current_section}", text_alignment="center")
-            completed_condition = store.check_lesson_completed(st.session_state["user"]["id"], course_id, lesson["id"])
+            completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
             with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
                 cols = st.columns(3, vertical_alignment="top")
                 if completed_condition:
@@ -108,7 +110,7 @@ def course_page(course_id : str, store : ProgressStore):
     with st.spinner("Loading recommendations..."):
         with st.sidebar:
             st.title("Recommended Lesson:")
-            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"]["id"], course_id)
+            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
             if rec_lesson_id:
                 rec_lesson = load_lesson_content(course_id, rec_lesson_id)
                 with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
@@ -123,7 +125,7 @@ def course_page(course_id : str, store : ProgressStore):
                             st.rerun()
             else:
                 st.write("No recommendations yet")
-            if store.get_completed_lessons(st.session_state["user"]["id"], course_id):
+            if store.get_completed_lessons(st.session_state["user"].id, course_id):
                 st.subheader("Repeat Random Exercises")
                 with st.container(border=True, key=f"lesson_REPETITON_rec"):
                     st.markdown(f"### Repetition", text_alignment="center")
@@ -133,7 +135,7 @@ def course_page(course_id : str, store : ProgressStore):
                             st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
                             clear_lesson_sessionstate()
                             st.session_state["step_idx"] = 0
-                            completed_lessons = store.get_completed_lessons(st.session_state["user"]["id"], course_id)
+                            completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
                             st.session_state["lesson_dict"] = generate_word_repetition(course_id, completed_lessons)
                             st.rerun()
 
@@ -207,7 +209,7 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             if not lesson_id == "REPETITION":
-                store.lesson_completed(st.session_state["user"]["id"], course_id, lesson_id, st.session_state["mistakes"])
+                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"])
             clear_lesson_sessionstate()
             st.rerun()
 
