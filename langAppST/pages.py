@@ -81,7 +81,6 @@ def course_page(course_id : str, store : ProgressStore):
                 current_section = lesson["section"]
                 st.title(body=f"{current_section}", text_alignment="center")
             completed_condition = True if lesson["id"] in completed_lessons else False
-            print(completed_condition, lesson["title"])
             with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
                 cols = st.columns(3, vertical_alignment="top")
                 if completed_condition:
