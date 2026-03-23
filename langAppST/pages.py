@@ -5,69 +5,24 @@ from .content import get_course
 from .content import load_courses, load_lessons, load_lesson_content, play_complete, find_new_exercises, create_section_repetition, generate_word_repetition
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
-
-
-def login(email: str, password: str):
-    try:
-        response = st.session_state["supabase"].supabase.auth.sign_in_with_password({
-            "email": email,
-            "password": password
-        })
-        st.session_state.user = response.user
-        st.session_state.logged_in = True
-        
-        st.session_state["just_logged_in"] = {"access_token": response.session.access_token, "refresh_token": response.session.refresh_token}
-        return True
-    except Exception as e:
-        st.error(f"Login failed: {str(e)}")
-        return False
-
-
-
-def signup(email, password):
-    try:
-        response = st.session_state["supabase"].supabase.auth.sign_up({
-            "email": email,
-            "password": password
-        })
-        st.session_state.user = response.user
-        return True
-    except Exception as e:
-        st.error(f"Signup failed: {str(e)}")
-        return False
-
+from streamlit_supabase_auth import login_form, logout_button
 
 def login_page():
     st.title("Welcome!")
-    mode = st.radio(
-        "Account",
-        ["Login", "Create Account"],
-        horizontal=True,
-    )
-
-    with st.form("auth_form", enter_to_submit=True):
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
-        if mode == "Create Account":
-            password_repeat = st.text_input("Repeat Password", type="password")
-        
-        submit = st.form_submit_button(mode)
-
-    if submit:
-        if mode == "Login":
-            if login(email, password):
-                st.success("✅ Logged In!")
-                st.rerun()
-        elif mode == "Create Account":
-            if password == password_repeat:
-                if signup(email, password):
-                    st.success("✅ Account created! Please check your email to confirm your account before logging in.")
-                    st.info("After confirming, come back here and log in.")
-            else:
-                st.error("Passwords not the same!")
-    
     st.space("small")
 
+    session = login_form(
+        url=st.secrets["SUPABASE_URL"],
+        apiKey=st.secrets["SUPABASE_KEY"],
+        providers=["google"],
+    )
+
+    if session:
+        st.session_state["user"] = session["user"]
+        st.session_state["logged_in"] = True
+        st.session_state["nav"] ={"page": "home"}
+        st.rerun()
+    
     st.divider()
     st.caption("Use the app as a guest. Your progress will not be saved, and you will not get recommended lessons and repetitions.")
     if st.button("Continue as Guest", width="stretch"):
@@ -89,8 +44,7 @@ def homepage():
             if st.button(label="Open Course", width="stretch", key=f"start_{course['id']}"):
                 st.session_state["nav"] = {"page": "course_page", "course_id": course["id"]}
                 st.session_state["step_idx"] = 0
-                st.rerun()
-                
+                st.rerun() 
 
 def course_page(course_id : str, store : ProgressStore):
     st.title("Select Lesson",text_alignment="center")
@@ -119,7 +73,7 @@ def course_page(course_id : str, store : ProgressStore):
                 st.divider()
                 current_section = lesson["section"]
                 st.title(body=f"{current_section}", text_alignment="center")
-            completed_condition = store.check_lesson_completed(st.session_state["user"].id, course_id, lesson["id"])
+            completed_condition = store.check_lesson_completed(st.session_state["user"]["id"], course_id, lesson["id"])
             with st.container(border=True, key=(f"finished_lesson_{lesson['id']}" if completed_condition else f"lesson_{lesson['id']}")):
                 cols = st.columns(3, vertical_alignment="top")
                 if completed_condition:
@@ -154,7 +108,7 @@ def course_page(course_id : str, store : ProgressStore):
     with st.spinner("Loading recommendations..."):
         with st.sidebar:
             st.title("Recommended Lesson:")
-            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
+            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"]["id"], course_id)
             if rec_lesson_id:
                 rec_lesson = load_lesson_content(course_id, rec_lesson_id)
                 with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
@@ -169,7 +123,7 @@ def course_page(course_id : str, store : ProgressStore):
                             st.rerun()
             else:
                 st.write("No recommendations yet")
-            if store.get_completed_lessons(st.session_state["user"].id, course_id):
+            if store.get_completed_lessons(st.session_state["user"]["id"], course_id):
                 st.subheader("Repeat Random Exercises")
                 with st.container(border=True, key=f"lesson_REPETITON_rec"):
                     st.markdown(f"### Repetition", text_alignment="center")
@@ -179,7 +133,7 @@ def course_page(course_id : str, store : ProgressStore):
                             st.session_state["nav"] = {"page": "lesson", "course_id": course_id, "current_lesson" : "REPETITION"}
                             clear_lesson_sessionstate()
                             st.session_state["step_idx"] = 0
-                            completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
+                            completed_lessons = store.get_completed_lessons(st.session_state["user"]["id"], course_id)
                             st.session_state["lesson_dict"] = generate_word_repetition(course_id, completed_lessons)
                             st.rerun()
 
@@ -253,7 +207,7 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             if not lesson_id == "REPETITION":
-                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"])
+                store.lesson_completed(st.session_state["user"]["id"], course_id, lesson_id, st.session_state["mistakes"])
             clear_lesson_sessionstate()
             st.rerun()
 
