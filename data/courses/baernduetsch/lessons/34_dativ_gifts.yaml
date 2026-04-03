@@ -121,6 +121,7 @@ steps:
       - **Mini Mueter git mir e Pflanze** (*My mother gives me a plant*)
       - **Si git ihm zwöi Stund** (*She gives him to hours*)
       - **Är git ihre nüt** (*He gives her nothing*)
+      
     images:
       - "data/assets/images/giving_gift.jpg"
 
@@ -301,3 +302,101 @@ steps:
       - **Dir gäht ihne öii Pflanze** (*You (pl) give them your plant/s*)
     images:
       - "data/assets/images/family_big_dinner.jpg"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl.) give us nothing!"
+      helper: "Ihr gebt uns nichts!"
+    tokens: ["Dir", "gäbit", "üs", "nüt!"]
+    solution_display: |
+      ✅ Correct!
+      
+      The *Dativ* of **mir** (*we*) is **üs**. You could say **dir gäbit** or **dir gäht**, both work.
+    audio: "data/assets/audio/dirgaebituesnuet.wav"
+
+  - type: choose
+    id: choose_21
+    prompt: "Choose all *plural Dativ* forms."
+    images:
+      - "data/assets/images/group_back_beach.jpg"
+    single_answer: false
+    correct_answers: ["üs", "öich", "ihne"]
+    wrong_answers: ["dir", "mir", "si"]
+    solution_display: |
+      ✅ Correct!
+      
+      The plural forms are:
+      - **mir** (*we*) -> **üs**
+      - **dir** (*you (pl)*) -> **öich**
+      - **si**  (*they*) -> **ihne**
+
+  - type: cloze
+    id: cloze_22
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Your parents give us two plants."
+      helper: "Eure Eltern geben uns zwei Pflanzen."
+      target: ["Öii Eltere ", " zwöi  Pflanze."]
+    answers: ["gäbe üs", "gäh üs"]
+    solution_display: |
+      ✅ Correct!
+      
+      For **si** (*they*), you can use **gäbe** or **gäh**. The *Dativ* of **mir** (*we*) is **üs**.
+    images:
+      - "data/assets/images/plant_1.jpg"
+    audio: "data/assets/audio/oeiielteregaebeueszwoeipflanze.wav"
+
+  - type: listen_type
+    id: listen_type_23
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirgaebeihnegaeld.wav"
+    answers: ["Mir gäbe ihne gäld", "mir gäh ihne gäld", "mir gaebe ihne gaeld", "mir gaeh ihne gaeld"]
+    images:
+      - "data/assets/images/swissfranc_give.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      The *Dativ* of **si** (*they*) is **ihne**.
+
+  - type: true_false
+    id: true_false_24
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/dirgaebituesnuet.wav"
+    text: "They're saying: "You give **us** nothing!""
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The *Dativ* of **mir** (*we*) is **üs** (kind of similar to the English *us*).
+
+  - type: match
+    id: match_25
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "gäbe / gäh (*we*)"
+      - left: "Dir "
+        right: "gäbit / gäht"
+      - left: "Si"
+        right: "gäbe /gäh (*they*)"
+
+  - type: match
+    id: match_26
+    prompt: "Match the Dativ forms!"
+    pairs:
+      - left: "I / Ig"
+        right: "mir"
+      - left: "Du"
+        right: "dir"
+      - left: "Är"
+        right: "ihm"
+      - left: "Si  (*she*)"
+        right: "ihre"
+      - left: "Mir"
+        right: "üs"
+      - left: "Dir"
+        right: "öich"
+      - left: "Si (*they*)"
+        right: "ihne"

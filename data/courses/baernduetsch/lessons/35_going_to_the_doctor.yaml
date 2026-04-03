@@ -1,0 +1,72 @@
+id: 35_going_to_the_doctor
+title: "👩‍⚕️Going to the Doctor"
+description: "Say that you are *not* feeling well, that you might be sick, and that you need to go to the doctor."
+estimated_minutes: 5
+section: People
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Dr Arzt / D Ärztin"
+    translation:
+      en: "The doctor (M/F)"
+      de: "Der Arzt / Die Ärztin"
+    images:
+      - "data/assets/images/doctor_f.jpg"
+    audio: "data/assets/audio/drarzt_daerztin.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am a doctor."
+      helper: "Ich bin Ärztin."
+    tokens: ["I", "bi", "Ärztin."]
+    solution_display: |
+      ✅ Correct!
+      
+      Unlike English, you differentiate between whether someone reads as male or female when talking about jobs. You say **I bi Arzt** if you're a guy, and **I bi Ärztin** if you're a girl.
+    audio: "data/assets/audio/ibiaerztin.wav"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "How are you? - Good!"
+      helper: "Wie geht's? - Gut!"
+      target: ["", " - Guet!"]
+    answers: ["Wie geits?", "Wie geits dir?"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say **Wie geits?** or **Wie geits dir?**. Notice the *Dativ* for **du** (**dir**)! Now we'll look at how to say how someone is doing!
+    images:
+      - "data/assets/images/conversation_casual.jpg"
+    audio: "data/assets/audio/wiegeits_guet.wav"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Mir geits guet"
+    translation:
+      en: "I'm doing good"
+      de: "Mir geht es gut"
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    audio: "data/assets/audio/mirgeitsguet.wav"
+
+  - type: markdown
+    id: markdown_4
+    markdown: |
+      ## Using the *Dativ* to say how you're doing
+      
+      **Mir geits guet** means *I am doing good*. The form is always the same to say how someone is doing:
+      - ***Dativ*** + **gah** + ...
+      
+      So, as an example:
+      
+      - **Ihm geits guet** (*He's doing good*)
+      - **Ihre geits schlächt** (*She's doing badly*)
+      - **Üs geits guet** (*We're doing good*)
+      - **Öich geits schlächt** (*You (pl) are doing bad*)
+    images:
+      - "data/assets/images/point_self.jpg"
