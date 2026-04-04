@@ -121,7 +121,6 @@ steps:
       - **Mini Mueter git mir e Pflanze** (*My mother gives me a plant*)
       - **Si git ihm zwöi Stund** (*She gives him to hours*)
       - **Är git ihre nüt** (*He gives her nothing*)
-      
     images:
       - "data/assets/images/giving_gift.jpg"
 
@@ -370,6 +369,31 @@ steps:
       ✅ Correct!
       
       The *Dativ* of **mir** (*we*) is **üs** (kind of similar to the English *us*).
+
+  - type: translate_type
+    id: translate_type_27
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "They give us a house."
+      helper: "Sie geben uns ein Haus."
+    answers: ["Si gäh üs es Huus.", "Si gäbe üs es Huus", "Si gäh üs äs Huus", "Si gäbe üs äs Huus"]
+    images:
+      - "data/assets/images/housenumber_9.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: order
+    id: order_28
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Do you (pl.) give us your car?"
+      helper: "Gebt ihr uns euer Auto?"
+    tokens: ["Gäbit", "dir", "üs", "öies", "Outo?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Üs** is *us*, **öies Outo** is *your car*. In a question, we flip the order of the verb and pronoun! (**Gäbit dir ...?** instead of **Dir gäbit ... .**)
+    audio: "data/assets/audio/gaebitdiruesoeiesouto.wav"
 
   - type: match
     id: match_25

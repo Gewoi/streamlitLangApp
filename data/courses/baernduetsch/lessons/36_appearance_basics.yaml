@@ -1,0 +1,56 @@
+id: 36_appearance_basics
+title: "👨‍💼 Appearance: Basics"
+description: "Learn the basics of how to describe what people look like, and tell someone they look good!"
+estimated_minutes: 4
+section: People
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "schön"
+    translation:
+      en: "pretty / beautiful"
+      de: "schön"
+    images:
+      - "data/assets/images/landscape_nice.jpg"
+    audio: "data/assets/audio/schoen.wav"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You're beautiful!"
+      helper: "Du bist schön!"
+    tokens: ["Du", "bisch", "schön!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Schön** means *pretty / beautiful*. If you want to be extra nice, you could say **wunderschön** instead, which means *really beautiful*.
+    audio: "data/assets/audio/dubischschoen.wav"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "That's a beautiful house!"
+      helper: "Das ist ein schönes Haus!"
+    tokens: ["Das", "isch", "es", "schöns", "Huus!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Es schöns Huus** means *a beautiful house*. Remember from earlier lessons: When having the adjective between **ä/äs/es** and the noun, we adjust it! **Huus** is *neuter*, so we say **es schöns Huus**. As a reminder, you can repeat the lesson about *Indefinite Articles and Adjectives*.
+    audio: "data/assets/audio/dasischesschoenshuus.wav"
+
+  - type: translate_type
+    id: translate_type_3
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "A beautiful mountain."
+      helper: "Ein schöner Berg."
+    answers: ["Ä schöne Bärg", "Ae schoene Baerg", "Ä schöne Berg"]
+    images:
+      - "data/assets/images/mountain_2.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Bärg** means *mountain*.

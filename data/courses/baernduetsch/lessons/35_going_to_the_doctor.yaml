@@ -70,3 +70,313 @@ steps:
       - **Öich geits schlächt** (*You (pl) are doing bad*)
     images:
       - "data/assets/images/point_self.jpg"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The doctor is here! (F)"
+      helper: "Die Ärztin ist hier!"
+    tokens: ["D", "Ärztin", "isch", "hie!"]
+    solution_display: |
+      ✅ Correct!
+      
+      We adjust names of jobs: When we talk about a *female* read person, we say **Ärtzin**. For a *male* read person, this would be **Arzt**.
+    audio: "data/assets/audio/daerztinischhie.wav"
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I'm doing good. I'm not going to the doctor."
+      helper: "Mit geht's gut. Ich gehe nicht zum Arzt."
+      target: ["", ". I gah nid zum Arzt."]
+    answers: ["Mir geits guet"]
+    solution_display: |
+      ✅ Correct! 
+      
+      To say *I'm doing well*, you say **mir geits guet** (**mir** being the *Dativ* of **I / Ig**).
+    images:
+      - "data/assets/images/no.jpg"
+    audio: "data/assets/audio/mirgeitsguet_igahnidzumarzt.wav"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You are not doing good."
+      helper: "Dir geht es nicht gut."
+    tokens: ["Dir", "geits", "nid", "guet."]
+    solution_display: |
+      ✅ Correct!
+      
+      We use the *Dativ* to say when someone is not doing well, so we say **dir** (*Dativ* of **du**).
+    audio: "data/assets/audio/dirgeitsnidguet.wav"
+
+  - type: translate_type
+    id: translate_type_7
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "She's not doing well."
+      helper: "Ihr geht es nicht gut."
+    answers: ["Ihre geits nid guet."]
+    images:
+      - "data/assets/images/sick_girl_1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Ihre** is the *Dativ* of **si** (*she*).
+
+  - type: listen_type
+    id: listen_type_8
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/uesgeitsguetmerci.wav"
+    answers: ["Üs geits guet, merci", "Ues geits guet, merci"]
+    images:
+      - "data/assets/images/group_selfie.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *we're doing good, thanks!*. **Üs** is the *Dativ* of **mir** (*we*).
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "zum Arzt / zur Ärztin"
+    translation:
+      en: "to the doctor (M/F)"
+      de: "zum Arzt / zur Ärztin"
+    images:
+      - "data/assets/images/doctor_visit.jpg"
+    audio: "data/assets/audio/zumarzt_zuraerztin.wav"
+
+  - type: match
+    id: match_13
+    prompt: "Match the words to the correct form of *doctor*!"
+    pairs:
+      - left: "zum"
+        right: "Arzt"
+      - left: "zur"
+        right: "Ärztin"
+
+  - type: true_false
+    id: true_false_10
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/mirgeitsnidguet_igahzumarzt.wav"
+    text: "This person is **doing good**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Mir geits nid guet, i gah zum Arzt!** Which means *I'm not doing good, I'm going to the doctor!*.
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I go to the doctor tomorrow."
+      helper: "Ich gehe morgen zum Arzt."
+      target: ["I gah morn ", "."]
+    answers: ["zum Arzt"]
+    solution_display: |
+      ✅ Correct!
+      
+      We say **zum Arzt** for a *male* read doctor, and **zur Ärztin** for a *female* read doctor.
+    images:
+      - "data/assets/images/doctor_visit2.jpg"
+    audio: "data/assets/audio/igahmornzumarzt.wav"
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "She goes to the doctor today. (F)"
+      helper: "Sie geht heute zur Ärztin."
+    answers: ["Si geit hüt zur Ärztin.", "Si geit huet zur Aerztin."]
+    solution_display: |
+      ✅ Correct!
+
+  - type: introduce_word
+    id: introduce_word_11
+    word: "chrank"
+    translation:
+      en: "sick"
+      de: "krank"
+    images:
+      - "data/assets/images/sick_guy_1.jpg"
+    audio: "data/assets/audio/chrank.wav"
+
+  - type: cloze
+    id: cloze_16
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We are sick."
+      helper: "Wir sind krank."
+      target: ["Mir si ", "."]
+    answers: ["chrank"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Chrank** means *sick*. You'll quite often see that a word that starts with a hard *k-* in German will start with a softer **ch-** in Bärndütsch.
+    images:
+      - "data/assets/images/sick_in_bed.jpg"
+    audio: "data/assets/audio/mirsichrank.wav"
+
+  - type: cloze
+    id: cloze_17
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She's sick. She's not going."
+      helper: "Sie ist krank. Sie geht nicht."
+      target: ["", ". Si geit nid."]
+    answers: ["Si isch chrank"]
+    images:
+      - "data/assets/images/sick_girl_2.jpg"
+    audio: "data/assets/audio/siischchrank_sigeitnid.wav"
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "What's the problem? - I'm sick."
+      helper: "Was hast du? - Ich bin krank."
+    tokens: ["Was", "hesch? -", "I", "bi", "chrank."]
+    solution_display: |
+      ✅ Correct!
+      
+      **I bi chrank** means *I'm sick*. Remember: **Was hesch?** means both *What do you have?* and *What's the problem? / What's wrong?*.
+    audio: "data/assets/audio/wshesch_ibichrank.wav"
+
+  - type: introduce_word
+    id: introduce_word_19
+    word: "gsund"
+    translation:
+      en: "healthy"
+      de: "gesund"
+    images:
+      - "data/assets/images/salad.jpg"
+    audio: "data/assets/audio/gsund.wav"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "The salad is healthy."
+      helper: "Der Salat ist gesund."
+    tokens: ["Dr", "Salat", "isch", "gsund."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Gsund** means *healthy*, both for people (**I bi gsund** as well as foods and other things (**Dr Salat isch gsund**).
+    audio: "data/assets/audio/drsalatischgsund.wav"
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ibigsund_igahnidzumarzt.wav"
+    text: "This person is **healthy**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **I bi gsund. I gah nid zum Arzt.**, which means *I'm healthy. I'm not going to the doctor*.
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My doctor is not available tomorrow. (F)"
+      helper: "Meine Ärztin kann morgen nicht."
+    answers: ["Mini Ärztin cha morn nid.", "Mini Aerztin cha morn nid."]
+    images:
+      - "data/assets/images/doctor_f.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: order
+    id: order_23
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He's not healthy, he's sick."
+      helper: "Er ist nicht gesund, er ist krank."
+    tokens: ["Är", "isch", "nid", "gsund,", "är isch", "chrank."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/aerischnidgsund_aerischchrank.wav"
+
+  - type: listen_type
+    id: listen_type_24
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sigeitmornzumarzt_siischchrank.wav"
+    answers: ["Si geit morn zum Arzt, si isch chrank"]
+    images:
+      - "data/assets/images/sick_girl_1.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *She's going to the doctor tomorrow, she's sick*.
+
+  - type: order
+    id: order_26
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I'm doing good, I'm healthy."
+      helper: "Mir geht's gut, ich bin gesund."
+    tokens: ["Mir", "geits", "guet,", "i", "bi", "gsund."]
+    solution_display: |
+      ✅ Correct!
+      
+      These are essentially two ways of saying the same thing: **Mir geits guet** (with the *Dativ*) means *I'm doing good*, and **I bi gsund** means *I am healthy*.
+    audio: "data/assets/audio/mirgeitsguet_ibigsund.wav"
+
+  - type: order
+    id: order_27
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You're not doing good, you're sick!"
+      helper: "Dir geht's nicht gut, du bist krank!"
+    tokens: ["Dir", "geits", "nid", "guet,", "du", "bisch", "chrank!"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is also two times essentially the same thing: **Dir geit's *nid* guet** or **Dir geits schlächt** (with the *Dativ* in both cases) means *You're not doing good*, and **Du bisch chrank** means *You're sick*.
+    audio: "data/assets/audio/dirgeitnidguet_dubischchrank.wav"
+
+  - type: match
+    id: match_28
+    prompt: "Match the *Dativ* forms!"
+    pairs:
+      - left: "I / Ig"
+        right: "Mir"
+      - left: "Du"
+        right: "Dir"
+      - left: "Är"
+        right: "Ihm"
+      - left: "Si (*she*)"
+        right: "Ihre"
+      - left: "Mir"
+        right: "Üs"
+      - left: "Dir"
+        right: "Öich"
+      - left: "Si (*they*)"
+        right: "Ihne"
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "healthy"
+        right: "gsund"
+      - left: "sick"
+        right: "chrank"
+      - left: "doctor (M)"
+        right: "Arzt"
+      - left: "doctor (F)"
+        right: "Ärztin"
+      - left: "to the doctor (M)"
+        right: "zum Arzt"
+      - left: "to the doctor (F)"
+        right: "zur Ärztin"
+      - left: "I am doing good"
+        right: "Mir geits guet"
+      - left: "We're doing good"
+        right: "Üs geits guet"
