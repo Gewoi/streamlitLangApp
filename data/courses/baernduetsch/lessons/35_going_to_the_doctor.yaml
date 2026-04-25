@@ -75,7 +75,7 @@ steps:
     id: order_9
     prompt: "Put the words in the correct order (Bärndütsch)."
     sentence:
-      question: "The doctor is here! (F)"
+      question: "The doctor (F) is here!"
       helper: "Die Ärztin ist hier!"
     tokens: ["D", "Ärztin", "isch", "hie!"]
     solution_display: |
@@ -189,7 +189,7 @@ steps:
     id: translate_type_15
     prompt: "Translate the following Sentence."
     sentence:
-      question: "She goes to the doctor today. (F)"
+      question: "She goes to the doctor (F) today."
       helper: "Sie geht heute zur Ärztin."
     answers: ["Si geit hüt zur Ärztin.", "Si geit huet zur Aerztin."]
     solution_display: |
@@ -339,7 +339,7 @@ steps:
       ✅ Correct!
       
       This is also two times essentially the same thing: **Dir geit's *nid* guet** or **Dir geits schlächt** (with the *Dativ* in both cases) means *You're not doing good*, and **Du bisch chrank** means *You're sick*.
-    audio: "data/assets/audio/dirgeitnidguet_dubischchrank.wav"
+    audio: "data/assets/audio/dirgeitsnidguet_dubischchrank.wav"
 
   - type: match
     id: match_28
@@ -353,9 +353,9 @@ steps:
         right: "Ihm"
       - left: "Si (*she*)"
         right: "Ihre"
-      - left: "Mir"
+      - left: "Mir (*we*)"
         right: "Üs"
-      - left: "Dir"
+      - left: "Dir (*you*)"
         right: "Öich"
       - left: "Si (*they*)"
         right: "Ihne"

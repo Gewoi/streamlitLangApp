@@ -471,6 +471,7 @@ steps:
       helper: "Sie hat blaue Augen."
     images:
       - "data/assets/images/eyes_blue.jpg"
+    answers: ["Si hett blaui Ouge."]
 
   - type: cloze
     id: cloze_41

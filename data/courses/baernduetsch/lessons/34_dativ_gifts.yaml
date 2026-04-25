@@ -31,7 +31,7 @@ steps:
       
       Look at the followig Sentence
       
-      <center> My brother gives me his car</center>
+      - My brother gives me his car
       
       You know that here, *his car* is in the *accusative*: It's the *target* of the action of **giving**. 
       
@@ -39,7 +39,7 @@ steps:
       
       In Bärndütsch, this sentence would be:
       
-      <center> **Mi Bruder git *mir* sis Outo** </center>
+      - **Mi Bruder git *mir* sis Outo**
       
       You've already seen this in **Wi geits dir?** (*How are you?*). The **Dir** isnt' *you (pl.)* here, it's actually the **Du** in *Dativ*! If you can reasonably add a *to* in front of the English translation of it (*gives **to** me*), then usually it will be in *Dativ* in German.
       
@@ -84,6 +84,7 @@ steps:
       **Outo** is *neuter*, so we use **ihres**. Again, the **mir** here is the *Dativ* of **I / Ig**!
     images:
       - "data/assets/images/couple_carkey.jpg"
+    answers: ["ihres Outo"]
     audio: "data/assets/audio/sigitmirihresouto.wav"
 
   - type: order
@@ -114,6 +115,8 @@ steps:
       | Du | **gisch** | **dir** |
       | Är | **git** | **ihm** |
       | Si | **git** | **ihre** |
+      
+      </center>
       
       When you use **gää**, whoever receives the thing that's given is in Dativ! Some examples:
       
@@ -165,8 +168,8 @@ steps:
     id: cloze_10
     prompt: "Fill in the missing words (answer in Bärndütsch)."
     sentence:
-      question: "She gives me her car tomorrow."
-      helper: "Sie gibt mir morgen ihr Auto."
+      question: "She gives me her car."
+      helper: "Sie gibt mir ihr Auto."
       target: ["", " ihres Outo."]
     answers: ["Si git mir"]
     solution_display: |
@@ -175,7 +178,7 @@ steps:
       **Si git mir** means **she gives (to) me**. Remember, if you can add a *to* in the English sentence before the pronoun, we usually use *Dativ* in Bärdütsch!
     images:
       - "data/assets/images/couple_carkey.jpg"
-    audio: "data/assets/audio/sigitmirmornihresouto.wav"
+    audio: "data/assets/audio/sigitmirihresouto.wav"
 
   - type: choose
     id: choose_11
@@ -363,7 +366,7 @@ steps:
     id: true_false_24
     prompt: "What do you think is said?"
     audio: "data/assets/audio/dirgaebituesnuet.wav"
-    text: "They're saying: "You give **us** nothing!""
+    text: "They're saying: *You give **us** nothing!*"
     answer: "True"
     solution_display: |
       ✅ Correct!
