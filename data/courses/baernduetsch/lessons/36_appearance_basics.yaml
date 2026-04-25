@@ -1,7 +1,7 @@
 id: 36_appearance_basics
 title: "👨‍💼 Appearance: Basics"
 description: "Learn the basics of how to describe what people look like, and tell someone they look good!"
-estimated_minutes: 4
+estimated_minutes: 7
 section: People
 
 steps:
@@ -54,3 +54,465 @@ steps:
       ✅ Correct!
       
       **Bärg** means *mountain*.
+
+  - type: introduce_word
+    id: introduce_word_4
+    word: "Oug / Ouge"
+    translation:
+      en: "Eye / Eyes"
+      de: "Auge / Augen"
+    images:
+      - "data/assets/images/eye_brown.jpg"
+    audio: "data/assets/audio/oug_ouge.wav"
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She has beautiful eyes."
+      helper: "Sie hat schöne Augen."
+      target: ["Si hett schöni ", "."]
+    answers: ["Ouge"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Oug** is *eye* and **Ouge** means *eyes*.
+    images:
+      - "data/assets/images/eyes_blue.jpg"
+    audio: "data/assets/audio/sihettschoeniouge.wav"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You have beautiful eyes."
+      helper: "Du hast schöne Augen."
+    tokens: ["Du", "hesch", "schöni", "Ouge."]
+    audio: "data/assets/audio/duheschschoeniouge.wav"
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "blau"
+    translation:
+      en: "blue"
+      de: "blau"
+    images:
+      - "data/assets/images/sky.jpg"
+    audio: "data/assets/audio/blau.wav"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "bruun"
+    translation:
+      en: "brown"
+      de: "braun"
+    images:
+      - "data/assets/images/fabric.jpg"
+    audio: "data/assets/audio/bruun.wav"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I have blue eyes and you have brown eyes."
+      helper: "Ich habe blaue Augen und du hast braune Augen."
+    tokens: ["Ig", "ha", "blaui", "Ouge", "u", "du", "hesch", "bruuni", "Ouge."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Blau** means *blue* and **bruun** means *brown*.
+    audio: "data/assets/audio/ihablauiougeuduheschbruuniouge.wav"
+
+  - type: translate_type
+    id: translate_type_10
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "blue"
+      helper: "blau"
+    answers: ["blau"]
+    images:
+      - "data/assets/images/sky.jpg"
+
+  - type: translate_type
+    id: translate_type_11
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "brown"
+      helper: "braun"
+    answers: ["bruun"]
+    images:
+      - "data/assets/images/fabric.jpg"
+
+  - type: cloze
+    id: cloze_12
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Your brown eyes are beautiful."
+      helper: "Deine braunen Augen sind schön."
+      target: ["Dini ", " Ouge si schön."]
+    answers: ["bruune"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Bruun** means *brown*. Remember that with a *definite article* (and **dini** counts as a *definite article*!), we use **bruun*e***. Without an article (or with an *indefinite article*), we would say **bruun*i* Ouge**.
+    images:
+      - "data/assets/images/eye_brown.jpg"
+    audio: "data/assets/audio/dinibruuneougesischoen.wav"
+
+  - type: match
+    id: match_13
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "brown"
+        right: "bruun"
+      - left: "blue"
+        right: "blau"
+
+  - type: introduce_word
+    id: introduce_word_14
+    word: "Nase"
+    translation:
+      en: "Nose"
+      de: "Nase"
+    images:
+      - "data/assets/images/face_bw.jpg"
+    audio: "data/assets/audio/nase.wav"
+
+  - type: order
+    id: order_15
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He has a big nose."
+      helper: "Er hat eine grosse Nase."
+    tokens: ["Är", "hett", "e", "grossi", "Nase."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Nase** means *nose*. It's pronounced slightly differently from Hochdeutsch, more ending with an ***ä*** sound. This is something you see often in words that end with an *-e* in Hochdeutsch.
+    audio: "data/assets/audio/aerhettegrossinase.wav"
+
+  - type: translate_type
+    id: translate_type_16
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My nose."
+      helper: "Meine Nase."
+    answers: ["Mini Nase."]
+    images:
+      - "data/assets/images/face_bw.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Nase** is *feminine*, so we use **d Nase** and therefore **Mini Nase**.
+
+  - type: listen_type
+    id: listen_type_17
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/miniougeumininase.wav"
+    answers: ["Mini Ouge u mini Nase."]
+    images:
+      - "data/assets/images/face_nosering.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *my eyes and my nose*. Note that **Mini Ouge** is *plural*, and *all* plural nouns use **d** as an article. **Oug** singular is actually *neuter*, so it's **ds Oug**. But in Plural, it's **d Ouge**.
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "Muu"
+    translation:
+      en: "Mouth"
+      de: "Mund"
+    images:
+      - "data/assets/images/mouth.jpg"
+    audio: "data/assets/audio/muu.wav"
+
+  - type: markdown
+    id: markdown_19
+    markdown: |
+      ## Muu
+      
+      The word for *mouth* is **Muu**. This is a bit of a strange word, as it differs from the German *Mund*.
+      
+      There is actually the German word *Maul*, which is a bit more of a crude word for mouth, often used for animals. Our word **Muu** is related to this, but you use it for all mouths, humans and other animals alike!
+    images:
+      - "data/assets/images/mouth2.jpg"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "My mouth."
+      helper: "Mein Mund."
+    tokens: ["Mis", "Muu."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Muu** is *neuter*, so here, we use **Mis Muu**. This is actually different from Hochdeutsch, where *Mund* is actually *masculine* (*der Mund*). But in Bärndütsch, it's *neuter*!
+    audio: "data/assets/audio/mismuu.wav"
+
+  - type: order
+    id: order_21
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "She has blue eyes and a small mouth."
+      helper: "Sie hat blaue Augen und einen kleinen Mund."
+    tokens: ["Si", "hett", "blaui", "Ouge", "und", "es", "chliises", "Muu."]
+    audio: "data/assets/audio/sihettblauiougeundeschliisesmuu.wav"
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "He has a big mouth!"
+      helper: "Er hat ein grosses Maul!"
+    answers: ["Är hett es grosses muu!", "Er hett es grosses Muu", "Är hett äs grosses Muu"]
+    images:
+      - "data/assets/images/guy_megaphone.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Äs grosses Muu** means *a big mouth*, and the phrase implies the same thing as in English: This is someone who speaks before they think, talks often, or is very loud!
+
+  - type: choose
+    id: choose_23
+    prompt: "Choose parts of the face!"
+    images:
+      - "data/assets/images/face_bw.jpg"
+    single_answer: false
+    correct_answers: ["Muu", "Nase", "Ouge"]
+    wrong_answers: ["Huus", "blau", "schön"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ouge** is *eyes*, **Nase** is *nose*, and **Muu** is *mouth*.
+
+  - type: true_false
+    id: true_false_24
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/sihettschoeniouge.wav"
+    text: "Her eyes are definitely **blue**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying **Si hett schöni Ouge**, which just means *she has beautiful eyes*. It does not say anything about the color!
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "nose"
+        right: "Nase"
+      - left: "mouth"
+        right: "Muu"
+      - left: "eyes"
+        right: "Ouge"
+
+  - type: match
+    id: match_26
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "beautiful"
+        right: "schön"
+      - left: "blue"
+        right: "blau"
+      - left: "brown"
+        right: "bruun"
+
+  - type: introduce_word
+    id: introduce_word_27
+    word: "Haar / Haar"
+    translation:
+      en: "hair"
+      de: "Haar / Haare"
+    images:
+      - "data/assets/images/hair_pink.jpg"
+    audio: "data/assets/audio/haar.wav"
+
+  - type: markdown
+    id: markdown_28
+    markdown: |
+      ## *Haar*: Plural and Singular!
+      
+      We use **Haar** both for the individual *strand of hair*, as well as for a whole *head of hair*.
+      
+      - **Si hett blondi Haar** -> *She has blonde hair*
+      - **I ha nes Haar i dr Suppe** -> *I have a (single) hair in my soup*
+      
+      Pay attention here: When we talk about someone's hair color, we use the *plural* form of hair. Now, both singular and plural are just the word **Haar**, but be careful with the adjectives there: These need to be adjusted! For example **blond*i* Haar**.
+    images:
+      - "data/assets/images/guy_wondering.jpg"
+
+  - type: introduce_word
+    id: introduce_word_29
+    word: "blond"
+    translation:
+      en: "blonde"
+      de: "blond"
+    images:
+      - "data/assets/images/hair_blonde.jpg"
+    audio: "data/assets/audio/blond.wav"
+
+  - type: order
+    id: order_30
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "She has blonde hair."
+      helper: "Sie hat blonde Haar."
+    tokens: ["Si", "hett", "blondi", "Haar."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Blondi Haar** means *blonde hair*.
+    audio: "data/assets/audio/sihettblondihaar.wav"
+
+  - type: cloze
+    id: cloze_31
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Does he have blonde or brown hair?"
+      helper: "Hat er blonde oder braune Haare?"
+      target: ["Hett är ", " Haar?"]
+    answers: ["blondi oder bruuni"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Bruun** is *brown*, and is also often used for haircolor.
+    images:
+      - "data/assets/images/guy_wondering.jpg"
+    audio: "data/assets/audio/hettaerblondioderbruunihaar.wav"
+
+  - type: listen_type
+    id: listen_type_32
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dinihaarsiblond.wav"
+    answers: ["Dini Haar si blond."]
+    images:
+      - "data/assets/images/hair_blonde.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *Your hair is blonde*.
+
+  - type: translate_type
+    id: translate_type_33
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My hair is brown."
+      helper: "Meine Haare sind braun."
+    answers: ["Mini Haar si bruun."]
+    images:
+      - "data/assets/images/guy_trainstation.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: introduce_word
+    id: introduce_word_34
+    word: "schwarz"
+    translation:
+      en: "black"
+      de: "schwarz"
+    images:
+      - "data/assets/images/sky_night_stars.jpg"
+    audio: "data/assets/audio/schwarz.wav"
+
+  - type: cloze
+    id: cloze_35
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "He has black hair."
+      helper: "Er hat schwarze Haare."
+      target: ["Är hett ", " Haar."]
+    answers: ["schwarzi"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Schwarz** means *black*.
+    images:
+      - "data/assets/images/group_men_photo.jpg"
+    audio: "data/assets/audio/aerhettschwarzihaar.wav"
+
+  - type: choose
+    id: choose_36
+    prompt: "Choose the hair colors!"
+    images:
+      - "data/assets/images/hair_blonde.jpg"
+    single_answer: false
+    correct_answers: ["schwarz", "bruun", "blond"]
+    wrong_answers: ["schön", "gross", "jung"]
+
+  - type: listen_type
+    id: listen_type_37
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sihettbruuniougeubruunihaar.wav"
+    answers: ["Si hett bruuni Ouge u bruuni Haar."]
+    images:
+      - "data/assets/images/woman_phone.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *She has brown eyes and brown hair*.
+
+  - type: order
+    id: order_38
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He has blonde hair and brown eyes."
+      helper: "Er hat blonde Haare und braune Augen."
+    tokens: ["Är", "hett", "blondi", "Haar", "u", "bruuni", "Ouge."]
+    audio: "data/assets/audio/aerhettblondihaarubruuniouge.wav"
+
+  - type: translate_type
+    id: translate_type_39
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "She has blue eyes."
+      helper: "Sie hat blaue Augen."
+    images:
+      - "data/assets/images/eyes_blue.jpg"
+
+  - type: cloze
+    id: cloze_41
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She has black hair."
+      helper: "Sie hat schwarze Haare."
+      target: ["Si hett ", " Haar."]
+    answers: ["schwarzi"]
+    images:
+      - "data/assets/images/girl_smiling.jpg"
+    audio: "data/assets/audio/sihettschwarzihaar.wav"
+
+  - type: match
+    id: match_40
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "blonde"
+        right: "blond"
+      - left: "brown"
+        right: "bruun"
+      - left: "black"
+        right: "schwarz"
+
+  - type: match
+    id: match_42
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "mouth"
+        right: "Muu"
+      - left: "nose"
+        right: "Nase"
+      - left: "eyes"
+        right: "Ouge"
+
+  - type: match
+    id: match_43
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "beautiful"
+        right: "schön"
+      - left: "blue"
+        right: "blau"
+      - left: "brown"
+        right: "bruun"
