@@ -93,6 +93,7 @@ else:
                 st.session_state["guest"] = False
                 st.session_state["logged_in"] = False
                 st.session_state["nav"] = {"page": "login"}
+                st.session_state["supabase"].supabase.auth.sign_out()
                 st.rerun()
         else:
             logout_button(url=st.secrets["SUPABASE_URL"], apiKey=st.secrets["SUPABASE_KEY"])

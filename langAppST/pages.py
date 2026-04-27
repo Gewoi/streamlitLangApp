@@ -10,10 +10,10 @@ from types import SimpleNamespace
 
 def login_page():
     st.title("Welcome!")
-    st.space("small")
+    st.markdown("You can use this app as a guest or, if you'd like to track your progress, you can log in.")
     st.divider()
 
-    st.markdown("Use the app as a guest.")
+    st.subheader("Guest Login")
     st.markdown("Your progress will not be saved, and you will not get recommended lessons and repetitions; but otherwise it's fully functional!")
     if st.button("Continue as Guest", width="stretch", type='primary'):
         st.session_state["guest"] = True
@@ -33,7 +33,7 @@ def login_page():
             session["refresh_token"]
         )
         # to make it easier to access
-        st.session_state["user"] = SimpleNamespace(**session["user"])
+        st.session_state["user"] = st.session_state["supabase"].supabase.auth.get_user().user
         st.session_state["logged_in"] = True
         st.session_state["nav"] ={"page": "home"}
         st.rerun()
@@ -66,7 +66,7 @@ def course_page(course_id : str, store : ProgressStore):
     lesson_list = load_lessons(course_id)
 
     current_section = ""
-    completed_lessons = store.get_completed_lessons(st.session_state["user"].id, course_id)
+    completed_lessons = store.get_completed_lessons(course_id)
     with st.spinner("Loading Lessons..."):
         for lesson in lesson_list:
             if (not lesson["section"] == current_section) and (lesson["section"] in sections):
@@ -118,7 +118,7 @@ def course_page(course_id : str, store : ProgressStore):
     with st.spinner("Loading recommendations..."):
         with st.sidebar:
             st.title("Recommended Lesson:")
-            rec_lesson_id = store.get_recommended_lesson(st.session_state["user"].id, course_id)
+            rec_lesson_id = store.get_recommended_lesson(course_id)
             if rec_lesson_id:
                 rec_lesson = load_lesson_content(course_id, rec_lesson_id)
                 with st.container(border=True, key=f"lesson_{rec_lesson_id}_rec"):
@@ -149,7 +149,8 @@ def course_page(course_id : str, store : ProgressStore):
 
 def player(course_id : str, lesson_id : str, store : ProgressStore):
     course_dict = get_course(course_id)
-    if "step_append" in st.session_state:
+    if "step_append" in st.session_state and st.session_state["upload_limit"]<5:
+        st.session_state["upload_limit"] += 1
         st.session_state["lesson_dict"]["steps"].append(st.session_state["step_append"])
         del st.session_state["step_append"]
     lesson_dict = st.session_state["lesson_dict"]
@@ -216,7 +217,7 @@ def finishing_screen(course_id : str, lesson_id : str, store : ProgressStore):
         if st.button(label="continue", width= "stretch", type="primary"):
             st.session_state["nav"] = {"page": "course_page", "course_id": course_id}
             if not lesson_id == "REPETITION":
-                store.lesson_completed(st.session_state["user"].id, course_id, lesson_id, st.session_state["mistakes"])
+                store.lesson_completed(course_id, lesson_id, st.session_state["mistakes"])
             clear_lesson_sessionstate()
             st.rerun()
 
@@ -237,6 +238,7 @@ def clear_lesson_sessionstate():
     st.session_state["last_pair"] = []
     st.session_state["match_sound"] = ""
     st.session_state["exercise_done"] = False
+    st.session_state["upload_limit"] = 0
 
 def reset_select_sessionstate_and_rerun():
     st.session_state["order_tokens"] = []
