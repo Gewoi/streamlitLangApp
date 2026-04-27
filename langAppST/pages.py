@@ -11,7 +11,16 @@ from types import SimpleNamespace
 def login_page():
     st.title("Welcome!")
     st.space("small")
+    st.divider()
 
+    st.markdown("Use the app as a guest.")
+    st.markdown("Your progress will not be saved, and you will not get recommended lessons and repetitions; but otherwise it's fully functional!")
+    if st.button("Continue as Guest", width="stretch", type='primary'):
+        st.session_state["guest"] = True
+        st.rerun()
+
+    st.divider()
+    st.markdown("Log in for progress tracking and recommended lessons.")
     session = login_form(
         url=st.secrets["SUPABASE_URL"],
         apiKey=st.secrets["SUPABASE_KEY"],
@@ -27,12 +36,6 @@ def login_page():
         st.session_state["user"] = SimpleNamespace(**session["user"])
         st.session_state["logged_in"] = True
         st.session_state["nav"] ={"page": "home"}
-        st.rerun()
-    
-    st.divider()
-    st.caption("Use the app as a guest. Your progress will not be saved, and you will not get recommended lessons and repetitions.")
-    if st.button("Continue as Guest", width="stretch"):
-        st.session_state["guest"] = True
         st.rerun()
 
 def homepage():
