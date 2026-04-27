@@ -6,7 +6,6 @@ from .content import load_courses, load_lessons, load_lesson_content, play_compl
 from .lesson_presenter import render_step
 from .progress_handler import ProgressStore
 from streamlit_supabase_auth import login_form, logout_button
-from types import SimpleNamespace
 
 def login_page():
     st.title("Welcome!")

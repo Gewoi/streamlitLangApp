@@ -12,6 +12,45 @@ from .no_dl_audio import audio_no_download
 import random
 import difflib
 
+#to only render safe html
+import bleach
+
+ALLOWED_TAGS = ["div", "p", "span", "br", "strong", "em", "code", "h1", "h2", "h3", "h4", "ul", "ol", "li", "a", "img"]
+ALLOWED_ATTRS = {
+    "div":  ["align", "style"],
+    "span": ["style"],
+    "p":    ["style"],
+    "a":    ["href", "title"],
+    "img":  ["src", "alt", "title"],
+}
+ALLOWED_STYLES = ["text-align", "color", "font-weight"]  # extend as needed
+
+def safe_html(raw: str) -> str:
+    return bleach.clean(
+        raw,
+        tags=ALLOWED_TAGS,
+        attributes=ALLOWED_ATTRS,
+        css_sanitizer=bleach.css_sanitizer.CSSSanitizer(allowed_css_properties=ALLOWED_STYLES),
+        protocols=["http", "https", "mailto"],
+        strip=True,
+    )
+
+@st.fragment
+def render_markdown_safe(step: dict):
+    md = step.get("markdown", "no markdown found")
+    st.markdown(safe_html(md), unsafe_allow_html=True)
+
+
+ASSETS_ROOT = Path.Path("data/assets").resolve()
+
+def safe_asset(p: str) -> Path.Path | None:
+    try:
+        full = (Path.Path.cwd() / p).resolve()
+        full.relative_to(ASSETS_ROOT)  # raises ValueError if outside
+        return full if full.is_file() else None
+    except (ValueError, OSError):
+        return None
+
 @dataclass
 class StepOutcome:
     can_go_next: bool
@@ -81,8 +120,8 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
         if step["type"] == "order" or step["type"] == "choose":
             time.sleep(.65)
             audio = step.get("audio", None)
-            if audio and audio.startswith("data/assets/audio"):
-                if os.path.exists(audio):
+            if audio:
+                if safe_asset(audio):
                     audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state["step_idx"]}")
                 else:
                     st.info(f"(Missing audio asset: {audio})")
@@ -115,18 +154,18 @@ def render_step(step : dict):
 @st.fragment
 def render_markdown(step : dict):
     _ = st.session_state.get("fragment_refresh", 0)
-    st.markdown(step.get("markdown", "no markdown found"), unsafe_allow_html=True)
+    render_markdown_safe(step.get("markdown", "no markdown found"))
 
     images = step.get("images", [])
     audio = step.get("audio", None)
     for img in images or []:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img) and img.startswith("data/assets/images"):
+                if safe_asset(img):
                     st.image(resize_image(img))
 
-    if audio and audio.startswith("data/assets/audio"):
-        if os.path.exists(audio):
+    if audio:
+        if safe_asset(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_markdown_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
@@ -146,12 +185,12 @@ def render_introduce_word(step : dict):
 
     for img in images or []:
         with st.container(horizontal_alignment="center"):
-            if os.path.exists(img) and img.startswith("data/assets/images"):
+            if safe_asset(img):
                 st.image(resize_image(img))
 
     
-    if audio and audio.startswith("data/assets/audio"):
-        if os.path.exists(audio):
+    if audio:
+        if safe_asset(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_intro_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
@@ -189,7 +228,7 @@ def render_cloze(step: dict):
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
-                    if os.path.exists(img) and img.startswith("data/assets/images"):
+                    if safe_asset(img):
                         st.image(resize_image(img))
         
         st.space("small")
@@ -268,7 +307,7 @@ def render_order(step: dict):
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img) and img.startswith("data/assets/images"):
+                if safe_asset(img):
                     st.image(resize_image(img))
     #TODO: Better formatting!!
 
@@ -336,10 +375,10 @@ def render_translate_type(step : dict):
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
-                    if os.path.exists(img) and img.startswith("data/assets/images"):
+                    if safe_asset(img):
                         st.image(resize_image(img))
-        if audio and audio.startswith("data/assets/audio"):
-            if os.path.exists(audio):
+        if audio:
+            if safe_asset(audio):
                 audio_no_download(audio, autoplay=True, key=f"audio_translate_{st.session_state["step_idx"]}")
             else:
                 st.info(f"(Missing audio asset: {audio})")
@@ -384,7 +423,7 @@ def render_listen_type(step : dict):
                 for img in images:
                     if os.path.exists(img):
                         st.image(resize_image(img))
-        if os.path.exists(audio) and audio.startswith("data/assets/audio"):
+        if safe_asset(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_listen_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
@@ -501,15 +540,15 @@ def render_true_false(step: dict):
 
     answer = step["answer"]
 
-    if audio and audio.startswith("data/assets/audio"):
-        if os.path.exists(audio):
+    if audio:
+        if safe_asset(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img) and img.startswith("data/assets/images"):
+                if safe_asset(img):
                     st.image(resize_image(img))
     
     st.space("medium")
@@ -555,11 +594,11 @@ def render_choose(step: dict):
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img) and img.startswith("data/assets/images"):
+                if safe_asset(img):
                     st.image(resize_image(img))
-    if audio and SINGLE_ANSWER and audio.startswith("data/assets/audio"):
-        if os.path.exists(audio):
-            audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
+    if audio:
+        if safe_asset(audio):
+            audio_no_download(audio, autoplay=True, key=f"audio_choose_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 

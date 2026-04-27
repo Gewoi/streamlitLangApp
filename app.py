@@ -1,8 +1,10 @@
 import streamlit as st
 import langAppST.pages as pages
 from langAppST.progress_handler import ProgressStore
-import json
 from streamlit_supabase_auth import login_form, logout_button
+from types import SimpleNamespace
+import base64
+import pathlib as Path
 
 if st.session_state.get("logged_in", False) and not st.session_state.get("guest", True):
     session = login_form(
@@ -30,8 +32,17 @@ st.html('''
       </script>
     ''')
 
-with open('stylesheet.css') as f:
-    css_file = f.read()
+@st.cache_data
+def load_styled_css():
+    with open('stylesheet.css') as f:
+        css = f.read()
+    img_b64 = base64.b64encode(Path.Path('data/assets/images/bern.jpg').read_bytes()).decode()
+    return css.replace(
+        "url('data/assets/images/bern.jpg')",
+        f"url('data:image/jpeg;base64,{img_b64}')"
+    )
+
+css_file = load_styled_css()
 
 st.html(f"<style>{css_file}</style>")
 
@@ -50,11 +61,7 @@ if "guest" not in st.session_state:
 
 # Guest flow stays the same
 if st.session_state["guest"] and not st.session_state["logged_in"]:
-    result = st.session_state["supabase"].supabase.auth.sign_in_with_password({
-        "email": "guest@test.local",
-        "password": "password123"
-    })
-    st.session_state["user"] = result.user
+    st.session_state["user"] = SimpleNamespace(id=None, email=None)
     st.session_state["logged_in"] = True
     st.session_state["nav"] ={"page": "home"}
     st.rerun()
@@ -73,11 +80,11 @@ if page == "login":
     pages.login_page()
 elif page == "home" and st.session_state["logged_in"]:
     pages.homepage()
-elif page == "course_page":
+elif page == "course_page" and st.session_state["logged_in"]:
     pages.course_page(nav.get("course_id"), st.session_state["supabase"])
-elif page == "lesson":
+elif page == "lesson" and st.session_state["logged_in"]:
     pages.player(nav.get("course_id"), nav.get("current_lesson"), st.session_state["supabase"])
-elif page == "finish":
+elif page == "finish" and st.session_state["logged_in"]:
     pages.finishing_screen(nav.get("course_id"), nav.get("current_lesson"), st.session_state["supabase"])
 
 if page == "login":
@@ -93,7 +100,6 @@ else:
                 st.session_state["guest"] = False
                 st.session_state["logged_in"] = False
                 st.session_state["nav"] = {"page": "login"}
-                st.session_state["supabase"].supabase.auth.sign_out()
                 st.rerun()
         else:
             logout_button(url=st.secrets["SUPABASE_URL"], apiKey=st.secrets["SUPABASE_KEY"])
