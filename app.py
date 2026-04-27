@@ -71,7 +71,7 @@ nav = st.session_state["nav"]
 page = nav.get("page")
 if page == "login":
     pages.login_page()
-elif page == "home":
+elif page == "home" and st.session_state["logged_in"]:
     pages.homepage()
 elif page == "course_page":
     pages.course_page(nav.get("course_id"), st.session_state["supabase"])

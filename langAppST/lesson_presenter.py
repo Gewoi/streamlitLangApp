@@ -81,7 +81,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
         if step["type"] == "order" or step["type"] == "choose":
             time.sleep(.65)
             audio = step.get("audio", None)
-            if audio:
+            if audio and audio.startswith("data/assets/audio"):
                 if os.path.exists(audio):
                     audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state["step_idx"]}")
                 else:
@@ -122,10 +122,10 @@ def render_markdown(step : dict):
     for img in images or []:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img):
+                if os.path.exists(img) and img.startswith("data/assets/images"):
                     st.image(resize_image(img))
 
-    if audio:
+    if audio and audio.startswith("data/assets/audio"):
         if os.path.exists(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_markdown_{st.session_state["step_idx"]}")
         else:
@@ -146,11 +146,11 @@ def render_introduce_word(step : dict):
 
     for img in images or []:
         with st.container(horizontal_alignment="center"):
-            if os.path.exists(img):
+            if os.path.exists(img) and img.startswith("data/assets/images"):
                 st.image(resize_image(img))
 
     
-    if audio:
+    if audio and audio.startswith("data/assets/audio"):
         if os.path.exists(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_intro_{st.session_state["step_idx"]}")
         else:
@@ -189,7 +189,7 @@ def render_cloze(step: dict):
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
-                    if os.path.exists(img):
+                    if os.path.exists(img) and img.startswith("data/assets/images"):
                         st.image(resize_image(img))
         
         st.space("small")
@@ -268,7 +268,7 @@ def render_order(step: dict):
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img):
+                if os.path.exists(img) and img.startswith("data/assets/images"):
                     st.image(resize_image(img))
     #TODO: Better formatting!!
 
@@ -336,9 +336,9 @@ def render_translate_type(step : dict):
         if images:
             with st.container(horizontal_alignment="center"):
                 for img in images:
-                    if os.path.exists(img):
+                    if os.path.exists(img) and img.startswith("data/assets/images"):
                         st.image(resize_image(img))
-        if audio:
+        if audio and audio.startswith("data/assets/audio"):
             if os.path.exists(audio):
                 audio_no_download(audio, autoplay=True, key=f"audio_translate_{st.session_state["step_idx"]}")
             else:
@@ -384,7 +384,7 @@ def render_listen_type(step : dict):
                 for img in images:
                     if os.path.exists(img):
                         st.image(resize_image(img))
-        if os.path.exists(audio):
+        if os.path.exists(audio) and audio.startswith("data/assets/audio"):
             audio_no_download(audio, autoplay=True, key=f"audio_listen_{st.session_state["step_idx"]}")
         else:
             st.info(f"(Missing audio asset: {audio})")
@@ -501,7 +501,7 @@ def render_true_false(step: dict):
 
     answer = step["answer"]
 
-    if audio:
+    if audio and audio.startswith("data/assets/audio"):
         if os.path.exists(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
         else:
@@ -509,7 +509,7 @@ def render_true_false(step: dict):
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img):
+                if os.path.exists(img) and img.startswith("data/assets/images"):
                     st.image(resize_image(img))
     
     st.space("medium")
@@ -555,9 +555,9 @@ def render_choose(step: dict):
     if images:
         with st.container(horizontal_alignment="center"):
             for img in images:
-                if os.path.exists(img):
+                if os.path.exists(img) and img.startswith("data/assets/images"):
                     st.image(resize_image(img))
-    if audio and SINGLE_ANSWER:
+    if audio and SINGLE_ANSWER and audio.startswith("data/assets/audio"):
         if os.path.exists(audio):
             audio_no_download(audio, autoplay=True, key=f"audio_tf_{st.session_state["step_idx"]}")
         else:
