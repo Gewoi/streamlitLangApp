@@ -49,7 +49,7 @@ steps:
       de: "Ich sehe eine Strasse."
     images:
       - "data/assets/images/view_big_building.jpg"
-    audio: "data/assets/audio/igsehestraas.wav"
+    audio: "data/assets/audio/igsehestraas.mp3"
 
   - type: order
     id: order_3
@@ -62,7 +62,7 @@ steps:
       ✅ Correct!
       
       In Bärndütsch, *articles* and *nouns* **do not change in the accusative**. This is different than Hochdütsch, where we would now say *den Bahnhof* instead of *der Bahnhof*. Bärndütsch makes this a bit easier!
-    audio: "data/assets/audio/igsehdrbahnhof.wav"
+    audio: "data/assets/audio/igsehdrbahnhof.mp3"
 
   - type: markdown
     id: markdown_4
@@ -117,7 +117,7 @@ steps:
       In the accusative (*receiving* the action), **si** turns to **se** (or **si**).
     images:
       - "data/assets/images/woman_waving.jpg"
-    audio: "data/assets/audio/dugsehschse.wav"
+    audio: "data/assets/audio/dugsehschse.mp3"
 
   - type: order
     id: order_7
@@ -130,12 +130,12 @@ steps:
       ✅ Correct!
       
       In the accusative, **äs** turns to **s** (which can be appended to the verb, like **gseht's**, or treated as its own thing).
-    audio: "data/assets/audio/aergsehts.wav"
+    audio: "data/assets/audio/aergsehts.mp3"
 
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/igsehsedoert.wav"
+    audio: "data/assets/audio/igsehsedoert.mp3"
     text: "The *her* referred to here is **closeby**."
     answer: "False"
     solution_display: |
@@ -154,7 +154,7 @@ steps:
       ✅ Correct!
       
       You can use both **ne** or **ihn** for *him*.
-    audio: "data/assets/audio/gsehschdunehie.wav"
+    audio: "data/assets/audio/gsehschdunehie.mp3"
 
   - type: translate_type
     id: translate_type_10
@@ -174,7 +174,7 @@ steps:
   - type: listen_type
     id: listen_type_11
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/igsehdi.wav"
+    audio: "data/assets/audio/igsehdi.mp3"
     answers: ["I gseh di"]
     images:
       - "data/assets/images/hideandseek.jpg"
@@ -261,7 +261,7 @@ steps:
       The accusative of *you* (pl.) is **öich** or **nech**. You can technically write the **nech** as an attachment to the word (**I gsehnech**), but either way is perfectly fine!
     images:
       - "data/assets/images/group_back_beach.jpg"
-    audio: "data/assets/audio/mirgsehnech.wav"
+    audio: "data/assets/audio/mirgsehnech.mp3"
 
   - type: order
     id: order_17
@@ -274,7 +274,7 @@ steps:
       ✅ Correct!
       
       For *we* (**mir**), we use **üs** in the accusative.
-    audio: "data/assets/audio/sigsehues.wav"
+    audio: "data/assets/audio/sigsehues.mp3"
 
   - type: cloze
     id: cloze_18
@@ -290,7 +290,7 @@ steps:
       For **si** (*they*), the accusative is **se**. This is kind of the same as for **si** (*she*). Usually the context clears this up! (not here though)
     images:
       - "data/assets/images/guy_transtation.jpg"
-    audio: "data/assets/audio/aergsehtse.wav"
+    audio: "data/assets/audio/aergsehtse.mp3"
 
   - type: cloze
     id: cloze_19
@@ -302,12 +302,12 @@ steps:
     answers: ["dir gseht üs", "dir gsehtnis"]
     images:
       - "data/assets/images/football_standoff.jpg"
-    audio: "data/assets/audio/mirgsehoeichudirgsehtues.wav"
+    audio: "data/assets/audio/mirgsehoeichudirgsehtues.mp3"
 
   - type: listen_type
     id: listen_type_20
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/gsehschduues.wav"
+    audio: "data/assets/audio/gsehschduues.mp3"
     answers: ["Gsesch du üs?"]
     images:
       - "data/assets/images/guy_trainstation.jpg"
@@ -319,7 +319,7 @@ steps:
   - type: true_false
     id: true_false_21
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/igsehnech.wav"
+    audio: "data/assets/audio/igsehnech.mp3"
     text: "This person is encountering **one person**."
     answer: "False"
     solution_display: |

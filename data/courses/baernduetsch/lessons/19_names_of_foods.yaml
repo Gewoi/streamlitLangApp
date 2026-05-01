@@ -13,12 +13,12 @@ steps:
       de: "Brot"
     images:
       - "data/assets/images/bread.jpg"
-    audio: "data/assets/audio/brot.wav"
+    audio: "data/assets/audio/brot.mp3"
 
   - type: listen_type
     id: listen_type_1
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/brot.wav"
+    audio: "data/assets/audio/brot.mp3"
     answers: ["brot"]
     images:
       - "data/assets/images/bread.jpg"
@@ -35,7 +35,7 @@ steps:
       de: "Käse"
     images:
       - "data/assets/images/cheese.jpg"
-    audio: "data/assets/audio/chaes.wav"
+    audio: "data/assets/audio/chaes.mp3"
 
   - type: order
     id: order_3
@@ -48,7 +48,7 @@ steps:
       ✅ Correct!
       
       Bread and cheese (**Brot u Chääs**) is a very typical Swiss dinner. On simple weekdays, a lot of families don't cook and just have bread, assorted cheeses and some small vegetables maybe.
-    audio: "data/assets/audio/brotuchaes.wav"
+    audio: "data/assets/audio/brotuchaes.mp3"
 
   - type: introduce_word
     id: introduce_word_4
@@ -58,7 +58,7 @@ steps:
       de: "Schokolade"
     images:
       - "data/assets/images/chocolate.jpg"
-    audio: "data/assets/audio/schoggi.wav"
+    audio: "data/assets/audio/schoggi.mp3"
 
   - type: translate_type
     id: translate_type_5
@@ -78,7 +78,7 @@ steps:
   - type: true_false
     id: true_false_6
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ihaettigaernaesschoggigipfeli.wav"
+    audio: "data/assets/audio/ihaettigaernaesschoggigipfeli.mp3"
     text: "This person would like a **chocolate croissant**."
     answer: "True"
     solution_display: |
@@ -115,7 +115,7 @@ steps:
       de: "Wasser"
     images:
       - "data/assets/images/water_pour.jpg"
-    audio: "data/assets/audio/wasser.wav"
+    audio: "data/assets/audio/wasser.mp3"
 
   - type: cloze
     id: cloze_9
@@ -131,7 +131,7 @@ steps:
       **Wasser** is the way we say *water* in Bärndütsch.
       
       If you would like a glass of water, you say **Äs Glas Wasser** (**Äs Glas** <-> *A glass*).
-    audio: "data/assets/audio/aesglaswasser.wav"
+    audio: "data/assets/audio/aesglaswasser.mp3"
 
   - type: order
     id: order_10
@@ -144,7 +144,7 @@ steps:
       ✅ Correct!
       
       **Äs Glas Wasser** means *a glass of water*.
-    audio: "data/assets/audio/ihaettigaernesglaswasser.wav"
+    audio: "data/assets/audio/ihaettigaernesglaswasser.mp3"
 
   - type: translate_type
     id: translate_type_11
@@ -168,7 +168,7 @@ steps:
       de: "Wein"
     images:
       - "data/assets/images/wine_glasses.jpg"
-    audio: "data/assets/audio/wii.wav"
+    audio: "data/assets/audio/wii.mp3"
 
   - type: order
     id: order_13
@@ -181,7 +181,7 @@ steps:
       ✅ Correct!
       
       **Wii** is *wine*, and **äs glas** means *a glass (of)*.
-    audio: "data/assets/audio/aesglaswii.wav"
+    audio: "data/assets/audio/aesglaswii.mp3"
 
   - type: cloze
     id: cloze_14
@@ -195,7 +195,7 @@ steps:
       ✅ Correct!
     images:
       - "data/assets/images/ordering_table_1.jpg"
-    audio: "data/assets/audio/washaettitdirgaern_esglaswasserbitte.wav"
+    audio: "data/assets/audio/washaettitdirgaern_esglaswasserbitte.mp3"
 
   - type: order
     id: order_15
@@ -204,7 +204,7 @@ steps:
       question: "I would like a glass of wine."
       helper: "Ich hätte gerne ein Glas Wein."
     tokens: ["I", "hätti", "gärn", "es", "Glas", "Wii."]
-    audio: "data/assets/audio/ihaettigaernesglaswii.wav"
+    audio: "data/assets/audio/ihaettigaernesglaswii.mp3"
 
   - type: match
     id: match_16

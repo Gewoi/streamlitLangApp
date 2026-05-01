@@ -41,7 +41,7 @@ steps:
       de: "Sie sind"
     images:
       - "data/assets/images/group_selfie.jpg"
-    audio: "data/assets/audio/sisi.wav"
+    audio: "data/assets/audio/sisi.mp3"
 
   - type: cloze
     id: cloze_2
@@ -57,12 +57,12 @@ steps:
       *I am* is *I bi*; when you introduce yourself with your name, you also need an article **dr/d**.
     images:
       - "data/assets/images/guy_with_headphones.jpg"
-    audio: "data/assets/audio/ibidrdennis.wav"
+    audio: "data/assets/audio/ibidrdennis.mp3"
 
   - type: listen_type
     id: listen_type_3
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/vowobischdu.wav"
+    audio: "data/assets/audio/vowobischdu.mp3"
     answers: ["Vo wo bisch du"]
     images:
       - "data/assets/images/woman_asking.jpg"
@@ -85,7 +85,7 @@ steps:
   - type: listen_type
     id: listen_type_5
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/aesischguet.wav"
+    audio: "data/assets/audio/aesischguet.mp3"
     answers: ["äs isch guet"]
     images:
       - "data/assets/images/no.jpg"
@@ -101,7 +101,7 @@ steps:
       question: "You (pl.) are good!"
       helper: "Ihr seid gut!"
     tokens: ["Dir", "sit", "guet!"]
-    audio: "data/assets/audio/dirsitguet.wav"
+    audio: "data/assets/audio/dirsitguet.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -129,7 +129,7 @@ steps:
       question: "We are from Italy!"
       helper: "Wir sind aus Italien!"
     tokens: ["Mir", "si", "us", "Italie!"]
-    audio: "data/assets/audio/mirsiusitalie.wav"
+    audio: "data/assets/audio/mirsiusitalie.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -153,7 +153,7 @@ steps:
   - type: listen_type
     id: listen_type_10
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sisi.wav"
+    audio: "data/assets/audio/sisi.mp3"
     answers: ["si si", "si sy"]
     images:
       - "data/assets/images/big_group.jpg"
@@ -180,12 +180,12 @@ steps:
       question: "I am, you are, she is"
       helper: "Ich bin, du bist, sie ist"
     tokens: ["I", "bi,", "du", "bisch,", "si", "isch"]
-    audio: "data/assets/audio/ibi_dubisch_siisch.wav"
+    audio: "data/assets/audio/ibi_dubisch_siisch.mp3"
 
   - type: true_false
     id: true_false_13
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/sisi.wav"
+    audio: "data/assets/audio/sisi.mp3"
     text: "Both **si** (*they*) and **si** (*are*) are pronounced the same."
     answer: "False"
     solution_display: |
@@ -196,7 +196,7 @@ steps:
   - type: listen_type
     id: listen_type_16
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mirsiusdrschwyz.wav"
+    audio: "data/assets/audio/mirsiusdrschwyz.mp3"
     answers: ["Mir si us dr schwyz", "mir si usdr schwyz"]
     images:
       - "data/assets/images/swissflag_boat.jpg"
@@ -208,7 +208,7 @@ steps:
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/aesischguet.wav"
+    audio: "data/assets/audio/aesischguet.mp3"
     text: "This can also mean **it's enough!**"
     answer: "True"
     solution_display: |
@@ -219,7 +219,7 @@ steps:
   - type: listen_type
     id: listen_type_17
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ibi_dubisch_siisch.wav"
+    audio: "data/assets/audio/ibi_dubisch_siisch.mp3"
     answers: ["i bi du bisch si isch"]
     images:
       - "data/assets/images/writing.jpg"
@@ -227,7 +227,7 @@ steps:
   - type: listen_type
     id: listen_type_18
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mirsi_dirsit_sisi.wav"
+    audio: "data/assets/audio/mirsi_dirsit_sisi.mp3"
     answers: ["mir si dir sit si si"]
     images:
       - "data/assets/images/big_group.jpg"

@@ -29,7 +29,7 @@ steps:
       de: "Guten Tag (closest)"
     images:
       - "data/assets/images/old_guy_handshake.jpg"
-    audio: "data/assets/audio/gruessech.wav"
+    audio: "data/assets/audio/gruessech.mp3"
 
   - type: cloze
     id: cloze_2
@@ -39,7 +39,7 @@ steps:
       helper: "Guten Tag, Herr Marti!"
       target: ["", ", Herr Marti!"]
     answers: ["grüessech", "gruessech", "guete tag"]
-    audio: "data/assets/audio/gruessech.wav"
+    audio: "data/assets/audio/gruessech.mp3"
     solution_display: |
       ✅ Correct! Greeting someone politely is **Grüessech**.
       
@@ -53,7 +53,7 @@ steps:
     sentence:
       question: "Greetings, miss Schmid!"
       helper: "Guten Tag, Frau Schmid!"
-    audio: "data/assets/audio/gruessechfrouschmid.wav"
+    audio: "data/assets/audio/gruessechfrouschmid.mp3"
     tokens: ["Grüessech,", "Frou", "Schmid!"]
     solution_display: |
       ✅ Correct!
@@ -89,7 +89,7 @@ steps:
   - type: listen_type
     id: listen_type_15
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/gruessech.wav"
+    audio: "data/assets/audio/gruessech.mp3"
     answers: ["grüessech"]
     images:
       - "data/assets/images/old_guy_handshake.jpg"
@@ -110,7 +110,7 @@ steps:
       ✅ Correct!
       
       In a *formal* setting or with older people, you say **Grüessech**.
-    audio: "data/assets/audio/gruessech.wav"
+    audio: "data/assets/audio/gruessech.mp3"
 
   - type: introduce_word
     id: introduce_word_6
@@ -120,7 +120,7 @@ steps:
       de: "Wie geht es Ihnen, Herr Marti?"
     images:
       - "data/assets/images/old_guy_handshake.jpg"
-    audio: "data/assets/audio/wiegeitseuchherrmarti.wav"
+    audio: "data/assets/audio/wiegeitseuchherrmarti.mp3"
 
   - type: markdown
     id: markdown_7
@@ -143,7 +143,7 @@ steps:
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wiegeitseuchherrmarti.wav"
+    audio: "data/assets/audio/wiegeitseuchherrmarti.mp3"
     text: "This person is using the **informal** way to ask how he's doing."
     answer: "False"
     solution_display: |
@@ -172,7 +172,7 @@ steps:
       de: "Und Ihnen?"
     images:
       - "data/assets/images/old_people_conv_garden.jpg"
-    audio: "data/assets/audio/ueuch.wav"
+    audio: "data/assets/audio/ueuch.mp3"
 
   - type: markdown
     id: markdown_12
@@ -204,7 +204,7 @@ steps:
   - type: true_false
     id: true_false_13
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ciaowiegeitsdirguetueuch.wav"
+    audio: "data/assets/audio/ciaowiegeitsdirguetueuch.mp3"
     text: "Here, **only the younger person** is using the *polite* form. (I apologize for the performance)"
     answer: "True"
     solution_display: |
@@ -226,7 +226,7 @@ steps:
       ✅ Correct!
       
       **Dir** and **öich** are the polite pronouns (which are the ones for *you (pl.)*, but we will look at that later).
-    audio: "data/assets/audio/ueuch.wav"
+    audio: "data/assets/audio/ueuch.mp3"
 
   - type: order
     id: order_17
@@ -235,7 +235,7 @@ steps:
       question: "Mister and Miss Schmid."
       helper: "Herr und Frau Schmid."
     tokens: ["Herr", "und", "Frou", "Schmid"]
-    audio: "data/assets/audio/herrundfrouschmid.wav"
+    audio: "data/assets/audio/herrundfrouschmid.mp3"
 
   - type: translate_type
     id: translate_type_18

@@ -16,7 +16,7 @@ steps:
       ✅ Correct!
       
       If we use an indefinite article, the adjective also adjusts a bit. We will look into that a bit now!
-    audio: "data/assets/audio/dubischegrossemoensch.wav"
+    audio: "data/assets/audio/dubischegrossemoensch.mp3"
 
   - type: markdown
     id: markdown_3
@@ -64,7 +64,7 @@ steps:
       For *neuter*, the adjective generally ends with **-es** after an *indefinite* article.
     images:
       - "data/assets/images/view_big_building.jpg"
-    audio: "data/assets/audio/igsehesgrosseshuusdert.wav"
+    audio: "data/assets/audio/igsehesgrosseshuusdert.mp3"
 
   - type: order
     id: order_3
@@ -77,12 +77,12 @@ steps:
       ✅ Correct!
       
       If the noun is *masculine*, which **Cappuccino** is (sometimes, these things are even among Swiss people, do don't fret if you get them wrong sometimes!), the adjective is **gross*e***.
-    audio: "data/assets/audio/ihaettigaernegrossecappuccino.wav"
+    audio: "data/assets/audio/ihaettigaernegrossecappuccino.mp3"
 
   - type: listen_type
     id: listen_type_4
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dasischegrossipflanze.wav"
+    audio: "data/assets/audio/dasischegrossipflanze.mp3"
     answers: ["Das isch e grossi Pflanze.", "Das isch ä grossi Pflanze."]
     images:
       - "data/assets/images/woman_smelling_big_plant.jpg"
@@ -121,7 +121,7 @@ steps:
   - type: true_false
     id: true_false_6
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/fuermigaerneschliiseskafi.wav"
+    audio: "data/assets/audio/fuermigaerneschliiseskafi.mp3"
     text: "This person would like a **small coffee**."
     answer: "True"
     solution_display: |
@@ -140,7 +140,7 @@ steps:
       ✅ Correct!
       
       The adjective **chlii** turns to **chliini** here because we have an *indefinite* article and a *feminine* noun.
-    audio: "data/assets/audio/ihaettigaernechliinisuppe.wav"
+    audio: "data/assets/audio/ihaettigaernechliinisuppe.mp3"
 
   - type: cloze
     id: cloze_9
@@ -156,7 +156,7 @@ steps:
       For *masculine*, after *indefinite* article, we use **chliine**.
     images:
       - "data/assets/images/coffee.jpg"
-    audio: "data/assets/audio/fuermiechliinecappuccinobitte.wav"
+    audio: "data/assets/audio/fuermiechliinecappuccinobitte.mp3"
 
   - type: match
     id: match_12
@@ -177,12 +177,12 @@ steps:
       de: "Ein Bier"
     images:
       - "data/assets/images/beer.jpg"
-    audio: "data/assets/audio/aesbier.wav"
+    audio: "data/assets/audio/aesbier.mp3"
 
   - type: true_false
     id: true_false_11
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/aesgrossesbierbitte.wav"
+    audio: "data/assets/audio/aesgrossesbierbitte.mp3"
     text: "This person would like **a small beer**."
     answer: "False"
     solution_display: |
@@ -206,7 +206,7 @@ steps:
   - type: listen_type
     id: listen_type_14
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/miraesseesgrosseszmittag.wav"
+    audio: "data/assets/audio/miraesseesgrosseszmittag.mp3"
     answers: ["Mir ässe äs grosses Zmittag", "Mir aesse aes grosses Zmittag", "Mir ässe es grosses Zmittag", "Mir aesse es grosses Zmittag"]
     images:
       - "data/assets/images/meal_group.jpg"

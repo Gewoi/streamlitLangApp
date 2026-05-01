@@ -1,0 +1,344 @@
+id: 37_common_jobs_and_working
+title: "👩‍🏭 Common Jobs and Working"
+description: "Learn some common names for jobs, and say what you do for a living. Bärndütsch has many ways of saying what you do!"
+estimated_minutes: 4
+section: Jobs
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Verchöiffer / Verchöifferin"
+    translation:
+      en: "Salesperson (M/F)"
+      de: "Verkäufer / Verkäuferin"
+    images:
+      - "data/assets/images/salesperson.jpg"
+    audio: "data/assets/audio/vrchoeiffer_vrchoeifferin.mp3"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Grammatical Gender for Jobs
+      
+      We've already encountered this, but as a reminder: We adjust the word we use for someone's job depending on who is talking, a male read person or a female read person. Now we have another job title that we need to distinguish:
+      
+      - **Verchöiffer** (*Salesman*)
+      - **Verchöifferin** (*Saleswoman*)
+      
+      For a more general expression, you'll often see **Verchöiffer/in** or the two said right after one another: **Verchöiffer und Verchöifferin**.
+    images:
+      - "data/assets/images/salesperson_f.jpg"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He is a salesperson, and she is a salesperson."
+      helper: "Er ist Verkäufer, und sie ist Verkäuferin."
+    tokens: ["Är isch", "Verchöiffer,", "u", "si isch", "Vrchöifferin."]
+    solution_display: |
+      ✅ Correct!
+      
+      One of the ways you can say what someone works as is by saying **I bi**, **Du bisch**, **Är/Si/Äs isch**, ... . So, *I am a salesperson* translates to **I bi Verchöiffer/in**.
+    audio: "data/assets/audio/aerischvrchoeifferusiischvrchoeiferin.mp3"
+
+  - type: choose
+    id: choose_3
+    prompt: "Choose all the *female* versions of jobs."
+    single_answer: false
+    correct_answers: ["Ärztin", "Verchöifferin"]
+    wrong_answers: ["Arzt", "Verchöiffer"]
+    solution_display: |
+      ✅ Correct!
+      
+      The *female* read versions of jobs quite often, if not almost always, end in **-in**.
+
+  - type: cloze
+    id: cloze_4
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You are a salesperson. (F)"
+      helper: "Du bist Verkäuferin."
+      target: ["Du bisch ", "."]
+    answers: ["Verchöifferin"]
+    solution_display: |
+      ✅ Correct!
+      
+      The *äu* in Standard German often turns into the **öi** you hear here. This happens quite often, you'll see it occur frequently!
+    images:
+      - "data/assets/images/salesperson.jpg"
+    audio: "data/assets/audio/dubischverchoeifferin.mp3"
+
+  - type: translate_type
+    id: translate_type_5
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Salesperson (M)"
+      helper: "Verkäufer"
+    answers: ["Verchöiffer", "Verchoeiffer"]
+    images:
+      - "data/assets/images/salesperson_m.jpg"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Lehrer / Lehrerin"
+    translation:
+      en: "Teacher"
+      de: "Lehrer / Lehrerin"
+    images:
+      - "data/assets/images/teacher_f.jpg"
+    audio: "data/assets/audio/lehrer_lehrerin.mp3"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He is a teacher now."
+      helper: "Er ist jetzt Lehrer."
+    tokens: ["Är", "isch", "jetz", "Lehrer."]
+    solution_display: |
+      ✅ Correct!
+      
+      This word is almost exactly the same as in Standard German. Also here, the *female* read version ends in **-in**: **Lehrer, Lehrerin**.
+    audio: "data/assets/audio/aerischjetzlehrer.mp3"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "My teacher (F) is young."
+      helper: "Meine Lehrerin ist jung."
+      target: ["Mini ", " isch jung."]
+    answers: ["Lehrerin"]
+    images:
+      - "data/assets/images/teacher_f.jpg"
+    audio: "data/assets/audio/minilehrerinischjung.mp3"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "schaffe"
+    translation:
+      en: "to work"
+      de: "arbeiten"
+    images:
+      - "data/assets/images/work_guy.jpg"
+    audio: "data/assets/audio/schaffe.mp3"
+
+  - type: markdown
+    id: markdown_9
+    markdown: |
+      ## The many words for *working*
+      
+      In Bärndütsch, you can actually use quite a lot of words to say that you're working. For now, we'll focus on the most universal and common one: **schaffe**. But, as an outlook, here are some of the other frequently used ones, what they mean, and wether they imply a positive relationship with the work:
+      
+      <center>
+      
+      | word | nuances | positive / neutral / negative |
+      | --- | --- | --- |
+      | **schaffe** | universal | positive / neutral |
+      | **bügle** | relatively universal too; word is pretty similar to *bügeln*, which means *ironing* in English | neutral / negative |
+      | **chrampfe** | means working really hard, often physically | negative | 
+      | **büeze** | more common in the countryside, usually for harder work; a **Büezer** is someone who does physical labor rather than a desk job | neutral / negative |
+      
+      </center>
+      
+      For now, we want to focus on **schaffe** though.
+    images:
+      - "data/assets/images/construction_work.jpg"
+
+  - type: match
+    id: match_11
+    prompt: "Match the conjugations of **schaffe** (singular)"
+    pairs:
+      - left: "I / Ig"
+        right: "schaffe"
+      - left: "Du"
+        right: "schaffsch / schaffisch"
+      - left: "Är / Si / Äs"
+        right: "schafft / schaffet"
+
+  - type: match
+    id: match_12
+    prompt: "Match the conjugations of **schaffe** (plural)"
+    pairs:
+      - left: "Mir"
+        right: "schaffe (*we*)"
+      - left: "Dir"
+        right: "schaffet"
+      - left: "Si"
+        right: "schaffe (*they*)"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I don't work tomorrow."
+      helper: "Ich arbeite morgen nicht."
+    tokens: ["I", "schaffe", "morn", "nid."]
+    solution_display: |
+      ✅ Correct!
+      
+      **I schaffe** means *I work*, and we use **nid** for *not*.
+    audio: "data/assets/audio/ischaffemornnid.mp3"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Do you work on Saturday?"
+      helper: "Arbeitest du am Samstag?"
+      target: ["", " du am Samsti?"]
+    answers: ["schaffsch", "schaffisch"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Du schaffsch** (or **du schaffisch**) means *you work*, and in questions, we flip the order of verb and subject!
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/schaffschduamsamsti.mp3"
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "My teacher works tomorrow."
+      helper: "Mein Lehrer arbeitet morgen."
+    answers: ["Mi Lehrer schafft morn.", "Mi Lehrer schaffet morn."]
+    images:
+      - "data/assets/images/teacher_m.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      You can say both **Är schafft** or **Är schaffet**.
+
+  - type: introduce_word
+    id: introduce_word_16
+    word: "I schaffe als..."
+    translation:
+      en: "I work as ..."
+      de: "Ich arbeite als ..."
+    images:
+      - "data/assets/images/point_self.jpg"
+    audio: "data/assets/audio/ischaffeals.mp3"
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I work as a teacher, and he's a salesperson."
+      helper: "Ich arbeite als Lehrerin, und er ist Verkäufer."
+    tokens: ["I", "schaffe", "als", "Lehrerin,", "u", "är", "isch", "Verchöiffer."]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say either **I bi ...** or **I schaffe als ...** to say what your job is!
+    audio: "data/assets/audio/ischaffealslehrerin_uaerischverchoeiffer.mp3"
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You work there as a teacher (M)."
+      helper: "Du arbeitest dort als Lehrer."
+    tokens: ["Du", "schaffsch", "dört", "als", "Lehrer."]
+    audio: "data/assets/audio/duschaffschdoertalslehrer.mp3"
+
+  - type: listen_type
+    id: listen_type_19
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/sischaffetalsverchoeifferin.mp3"
+    answers: ["Si schafft als Verchöifferin", "Si schaffet als Verchöifferin"]
+    images:
+      - "data/assets/images/salesperson_f.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *She works as a salesperson*.
+
+  - type: introduce_word
+    id: introduce_word_20
+    word: "Polizischt / Polizischtin"
+    translation:
+      en: "Policeman / Policewoman"
+      de: "Polizist / Polizistin"
+    images:
+      - "data/assets/images/policeman.jpg"
+    audio: "data/assets/audio/polizischt_polizischtin.mp3"
+
+  - type: cloze
+    id: cloze_21
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You are a policeman."
+      helper: "Du bist Polizist."
+      target: ["Du bisch ", "."]
+    answers: ["Polizischt", "ä Polizischt", "e Polizischt"]
+    solution_display: |
+      ✅ Correct!
+      
+      Note that in German, you actually say the *st* in there softly; in Bärndütsch, we really say **scht**!
+    images:
+      - "data/assets/images/policecar_toy.jpg"
+    audio: "data/assets/audio/dubischpolizischt.mp3"
+
+  - type: order
+    id: order_22
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "She works as a policewoman."
+      helper: "Sie arbeitet als Polizistin."
+    tokens: ["Si", "schaffet", "als", "Polizischtin."]
+    audio: "data/assets/audio/sischaffetalspolizischtin.mp3"
+
+  - type: translate_type
+    id: translate_type_23
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "He does not work as a policeman."
+      helper: "Er arbeitet nicht als Polizist."
+    answers: ["Är schaffet nid als Polizischt.", "Aer schaffet nid als Polizischt.", "Är schafft nid als Polizischt.", "Aer schafft nid als Polizischt"]
+    images:
+      - "data/assets/images/policeman.jpg"
+
+  - type: match
+    id: match_24
+    prompt: "Match the conjugations of **schaffe** (singular)"
+    pairs:
+      - left: "I / Ig"
+        right: "schaffe"
+      - left: "Du"
+        right: "schaffsch / schaffisch"
+      - left: "Är / Si / Äs"
+        right: "schafft / schaffet"
+
+  - type: match
+    id: match_25
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Mir"
+        right: "schaffe (*we*)"
+      - left: "Dir"
+        right: "schaffet"
+      - left: "Si"
+        right: "schaffe (*they*)"
+
+  - type: match
+    id: match_26
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Doctor (M)"
+        right: "Arzt"
+      - left: "Doctor (F)"
+        right: "Ärztin"
+      - left: "Salesperson (M)"
+        right: "Verchöiffer"
+      - left: "Salesperson (F)"
+        right: "Verchöifferin"
+      - left: "Policeman"
+        right: "Polizischt"
+      - left: "Policewoman"
+        right: "Polizischtin"
+      - left: "Teacher (M)"
+        right: "Lehrer"
+      - left: "Teacher (F)"
+        right: "Lehrerin"

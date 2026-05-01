@@ -13,7 +13,7 @@ steps:
       de: "Ich komme aus ___"
     images:
       - "data/assets/images/world_pins.jpg"
-    audio: "data/assets/audio/ichumeus_vo.wav"
+    audio: "data/assets/audio/ichumeus_vo.mp3"
 
   - type: cloze
     id: cloze_1
@@ -23,7 +23,7 @@ steps:
       helper: "Ich komme aus Deutschland."
       target: ["I ", " Dütschland."]
     answers: ["chume vo", "chume us"]
-    audio: "data/assets/audio/ichumeus_vo.wav"
+    audio: "data/assets/audio/ichumeus_vo.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -34,7 +34,7 @@ steps:
   - type: true_false
     id: true_false_3
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ichumeusdrschwyz.wav"
+    audio: "data/assets/audio/ichumeusdrschwyz.mp3"
     text: "This person is from **Germany**"
     answer: "False"
     solution_display: |
@@ -49,7 +49,7 @@ steps:
       question: "I am from Switzerland."
       helper: "Ich komme aus der Schweiz."
     tokens: ["I", "chume", "us", "dr", "Schwyz."]
-    audio: "data/assets/audio/ichumeusdrschwyz.wav"
+    audio: "data/assets/audio/ichumeusdrschwyz.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -58,7 +58,7 @@ steps:
   - type: listen_type
     id: listen_type_2
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ichumeusdrschwyz.wav"
+    audio: "data/assets/audio/ichumeusdrschwyz.mp3"
     answers: ["I chume us dr schwyz", "I chume usdr schwyz", "i chume us dr schwiz", "i chume usdr schwiz"]
     images:
       - "data/assets/images/swissflag_boat.jpg"
@@ -74,7 +74,7 @@ steps:
       question: "I am from Poland."
       helper: "Ich komme aus Polen."
     tokens: ["I", "chume", "us", "Pole."]
-    audio: "data/assets/audio/ichumeuspole.wav"
+    audio: "data/assets/audio/ichumeuspole.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -88,12 +88,12 @@ steps:
       de: "Von wo kommst du? / Woher kommst du?"
     images:
       - "data/assets/images/question_microphone.jpg"
-    audio: "data/assets/audio/vowobischdu_vowochunnschdu.wav"
+    audio: "data/assets/audio/vowobischdu_vowochunnschdu.mp3"
 
   - type: true_false
     id: true_false_6
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/vowochunnschdu_pole.wav"
+    audio: "data/assets/audio/vowochunnschdu_pole.mp3"
     text: "The asked person is from **Germany**."
     answer: "False"
     solution_display: |
@@ -141,7 +141,7 @@ steps:
       de: "Von wo kommen Sie? (polite) / Von wo kommt ihr? (plural)"
     images:
       - "data/assets/images/conference_handshake.jpg"
-    audio: "data/assets/audio/vowochoemitdir.wav"
+    audio: "data/assets/audio/vowochoemitdir.mp3"
 
   - type: markdown
     id: markdown_11
@@ -165,7 +165,7 @@ steps:
       question: "Where are you from? (pl)"
       helper: "Woher kommt ihr?"
     tokens: ["Vo", "wo", "chömit", "dir?"]
-    audio: "data/assets/audio/vowochoemitdir.wav"
+    audio: "data/assets/audio/vowochoemitdir.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -179,7 +179,7 @@ steps:
       helper: "Woher kommen Sie? - Aus der Schweiz!"
       target: ["Vo wo chömit dir? - Us ", "."]
     answers: ["dr schwyz", "dr schwiz"]
-    audio: "data/assets/audio/vowochoemitdir_usdrschwyz.wav"
+    audio: "data/assets/audio/vowochoemitdir_usdrschwyz.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -188,7 +188,7 @@ steps:
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/vowochunnschdu_pole.wav"
+    audio: "data/assets/audio/vowochunnschdu_pole.mp3"
     text: "This person is asking in the **polite** form."
     answer: "False"
     solution_display: |
@@ -208,7 +208,7 @@ steps:
       ✅ Correct!
       
       When talking to an older person or a stranger of some position, you say **Vo wo chömit dir?**
-    audio: "data/assets/audio/vowochoemitdir.wav"
+    audio: "data/assets/audio/vowochoemitdir.mp3"
 
   - type: match
     id: match_8

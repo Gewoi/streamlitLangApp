@@ -25,7 +25,7 @@ steps:
       | Du | **chasch** | Dir | **chöit** |
       | Är / Si / Äs | **cha** | Si | **chöi** |
       
-    audio: "data/assets/audio/choenne_conjugation.wav"
+    audio: "data/assets/audio/choenne_conjugation.mp3"
     images:
       - "data/assets/images/group_run.jpg"
 
@@ -57,7 +57,7 @@ steps:
     translation:
       en: "then"
       de: "dann"
-    audio: "data/assets/audio/denn.wav"
+    audio: "data/assets/audio/denn.mp3"
 
   - type: order
     id: order_5
@@ -70,7 +70,7 @@ steps:
       ✅ Correct!
       
       To say that *you are available* at a certain time, you say **i cha ...**. To say *I am available then*, you'd say **I cha denn**.
-    audio: "data/assets/audio/ichaamdrue.wav"
+    audio: "data/assets/audio/ichaamdrue.mp3"
 
   - type: cloze
     id: cloze_4
@@ -86,7 +86,7 @@ steps:
       To say that you're free at a time, you can say **I cha denn**.
     images:
       - "data/assets/images/old_people_conv_garden.jpg"
-    audio: "data/assets/audio/heschduamdruezyt_jaichadenn.wav"
+    audio: "data/assets/audio/heschduamdruezyt_jaichadenn.mp3"
 
   - type: translate_type
     id: translate_type_6
@@ -110,7 +110,7 @@ steps:
       de: "nicht"
     images:
       - "data/assets/images/x_sign.jpg"
-    audio: "data/assets/audio/nid.wav"
+    audio: "data/assets/audio/nid.mp3"
 
   - type: markdown
     id: markdown_8
@@ -138,7 +138,7 @@ steps:
       ✅ Correct!
       
       **Nid** means *not*, and **I cha** means *I am available* (in this case **i cha nid** = *I am not available*).
-    audio: "data/assets/audio/ichamornnidsorry.wav"
+    audio: "data/assets/audio/ichamornnidsorry.mp3"
 
   - type: cloze
     id: cloze_10
@@ -154,12 +154,12 @@ steps:
       In cases like this, the **nid** comes at the end of the sentence. In cases where you talk about an *action* that you're unable to do with a *verb*, that comes at the end: **Dir chöit nid schwümme** (*You (pl.) can't swim*), **Du chasch nid rede** (*You (sing.) can't talk*).
     images:
       - "data/assets/images/weekend_sign.jpg"
-    audio: "data/assets/audio/mirchoeiamsamstinid.wav"
+    audio: "data/assets/audio/mirchoeiamsamstinid.mp3"
 
   - type: true_false
     id: true_false_11
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ichamornnidsorry.wav"
+    audio: "data/assets/audio/ichamornnidsorry.mp3"
     text: "This person is **available tomorrow**."
     answer: "False"
     solution_display: |
@@ -175,7 +175,7 @@ steps:
       de: "Minute / Minuten"
     images:
       - "data/assets/images/clock_white.jpg"
-    audio: "data/assets/audio/minute_minute.wav"
+    audio: "data/assets/audio/minute_minute.mp3"
 
   - type: markdown
     id: markdown_14
@@ -200,7 +200,7 @@ steps:
       de: "Stunde / Stunden"
     images:
       - "data/assets/images/clock_spinning.jpg"
-    audio: "data/assets/audio/stund_stunde.wav"
+    audio: "data/assets/audio/stund_stunde.mp3"
 
   - type: match
     id: match_16
@@ -221,7 +221,7 @@ steps:
       de: "In zehn Minuten"
     images:
       - "data/assets/images/watch_held.jpg"
-    audio: "data/assets/audio/izaeminute.wav"
+    audio: "data/assets/audio/izaeminute.mp3"
 
   - type: markdown
     id: markdown_17
@@ -275,7 +275,7 @@ steps:
   - type: true_false
     id: true_false_20
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wenngeischdu_irestund.wav"
+    audio: "data/assets/audio/wenngeischdu_irestund.mp3"
     text: "This asked person will leave **in one hour**."
     answer: "True"
     solution_display: |
@@ -294,12 +294,12 @@ steps:
       ✅ Correct!
       
       Note that often in Bärndütsch, you'll hear people actually say **i zwöi Stund** instead of **i zwöi Stunde**. Both is correct! We'll focus on the case that's a bit closer to Hochdeutsch.
-    audio: "data/assets/audio/aerischizwoeistundehie.wav"
+    audio: "data/assets/audio/aerischizwoeistundehie.mp3"
 
   - type: listen_type
     id: listen_type_22
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/irestundischnueni.wav"
+    audio: "data/assets/audio/irestundischnueni.mp3"
     answers: ["Ire Stund isch nüni.", "Ire Stund isch nueni."]
     images:
       - "data/assets/images/watch_lookat3.jpg"
@@ -322,7 +322,7 @@ steps:
       **I füf Minute** means *in five minutes*. **I cha denn** means *I am available then*.
     images:
       - "data/assets/images/thumbs_up.jpg"
-    audio: "data/assets/audio/ischifuefminuteguet_jaichadenn.wav"
+    audio: "data/assets/audio/ischifuefminuteguet_jaichadenn.mp3"
 
   - type: translate_type
     id: translate_type_25

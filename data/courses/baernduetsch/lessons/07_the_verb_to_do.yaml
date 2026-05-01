@@ -13,7 +13,7 @@ steps:
       de: "Ich mache _"
     images:
       - "data/assets/images/pottery.jpg"
-    audio: "data/assets/audio/imache.wav"
+    audio: "data/assets/audio/imache.mp3"
 
   - type: markdown
     id: markdown_1
@@ -56,7 +56,7 @@ steps:
   - type: listen_type
     id: listen_type_3
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dumachsch.wav"
+    audio: "data/assets/audio/dumachsch.mp3"
     answers: ["du machsch"]
     images:
       - "data/assets/images/woman_painting.jpg"
@@ -88,7 +88,7 @@ steps:
       de: "Was macht sie?"
     images:
       - "data/assets/images/woman_asking.jpg"
-    audio: "data/assets/audio/wasmachtsi.wav"
+    audio: "data/assets/audio/wasmachtsi.mp3"
 
   - type: markdown
     id: markdown_6
@@ -104,7 +104,7 @@ steps:
   - type: listen_type
     id: listen_type_7
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/wasmachter.wav"
+    audio: "data/assets/audio/wasmachter.mp3"
     answers: ["was macht är", "was machter"]
     images:
       - "data/assets/images/guy_pottery.jpg"
@@ -122,12 +122,12 @@ steps:
       de: "Was"
     images:
       - "data/assets/images/question_mark.jpg"
-    audio: "data/assets/audio/was.wav"
+    audio: "data/assets/audio/was.mp3"
 
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wasmachschdu.wav"
+    audio: "data/assets/audio/wasmachschdu.mp3"
     text: "They're asking you **how you are**."
     answer: "False"
     solution_display: |
@@ -143,7 +143,7 @@ steps:
       de: "Es macht etwas!"
     images:
       - "data/assets/images/pointing_distance.jpg"
-    audio: "data/assets/audio/esmachtoeppis.wav"
+    audio: "data/assets/audio/esmachtoeppis.mp3"
 
   - type: markdown
     id: markdown_10
@@ -179,7 +179,7 @@ steps:
       question: "He's doing something!"
       helper: "Er macht etwas!"
     tokens: ["Är", "macht", "öppis!"]
-    audio: "data/assets/audio/aermachtoeppis.wav"
+    audio: "data/assets/audio/aermachtoeppis.mp3"
     solution_display: |
       Correct!
       

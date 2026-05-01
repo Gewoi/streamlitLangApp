@@ -14,6 +14,7 @@ import difflib
 
 #to only render safe html
 import bleach
+import bleach.css_sanitizer
 
 ALLOWED_TAGS = ["div", "p", "span", "br", "strong", "em", "code", "h1", "h2", "h3", "h4", "ul", "ol", "li", "a", "img"]
 ALLOWED_ATTRS = {
@@ -99,7 +100,7 @@ def highlight_differences(input_str, candidates, similarity_threshold=0.5):
         elif opcode == 'replace':
             md_output.append(f"**{best_match[b0:b1]}**")
         elif opcode == 'delete':
-            md_output.append(f"~~{input_str[a0:a1]}~~")
+            md_output.append(f"~{input_str[a0:a1]}~")
         elif opcode == 'insert':
             md_output.append(f"**{best_match[b0:b1]}**")
     
@@ -122,7 +123,7 @@ def submitted_exercise(sol_display : str = "", step : dict = None):
             audio = step.get("audio", None)
             if audio:
                 if safe_asset(audio):
-                    audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state["step_idx"]}")
+                    audio_no_download(audio, autoplay=True, key=f"audio_order_{st.session_state['step_idx']}")
                 else:
                     st.info(f"(Missing audio asset: {audio})")
     return StepOutcome(can_go_next=True)
@@ -154,7 +155,7 @@ def render_step(step : dict):
 @st.fragment
 def render_markdown(step : dict):
     _ = st.session_state.get("fragment_refresh", 0)
-    render_markdown_safe(step.get("markdown", "no markdown found"))
+    render_markdown_safe(step)
 
     images = step.get("images", [])
     audio = step.get("audio", None)
@@ -166,7 +167,7 @@ def render_markdown(step : dict):
 
     if audio:
         if safe_asset(audio):
-            audio_no_download(audio, autoplay=True, key=f"audio_markdown_{st.session_state["step_idx"]}")
+            audio_no_download(audio, autoplay=True, key=f"audio_markdown_{st.session_state['step_idx']}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 
@@ -191,7 +192,7 @@ def render_introduce_word(step : dict):
     
     if audio:
         if safe_asset(audio):
-            audio_no_download(audio, autoplay=True, key=f"audio_intro_{st.session_state["step_idx"]}")
+            audio_no_download(audio, autoplay=True, key=f"audio_intro_{st.session_state['step_idx']}")
         else:
             st.info(f"(Missing audio asset: {audio})")
 

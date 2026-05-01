@@ -13,7 +13,7 @@ steps:
       de: "Ich heisse Dennis"
     images:
       - "data/assets/images/guy_with_headphones.jpg"
-    audio: "data/assets/audio/iheissedennis.wav"
+    audio: "data/assets/audio/iheissedennis.mp3"
 
   - type: markdown
     id: exp_iheisse
@@ -47,7 +47,7 @@ steps:
       In this case, since we have a generally *girl* read name, we use **d** after *i bi*.
     images:
       - "data/assets/images/girl_smiling.jpg"
-    audio: "data/assets/audio/iheisseangela.wav"
+    audio: "data/assets/audio/iheisseangela.mp3"
 
   - type: order
     id: order_ibidrdennis
@@ -56,7 +56,7 @@ steps:
       question: "I am Dennis"
       helper: ""
     tokens: ["I", "bi", "dr", "Dennis"]
-    audio: "data/assets/audio/ibidrdennis.wav"
+    audio: "data/assets/audio/ibidrdennis.mp3"
     solution_display: |
       ✅ Correct! 
       
@@ -65,7 +65,7 @@ steps:
   - type: listen_type
     id: listen_type_13
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/iheissedennis.wav"
+    audio: "data/assets/audio/iheissedennis.mp3"
     answers: ["i heisse dennis"]
     images:
       - "data/assets/images/guy_with_headphones.jpg"
@@ -77,7 +77,7 @@ steps:
   - type: true_false
     id: ciaoibidennis
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ciaoibidenniswiegeits.wav"
+    audio: "data/assets/audio/ciaoibidenniswiegeits.mp3"
     text: "You could answer with *guet* here."
     answer: "True"
     solution_display: |
@@ -99,7 +99,7 @@ steps:
       ✅ Correct!
       
       You can say both **I bi dr/d ...** or **I heisse ...**.
-    audio: "data/assets/audio/iheissedennis.wav"
+    audio: "data/assets/audio/iheissedennis.mp3"
 
   - type: introduce_word
     id: word_wieheissischdu
@@ -109,7 +109,7 @@ steps:
       de: "Wie heisst du?"
     images:
       - "data/assets/images/pointing_you.jpg"
-    audio: "data/assets/audio/wieheissischdu.wav"
+    audio: "data/assets/audio/wieheissischdu.mp3"
 
   - type: order
     id: order_wieheissischdu
@@ -118,7 +118,7 @@ steps:
       question: "What's your name?"
       helper: "Wie heisst du?"
     tokens: ["Wie", "heissisch", "du?"]
-    audio: "data/assets/audio/wieheissischdu.wav"
+    audio: "data/assets/audio/wieheissischdu.mp3"
     solution_display: |
       ✅ Correct!
 
@@ -151,7 +151,7 @@ steps:
   - type: listen_type
     id: listen_ibidrdenniswiegeits
     prompt: "Listen and type what you hear (Bernese)."
-    audio: "data/assets/audio/ciaoibidenniswiegeits.wav"
+    audio: "data/assets/audio/ciaoibidenniswiegeits.mp3"
     answers: ["Tschau, i bi dr dennis. wie geits dir?", "tschou, i bi dr dennis, wie geits dir", "tschou, i bi dr dennis, wi geits dir", "tschau, i bi dr dennis, wi geits dir"]
     images:
       - "data/assets/images/guy_with_headphones.jpg"
@@ -168,12 +168,12 @@ steps:
       de: "Freut mich!"
     images:
       - "data/assets/images/woman_waving_two.jpg"
-    audio: "data/assets/audio/froitmi.wav"
+    audio: "data/assets/audio/froitmi.mp3"
 
   - type: true_false
     id: dennisunicola
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dennisunicola.wav"
+    audio: "data/assets/audio/dennisunicola.mp3"
     text: "Dennis asked Nicola how he's doing."
     answer: "False"
     solution_display: |

@@ -13,7 +13,7 @@ steps:
       de: "Wir machen das!"
     images:
       - "data/assets/images/group_run.jpg"
-    audio: "data/assets/audio/mirmachedas.wav"
+    audio: "data/assets/audio/mirmachedas.mp3"
 
   - type: translate_type
     id: translate_type_1
@@ -83,7 +83,7 @@ steps:
   - type: listen_type
     id: listen_type_5
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/simacheoeppis.wav"
+    audio: "data/assets/audio/simacheoeppis.mp3"
     answers: ["si mache öppis", "sie mache öppis"]
     images:
       - "data/assets/images/cheers.jpg"
@@ -100,7 +100,7 @@ steps:
       de: "Nichts"
     images:
       - "data/assets/images/x_sign.jpg"
-    audio: "data/assets/audio/nuet.wav"
+    audio: "data/assets/audio/nuet.mp3"
 
   - type: translate_type
     id: translate_type_7
@@ -120,7 +120,7 @@ steps:
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wasmachesi.wav"
+    audio: "data/assets/audio/wasmachesi.mp3"
     text: "This person is asking what **she** is doing."
     answer: "False"
     solution_display: |

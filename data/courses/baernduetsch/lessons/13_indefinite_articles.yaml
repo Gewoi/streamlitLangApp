@@ -31,7 +31,7 @@ steps:
       de: "Ein Mann"
     images:
       - "data/assets/images/old_guy_half_wave.jpg"
-    audio: "data/assets/audio/aemaa.wav"
+    audio: "data/assets/audio/aemaa.mp3"
 
   - type: match
     id: match_1
@@ -50,12 +50,12 @@ steps:
       de: "Eine Frau"
     images:
       - "data/assets/images/woman_waving_two.jpg"
-    audio: "data/assets/audio/aefrou.wav"
+    audio: "data/assets/audio/aefrou.mp3"
 
   - type: true_false
     id: true_false_4
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/aemaaundaefrou.wav"
+    audio: "data/assets/audio/aemaaundaefrou.mp3"
     text: "**Maa** and **Frou** use **different** indefinite articles."
     answer: "False"
     solution_display: |
@@ -71,7 +71,7 @@ steps:
       helper: "Ein Mann und eine Frau."
       target: ["", " und e Frou."]
     answers: ["ä maa", "ä maah", "e maa", "e maah"]
-    audio : "data/assets/audio/aemaaundaefrou.wav"
+    audio : "data/assets/audio/aemaaundaefrou.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -91,7 +91,7 @@ steps:
       ✅ Correct!
       
       **Frou** is *feminine*, so we use **ä** (and we also use **ä** for *masculine* nouns).
-    audio: "data/assets/audio/aefrou.wav"
+    audio: "data/assets/audio/aefrou.mp3"
 
   - type: introduce_word
     id: introduce_word_6
@@ -101,7 +101,7 @@ steps:
       de: "Ein Kind"
     images:
       - "data/assets/images/kid_with_toy.jpg"
-    audio: "data/assets/audio/aeschind.wav"
+    audio: "data/assets/audio/aeschind.mp3"
 
   - type: order
     id: order_7
@@ -109,7 +109,7 @@ steps:
     sentence:
       question: "A woman and a child."
       helper: "Eine Frau und ein Kind."
-    audio : "data/assets/audio/aefrouundaeschind.wav"
+    audio : "data/assets/audio/aefrouundaeschind.mp3"
     tokens: ["Ä", "Frou", "und", "äs", "chind."]
     solution_display: |
       ✅ Correct!
@@ -139,7 +139,7 @@ steps:
       ✅ Correct!
       
       **Chind** is *neuter*, so we use **äs**.
-    audio: "data/assets/audio/aeschind.wav"
+    audio: "data/assets/audio/aeschind.mp3"
 
   - type: markdown
     id: markdown_9
@@ -182,7 +182,7 @@ steps:
   - type: true_false
     id: true_false_11
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ibinemaa.wav"
+    audio: "data/assets/audio/ibinemaa.mp3"
     text: "He's saying that **he is a man**"
     answer: "True"
     solution_display: |
@@ -198,7 +198,7 @@ steps:
       helper: "Ich bin ein Kind"
       target: ["I ", " chind."]
     answers: ["bines", "bi äs", "bi es"]
-    audio : "data/assets/audio/ibineschind.wav"
+    audio : "data/assets/audio/ibineschind.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -214,7 +214,7 @@ steps:
       de: "Das ist ein Haus"
     images:
       - "data/assets/images/house_grass.jpg"
-    audio: "data/assets/audio/dasischaeshuus.wav"
+    audio: "data/assets/audio/dasischaeshuus.mp3"
 
   - type: markdown
     id: markdown_14
@@ -233,7 +233,7 @@ steps:
   - type: listen_type
     id: listen_type_19
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dasischguet.wav"
+    audio: "data/assets/audio/dasischguet.mp3"
     answers: ["das isch guet"]
     images:
       - "data/assets/images/thumbs_up.jpg"
@@ -250,7 +250,7 @@ steps:
       de: "hier"
     images:
       - "data/assets/images/pointing_map.jpg"
-    audio: "data/assets/audio/hie.wav"
+    audio: "data/assets/audio/hie.mp3"
 
   - type: introduce_word
     id: introduce_word_16
@@ -260,7 +260,7 @@ steps:
       de: "dort"
     images:
       - "data/assets/images/pointing_distance.jpg"
-    audio: "data/assets/audio/doert_dert.wav"
+    audio: "data/assets/audio/doert_dert.mp3"
 
   - type: match
     id: match_extra_22
@@ -279,7 +279,7 @@ steps:
       helper: "Hier ist ein Bahnhof."
       target: ["", " isch ä bahnhof."]
     answers: ["hie", "hiä"]
-    audio : "data/assets/audio/hieischebahnhof.wav"
+    audio : "data/assets/audio/hieischebahnhof.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -295,7 +295,7 @@ steps:
       helper: "Das dort ist ein Haus!"
       target: ["Das ", " isch es Huus."]
     answers: ["dört", "dert"]
-    audio : "data/assets/audio/dasdoertischeshuus.wav"
+    audio : "data/assets/audio/dasdoertischeshuus.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -310,7 +310,7 @@ steps:
       question: "This is big!"
       helper: "Das ist gross!"
     tokens: ["Das", "isch", "gross!"]
-    audio : "data/assets/audio/dasischgross.wav"
+    audio : "data/assets/audio/dasischgross.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -334,7 +334,7 @@ steps:
   - type: listen_type
     id: listen_type_21
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dashieischestraas.wav"
+    audio: "data/assets/audio/dashieischestraas.mp3"
     answers: ["das hie isch ä straas", "das hie isch e straas"]
     images:
       - "data/assets/images/city_street.jpg"
@@ -346,7 +346,7 @@ steps:
   - type: true_false
     id: true_false_22
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dasdoertischeshuus.wav"
+    audio: "data/assets/audio/dasdoertischeshuus.mp3"
     text: "The house they're talking about is **right here**"
     answer: "False"
     solution_display: |
@@ -362,7 +362,7 @@ steps:
       helper: "Ich bin hier."
       target: ["I bi ", "."]
     answers: ["hie", "hiä"]
-    audio : "data/assets/audio/ibihie.wav"
+    audio : "data/assets/audio/ibihie.mp3"
     solution_display: |
       ✅ Correct!
       

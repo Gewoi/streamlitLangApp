@@ -13,7 +13,7 @@ steps:
       de: "Meine Mutter"
     images:
       - "data/assets/images/middleaged_woman.jpg"
-    audio: "data/assets/audio/minimueter.wav"
+    audio: "data/assets/audio/minimueter.mp3"
 
   - type: order
     id: order_1
@@ -26,7 +26,7 @@ steps:
       ✅ Correct!
       
       **Mini Mueter** means *my mother*. **I gseh** means *I see*, and **hüt** means *today*. You could also put the **hüt** at the end of the sentence (**I gseh mini Mueter hüt**), but this solution is usually a bit more elegant.
-    audio: "data/assets/audio/igsehhuetminimueter.wav"
+    audio: "data/assets/audio/igsehhuetminimueter.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -36,7 +36,7 @@ steps:
       de: "Dein Vater"
     images:
       - "data/assets/images/middleaged_man.jpg"
-    audio: "data/assets/audio/divater.wav"
+    audio: "data/assets/audio/divater.mp3"
 
   - type: cloze
     id: cloze_3
@@ -52,7 +52,7 @@ steps:
       **Di Vater** means *your father*. **Hie** is *here*.
     images:
       - "data/assets/images/old_guy_handshake.jpg"
-    audio: "data/assets/audio/divaterischhie.wav"
+    audio: "data/assets/audio/divaterischhie.mp3"
 
   - type: introduce_word
     id: introduce_word_6
@@ -62,7 +62,7 @@ steps:
       de: "Sein Kind"
     images:
       - "data/assets/images/kid_with_toy.jpg"
-    audio: "data/assets/audio/sischind.wav"
+    audio: "data/assets/audio/sischind.mp3"
 
   - type: choose
     id: choose_7
@@ -76,7 +76,7 @@ steps:
       ✅ Correct!
       
       For *his* with a *neuter* noun, you use **sis**. We'll look at the rules and forms in the next few slides!
-    audio: "data/assets/audio/sischind.wav"
+    audio: "data/assets/audio/sischind.mp3"
 
   - type: markdown
     id: markdown_4
@@ -178,7 +178,7 @@ steps:
       *His* with a *neuter* object is **sis**.
     images:
       - "data/assets/images/house_big.jpg"
-    audio: "data/assets/audio/sishuusischgross.wav"
+    audio: "data/assets/audio/sishuusischgross.mp3"
 
   - type: order
     id: order_12
@@ -191,12 +191,12 @@ steps:
       ✅ Correct!
       
       The base form for *your* is **di**. Use the base form for *masculine* nouns, and add **-ni** for *feminine* nouns.
-    audio: "data/assets/audio/divaterudinimuetersihie.wav"
+    audio: "data/assets/audio/divaterudinimuetersihie.mp3"
 
   - type: listen_type
     id: listen_type_13
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sinimueterchahuetnid.wav"
+    audio: "data/assets/audio/sinimueterchahuetnid.mp3"
     answers: ["Sini Mueter cha hüt nid.", "Sini Mueter cha huet nid."]
     images:
       - "data/assets/images/older_couple_talk.jpg"
@@ -208,7 +208,7 @@ steps:
   - type: true_false
     id: true_false_14
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ihrevaterischhie.wav"
+    audio: "data/assets/audio/ihrevaterischhie.mp3"
     text: "**Your** father is here."
     answer: "False"
     solution_display: |
@@ -266,7 +266,7 @@ steps:
       de: "Meine Eltern"
     images:
       - "data/assets/images/older_couple.jpg"
-    audio: "data/assets/audio/minieltere.wav"
+    audio: "data/assets/audio/minieltere.mp3"
 
   - type: order
     id: order_19
@@ -279,12 +279,12 @@ steps:
       ✅ Correct!
       
       **Dini Eltere** means *your parents*.
-    audio: "data/assets/audio/divaterudinimuetersidinieltere.wav"
+    audio: "data/assets/audio/divaterudinimuetersidinieltere.mp3"
 
   - type: listen_type
     id: listen_type_20
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sishuusischchlii.wav"
+    audio: "data/assets/audio/sishuusischchlii.mp3"
     answers: ["Sis huus isch chlii"]
     images:
       - "data/assets/images/house_small.jpg"
@@ -314,7 +314,7 @@ steps:
       question: "His parents can't tomorrow / His parents aren't available tomorrow"
       helper: "Seine Eltern können morgen nicht."
     tokens: ["Sini", "Eltere", "chöi", "morn", "nid."]
-    audio: "data/assets/audio/sinielterechoeimornnid.wav"
+    audio: "data/assets/audio/sinielterechoeimornnid.mp3"
 
   - type: match
     id: match_23

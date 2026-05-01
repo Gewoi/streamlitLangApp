@@ -55,7 +55,7 @@ steps:
       **Gaah** in third person is **geit**, so *she's going* is **si geit**.
     images:
       - "data/assets/images/woman_waving_two.jpg"
-    audio: "data/assets/audio/sigeithei.wav"
+    audio: "data/assets/audio/sigeithei.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -65,7 +65,7 @@ steps:
       de: "nach Hause"
     images:
       - "data/assets/images/house_grass.jpg"
-    audio: "data/assets/audio/hei.wav"
+    audio: "data/assets/audio/hei.mp3"
 
   - type: order
     id: order_3
@@ -78,7 +78,7 @@ steps:
       ✅ Correct!
       
       **I gah** means *I go*. To say that you're going home, you use **hei**.
-    audio: "data/assets/audio/igahjetzhei_tschau.wav"
+    audio: "data/assets/audio/igahjetzhei_tschau.mp3"
 
   - type: translate_type
     id: translate_type_4
@@ -103,7 +103,7 @@ steps:
       de: "Jetzt"
     images:
       - "data/assets/images/watch_lookat.jpg"
-    audio: "data/assets/audio/jetz_jetzt.wav"
+    audio: "data/assets/audio/jetz_jetzt.mp3"
 
   - type: translate_type
     id: translate_type_6
@@ -131,12 +131,12 @@ steps:
       ✅ Correct!
       
       **Äs geit** means *it goes.
-    audio: "data/assets/audio/aesgeitguetmerci.wav"
+    audio: "data/assets/audio/aesgeitguetmerci.mp3"
 
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/aergeitjetzhei.wav"
+    audio: "data/assets/audio/aergeitjetzhei.mp3"
     text: "They're talking about someone who's **going home now**."
     answer: "True"
     solution_display: |
@@ -196,7 +196,7 @@ steps:
       ✅ Correct!
       
       **Si göh** means *they go / they're going*.
-    audio: "data/assets/audio/sigoehjetzhei.wav"
+    audio: "data/assets/audio/sigoehjetzhei.mp3"
 
   - type: cloze
     id: cloze_14
@@ -212,7 +212,7 @@ steps:
       **Dir göht** means *you (pl.) go / you're going*. In a question, we change the order of verb and subject.
     images:
       - "data/assets/images/woman_asking.jpg"
-    audio: "data/assets/audio/goehtdirhei.wav"
+    audio: "data/assets/audio/goehtdirhei.mp3"
 
   - type: introduce_word
     id: introduce_word_15
@@ -222,7 +222,7 @@ steps:
       de: "Weg"
     images:
       - "data/assets/images/pointing_map.jpg"
-    audio: "data/assets/audio/furt_waeg.wav"
+    audio: "data/assets/audio/furt_waeg.mp3"
 
   - type: cloze
     id: cloze_16
@@ -238,7 +238,7 @@ steps:
       Both **furt** and **wäg** mean *away*!
     images:
       - "data/assets/images/tourists_map.jpg"
-    audio: "data/assets/audio/goehsifurt_goehsiwaeg.wav"
+    audio: "data/assets/audio/goehsifurt_goehsiwaeg.mp3"
 
   - type: translate_type
     id: translate_type_17
@@ -263,7 +263,7 @@ steps:
       de: "Bald"
     images:
       - "data/assets/images/watch_lookat.jpg"
-    audio: "data/assets/audio/glii.wav"
+    audio: "data/assets/audio/glii.mp3"
 
   - type: order
     id: order_19
@@ -276,12 +276,12 @@ steps:
       ✅ Correct!
       
       **Glii** means *soon*; this is a very Swiss term that you'll hear in a couple of dialects. You can technically also use the German *bald*, that works too; but Swiss people will more often use glii!
-    audio: "data/assets/audio/mirgoehgliihei_bisspeter.wav"
+    audio: "data/assets/audio/mirgoehgliihei_bisspeter.mp3"
 
   - type: listen_type
     id: listen_type_20
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/goehtdirglii.wav"
+    audio: "data/assets/audio/goehtdirglii.mp3"
     answers: ["Göht dir glii?"]
     images:
       - "data/assets/images/conference_handshake.jpg"
@@ -304,7 +304,7 @@ steps:
       **Mir göh** is *we go*, and **glii** means *soon*.
     images:
       - "data/assets/images/watch_lookat.jpg"
-    audio: "data/assets/audio/goehmirglii.wav"
+    audio: "data/assets/audio/goehmirglii.mp3"
 
   - type: match
     id: match_22
@@ -320,7 +320,7 @@ steps:
   - type: true_false
     id: true_false_23
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/mirgoehglii.wav"
+    audio: "data/assets/audio/mirgoehglii.mp3"
     text: "They are leaving **now**."
     answer: "False"
     solution_display: |

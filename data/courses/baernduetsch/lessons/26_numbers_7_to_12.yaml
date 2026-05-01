@@ -13,7 +13,7 @@ steps:
       de: "Sieben, Acht, Neun"
     images:
       - "data/assets/images/calculator_7_8_9.jpg"
-    audio: "data/assets/audio/sibeachtnuen.wav"
+    audio: "data/assets/audio/sibeachtnuen.mp3"
 
   - type: order
     id: order_1
@@ -26,7 +26,7 @@ steps:
       ✅ Correct!
       
       Sometimes, people will also write **Nün** as **Nüün**; and similarly **Füf** (5) as **Füüf** and **Drü** (3) as **Drüü**.
-    audio: "data/assets/audio/sibeachtnuen.wav"
+    audio: "data/assets/audio/sibeachtnuen.mp3"
 
   - type: cloze
     id: cloze_2
@@ -42,7 +42,7 @@ steps:
       In modern times, when you want to say how many of something there is (two men, three houses, etc.), you can just say **number + plural**.
     images:
       - "data/assets/images/group_back_beach.jpg"
-    audio: "data/assets/audio/mirsisibemoensche.wav"
+    audio: "data/assets/audio/mirsisibemoensche.mp3"
 
   - type: cloze
     id: cloze_5
@@ -58,7 +58,7 @@ steps:
       The word for *number* is **Zahl**, and it's plural is **Zahle**.
     images:
       - "data/assets/images/numbers.jpg"
-    audio: "data/assets/audio/sibeachtunuensizahle.wav"
+    audio: "data/assets/audio/sibeachtunuensizahle.mp3"
 
   - type: translate_type
     id: translate_type_7
@@ -95,7 +95,7 @@ steps:
   - type: listen_type
     id: listen_type_11
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sibeachtnuen.wav"
+    audio: "data/assets/audio/sibeachtnuen.mp3"
     answers: ["Sibe acht nün", "sibe acht nüün"]
     images:
       - "data/assets/images/calculator_7_8_9.jpg"
@@ -119,7 +119,7 @@ steps:
       de: "Zehn, Elf, Zwölf"
     images:
       - "data/assets/images/seats_stadium.jpg"
-    audio: "data/assets/audio/zaeelfzwoelf.wav"
+    audio: "data/assets/audio/zaeelfzwoelf.mp3"
 
   - type: order
     id: order_13
@@ -130,7 +130,7 @@ steps:
     tokens: ["D", "Zahle", "si", "zää,", "elf", "u", "zwölf."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/dzahlesizaeelfuzwoelf.wav"
+    audio: "data/assets/audio/dzahlesizaeelfuzwoelf.mp3"
 
   - type: cloze
     id: cloze_14
@@ -146,12 +146,12 @@ steps:
       The numbers from 7 to 12 are **Sibe, Acht, Nün, Zää, Elf, Zwölf**.
     images:
       - "data/assets/images/lottery_wheel.jpg"
-    audio: "data/assets/audio/dzahlesisibezaeuzwoelf.wav"
+    audio: "data/assets/audio/dzahlesisibezaeuzwoelf.mp3"
 
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/sihettelfpflanze.wav"
+    audio: "data/assets/audio/sihettelfpflanze.mp3"
     text: "She has **eleven** plants."
     answer: "True"
     solution_display: |
@@ -177,7 +177,7 @@ steps:
       question: ""
       helper: ""
     tokens: ["Sibe", "Acht", "Nün", "Zää", "Elf", "Zwölf"]
-    audio: "data/assets/audio/sibeachtnuenzaehelfzwoelf.wav"
+    audio: "data/assets/audio/sibeachtnuenzaehelfzwoelf.mp3"
 
   - type: match
     id: match_20

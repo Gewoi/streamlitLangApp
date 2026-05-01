@@ -13,7 +13,7 @@ steps:
       de: "Ich spreche Berndeutsch"
     images:
       - "data/assets/images/bern.jpg"
-    audio: "data/assets/audio/iredebaernduetsch.wav"
+    audio: "data/assets/audio/iredebaernduetsch.mp3"
 
   - type: markdown
     id: markdown_1
@@ -63,7 +63,7 @@ steps:
       helper: "Sie spricht."
       target: ["Si ", "."]
     answers: ["redt", "redet"]
-    audio: "data/assets/audio/siredet.wav"
+    audio: "data/assets/audio/siredet.mp3"
     
     solution_display: |
       ✅ Correct!
@@ -90,7 +90,7 @@ steps:
       question: "We talk English."
       helper: "Wir reden Englisch."
     tokens: ["Mir", "rede", "Änglisch."]
-    audio: "data/assets/audio/mirredeaenglisch.wav"
+    audio: "data/assets/audio/mirredeaenglisch.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -99,7 +99,7 @@ steps:
   - type: listen_type
     id: listen_type_7
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/iredebaernduetsch.wav"
+    audio: "data/assets/audio/iredebaernduetsch.mp3"
     answers: ["i rede bärndütsch", "i redä bärndütsch"]
     images:
       - "data/assets/images/guy_with_headpones.jpg"
@@ -116,7 +116,7 @@ steps:
       helper: "Sie sprechen Hochdeutsch"
       target: ["Si ", " hochdütsch."]
     answers: ["rede", "redä"]
-    audio: "data/assets/audio/siredehochduetsch.wav"
+    audio: "data/assets/audio/siredehochduetsch.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -164,7 +164,7 @@ steps:
   - type: listen_type
     id: listen_type_10
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mirredeitalienisch.wav"
+    audio: "data/assets/audio/mirredeitalienisch.mp3"
     answers: ["mir rede italienisch", "mir rede italiänisch"]
     images:
       - "data/assets/images/colloseum.jpg"
@@ -180,7 +180,7 @@ steps:
       question: "I am from Poland. We speak Polish."
       helper: "Ich komme aus Polen. Wir sprechen Polnisch."
     tokens: ["I", "bi", "us", "Pole.", "Mir", "rede", "Polnisch."]
-    audio: "data/assets/audio/ichumeuspole_mirredepolnisch.wav"
+    audio: "data/assets/audio/ichumeuspole_mirredepolnisch.mp3"
     solution_display: |
       ✅ Correct!
       

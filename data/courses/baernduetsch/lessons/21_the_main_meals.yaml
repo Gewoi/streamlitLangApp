@@ -13,7 +13,7 @@ steps:
       de: "Frühstück"
     images:
       - "data/assets/images/breakfast_2.jpg"
-    audio: "data/assets/audio/zmorge.wav"
+    audio: "data/assets/audio/zmorge.mp3"
 
   - type: cloze
     id: cloze_1
@@ -29,7 +29,7 @@ steps:
       *Breakfast* is **Zmorge** in Bärndütsch. We will now look at the verb **ässe** (*to eat*)!
     images:
       - "data/assets/images/breakfast.jpg"
-    audio: "data/assets/audio/igissezmorge.wav"
+    audio: "data/assets/audio/igissezmorge.mp3"
 
   - type: markdown
     id: markdown_2
@@ -73,7 +73,7 @@ steps:
       ✅ Correct!
       
       For *he eats*, we say *är isst*. And **Gipfeli** is a very typically Swiss breakfast.
-    audio: "data/assets/audio/aerisstesgipfeli.wav"
+    audio: "data/assets/audio/aerisstesgipfeli.mp3"
 
   - type: translate_type
     id: translate_type_5
@@ -96,7 +96,7 @@ steps:
       de: "Mittagessen"
     images:
       - "data/assets/images/meal_group.jpg"
-    audio: "data/assets/audio/zmittag.wav"
+    audio: "data/assets/audio/zmittag.mp3"
 
   - type: order
     id: order_7
@@ -114,7 +114,7 @@ steps:
       - **Zmittag** -> **Z** + **Mittag**
       
       So, very similarly, the next one is constructed...
-    audio: "data/assets/audio/igissezmittag.wav"
+    audio: "data/assets/audio/igissezmittag.mp3"
 
   - type: introduce_word
     id: introduce_word_8
@@ -124,7 +124,7 @@ steps:
       de: "Abendessen"
     images:
       - "data/assets/images/dinner.jpg"
-    audio: "data/assets/audio/znacht.wav"
+    audio: "data/assets/audio/znacht.mp3"
 
   - type: cloze
     id: cloze_9
@@ -142,12 +142,12 @@ steps:
       - **Znacht** -> **Z** + **Nacht**
     images:
       - "data/assets/images/dinner_group.jpg"
-    audio: "data/assets/audio/issischduznacht.wav"
+    audio: "data/assets/audio/issischduznacht.mp3"
 
   - type: listen_type
     id: listen_type_10
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/igissezmorge.wav"
+    audio: "data/assets/audio/igissezmorge.mp3"
     answers: ["Ig isse Zmorge", "I isse Zmorge"]
     images:
       - "data/assets/images/breakfast.jpg"
@@ -207,12 +207,12 @@ steps:
       ✅ Correct!
       
       **Znacht** means dinner, and the forms are **mir ässe** (*we eat*) and **dir ässit** (*you (pl.) eat*).
-    audio: "data/assets/audio/miraesseznachtudiraessitznacht.wav"
+    audio: "data/assets/audio/miraesseznachtudiraessitznacht.mp3"
 
   - type: listen_type
     id: listen_type_15
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/aessitdiroeppis.wav"
+    audio: "data/assets/audio/aessitdiroeppis.mp3"
     answers: ["Ässit dir öppis?", "Aessit dir oeppis?", "Ässit dir öpis?", "Aessit dir oepis?"]
     images:
       - "data/assets/images/dinner_group.jpg"
@@ -224,7 +224,7 @@ steps:
   - type: true_false
     id: true_false_16
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/siaessezmittag.wav"
+    audio: "data/assets/audio/siaessezmittag.mp3"
     text: "This statement is about **one person**."
     answer: "False"
     solution_display: |
@@ -240,7 +240,7 @@ steps:
       de: ""
     images:
       - "data/assets/images/croissant.jpg"
-    audio: "data/assets/audio/znueni_zvieri.wav"
+    audio: "data/assets/audio/znueni_zvieri.mp3"
 
   - type: markdown
     id: markdown_17
@@ -320,7 +320,7 @@ steps:
       **Znüni** is a very Swiss word for a morning snack; it literally translates to *to nine (9)*, refering to 9am (although it's usually eaten a bit after that.
     images:
       - "data/assets/images/croissant.jpg"
-    audio: "data/assets/audio/miraesseznueni.wav"
+    audio: "data/assets/audio/miraesseznueni.mp3"
 
   - type: order
     id: order_24
@@ -333,7 +333,7 @@ steps:
       ✅ Correct!
       
       **Zvieri** is a common term for an afternoon snack; it literally translates to *to four (4)*, refering to 4pm.
-    audio: "data/assets/audio/aerisstzvieri.wav"
+    audio: "data/assets/audio/aerisstzvieri.mp3"
 
   - type: match
     id: match_21

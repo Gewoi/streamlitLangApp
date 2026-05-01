@@ -13,7 +13,7 @@ steps:
       de: "Die Männer"
     images:
       - "data/assets/images/group_men.jpg"
-    audio: "data/assets/audio/dmaenner.wav"
+    audio: "data/assets/audio/dmaenner.mp3"
 
   - type: cloze
     id: cloze_1
@@ -29,7 +29,7 @@ steps:
       **D Männer** is the plural of **dr Maa**.
     images:
       - "data/assets/images/group_men_photo.jpg"
-    audio: "data/assets/audio/gsehschdudmaenner.wav"
+    audio: "data/assets/audio/gsehschdudmaenner.mp3"
 
   - type: markdown
     id: markdown_2
@@ -70,7 +70,7 @@ steps:
       de: "Der Mensch / Die Menschen"
     images:
       - "data/assets/images/group_run.jpg"
-    audio: "data/assets/audio/drmoensch_dmoensche.wav"
+    audio: "data/assets/audio/drmoensch_dmoensche.mp3"
 
   - type: order
     id: order_4
@@ -83,7 +83,7 @@ steps:
       ✅ Correct!
       
       In this case, the plural form just adds an **-e** at the end.
-    audio: "data/assets/audio/jamirsimoensche.wav"
+    audio: "data/assets/audio/jamirsimoensche.mp3"
 
   - type: order
     id: order_5
@@ -96,7 +96,7 @@ steps:
       ✅ Correct!
       
       **Froue** is the plural of **Frou**, and **Chinder** is the plural of **Chind**.
-    audio: "data/assets/audio/dfroueudchinder.wav"
+    audio: "data/assets/audio/dfroueudchinder.mp3"
 
   - type: translate_type
     id: translate_type_6
@@ -116,7 +116,7 @@ steps:
   - type: listen_type
     id: listen_type_7
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dchindersihie.wav"
+    audio: "data/assets/audio/dchindersihie.mp3"
     answers: ["D Chinder si hie.", "D Chind si hie."]
     images:
       - "data/assets/images/kids_faces.jpg"
@@ -133,7 +133,7 @@ steps:
       de: "Die Häuser"
     images:
       - "data/assets/images/houses.jpg"
-    audio: "data/assets/audio/dhueser.wav"
+    audio: "data/assets/audio/dhueser.mp3"
 
   - type: order
     id: order_9
@@ -146,12 +146,12 @@ steps:
       ✅ Correct!
       
       **D Hüser** is technically in the accusative, but we use the same forms in Bärndütsch, so you don't need to worry about that at all!
-    audio: "data/assets/audio/gsehschdudhueserdert.wav"
+    audio: "data/assets/audio/gsehschdudhueserdert.mp3"
 
   - type: true_false
     id: true_false_10
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/moenscheheihueser.wav"
+    audio: "data/assets/audio/moenscheheihueser.mp3"
     text: "They're saying that **animals have houses**."
     answer: "False"
     solution_display: |
@@ -167,7 +167,7 @@ steps:
       de: "Die Strassen"
     images:
       - "data/assets/images/highway_crossroads.jpg"
-    audio: "data/assets/audio/dstrasse.wav"
+    audio: "data/assets/audio/dstrasse.mp3"
 
   - type: order
     id: order_12
@@ -180,7 +180,7 @@ steps:
       ✅ Correct!
       
       In the plural form, **Straas** gets closer to its German counterpart and more emphasis on the double s: **Strasse**. Note that an **-e** at the end, as you've already heard a few times now, is pronounced more like an **-ä**.
-    audio: "data/assets/audio/mirgsehhueserustrasse.wav"
+    audio: "data/assets/audio/mirgsehhueserustrasse.mp3"
 
   - type: translate_type
     id: translate_type_13

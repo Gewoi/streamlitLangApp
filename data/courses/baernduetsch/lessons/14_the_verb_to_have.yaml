@@ -51,7 +51,7 @@ steps:
       **I ha** means *I have*.
     images:
       - "data/assets/images/kid_with_toy.jpg"
-    audio: "data/assets/audio/ihaoeppis.wav"
+    audio: "data/assets/audio/ihaoeppis.mp3"
 
   - type: order
     id: order_2
@@ -60,7 +60,7 @@ steps:
       question: "The woman has a house."
       helper: "Die Frau hat ein Haus."
     tokens: ["D", "Frou", "hett", "äs", "huus."]
-    audio: "data/assets/audio/dfrouhetteshuus.wav"
+    audio: "data/assets/audio/dfrouhetteshuus.mp3"
 
   - type: cloze
     id: cloze_3
@@ -76,7 +76,7 @@ steps:
       **Du hesch** means *you have*.
     images:
       - "data/assets/images/pointing_you.jpg"
-    audio: "data/assets/audio/duheschdas.wav"
+    audio: "data/assets/audio/duheschdas.mp3"
 
   - type: match
     id: match_4
@@ -111,12 +111,12 @@ steps:
       ✅ Correct!
       
       For both **mir** (*we*) and **si** (*they*), we  use **hei**.
-    audio: "data/assets/audio/siheioeppis.wav"
+    audio: "data/assets/audio/siheioeppis.mp3"
 
   - type: listen_type
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/heitdirdas.wav"
+    audio: "data/assets/audio/heitdirdas.mp3"
     answers: ["Heit dir das?"]
     images:
       - "data/assets/images/girl_shopping.jpg"
@@ -160,7 +160,7 @@ steps:
   - type: true_false
     id: true_false_11
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ihaneshuus.wav"
+    audio: "data/assets/audio/ihaneshuus.mp3"
     text: "This  person **has a house**."
     answer: "True"
     solution_display: |
@@ -180,7 +180,7 @@ steps:
       ✅ Correct!
       
       Note that here, we don't need the connecting **-n**, because **i** and **ä** are different enough to not cause any problems to the flow of the sentence.
-    audio: "data/assets/audio/mirheiaeschind.wav"
+    audio: "data/assets/audio/mirheiaeschind.mp3"
 
   - type: introduce_word
     id: introduce_word_13
@@ -190,7 +190,7 @@ steps:
       de: "Was hast du?"
     images:
       - "data/assets/images/woman_asking.jpg"
-    audio: "data/assets/audio/washesch_washeschdu.wav"
+    audio: "data/assets/audio/washesch_washeschdu.mp3"
 
   - type: markdown
     id: markdown_14
@@ -207,7 +207,7 @@ steps:
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wiegeits_schlaecht_ohnei_washesch.wav"
+    audio: "data/assets/audio/wiegeits_schlaecht_ohnei_washesch.mp3"
     text: "The person answering is **doing good**."
     answer: "False"
     solution_display: |
@@ -223,7 +223,7 @@ steps:
       question: "He has a house."
       helper: "Er hat ein Haus."
     tokens: ["Är", "hett", "es", "huus."]
-    audio: "data/assets/audio/aerhetteshuus.wav"
+    audio: "data/assets/audio/aerhetteshuus.mp3"
 
   - type: match
     id: match_17

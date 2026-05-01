@@ -51,7 +51,7 @@ steps:
       de: "Hallo"
     images:
       - "data/assets/images/hoi.jpg"
-    audio: "data/assets/audio/hoi.wav"
+    audio: "data/assets/audio/hoi.mp3"
 
   - type: markdown
     id: explanation_greeting
@@ -76,7 +76,7 @@ steps:
       helper: "Hallo, Claudio!"
       target: [" ", ", Claudio!"]
     answers: ["hallo", "sälü", "tschau", "tschou"]
-    audio: "data/assets/audio/hallo_claudio.wav"
+    audio: "data/assets/audio/hallo_claudio.mp3"
     solution_display: |
       ✅ Correct! **Hallo** means hello.
       
@@ -87,8 +87,8 @@ steps:
   - type: listen_type
     id: listen_type_17
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/hoi.wav"
-    answers: ["Hallo tschau sälü", "hallo tschou sälü", "hallo tschau säli", "hallo tschou säli"]
+    audio: "data/assets/audio/tschou.mp3"
+    answers: ["tschou", "tschau"]
     images:
       - "data/assets/images/handshake_cafe.jpg"
     solution_display: |
@@ -104,7 +104,7 @@ steps:
       de: "Wie geht's?"
     images:
       - "data/assets/images/woman_asking.jpg"
-    audio: "data/assets/audio/wiegeits.wav"
+    audio: "data/assets/audio/wiegeits.mp3"
 
   - type: order
     id: order_wiegeits
@@ -113,7 +113,7 @@ steps:
       question: "How are you?"
       helper: "Wie geht's dir?"
     tokens: ["Wie", "geit's", "dr?"]
-    audio: "data/assets/audio/wiegeits.wav"
+    audio: "data/assets/audio/wiegeits.mp3"
     solution_display: |
       ✅ Correct! 
       
@@ -137,7 +137,7 @@ steps:
   - type: listen_type
     id: listen_type_12
     prompt: "Listen and type what you hear (Bernese)."
-    audio: "data/assets/audio/saeliwigeits.wav"
+    audio: "data/assets/audio/saeliwigeits.mp3"
     answers: ["sälü wie geits", "säli wie geits"]
     images:
       - "data/assets/images/handshake.jpg"
@@ -154,12 +154,12 @@ steps:
       de: "Tschüss!"
     images:
       - "data/assets/images/wavinghand_curtain.jpg"
-    audio: "data/assets/audio/tschuesstschausaelu.wav"
+    audio: "data/assets/audio/tschuesstschausaelu.mp3"
 
   - type: true_false
     id: verabschiedung
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/saeliwigeits.wav"
+    audio: "data/assets/audio/saeliwigeits.mp3"
     text: "This person is saying goodbye."
     answer: "False"
     solution_display: |
@@ -203,7 +203,7 @@ steps:
       helper: "Wie geht's?"
       target: ["Wie ", " dir?"]
     answers: ["geits", "geit's"]
-    audio: "data/assets/audio/wiegeits.wav"
+    audio: "data/assets/audio/wiegeits.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -219,7 +219,7 @@ steps:
       de: "Bis später!"
     images:
       - "data/assets/images/woman_waving.jpg"
-    audio: "data/assets/audio/bisspeter.wav"
+    audio: "data/assets/audio/bisspeter.mp3"
 
   - type: order
     id: order_20
@@ -228,7 +228,7 @@ steps:
       question: "Bye, see you later!"
       helper: "Tschüss, bis später!"
     tokens: ["Tschau,", "bis", "speter!"]
-    audio: "data/assets/audio/tschussbisspeter.wav"
+    audio: "data/assets/audio/tschussbisspeter.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -237,7 +237,7 @@ steps:
   - type: true_false
     id: verabschiedung_oder begrüssung
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/tschussbisspeter.wav"
+    audio: "data/assets/audio/tschussbisspeter.mp3"
     text: "This person is saying goodbye."
     answer: "True"
     solution_display: |
@@ -248,7 +248,7 @@ steps:
   - type: listen_type
     id: listen_type_21
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/tschussbisspeter.wav"
+    audio: "data/assets/audio/tschussbisspeter.mp3"
     answers: ["Tschüss, bis speter", "Tschüss, bis später"]
     images:
       - "data/assets/images/wavinghand_curtain.jpg"
@@ -272,7 +272,7 @@ steps:
       de: "Gut"
     images:
       - "data/assets/images/thumbs_up.jpg"
-    audio: "data/assets/audio/guet.wav"
+    audio: "data/assets/audio/guet.mp3"
 
   - type: cloze
     id: cloze_guet
@@ -282,7 +282,7 @@ steps:
       helper: "Wie geht's? - Gut"
       target: ["Wie geits? - ", "!"]
     answers: ["guet"]
-    audio: "data/assets/audio/wiegeits_guet.wav"
+    audio: "data/assets/audio/wiegeits_guet.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -293,7 +293,7 @@ steps:
   - type: listen_type
     id: listen_type_22
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/guet.wav"
+    audio: "data/assets/audio/guet.mp3"
     answers: ["guet"]
     images:
       - "data/assets/images/cool_plus.jpg"

@@ -13,7 +13,7 @@ steps:
       de: "Unsere Familie"
     images:
       - "data/assets/images/family_sofa.jpg"
-    audio: "data/assets/audio/uesifamilie.wav"
+    audio: "data/assets/audio/uesifamilie.mp3"
 
   - type: cloze
     id: cloze_1
@@ -29,7 +29,7 @@ steps:
       **Üsi Familie** means *our family*.
     images:
       - "data/assets/images/family_big_dinner.jpg"
-    audio: "data/assets/audio/uesifamilieischgross.wav"
+    audio: "data/assets/audio/uesifamilieischgross.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -39,7 +39,7 @@ steps:
       de: "Euer Bruder"
     images:
       - "data/assets/images/guy__with_headphones.jpg"
-    audio: "data/assets/audio/oeiebrueder.wav"
+    audio: "data/assets/audio/oeiebrueder.mp3"
 
   - type: cloze
     id: cloze_3
@@ -55,7 +55,7 @@ steps:
       **Öie Brueder** means *your brother*, both as in "*you all's brother*", as well as formally (*your brother, miser Schmid* for example).
     images:
       - "data/assets/images/guy_pottery.jpg"
-    audio: "data/assets/audio/oeiebruedermachtoeppis.wav"
+    audio: "data/assets/audio/oeiebruedermachtoeppis.mp3"
 
   - type: introduce_word
     id: introduce_word_4
@@ -65,7 +65,7 @@ steps:
       de: "Ihre Schwester"
     images:
       - "data/assets/images/woman_waving_two.jpg"
-    audio: "data/assets/audio/ihrischwoeschter.wav"
+    audio: "data/assets/audio/ihrischwoeschter.mp3"
 
   - type: order
     id: order_5
@@ -78,7 +78,7 @@ steps:
       ✅ Correct!
       
       **Ihri Schwöschter** can mean both *their sister* as well as *her sister*. The possesives for **si**/*they* are actually **exactly the same** as for **si**/*she*.
-    audio: "data/assets/audio/ihrischwoeschterhetteschind.wav"
+    audio: "data/assets/audio/ihrischwoeschterhetteschind.mp3"
 
   - type: markdown
     id: markdown_6
@@ -122,7 +122,7 @@ steps:
       ✅ Correct!
       
       Here, the person is adresses *formally*, so they use **öies Gipfeli**.
-    audio: "data/assets/audio/hieischoeiesgipfeli_eguete.wav"
+    audio: "data/assets/audio/hieischoeiesgipfeli_eguete.mp3"
 
   - type: cloze
     id: cloze_8
@@ -138,12 +138,12 @@ steps:
       **Üsi** is *our* (fem.), and **Schwöschter** means *sister*.
     images:
       - "data/assets/images/girl_shopping.jpg"
-    audio: "data/assets/audio/uesischwoeschterchanid.wav"
+    audio: "data/assets/audio/uesischwoeschterchanid.mp3"
 
   - type: true_false
     id: true_false_10
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ihrebruederischgliihie.wav"
+    audio: "data/assets/audio/ihrebruederischgliihie.mp3"
     text: "**Her *or* their** brother is here soon."
     answer: "True"
     solution_display: |
@@ -189,12 +189,12 @@ steps:
       **Öii Eltere** means *your (pl) parents*. Remember: Plural forms are *always* feminine!
       
       Also note how **öii** was pronounced: The **i-i** is a repeated sound.
-    audio: "data/assets/audio/oeiielterechoeimornnid.wav"
+    audio: "data/assets/audio/oeiielterechoeimornnid.mp3"
 
   - type: listen_type
     id: listen_type_13
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/oeiebruederischeschind.wav"
+    audio: "data/assets/audio/oeiebruederischeschind.mp3"
     answers: ["Öie Brueder isch es Chind."]
     images:
       - "data/assets/images/kid_eating.jpg"

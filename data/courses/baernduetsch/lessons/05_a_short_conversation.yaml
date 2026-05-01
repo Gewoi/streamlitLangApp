@@ -19,7 +19,7 @@ steps:
       **Herr Marti**: Ah! I bi dr Herr Marti, fröit mi!
     images:
       - "data/assets/images/polite_intro.jpg"
-    audio: "data/assets/audio/conversation_introduction.wav"
+    audio: "data/assets/audio/conversation_introduction.mp3"
 
   - type: order
     id: order_1
@@ -36,7 +36,7 @@ steps:
   - type: true_false
     id: true_false_2
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/conversation_introduction.wav"
+    audio: "data/assets/audio/conversation_introduction.mp3"
     text: "**Fritz** is using the *polite* form, while **Herr Marti** is using the *informal* form."
     answer: "True"
     solution_display: |
@@ -47,7 +47,7 @@ steps:
   - type: listen_type
     id: listen_type_3
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/froitmi.wav"
+    audio: "data/assets/audio/froitmi.mp3"
     answers: ["Fröit mi"]
     images:
       - "data/assets/images/girl_smiling.jpg"
@@ -79,7 +79,7 @@ steps:
       helper: "Und Ihnen?"
       target: ["", " öich?"]
     answers: ["U", "Und"]
-    audio: "data/assets/audio/ueuch.wav"
+    audio: "data/assets/audio/ueuch.mp3"
     solution_display: |
       ✅ Correct!
       

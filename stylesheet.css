@@ -55,6 +55,12 @@ height: 0%;
         bottom: 5px;
     }
 
+[class*="sidebar_fixed_bottom"] {
+    position: fixed;
+    bottom: 10px;
+    width: calc(var(--sidebar-width, 300px) - 2rem);
+}
+
 
 @keyframes myAnimation {
   from {background-color: 	rgba(102, 255, 102, .6);}

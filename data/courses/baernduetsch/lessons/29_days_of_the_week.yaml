@@ -13,7 +13,7 @@ steps:
       de: "Heute"
     images:
       - "data/assets/images/calendar_pin.jpg"
-    audio: "data/assets/audio/huet.wav"
+    audio: "data/assets/audio/huet.mp3"
 
   - type: introduce_word
     id: introduce_word_0
@@ -23,7 +23,7 @@ steps:
       de: "Montag"
     images:
       - "data/assets/images/monday.jpg"
-    audio: "data/assets/audio/maenti.wav"
+    audio: "data/assets/audio/maenti.mp3"
 
   - type: order
     id: order_5
@@ -36,7 +36,7 @@ steps:
       ✅ Correct!
       
       **Hüt** means today, and **Mänti** means *Monday*.
-    audio: "data/assets/audio/huetischmaenti.wav"
+    audio: "data/assets/audio/huetischmaenti.mp3"
 
   - type: translate_type
     id: translate_type_6
@@ -58,7 +58,7 @@ steps:
       de: "Dienstag"
     images:
       - "data/assets/images/week_firsthalf.jpg"
-    audio: "data/assets/audio/dsischti.wav"
+    audio: "data/assets/audio/dsischti.mp3"
 
   - type: order
     id: order_2
@@ -71,7 +71,7 @@ steps:
       ✅ Correct!
       
       **Mänti** is *Monday*, and **Dischti** is *Tuesday*. Sometimes, people add a **-g** at the end of those (**Mäntig**, **Dsischtig**), but that's not necessary (and depends a bit on where in Bern you are from).
-    audio: "data/assets/audio/maentiudsischti.wav"
+    audio: "data/assets/audio/maentiudsischti.mp3"
 
   - type: translate_type
     id: translate_type_3
@@ -96,7 +96,7 @@ steps:
       ✅ Correct!
       
       **Hesch Zyt?** means *do you have time?*; you can leave out the **du** from **Hesch du Zyt?** if you want to!
-    audio: "data/assets/audio/heschzytamdsischti.wav"
+    audio: "data/assets/audio/heschzytamdsischti.mp3"
 
   - type: choose
     id: choose_8
@@ -110,7 +110,7 @@ steps:
       ✅ Correct!
       
       **Mänti** means *Monday*.
-    audio: "data/assets/audio/maenti.wav"
+    audio: "data/assets/audio/maenti.mp3"
 
   - type: introduce_word
     id: introduce_word_9
@@ -120,7 +120,7 @@ steps:
       de: "Mittwoch"
     images:
       - "data/assets/images/week_firsthalf.jpg"
-    audio: "data/assets/audio/mittwuch.wav"
+    audio: "data/assets/audio/mittwuch.mp3"
 
   - type: cloze
     id: cloze_10
@@ -136,12 +136,12 @@ steps:
       **Mittwuch** means *Wednesday*. Just like time, if you want to say something is happening *on* or *during* that day, you say **am + *day***: **Am Mittwuch**
     images:
       - "data/assets/images/calendar_pin.jpg"
-    audio: "data/assets/audio/wennheschzyt_ammittwuch.wav"
+    audio: "data/assets/audio/wennheschzyt_ammittwuch.mp3"
 
   - type: listen_type
     id: listen_type_11
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/huetischmittwuch.wav"
+    audio: "data/assets/audio/huetischmittwuch.mp3"
     answers: ["Hüt isch Mittwuch.", "Huet isch Mittwuch."]
     images:
       - "data/assets/images/calendar_circles.jpg"
@@ -154,7 +154,7 @@ steps:
       de: "Morgen"
     images:
       - "data/assets/images/closed_seeya_tomorrow.jpg"
-    audio: "data/assets/audio/morn.wav"
+    audio: "data/assets/audio/morn.mp3"
 
   - type: cloze
     id: cloze_13
@@ -170,12 +170,12 @@ steps:
       **Morn** means *tomorrow* and **Dsischti** means *tuesday*.
     images:
       - "data/assets/images/calendar_pin.jpg"
-    audio: "data/assets/audio/huetischmaentimornischdsischti.wav"
+    audio: "data/assets/audio/huetischmaentimornischdsischti.mp3"
 
   - type: true_false
     id: true_false_14
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/mornischmittwuch.wav"
+    audio: "data/assets/audio/mornischmittwuch.mp3"
     text: "Tomorrow is **Wednesday**."
     answer: "True"
     solution_display: |
@@ -206,7 +206,7 @@ steps:
       de: "Donnerstag"
     images:
       - "data/assets/images/calendar_circles.jpg"
-    audio: "data/assets/audio/donnsti.wav"
+    audio: "data/assets/audio/donnsti.mp3"
 
   - type: introduce_word
     id: introduce_word_17
@@ -216,7 +216,7 @@ steps:
       de: "Freitag"
     images:
       - "data/assets/images/friday.jpg"
-    audio: "data/assets/audio/friti.wav"
+    audio: "data/assets/audio/friti.mp3"
 
   - type: order
     id: order_18
@@ -229,7 +229,7 @@ steps:
       ✅ Correct!
       
       **Donnsti** is *Thursday* and **Friti** is *Friday*.
-    audio: "data/assets/audio/donnstiufritisiguet.wav"
+    audio: "data/assets/audio/donnstiufritisiguet.mp3"
 
   - type: cloze
     id: cloze_19
@@ -245,7 +245,7 @@ steps:
       **Morn** means *tomorrow*, and **Friti** is *Friday*.
     images:
       - "data/assets/images/friday.jpg"
-    audio: "data/assets/audio/huetischdonnstiumornischfriti.wav"
+    audio: "data/assets/audio/huetischdonnstiumornischfriti.mp3"
 
   - type: choose
     id: choose_20
@@ -266,7 +266,7 @@ steps:
       de: "Samstag"
     images:
       - "data/assets/images/saturday.jpg"
-    audio: "data/assets/audio/samsti.wav"
+    audio: "data/assets/audio/samsti.mp3"
 
   - type: introduce_word
     id: introduce_word_22
@@ -276,7 +276,7 @@ steps:
       de: "Sonntag"
     images:
       - "data/assets/images/note_sunday.jpg"
-    audio: "data/assets/audio/sunnti.wav"
+    audio: "data/assets/audio/sunnti.mp3"
 
   - type: order
     id: order_23
@@ -289,7 +289,7 @@ steps:
       ✅ Correct!
       
       You could also say **Hesch du Zyt am Samsti?** or just **Hesch Zyt am Samsti?**; the order of those doesn't quite matter, but this is a bit more elegant.
-    audio: "data/assets/audio/heschduamsamstizyt.wav"
+    audio: "data/assets/audio/heschduamsamstizyt.mp3"
 
   - type: cloze
     id: cloze_24
@@ -305,7 +305,7 @@ steps:
       **Sunnti** means *Sunday*. **Glii isch ...** means *Soon, it's ...*. You don't need a subject like **Äs** here necessarily, although you could say **Glii isch es Sunnti**.
     images:
       - "data/assets/images/watch_lookat.jpg"
-    audio: "data/assets/audio/gliiischsunnti.wav"
+    audio: "data/assets/audio/gliiischsunnti.mp3"
 
   - type: choose
     id: choose_25
@@ -317,12 +317,12 @@ steps:
       ✅ Correct!
       
       **Samsti** means *Saturday* and **Sunnti** means *Sunday*.
-    audio: "data/assets/audio/samstiusunnti.wav"
+    audio: "data/assets/audio/samstiusunnti.mp3"
 
   - type: listen_type
     id: listen_type_26
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/samstiusunnti.wav"
+    audio: "data/assets/audio/samstiusunnti.mp3"
     answers: ["Samsti u Sunnti", "Samstig u Sunntig."]
     images:
       - "data/assets/images/weekend_sign.jpg"
@@ -345,7 +345,7 @@ steps:
       **Mittwuch** means *Wednesday* and **Donnsti** means *Thursday*.
     images:
       - "data/assets/images/week_firsthalf.jpg"
-    audio: "data/assets/audio/maentidsischtimittwuchudonnsti.wav"
+    audio: "data/assets/audio/maentidsischtimittwuchudonnsti.mp3"
 
   - type: order
     id: order_28
@@ -358,7 +358,7 @@ steps:
       ✅ Correct!
       
       **Friti** means *Friday*, **Samsti** means *Saturday* and **Sunnti** means *Sunday*.
-    audio: "data/assets/audio/fritisamstiusunnti.wav"
+    audio: "data/assets/audio/fritisamstiusunnti.mp3"
 
   - type: cloze
     id: cloze_29
@@ -374,7 +374,7 @@ steps:
       **Hüt** means *today*, and **morn** means *tomorrow*
     images:
       - "data/assets/images/conversation_casual.jpg"
-    audio: "data/assets/audio/ihahuetumornzyt.wav"
+    audio: "data/assets/audio/ihahuetumornzyt.mp3"
 
   - type: translate_type
     id: translate_type_30
@@ -397,7 +397,7 @@ steps:
       question: "Put the weekdays in the correct order!"
       helper: ""
     tokens: ["Mänti", "Dsischti", "Mittwuch", "Donnsti", "Friti", "Samsti", "Sunnti"]
-    audio: "data/assets/audio/maentidsischtimittwuchdonnstifritisamstisunnti.wav"
+    audio: "data/assets/audio/maentidsischtimittwuchdonnstifritisamstisunnti.mp3"
 
   - type: match
     id: match_32

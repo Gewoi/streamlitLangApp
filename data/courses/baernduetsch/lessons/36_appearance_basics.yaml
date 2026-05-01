@@ -13,7 +13,7 @@ steps:
       de: "schön"
     images:
       - "data/assets/images/landscape_nice.jpg"
-    audio: "data/assets/audio/schoen.wav"
+    audio: "data/assets/audio/schoen.mp3"
 
   - type: order
     id: order_1
@@ -26,7 +26,7 @@ steps:
       ✅ Correct!
       
       **Schön** means *pretty / beautiful*. If you want to be extra nice, you could say **wunderschön** instead, which means *really beautiful*.
-    audio: "data/assets/audio/dubischschoen.wav"
+    audio: "data/assets/audio/dubischschoen.mp3"
 
   - type: order
     id: order_2
@@ -39,7 +39,7 @@ steps:
       ✅ Correct!
       
       **Es schöns Huus** means *a beautiful house*. Remember from earlier lessons: When having the adjective between **ä/äs/es** and the noun, we adjust it! **Huus** is *neuter*, so we say **es schöns Huus**. As a reminder, you can repeat the lesson about *Indefinite Articles and Adjectives*.
-    audio: "data/assets/audio/dasischesschoenshuus.wav"
+    audio: "data/assets/audio/dasischesschoenshuus.mp3"
 
   - type: translate_type
     id: translate_type_3
@@ -63,7 +63,7 @@ steps:
       de: "Auge / Augen"
     images:
       - "data/assets/images/eye_brown.jpg"
-    audio: "data/assets/audio/oug_ouge.wav"
+    audio: "data/assets/audio/oug_ouge.mp3"
 
   - type: cloze
     id: cloze_5
@@ -79,7 +79,7 @@ steps:
       **Oug** is *eye* and **Ouge** means *eyes*.
     images:
       - "data/assets/images/eyes_blue.jpg"
-    audio: "data/assets/audio/sihettschoeniouge.wav"
+    audio: "data/assets/audio/sihettschoeniouge.mp3"
 
   - type: order
     id: order_6
@@ -88,7 +88,7 @@ steps:
       question: "You have beautiful eyes."
       helper: "Du hast schöne Augen."
     tokens: ["Du", "hesch", "schöni", "Ouge."]
-    audio: "data/assets/audio/duheschschoeniouge.wav"
+    audio: "data/assets/audio/duheschschoeniouge.mp3"
 
   - type: introduce_word
     id: introduce_word_7
@@ -98,7 +98,7 @@ steps:
       de: "blau"
     images:
       - "data/assets/images/sky.jpg"
-    audio: "data/assets/audio/blau.wav"
+    audio: "data/assets/audio/blau.mp3"
 
   - type: introduce_word
     id: introduce_word_8
@@ -108,7 +108,7 @@ steps:
       de: "braun"
     images:
       - "data/assets/images/fabric.jpg"
-    audio: "data/assets/audio/bruun.wav"
+    audio: "data/assets/audio/bruun.mp3"
 
   - type: order
     id: order_9
@@ -121,7 +121,7 @@ steps:
       ✅ Correct!
       
       **Blau** means *blue* and **bruun** means *brown*.
-    audio: "data/assets/audio/ihablauiougeuduheschbruuniouge.wav"
+    audio: "data/assets/audio/ihablauiougeuduheschbruuniouge.mp3"
 
   - type: translate_type
     id: translate_type_10
@@ -157,7 +157,7 @@ steps:
       **Bruun** means *brown*. Remember that with a *definite article* (and **dini** counts as a *definite article*!), we use **bruun*e***. Without an article (or with an *indefinite article*), we would say **bruun*i* Ouge**.
     images:
       - "data/assets/images/eye_brown.jpg"
-    audio: "data/assets/audio/dinibruuneougesischoen.wav"
+    audio: "data/assets/audio/dinibruuneougesischoen.mp3"
 
   - type: match
     id: match_13
@@ -176,7 +176,7 @@ steps:
       de: "Nase"
     images:
       - "data/assets/images/face_bw.jpg"
-    audio: "data/assets/audio/nase.wav"
+    audio: "data/assets/audio/nase.mp3"
 
   - type: order
     id: order_15
@@ -189,7 +189,7 @@ steps:
       ✅ Correct!
       
       **Nase** means *nose*. It's pronounced slightly differently from Hochdeutsch, more ending with an ***ä*** sound. This is something you see often in words that end with an *-e* in Hochdeutsch.
-    audio: "data/assets/audio/aerhettegrossinase.wav"
+    audio: "data/assets/audio/aerhettegrossinase.mp3"
 
   - type: translate_type
     id: translate_type_16
@@ -208,7 +208,7 @@ steps:
   - type: listen_type
     id: listen_type_17
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/miniougeumininase.wav"
+    audio: "data/assets/audio/miniougeumininase.mp3"
     answers: ["Mini Ouge u mini Nase."]
     images:
       - "data/assets/images/face_nosering.jpg"
@@ -225,7 +225,7 @@ steps:
       de: "Mund"
     images:
       - "data/assets/images/mouth.jpg"
-    audio: "data/assets/audio/muu.wav"
+    audio: "data/assets/audio/muu.mp3"
 
   - type: markdown
     id: markdown_19
@@ -249,7 +249,7 @@ steps:
       ✅ Correct!
       
       **Muu** is *neuter*, so here, we use **Mis Muu**. This is actually different from Hochdeutsch, where *Mund* is actually *masculine* (*der Mund*). But in Bärndütsch, it's *neuter*!
-    audio: "data/assets/audio/mismuu.wav"
+    audio: "data/assets/audio/mismuu.mp3"
 
   - type: order
     id: order_21
@@ -258,7 +258,7 @@ steps:
       question: "She has blue eyes and a small mouth."
       helper: "Sie hat blaue Augen und einen kleinen Mund."
     tokens: ["Si", "hett", "blaui", "Ouge", "und", "es", "chliises", "Muu."]
-    audio: "data/assets/audio/sihettblauiougeundeschliisesmuu.wav"
+    audio: "data/assets/audio/sihettblauiougeundeschliisesmuu.mp3"
 
   - type: translate_type
     id: translate_type_22
@@ -290,7 +290,7 @@ steps:
   - type: true_false
     id: true_false_24
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/sihettschoeniouge.wav"
+    audio: "data/assets/audio/sihettschoeniouge.mp3"
     text: "Her eyes are definitely **blue**."
     answer: "False"
     solution_display: |
@@ -328,7 +328,7 @@ steps:
       de: "Haar / Haare"
     images:
       - "data/assets/images/hair_pink.jpg"
-    audio: "data/assets/audio/haar.wav"
+    audio: "data/assets/audio/haar.mp3"
 
   - type: markdown
     id: markdown_28
@@ -352,7 +352,7 @@ steps:
       de: "blond"
     images:
       - "data/assets/images/hair_blonde.jpg"
-    audio: "data/assets/audio/blond.wav"
+    audio: "data/assets/audio/blond.mp3"
 
   - type: order
     id: order_30
@@ -365,7 +365,7 @@ steps:
       ✅ Correct!
       
       **Blondi Haar** means *blonde hair*.
-    audio: "data/assets/audio/sihettblondihaar.wav"
+    audio: "data/assets/audio/sihettblondihaar.mp3"
 
   - type: cloze
     id: cloze_31
@@ -381,12 +381,12 @@ steps:
       **Bruun** is *brown*, and is also often used for haircolor.
     images:
       - "data/assets/images/guy_wondering.jpg"
-    audio: "data/assets/audio/hettaerblondioderbruunihaar.wav"
+    audio: "data/assets/audio/hettaerblondioderbruunihaar.mp3"
 
   - type: listen_type
     id: listen_type_32
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dinihaarsiblond.wav"
+    audio: "data/assets/audio/dinihaarsiblond.mp3"
     answers: ["Dini Haar si blond."]
     images:
       - "data/assets/images/hair_blonde.jpg"
@@ -415,7 +415,7 @@ steps:
       de: "schwarz"
     images:
       - "data/assets/images/sky_night_stars.jpg"
-    audio: "data/assets/audio/schwarz.wav"
+    audio: "data/assets/audio/schwarz.mp3"
 
   - type: cloze
     id: cloze_35
@@ -431,7 +431,7 @@ steps:
       **Schwarz** means *black*.
     images:
       - "data/assets/images/group_men_photo.jpg"
-    audio: "data/assets/audio/aerhettschwarzihaar.wav"
+    audio: "data/assets/audio/aerhettschwarzihaar.mp3"
 
   - type: choose
     id: choose_36
@@ -445,7 +445,7 @@ steps:
   - type: listen_type
     id: listen_type_37
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sihettbruuniougeubruunihaar.wav"
+    audio: "data/assets/audio/sihettbruuniougeubruunihaar.mp3"
     answers: ["Si hett bruuni Ouge u bruuni Haar."]
     images:
       - "data/assets/images/woman_phone.jpg"
@@ -461,7 +461,7 @@ steps:
       question: "He has blonde hair and brown eyes."
       helper: "Er hat blonde Haare und braune Augen."
     tokens: ["Är", "hett", "blondi", "Haar", "u", "bruuni", "Ouge."]
-    audio: "data/assets/audio/aerhettblondihaarubruuniouge.wav"
+    audio: "data/assets/audio/aerhettblondihaarubruuniouge.mp3"
 
   - type: translate_type
     id: translate_type_39
@@ -483,7 +483,7 @@ steps:
     answers: ["schwarzi"]
     images:
       - "data/assets/images/girl_smiling.jpg"
-    audio: "data/assets/audio/sihettschwarzihaar.wav"
+    audio: "data/assets/audio/sihettschwarzihaar.mp3"
 
   - type: match
     id: match_40

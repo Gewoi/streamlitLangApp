@@ -23,12 +23,12 @@ steps:
       **Barista**: So, für öich: Zwöi Kafi u eis Gipfeli. E guete u bis speter!
     images:
       - "data/assets/images/ordering_cafe_3.jpg"
-    audio: "data/assets/audio/conv_cafe.wav"
+    audio: "data/assets/audio/conv_cafe.mp3"
 
   - type: true_false
     id: true_false_1
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/conv_cafe.wav"
+    audio: "data/assets/audio/conv_cafe.mp3"
     text: "It is currently **Morning**."
     answer: "True"
     solution_display: |
@@ -47,12 +47,12 @@ steps:
       ✅ Correct!
       
       This is the formal way of asking someone what they would like.
-    audio: "data/assets/audio/washaettitdirgaern.wav"
+    audio: "data/assets/audio/washaettitdirgaern.mp3"
 
   - type: true_false
     id: true_false_3
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+    audio: "data/assets/audio/ihaettigaerneskafi.mp3"
     text: "This person would like **something to eat**."
     answer: "False"
     solution_display: |
@@ -63,7 +63,7 @@ steps:
   - type: listen_type
     id: listen_type_4
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ufueroeich.wav"
+    audio: "data/assets/audio/ufueroeich.mp3"
     answers: ["U für öich?", "Und für öich?", "U fuer oeich?", "Und fuer oeich?"]
     images:
       - "data/assets/images/ordering_table_1.jpg"
@@ -75,7 +75,7 @@ steps:
   - type: true_false
     id: true_false_5
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/conv_cafe.wav"
+    audio: "data/assets/audio/conv_cafe.mp3"
     text: "In the end, the order is **two coffees and one croissant**."
     answer: "True"
     solution_display: |
@@ -86,7 +86,7 @@ steps:
   - type: listen_type
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/eguete.wav"
+    audio: "data/assets/audio/eguete.mp3"
     answers: ["Ä guete", "E guete"]
     images:
       - "data/assets/images/croissant.jpg"

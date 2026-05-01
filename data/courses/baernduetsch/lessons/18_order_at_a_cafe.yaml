@@ -13,7 +13,7 @@ steps:
       de: "Ich hätte gerne ..."
     images:
       - "data/assets/images/ordering_cafe_1.jpg"
-    audio: "data/assets/audio/ihaettigaern.wav"
+    audio: "data/assets/audio/ihaettigaern.mp3"
 
   - type: order
     id: order_1
@@ -26,7 +26,7 @@ steps:
       ✅ Correct!
       
       **I hätti gärn ... ** is the simplest way to order something. The **gärn** in here works kind of like *please*, so you don't necessarily need to say **bitte** at the end (but a lot of people still do).
-    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+    audio: "data/assets/audio/ihaettigaerneskafi.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -36,12 +36,12 @@ steps:
       de: "Ein Kaffee"
     images:
       - "data/assets/images/coffee_millk.jpg"
-    audio: "data/assets/audio/aeskafi.wav"
+    audio: "data/assets/audio/aeskafi.mp3"
 
   - type: true_false
     id: true_false_3
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/eskafi_jagaern.wav"
+    audio: "data/assets/audio/eskafi_jagaern.mp3"
     text: "This person **would like a coffee**."
     answer: "True"
     solution_display: |
@@ -52,7 +52,7 @@ steps:
   - type: listen_type
     id: listen_type_4
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ihaettigaerneskafi.wav"
+    audio: "data/assets/audio/ihaettigaerneskafi.mp3"
     answers: ["I hätti gärn es kafi", "I hätti gärn es kaffi", "I hätti gärn äs kafi", "I hätti gärn äs kaffi"]
     images:
       - "data/assets/images/ordering_cafe_2.jpg"
@@ -69,7 +69,7 @@ steps:
       de: "Was hätten Sie gerne?"
     images:
       - "data/assets/images/ordering_table_2.jpg"
-    audio: "data/assets/audio/washaettitdirgaern.wav"
+    audio: "data/assets/audio/washaettitdirgaern.mp3"
 
   - type: order
     id: order_6
@@ -82,7 +82,7 @@ steps:
       ✅ Correct!
       
       This is, generally, how you want to ask people what they would like if you work in a restaurant (especially older folks, the younger ones you can use the informal way that we'll look at later!)
-    audio: "data/assets/audio/washaettitdirgaern.wav"
+    audio: "data/assets/audio/washaettitdirgaern.mp3"
 
   - type: introduce_word
     id: introduce_word_7
@@ -92,12 +92,12 @@ steps:
       de: "Ein Croissant"
     images:
       - "data/assets/images/croissant.jpg"
-    audio: "data/assets/audio/aesgipfeli.wav"
+    audio: "data/assets/audio/aesgipfeli.mp3"
 
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.wav"
+    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.mp3"
     text: "This person would like **a coffee and a croissant**."
     answer: "True"
     solution_display: |
@@ -128,7 +128,7 @@ steps:
       de: "Guten Morgen!"
     images:
       - "data/assets/images/girl_bed_getting_up.jpg"
-    audio: "data/assets/audio/guetemorge.wav"
+    audio: "data/assets/audio/guetemorge.mp3"
 
   - type: cloze
     id: cloze_11
@@ -144,7 +144,7 @@ steps:
       This is what you say in the morning to greet someone!
     images:
       - "data/assets/images/breakfast.jpg"
-    audio: "data/assets/audio/guetemorge.wav"
+    audio: "data/assets/audio/guetemorge.mp3"
 
   - type: order
     id: order_12
@@ -157,7 +157,7 @@ steps:
       ✅ Correct!
       
       If you enter a bakery early in the morning in Bern, you will hear this all the time.
-    audio: "data/assets/audio/guetemorge_ihaettigaernaesgipfeli.wav"
+    audio: "data/assets/audio/guetemorge_ihaettigaernaesgipfeli.mp3"
 
   - type: translate_type
     id: translate_type_13
@@ -182,7 +182,7 @@ steps:
       de: "Was hättest du gerne?"
     images:
       - "data/assets/images/ordering_table_1.jpg"
-    audio: "data/assets/audio/washaettischdugaern.wav"
+    audio: "data/assets/audio/washaettischdugaern.mp3"
 
   - type: cloze
     id: cloze_15
@@ -198,7 +198,7 @@ steps:
       **Was hättit dir gärn?** is the *formal* form, but when you talk to someone you know or generally someone your age, you can use the informal: **Was hättisch du gärn?**
     images:
       - "data/assets/images/ordering_cafe_1.jpg"
-    audio: "data/assets/audio/washaettischdugaern_eskafiundesgipfelibitte.wav"
+    audio: "data/assets/audio/washaettischdugaern_eskafiundesgipfelibitte.mp3"
 
   - type: order
     id: order_16
@@ -207,12 +207,12 @@ steps:
       question: "What would you like? (informal)"
       helper: "Was hättest du gerne?"
     tokens: ["Was", "hättisch", "du", "gärn?"]
-    audio: "data/assets/audio/washaettischdugaern.wav"
+    audio: "data/assets/audio/washaettischdugaern.mp3"
 
   - type: true_false
     id: true_false_17
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.wav"
+    audio: "data/assets/audio/washaettitdirgaern_aeskafiundesgipfelibitte.mp3"
     text: "This person is using the **formal** form to ask the guest what they would like."
     answer: "True"
     solution_display: |

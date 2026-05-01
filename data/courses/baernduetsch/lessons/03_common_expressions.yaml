@@ -13,7 +13,7 @@ steps:
       de: "Danke"
     images:
       - "data/assets/images/thankyou.jpg"
-    audio: "data/assets/audio/mercidanke.wav"
+    audio: "data/assets/audio/mercidanke.mp3"
 
   - type: markdown
     id: exp_mercidanke
@@ -39,7 +39,7 @@ steps:
   - type: true_false
     id: true_false_16
     prompt: "What do you think?"
-    audio: "data/assets/audio/mercidanke.wav"
+    audio: "data/assets/audio/mercidanke.mp3"
     text: "To thank someone, you can say both **Danke** and **Merci**"
     answer: "True"
     solution_display: |
@@ -55,7 +55,7 @@ steps:
       de: "Ja / Nein"
     images:
       - "data/assets/images/yes_no.jpg"
-    audio: "data/assets/audio/ja_nei.wav"
+    audio: "data/assets/audio/ja_nei.mp3"
 
   - type: cloze
     id: cloze_17
@@ -65,7 +65,7 @@ steps:
       helper: "Ja, ich heisse Dennis."
       target: ["", ", i heisse Dennis."]
     answers: ["ja"]
-    audio: "data/assets/audio/jaiheissedennis.wav"
+    audio: "data/assets/audio/jaiheissedennis.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -93,12 +93,12 @@ steps:
       de: "Geht's gut? - Ja, danke!"
     images:
       - "data/assets/images/polite_intro.jpg"
-    audio: "data/assets/audio/geitsguetjamerci.wav"
+    audio: "data/assets/audio/geitsguetjamerci.mp3"
 
   - type: true_false
     id: geitsguet_tf
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/geitsguetja.wav"
+    audio: "data/assets/audio/geitsguetja.mp3"
     text: "This person is **doing well**"
     answer: "True"
     solution_display: |
@@ -114,7 +114,7 @@ steps:
       helper: "Geht's gut? - Ja, danke!"
       target: ["Geit's guet? - Ja,", "!"]
     answers: ["danke", "merci"]
-    audio: "data/assets/audio/geitsguet_jamerci.wav"
+    audio: "data/assets/audio/geitsguet_jamerci.mp3"
     solution_display: |
       ✅ Correct! 
       
@@ -125,7 +125,7 @@ steps:
   - type: listen_type
     id: listen_neimerci
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/neimerci.wav"
+    audio: "data/assets/audio/neimerci.mp3"
     answers: ["nei, merci"]
     images:
       - "data/assets/images/no.jpg"
@@ -142,7 +142,7 @@ steps:
       de: "Entschuldigung"
     images:
       - "data/assets/images/sorry.jpg"
-    audio: "data/assets/audio/tschuldigungsorry.wav"
+    audio: "data/assets/audio/tschuldigungsorry.mp3"
 
   - type: markdown
     id: tschuldigung_exp
@@ -165,7 +165,7 @@ steps:
       ✅ Correct!
       
       You can say **Tschuldigung**, **Entschuldigung** or **Sorry**.
-    audio: "data/assets/audio/tschuldigungsorry.wav"  
+    audio: "data/assets/audio/tschuldigungsorry.mp3"  
   
   - type: match
     id: match_19
@@ -209,7 +209,7 @@ steps:
       You can say **nei, merci** or **nei, danke** to *politely* decline something.
     images:
       - "data/assets/images/no.jpg"
-    audio: "data/assets/audio/tschuldigungneimerci.wav"
+    audio: "data/assets/audio/tschuldigungneimerci.mp3"
 
   - type: introduce_word
     id: word_bitte
@@ -219,7 +219,7 @@ steps:
       de: "Bitte"
     images:
       - "data/assets/images/bitte.jpg"
-    audio: "data/assets/audio/bitte.wav"
+    audio: "data/assets/audio/bitte.mp3"
 
   - type: translate_type
     id: translate_bitte
@@ -256,12 +256,12 @@ steps:
       de: "Ja, gerne!"
     images:
       - "data/assets/images/waiter_drinks.jpg"
-    audio: "data/assets/audio/jagaern.wav"
+    audio: "data/assets/audio/jagaern.mp3"
 
   - type: true_false
     id: true_false_22
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/eskafi_jagaern.wav"
+    audio: "data/assets/audio/eskafi_jagaern.mp3"
     text: "This person would **like a coffee**."
     answer: "True"
     solution_display: |
@@ -276,7 +276,7 @@ steps:
       question: "Are you doing good? - Yes, thank you!"
       helper: ""
     tokens: ["Geits", "guet?", "Ja,", "merci!"]
-    audio: "data/assets/audio/geitsguet_jamerci.wav"
+    audio: "data/assets/audio/geitsguet_jamerci.mp3"
     solution_display: |
       ✅ Correct!
 

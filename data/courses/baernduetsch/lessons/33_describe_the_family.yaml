@@ -13,7 +13,7 @@ steps:
       de: "freundlich"
     images:
       - "data/assets/images/handshake_cafe.jpg"
-    audio: "data/assets/audio/fruendlech.wav"
+    audio: "data/assets/audio/fruendlech.mp3"
 
   - type: order
     id: order_1
@@ -24,7 +24,7 @@ steps:
     tokens: ["Si", "si", "fründlech."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/sisifruendlech.wav"
+    audio: "data/assets/audio/sisifruendlech.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -34,7 +34,7 @@ steps:
       de: "unfreundlich"
     images:
       - "data/assets/images/guy_thumbs_down.jpg"
-    audio: "data/assets/audio/unfruendlech.wav"
+    audio: "data/assets/audio/unfruendlech.mp3"
 
   - type: cloze
     id: cloze_3
@@ -50,7 +50,7 @@ steps:
       **Fründlech** means *polite*, and **unfründlech** means *impolite*.
     images:
       - "data/assets/images/no.jpg"
-    audio: "data/assets/audio/aerischunfruendlech.wav"
+    audio: "data/assets/audio/aerischunfruendlech.mp3"
 
   - type: order
     id: order_4
@@ -66,12 +66,12 @@ steps:
       - *masculine*: ends with **-e**
       - *feminine*: ends with **-i**
       - *neuter*: ends with **-s** or **-es**
-    audio: "data/assets/audio/mibruederischefruendlechemoensch.wav"
+    audio: "data/assets/audio/mibruederischefruendlechemoensch.mp3"
 
   - type: true_false
     id: true_false_5
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/aerischunfruendlech.wav"
+    audio: "data/assets/audio/aerischunfruendlech.mp3"
     text: "He is **polite**."
     answer: "False"
     solution_display: |
@@ -87,7 +87,7 @@ steps:
       de: "Grossvater / Grossmutter"
     images:
       - "data/assets/images/older_couple.jpg"
-    audio: "data/assets/audio/grossvater_grossmueter.wav"
+    audio: "data/assets/audio/grossvater_grossmueter.mp3"
 
   - type: choose
     id: choose_7
@@ -101,7 +101,7 @@ steps:
       ✅ Correct!
       
       Your **Grossvater** and your **Grossmueter** are your **Grosseltere** (*grandparents*).
-    audio: "data/assets/audio/grosseltere.wav"
+    audio: "data/assets/audio/grosseltere.mp3"
 
   - type: cloze
     id: cloze_8
@@ -117,7 +117,7 @@ steps:
       **Grossvater** is *grandfather*, and **Grossmueter** is *grandmother*.
     images:
       - "data/assets/images/old_guy_half_wave.jpg"
-    audio: "data/assets/audio/migrossvaterischefruendlechemoensch.wav"
+    audio: "data/assets/audio/migrossvaterischefruendlechemoensch.mp3"
 
   - type: match
     id: match_9
@@ -144,7 +144,7 @@ steps:
       de: "glücklich / unglücklich"
     images:
       - "data/assets/images/emotions_icons.jpg"
-    audio: "data/assets/audio/gluecklech_ungluecklech.wav"
+    audio: "data/assets/audio/gluecklech_ungluecklech.mp3"
 
   - type: cloze
     id: cloze_11
@@ -160,7 +160,7 @@ steps:
       **Glücklech** means *happy*, and **unglücklech** means *unhappy*.
     images:
       - "data/assets/images/girl_smiling.jpg"
-    audio: "data/assets/audio/minischwoeschterischgluecklech.wav"
+    audio: "data/assets/audio/minischwoeschterischgluecklech.mp3"
 
   - type: order
     id: order_12
@@ -169,7 +169,7 @@ steps:
       question: "I am unhappy today."
       helper: "Ich bin heute unglücklich."
     tokens: ["I", "bi", "hüt", "unglücklech."]
-    audio: "data/assets/audio/ibihuetungluecklech.wav"
+    audio: "data/assets/audio/ibihuetungluecklech.mp3"
 
   - type: markdown
     id: markdown_17
@@ -190,7 +190,7 @@ steps:
       de: "traurig"
     images:
       - "data/assets/images/sad_guy_able.jpg"
-    audio: "data/assets/audio/truurig.wav"
+    audio: "data/assets/audio/truurig.mp3"
 
   - type: order
     id: order_14
@@ -203,7 +203,7 @@ steps:
       ✅ Correct!
       
       **Glücklech** means *happy*, and **truurig** means *sad*.
-    audio: "data/assets/audio/bischdugluecklechodertruurig.wav"
+    audio: "data/assets/audio/bischdugluecklechodertruurig.mp3"
 
   - type: translate_type
     id: translate_type_15
@@ -233,7 +233,7 @@ steps:
       All weekdays are *masculine*! So, when adding an adjective before it, we end it accordingly: **truurig*e***.
     images:
       - "data/assets/images/monday.jpg"
-    audio: "data/assets/audio/aetruurigemaenti.wav"
+    audio: "data/assets/audio/aetruurigemaenti.mp3"
 
   - type: introduce_word
     id: introduce_word_18
@@ -243,7 +243,7 @@ steps:
       de: "müde"
     images:
       - "data/assets/images/guy_yawn.jpg"
-    audio: "data/assets/audio/mued.wav"
+    audio: "data/assets/audio/mued.mp3"
 
   - type: cloze
     id: cloze_19
@@ -259,12 +259,12 @@ steps:
       **Müed** means *tired*.
     images:
       - "data/assets/images/cat_yawn.jpg"
-    audio: "data/assets/audio/dubischmued.wav"
+    audio: "data/assets/audio/dubischmued.mp3"
 
   - type: listen_type
     id: listen_type_20
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ibimued.wav"
+    audio: "data/assets/audio/ibimued.mp3"
     answers: ["I bi müed."]
     images:
       - "data/assets/images/guy_yawn.jpg"
@@ -282,7 +282,7 @@ steps:
     tokens: ["Mir", "si", "müed,", "mir", "göh", "jetz.", "Tschüss!"]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/mirsimuedmirgoehjetz_tschuess.wav"
+    audio: "data/assets/audio/mirsimuedmirgoehjetz_tschuess.mp3"
 
   - type: translate_type
     id: translate_type_22
@@ -299,7 +299,7 @@ steps:
   - type: true_false
     id: true_false_23
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ibihuetungluecklech.wav"
+    audio: "data/assets/audio/ibihuetungluecklech.mp3"
     text: "This person is **tired** today?"
     answer: "False"
     solution_display: |

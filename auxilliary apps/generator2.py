@@ -64,8 +64,8 @@ def make_audio_path(name: str) -> str:
     """Create full audio path from just the filename."""
     if not name:
         return ""
-    name = name.replace('.wav', '').strip()
-    return f"data/assets/audio/{name}.wav"
+    name = name.replace('.mp3', '').strip()
+    return f"data/assets/audio/{name}.mp3"
 
 
 def make_image_path(name: str) -> str:
@@ -80,7 +80,7 @@ def extract_audio_name(path: str) -> str:
     """Extract just the filename from an audio path."""
     if not path:
         return ""
-    match = re.search(r'data/assets/audio/(.+)\.wav$', path)
+    match = re.search(r'data/assets/audio/(.+)\.mp3$', path)
     return match.group(1) if match else path
 
 
@@ -327,7 +327,7 @@ class FilePathEntry(ttk.Frame):
         self.entry = ttk.Entry(self, width=30)
         self.entry.pack(side='left', fill='x', expand=True)
         
-        ext = '.wav' if path_type == 'audio' else '.jpg'
+        ext = '.mp3' if path_type == 'audio' else '.jpg'
         ttk.Label(self, text=ext, foreground='gray').pack(side='left', padx=(2, 0))
     
     def get(self) -> str:

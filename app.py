@@ -103,3 +103,5 @@ else:
                 st.rerun()
         else:
             logout_button(url=st.secrets["SUPABASE_URL"], apiKey=st.secrets["SUPABASE_KEY"])
+    with st.sidebar.container(key="sidebar_fixed_bottom"):
+        st.caption("<small>If you find bugs, have a comment or something else, please reach out under admin(at)langapp.ch </small>", unsafe_allow_html=True)

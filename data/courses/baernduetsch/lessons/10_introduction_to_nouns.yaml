@@ -13,7 +13,7 @@ steps:
       de: "Der Bahnhof"
     images:
       - "data/assets/images/trainstation.jpg"
-    audio: "data/assets/audio/drbahnhof.wav"
+    audio: "data/assets/audio/drbahnhof.mp3"
 
   - type: markdown
     id: markdown_1
@@ -44,7 +44,7 @@ steps:
       de: "Die Strasse"
     images:
       - "data/assets/images/city_street.jpg"
-    audio: "data/assets/audio/dstraas.wav"
+    audio: "data/assets/audio/dstraas.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -54,7 +54,7 @@ steps:
       de: "Das Haus"
     images:
       - "data/assets/images/house_grass.jpg"
-    audio: "data/assets/audio/dshuus.wav"
+    audio: "data/assets/audio/dshuus.mp3"
 
   - type: match
     id: match_4
@@ -94,12 +94,12 @@ steps:
       ✅ Correct!
       
       **Bahnhof** is *masculine*.
-    audio: "data/assets/audio/drbahnhof.wav"
+    audio: "data/assets/audio/drbahnhof.mp3"
 
   - type: listen_type
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dstraas.wav"
+    audio: "data/assets/audio/dstraas.mp3"
     answers: ["d straas", "d straass"]
     images:
       - "data/assets/images/city_street.jpg"
@@ -115,7 +115,7 @@ steps:
       question: "The train station, the street, the house"
       helper: "Der Bahnhof, die Strasse, das Haus"
     tokens: ["Dr", "Bahnhof,", "d", "straas,", "ds", "huus"]
-    audio: "data/assets/audio/drbahnhofdstraasdshuus.wav"
+    audio: "data/assets/audio/drbahnhofdstraasdshuus.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -124,7 +124,7 @@ steps:
   - type: true_false
     id: true_false_8
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dshuus.wav"
+    audio: "data/assets/audio/dshuus.mp3"
     text: "**Ds Huus** is *gramatically neuter*."
     answer: "True"
     solution_display: |
@@ -144,7 +144,7 @@ steps:
       ✅ Correct!
       
       **Straas** is *feminine*.
-    audio: "data/assets/audio/dstraas.wav"
+    audio: "data/assets/audio/dstraas.mp3"
 
   - type: introduce_word
     id: introduce_word_9
@@ -154,7 +154,7 @@ steps:
       de: "Wo ist ___?"
     images:
       - "data/assets/images/tourists_map.jpg"
-    audio: "data/assets/audio/woisch.wav"
+    audio: "data/assets/audio/woisch.mp3"
 
   - type: cloze
     id: cloze_10
@@ -164,7 +164,7 @@ steps:
       helper: "Wo ist der Bahnhof?"
       target: ["", " dr Bahnhof?"]
     answers: ["Wo isch"]
-    audio: "data/assets/audio/woisch.wav"
+    audio: "data/assets/audio/woisch.mp3"
     solution_display: |
       ✅ Correct!
       
@@ -175,7 +175,7 @@ steps:
   - type: listen_type
     id: listen_type_11
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/woischdshuus.wav"
+    audio: "data/assets/audio/woischdshuus.mp3"
     answers: ["wo isch ds huus"]
     images:
       - "data/assets/images/house_grass.jpg"
@@ -183,7 +183,7 @@ steps:
   - type: true_false
     id: true_false_12
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/woischdstraas.wav"
+    audio: "data/assets/audio/woischdstraas.mp3"
     text: "**Straas** if *masculine*"
     answer: "False"
     solution_display: |
@@ -198,7 +198,7 @@ steps:
       question: "Where is the train station?"
       helper: ""
     tokens: ["Wo", "isch", "dr", "Bahnhof?"]
-    audio: "data/assets/audio/woischdrbahnhof.wav"
+    audio: "data/assets/audio/woischdrbahnhof.mp3"
 
   - type: match
     id: match_14
@@ -214,7 +214,7 @@ steps:
   - type: listen_type
     id: listen_type_12
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/woischdrbahnhof.wav"
+    audio: "data/assets/audio/woischdrbahnhof.mp3"
     answers: ["wo isch dr bahnhof"]
     images:
       - "data/assets/images/tourists_map.jpg"

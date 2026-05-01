@@ -13,7 +13,7 @@ steps:
       de: "Ds Tier"
     images:
       - "data/assets/images/cow_1.jpg"
-    audio: "data/assets/audio/dstier.wav"
+    audio: "data/assets/audio/dstier.mp3"
 
   - type: cloze
     id: cloze_1
@@ -29,7 +29,7 @@ steps:
       **Ds Tier** means an animal; it is *neuter*.
     images:
       - "data/assets/images/cat_1.jpg"
-    audio: "data/assets/audio/igsehdstier.wav"
+    audio: "data/assets/audio/igsehdstier.mp3"
 
   - type: introduce_word
     id: introduce_word_2
@@ -39,7 +39,7 @@ steps:
       de: "Das grosses Tier"
     images:
       - "data/assets/images/cow_1.jpg"
-    audio: "data/assets/audio/dsgrossetier.wav"
+    audio: "data/assets/audio/dsgrossetier.mp3"
 
   - type: markdown
     id: markdown_3
@@ -89,7 +89,7 @@ steps:
       **Tier** is *neuter*, so we use **ds**. If we use an adjective to describe it *before the noun*, we add **-e** to it, hence: **I gseh ds grosse Tier!**.
     images:
       - "data/assets/images/cow_1.jpg"
-    audio: "data/assets/audio/igsehdsgrossetier.wav"
+    audio: "data/assets/audio/igsehdsgrossetier.mp3"
 
   - type: introduce_word
     id: introduce_word_5
@@ -99,7 +99,7 @@ steps:
       de: "Die Pflanze"
     images:
       - "data/assets/images/plant_1.jpg"
-    audio: "data/assets/audio/dpflanze.wav"
+    audio: "data/assets/audio/dpflanze.mp3"
 
   - type: order
     id: order_6
@@ -114,7 +114,7 @@ steps:
       **Pflanze** is *feminine*, so when we put an adjective *before the noun*, we add **-i**: **Di grossi Pflanze**.
       
       Note here: After **haa** (*to have*), we use the *accusative*! The plant is the "*receiver*/*target*" here. But in Bärndütsch, unlike in Hochdütsch, the noun and adjective stay the same as in the *nominative*, so you don't need to worry about adjusting anything!
-    audio: "data/assets/audio/ihadigrossipflanze.wav"
+    audio: "data/assets/audio/ihadigrossipflanze.mp3"
 
   - type: order
     id: order_7
@@ -127,7 +127,7 @@ steps:
       ✅ Correct!
       
       Here you see a *neuter* noun (**ds gross*e* Tier**) and a *feminine* noun (**di gross*i* Pflanze**) and how theirn adjectives change! Next, we wanna look at a *masculine* noun.
-    audio: "data/assets/audio/dsgrossetierudigrossipflanze.wav"
+    audio: "data/assets/audio/dsgrossetierudigrossipflanze.mp3"
 
   - type: introduce_word
     id: introduce_word_8
@@ -137,7 +137,7 @@ steps:
       de: "Der Berg"
     images:
       - "data/assets/images/mountain_1.jpg"
-    audio: "data/assets/audio/drbaerg.wav"
+    audio: "data/assets/audio/drbaerg.mp3"
 
   - type: cloze
     id: cloze_9
@@ -153,7 +153,7 @@ steps:
       When we have a *masculine* noun with a definite article, we don't change the adjective from its basic form: **Dr gross Bärg**.
     images:
       - "data/assets/images/mountain_2.jpg"
-    audio: "data/assets/audio/drgrossbaerg.wav"
+    audio: "data/assets/audio/drgrossbaerg.mp3"
 
   - type: order
     id: order_10
@@ -166,7 +166,7 @@ steps:
       ✅ Correct!
       
       For question, we *change the order of verb and subject* (here **du**)!
-    audio: "data/assets/audio/gsehschdudrjungmaadert.wav"
+    audio: "data/assets/audio/gsehschdudrjungmaadert.mp3"
 
   - type: translate_type
     id: translate_type_11
@@ -186,7 +186,7 @@ steps:
   - type: true_false
     id: true_false_12
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/igsehdsgrossetier.wav"
+    audio: "data/assets/audio/igsehdsgrossetier.mp3"
     text: "For a *neuter* noun like **Tier** we **do not change the adjective**."
     answer: "False"
     solution_display: |
@@ -205,7 +205,7 @@ steps:
       ✅ Correct!
       
       It is *feminine*, so wie add **-i** and change the *definite article* to **di**. NOTE HERE: As you might know, we do not like similar sounding *vowels* right next to eacht other. This is why we add an **n** in **chliini**: It flows better like this!
-    audio: "data/assets/audio/igsehdichliinipflanze.wav"
+    audio: "data/assets/audio/igsehdichliinipflanze.mp3"
 
   - type: match
     id: match_15
@@ -232,12 +232,12 @@ steps:
       Same thing here: We add an **n** to not have the two similar sounding vowels next to each other!
     images:
       - "data/assets/images/cat_1.jpg"
-    audio: "data/assets/audio/igsehdschliinetierdoert.wav"
+    audio: "data/assets/audio/igsehdschliinetierdoert.mp3"
 
   - type: listen_type
     id: listen_type_17
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/drgrossbaergudrchliimaa.wav"
+    audio: "data/assets/audio/drgrossbaergudrchliimaa.mp3"
     answers: ["Dr gross Bärg u dr chlii Maa.", "Dr gross Bärg u dr chlii Maah."]
     images:
       - "data/assets/images/guy_mountain.jpg"
@@ -249,7 +249,7 @@ steps:
   - type: listen_type
     id: listen_type_18
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dialtipflanzeudijungifrou.wav"
+    audio: "data/assets/audio/dialtipflanzeudijungifrou.mp3"
     answers: ["Di alti Pflanze u di jungi Frou"]
     images:
       - "data/assets/images/woman_plants.jpg"

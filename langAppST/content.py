@@ -19,19 +19,19 @@ def autoplay_sound(sound_path):
 
 @st.cache_data(show_spinner=False)
 def play_correct():
-    autoplay_sound("data/assets/audio/correct_exercise.wav")
+    autoplay_sound("data/assets/audio/correct_exercise.mp3")
 
 @st.cache_data(show_spinner=False)
 def play_wrong():
-    autoplay_sound("data/assets/audio/wrong_exercise.wav")
+    autoplay_sound("data/assets/audio/wrong_exercise.mp3")
 
 @st.cache_data(show_spinner=False)
 def play_match_correct():
-    autoplay_sound("data/assets/audio/match_correct.wav")
+    autoplay_sound("data/assets/audio/match_correct.mp3")
 
 @st.cache_data(show_spinner=False)
 def play_complete():
-    autoplay_sound("data/assets/audio/lesson_done.wav")
+    autoplay_sound("data/assets/audio/lesson_done.mp3")
 
 @st.cache_data(show_spinner=False)
 def contain_cv2(img, target_w, target_h, allow_upscale=False):

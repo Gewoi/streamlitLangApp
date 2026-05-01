@@ -19,12 +19,12 @@ steps:
       **Suppe** means *soup*.
     images:
       - "data/assets/images/soup.jpg"
-    audio: "data/assets/audio/ihaettigaernesuppe.wav"
+    audio: "data/assets/audio/ihaettigaernesuppe.mp3"
 
   - type: true_false
     id: true_false_1
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/washaettitdirgaern_esuppebitte.wav"
+    audio: "data/assets/audio/washaettitdirgaern_esuppebitte.mp3"
     text: "The person asking is using the **informal** form."
     answer: "False"
     solution_display: |
@@ -40,7 +40,7 @@ steps:
       de: "Für mich"
     images:
       - "data/assets/images/point_self.jpg"
-    audio: "data/assets/audio/fuermi.wav"
+    audio: "data/assets/audio/fuermi.mp3"
 
   - type: markdown
     id: markdown_3
@@ -73,7 +73,7 @@ steps:
       **Für mi** means *for me*; after **für**, you always have the accusative!
     images:
       - "data/assets/images/ordering_cafe_1.jpg"
-    audio: "data/assets/audio/washaettitdirgaern_fuermieskafibitte.wav"
+    audio: "data/assets/audio/washaettitdirgaern_fuermieskafibitte.mp3"
 
   - type: order
     id: order_5
@@ -86,7 +86,7 @@ steps:
       ✅ Correct!
       
       This is ususally how someone will ask you what you'd like after they asked someone else. Notice how we also have the *accusative*: **U für *öich***?
-    audio: "data/assets/audio/ufueroeich.wav"
+    audio: "data/assets/audio/ufueroeich.mp3"
 
   - type: match
     id: match_6
@@ -108,12 +108,12 @@ steps:
       ✅ Correct!
       
       Notice the *accusative* after **für**: **U für *öich*?**, **Für *mi* ...** .
-    audio: "data/assets/audio/ufueroeich_fuermiesuppebitte.wav"
+    audio: "data/assets/audio/ufueroeich_fuermiesuppebitte.mp3"
 
   - type: listen_type
     id: listen_type_8
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/ihaettigaernesuppe.wav"
+    audio: "data/assets/audio/ihaettigaernesuppe.mp3"
     answers: ["I hätti gärn e suppe", "I haetti gaern e suppe", "I hätti gärn ä suppe", "I haetti gaern ae suppe"]
     images:
       - "data/assets/images/soup.jpg"
@@ -136,12 +136,12 @@ steps:
       Again, we use the *accusative* after **für**. It is important to note that **ihn** is more correct here than **ne**, because we specifically *emphasize* that it's *for him* by putting it at the start of the sentence. But both works, **ihn** just sounds a tad nicer.
     images:
       - "data/assets/images/ordering_table_3.jpg"
-    audio: "data/assets/audio/fuerihneskafibitte.wav"
+    audio: "data/assets/audio/fuerihneskafibitte.mp3"
 
   - type: true_false
     id: true_false_10
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/washaettitdirgaern_eskafibitte_ufueroeich_fuermiesglaswasser.wav"
+    audio: "data/assets/audio/washaettitdirgaern_eskafibitte_ufueroeich_fuermiesglaswasser.mp3"
     text: "Both of them are ordering **drinks**."
     answer: "True"
     solution_display: |
@@ -173,7 +173,7 @@ steps:
     tokens: ["Für", "mi", "ä Suppe", "und", "für si", "äs Kafi."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/fuermiesuppeundfuersieskafi.wav"
+    audio: "data/assets/audio/fuermiesuppeundfuersieskafi.mp3"
 
   - type: introduce_word
     id: introduce_word_22
@@ -183,7 +183,7 @@ steps:
       de: "Guten Appetit!"
     images:
       - "data/assets/images/kid_eating.jpg"
-    audio: "data/assets/audio/eguete.wav"
+    audio: "data/assets/audio/eguete.mp3"
 
   - type: markdown
     id: markdown_23
@@ -217,7 +217,7 @@ steps:
       de: "Ein Salat"
     images:
       - "data/assets/images/salad.jpg"
-    audio: "data/assets/audio/aesalat.wav"
+    audio: "data/assets/audio/aesalat.mp3"
 
   - type: order
     id: order_14
@@ -230,7 +230,7 @@ steps:
       ✅ Correct!
       
       **Gärn** takes the role of *please* here.
-    audio: "data/assets/audio/fuermigaernesalat.wav"
+    audio: "data/assets/audio/fuermigaernesalat.mp3"
 
   - type: match
     id: match_15
@@ -253,7 +253,7 @@ steps:
       de: "Rösti"
     images:
       - "data/assets/images/roesti.jpg"
-    audio: "data/assets/audio/roesti.wav"
+    audio: "data/assets/audio/roesti.mp3"
 
   - type: introduce_word
     id: introduce_word_17
@@ -263,7 +263,7 @@ steps:
       de: "Fondue"
     images:
       - "data/assets/images/fondue.jpg"
-    audio: "data/assets/audio/fondue.wav"
+    audio: "data/assets/audio/fondue.mp3"
 
   - type: markdown
     id: markdown_21
@@ -291,12 +291,12 @@ steps:
     answers: ["Rösti"]
     images:
       - "data/assets/images/roesti.jpg"
-    audio: "data/assets/audio/ihaettigaerndroesti.wav"
+    audio: "data/assets/audio/ihaettigaerndroesti.mp3"
 
   - type: listen_type
     id: listen_type_19
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/aesfondue.wav"
+    audio: "data/assets/audio/aesfondue.mp3"
     answers: ["Äs fondue", "Es fondue"]
     images:
       - "data/assets/images/correct.jpg"

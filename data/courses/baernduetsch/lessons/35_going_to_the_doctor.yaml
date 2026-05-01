@@ -13,7 +13,7 @@ steps:
       de: "Der Arzt / Die Ärztin"
     images:
       - "data/assets/images/doctor_f.jpg"
-    audio: "data/assets/audio/drarzt_daerztin.wav"
+    audio: "data/assets/audio/drarzt_daerztin.mp3"
 
   - type: order
     id: order_1
@@ -26,7 +26,7 @@ steps:
       ✅ Correct!
       
       Unlike English, you differentiate between whether someone reads as male or female when talking about jobs. You say **I bi Arzt** if you're a guy, and **I bi Ärztin** if you're a girl.
-    audio: "data/assets/audio/ibiaerztin.wav"
+    audio: "data/assets/audio/ibiaerztin.mp3"
 
   - type: cloze
     id: cloze_2
@@ -42,7 +42,7 @@ steps:
       You can say **Wie geits?** or **Wie geits dir?**. Notice the *Dativ* for **du** (**dir**)! Now we'll look at how to say how someone is doing!
     images:
       - "data/assets/images/conversation_casual.jpg"
-    audio: "data/assets/audio/wiegeits_guet.wav"
+    audio: "data/assets/audio/wiegeits_guet.mp3"
 
   - type: introduce_word
     id: introduce_word_3
@@ -52,7 +52,7 @@ steps:
       de: "Mir geht es gut"
     images:
       - "data/assets/images/thumbs_up.jpg"
-    audio: "data/assets/audio/mirgeitsguet.wav"
+    audio: "data/assets/audio/mirgeitsguet.mp3"
 
   - type: markdown
     id: markdown_4
@@ -82,7 +82,7 @@ steps:
       ✅ Correct!
       
       We adjust names of jobs: When we talk about a *female* read person, we say **Ärtzin**. For a *male* read person, this would be **Arzt**.
-    audio: "data/assets/audio/daerztinischhie.wav"
+    audio: "data/assets/audio/daerztinischhie.mp3"
 
   - type: cloze
     id: cloze_5
@@ -98,7 +98,7 @@ steps:
       To say *I'm doing well*, you say **mir geits guet** (**mir** being the *Dativ* of **I / Ig**).
     images:
       - "data/assets/images/no.jpg"
-    audio: "data/assets/audio/mirgeitsguet_igahnidzumarzt.wav"
+    audio: "data/assets/audio/mirgeitsguet_igahnidzumarzt.mp3"
 
   - type: order
     id: order_6
@@ -111,7 +111,7 @@ steps:
       ✅ Correct!
       
       We use the *Dativ* to say when someone is not doing well, so we say **dir** (*Dativ* of **du**).
-    audio: "data/assets/audio/dirgeitsnidguet.wav"
+    audio: "data/assets/audio/dirgeitsnidguet.mp3"
 
   - type: translate_type
     id: translate_type_7
@@ -130,7 +130,7 @@ steps:
   - type: listen_type
     id: listen_type_8
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/uesgeitsguetmerci.wav"
+    audio: "data/assets/audio/uesgeitsguetmerci.mp3"
     answers: ["Üs geits guet, merci", "Ues geits guet, merci"]
     images:
       - "data/assets/images/group_selfie.jpg"
@@ -147,7 +147,7 @@ steps:
       de: "zum Arzt / zur Ärztin"
     images:
       - "data/assets/images/doctor_visit.jpg"
-    audio: "data/assets/audio/zumarzt_zuraerztin.wav"
+    audio: "data/assets/audio/zumarzt_zuraerztin.mp3"
 
   - type: match
     id: match_13
@@ -161,7 +161,7 @@ steps:
   - type: true_false
     id: true_false_10
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/mirgeitsnidguet_igahzumarzt.wav"
+    audio: "data/assets/audio/mirgeitsnidguet_igahzumarzt.mp3"
     text: "This person is **doing good**."
     answer: "False"
     solution_display: |
@@ -183,7 +183,7 @@ steps:
       We say **zum Arzt** for a *male* read doctor, and **zur Ärztin** for a *female* read doctor.
     images:
       - "data/assets/images/doctor_visit2.jpg"
-    audio: "data/assets/audio/igahmornzumarzt.wav"
+    audio: "data/assets/audio/igahmornzumarzt.mp3"
 
   - type: translate_type
     id: translate_type_15
@@ -203,7 +203,7 @@ steps:
       de: "krank"
     images:
       - "data/assets/images/sick_guy_1.jpg"
-    audio: "data/assets/audio/chrank.wav"
+    audio: "data/assets/audio/chrank.mp3"
 
   - type: cloze
     id: cloze_16
@@ -219,7 +219,7 @@ steps:
       **Chrank** means *sick*. You'll quite often see that a word that starts with a hard *k-* in German will start with a softer **ch-** in Bärndütsch.
     images:
       - "data/assets/images/sick_in_bed.jpg"
-    audio: "data/assets/audio/mirsichrank.wav"
+    audio: "data/assets/audio/mirsichrank.mp3"
 
   - type: cloze
     id: cloze_17
@@ -231,7 +231,7 @@ steps:
     answers: ["Si isch chrank"]
     images:
       - "data/assets/images/sick_girl_2.jpg"
-    audio: "data/assets/audio/siischchrank_sigeitnid.wav"
+    audio: "data/assets/audio/siischchrank_sigeitnid.mp3"
 
   - type: order
     id: order_18
@@ -244,7 +244,7 @@ steps:
       ✅ Correct!
       
       **I bi chrank** means *I'm sick*. Remember: **Was hesch?** means both *What do you have?* and *What's the problem? / What's wrong?*.
-    audio: "data/assets/audio/wshesch_ibichrank.wav"
+    audio: "data/assets/audio/wshesch_ibichrank.mp3"
 
   - type: introduce_word
     id: introduce_word_19
@@ -254,7 +254,7 @@ steps:
       de: "gesund"
     images:
       - "data/assets/images/salad.jpg"
-    audio: "data/assets/audio/gsund.wav"
+    audio: "data/assets/audio/gsund.mp3"
 
   - type: order
     id: order_20
@@ -267,12 +267,12 @@ steps:
       ✅ Correct!
       
       **Gsund** means *healthy*, both for people (**I bi gsund** as well as foods and other things (**Dr Salat isch gsund**).
-    audio: "data/assets/audio/drsalatischgsund.wav"
+    audio: "data/assets/audio/drsalatischgsund.mp3"
 
   - type: true_false
     id: true_false_21
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/ibigsund_igahnidzumarzt.wav"
+    audio: "data/assets/audio/ibigsund_igahnidzumarzt.mp3"
     text: "This person is **healthy**."
     answer: "True"
     solution_display: |
@@ -301,12 +301,12 @@ steps:
     tokens: ["Är", "isch", "nid", "gsund,", "är isch", "chrank."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/aerischnidgsund_aerischchrank.wav"
+    audio: "data/assets/audio/aerischnidgsund_aerischchrank.mp3"
 
   - type: listen_type
     id: listen_type_24
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sigeitmornzumarzt_siischchrank.wav"
+    audio: "data/assets/audio/sigeitmornzumarzt_siischchrank.mp3"
     answers: ["Si geit morn zum Arzt, si isch chrank"]
     images:
       - "data/assets/images/sick_girl_1.jpg"
@@ -326,7 +326,7 @@ steps:
       ✅ Correct!
       
       These are essentially two ways of saying the same thing: **Mir geits guet** (with the *Dativ*) means *I'm doing good*, and **I bi gsund** means *I am healthy*.
-    audio: "data/assets/audio/mirgeitsguet_ibigsund.wav"
+    audio: "data/assets/audio/mirgeitsguet_ibigsund.mp3"
 
   - type: order
     id: order_27
@@ -339,7 +339,7 @@ steps:
       ✅ Correct!
       
       This is also two times essentially the same thing: **Dir geit's *nid* guet** or **Dir geits schlächt** (with the *Dativ* in both cases) means *You're not doing good*, and **Du bisch chrank** means *You're sick*.
-    audio: "data/assets/audio/dirgeitsnidguet_dubischchrank.wav"
+    audio: "data/assets/audio/dirgeitsnidguet_dubischchrank.mp3"
 
   - type: match
     id: match_28

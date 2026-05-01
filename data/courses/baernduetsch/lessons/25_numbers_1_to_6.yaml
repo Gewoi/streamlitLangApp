@@ -13,7 +13,7 @@ steps:
       de: "Eins, Zwei, Drei"
     images:
       - "data/assets/images/medals_123.jpg"
-    audio: "data/assets/audio/eis_zwoei_drue.wav"
+    audio: "data/assets/audio/eis_zwoei_drue.mp3"
 
   - type: order
     id: order_1
@@ -22,7 +22,7 @@ steps:
       question: "One, Two, Three"
       helper: "Eins, Zwei, Drei"
     tokens: ["Eis,", "Zwöi,", "Drü"]
-    audio: "data/assets/audio/eis_zwoei_drue.wav"
+    audio: "data/assets/audio/eis_zwoei_drue.mp3"
 
   - type: cloze
     id: cloze_2
@@ -38,7 +38,7 @@ steps:
       In modern times, when you want to say how many of something there is (two men, three houses, etc.), you can just say **number + plural**.
     images:
       - "data/assets/images/polite_intro.jpg"
-    audio: "data/assets/audio/igsehzwoeimaennerdoert.wav"
+    audio: "data/assets/audio/igsehzwoeimaennerdoert.mp3"
 
   - type: markdown
     id: markdown_3
@@ -86,7 +86,7 @@ steps:
       de: "Zahl / Zahlen"
     images:
       - "data/assets/images/numbers.jpg"
-    audio: "data/assets/audio/zahl_zahle.wav"
+    audio: "data/assets/audio/zahl_zahle.mp3"
 
   - type: cloze
     id: cloze_5
@@ -102,7 +102,7 @@ steps:
       The word for *number* is **Zahl**, and it's plural is **Zahle**.
     images:
       - "data/assets/images/medals_123.jpg"
-    audio: "data/assets/audio/eiszwoeiudruesizahle.wav"
+    audio: "data/assets/audio/eiszwoeiudruesizahle.mp3"
 
   - type: translate_type
     id: translate_type_7
@@ -138,7 +138,7 @@ steps:
   - type: listen_type
     id: listen_type_11
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/druezwoeieis.wav"
+    audio: "data/assets/audio/druezwoeieis.mp3"
     answers: ["Drü, Zwöi, Eis", "Drue, Zwoei, Eis"]
     images:
       - "data/assets/images/rocket_launch.jpg"
@@ -164,7 +164,7 @@ steps:
       de: "Vier, Fünf, Sechs"
     images:
       - "data/assets/images/4_5_6.jpg"
-    audio: "data/assets/audio/vierfuefsaechs.wav"
+    audio: "data/assets/audio/vierfuefsaechs.mp3"
 
   - type: order
     id: order_13
@@ -175,7 +175,7 @@ steps:
     tokens: ["D", "Zahle", "si", "vier,", "füf", "u", "sächs."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/dzahlesivierfuefusaechs.wav"
+    audio: "data/assets/audio/dzahlesivierfuefusaechs.mp3"
 
   - type: cloze
     id: cloze_14
@@ -191,12 +191,12 @@ steps:
       The numbers from 1 to 6 are **Eis, Zwöi, Drü, Vier, Füf, Sächs**.
     images:
       - "data/assets/images/lottery_wheel.jpg"
-    audio: "data/assets/audio/dzahlesidruesaechsufuef.wav"
+    audio: "data/assets/audio/dzahlesidruesaechsufuef.mp3"
 
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/igsehvierbaerge.wav"
+    audio: "data/assets/audio/igsehvierbaerge.mp3"
     text: "This person sees **six (6) mountains**."
     answer: "False"
     solution_display: |
@@ -222,7 +222,7 @@ steps:
       question: ""
       helper: ""
     tokens: ["Eis", "Zwöi", "Drü", "Vier", "Füf", "Sächs"]
-    audio: "data/assets/audio/eiszwoeidruevierfuefsaechs.wav"
+    audio: "data/assets/audio/eiszwoeidruevierfuefsaechs.mp3"
 
   - type: translate_type
     id: translate_type_18

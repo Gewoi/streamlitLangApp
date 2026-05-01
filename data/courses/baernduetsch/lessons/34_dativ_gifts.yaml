@@ -59,7 +59,7 @@ steps:
       ✅ Correct!
       
       **Mi Brueder** is *my brother*, **(är) git** means *(he) gives* and **sis Outo** is *his car*. The **mir** is the Dativ form of first person singular; *me* isn't the target of the action of *giving*, but the one that it is given *to*!
-    audio: "data/assets/audio/mibruedergitmirsisouto.wav"
+    audio: "data/assets/audio/mibruedergitmirsisouto.mp3"
 
   - type: introduce_word
     id: introduce_word_3
@@ -69,7 +69,7 @@ steps:
       de: "Das Auto"
     images:
       - "data/assets/images/car1.jpg"
-    audio: "data/assets/audio/dsouto.wav"
+    audio: "data/assets/audio/dsouto.mp3"
 
   - type: cloze
     id: cloze_4
@@ -85,7 +85,7 @@ steps:
     images:
       - "data/assets/images/couple_carkey.jpg"
     answers: ["ihres Outo"]
-    audio: "data/assets/audio/sigitmirihresouto.wav"
+    audio: "data/assets/audio/sigitmirihresouto.mp3"
 
   - type: order
     id: order_5
@@ -98,7 +98,7 @@ steps:
       ✅ Correct!
       
       Now, let's look at the verb **gää** (*to give*) and some *Dativ* forms!
-    audio: "data/assets/audio/mivaterhettesouto.wav"
+    audio: "data/assets/audio/mivaterhettesouto.mp3"
 
   - type: markdown
     id: markdown_6
@@ -162,7 +162,7 @@ steps:
       ✅ Correct!
       
       **Du gisch** means **you give**, and **ihm** is the *Dativ* form of **Är**.
-    audio: "data/assets/audio/dugischihmdisouto.wav"
+    audio: "data/assets/audio/dugischihmdisouto.mp3"
 
   - type: cloze
     id: cloze_10
@@ -178,7 +178,7 @@ steps:
       **Si git mir** means **she gives (to) me**. Remember, if you can add a *to* in the English sentence before the pronoun, we usually use *Dativ* in Bärdütsch!
     images:
       - "data/assets/images/couple_carkey.jpg"
-    audio: "data/assets/audio/sigitmirihresouto.wav"
+    audio: "data/assets/audio/sigitmirihresouto.mp3"
 
   - type: choose
     id: choose_11
@@ -192,12 +192,12 @@ steps:
       ✅ Correct!
       
       The *Dativ* of **är** is **ihm**. **E Suppe** means *a soup*.
-    audio: "data/assets/audio/igibeihmesuppe.wav"
+    audio: "data/assets/audio/igibeihmesuppe.mp3"
 
   - type: listen_type
     id: listen_type_12
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/sigitmirnuet.wav"
+    audio: "data/assets/audio/sigitmirnuet.mp3"
     answers: ["Si git mir nüt", "Si git mir nuet."]
     images:
       - "data/assets/images/x_sign.jpg"
@@ -214,7 +214,7 @@ steps:
       de: "Geld"
     images:
       - "data/assets/images/swissfranc.jpg"
-    audio: "data/assets/audio/gaeld.wav"
+    audio: "data/assets/audio/gaeld.mp3"
 
   - type: cloze
     id: cloze_14
@@ -230,7 +230,7 @@ steps:
       **Ihm** is the *Dativ* of **ar**, and **Gäld** means *money*. **Gäld** does have an article (**Ds Gäld**, *neuter*), but it's often used without an article.
     images:
       - "data/assets/images/swissfranc_give.jpg"
-    audio: "data/assets/audio/igibeihmgaeld.wav"
+    audio: "data/assets/audio/igibeihmgaeld.mp3"
 
   - type: translate_type
     id: translate_type_15
@@ -253,7 +253,7 @@ steps:
     tokens: ["Du", "gisch", "ihre", "Gäld", "u", "si", "git", "dir", "es", "Outo."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/dugischihregaeld_sigitdiresouto.wav"
+    audio: "data/assets/audio/dugischihregaeld_sigitdiresouto.mp3"
 
   - type: match
     id: match_17
@@ -316,7 +316,7 @@ steps:
       ✅ Correct!
       
       The *Dativ* of **mir** (*we*) is **üs**. You could say **dir gäbit** or **dir gäht**, both work.
-    audio: "data/assets/audio/dirgaebituesnuet.wav"
+    audio: "data/assets/audio/dirgaebituesnuet.mp3"
 
   - type: choose
     id: choose_21
@@ -348,12 +348,12 @@ steps:
       For **si** (*they*), you can use **gäbe** or **gäh**. The *Dativ* of **mir** (*we*) is **üs**.
     images:
       - "data/assets/images/plant_1.jpg"
-    audio: "data/assets/audio/oeiielteregaebeueszwoeipflanze.wav"
+    audio: "data/assets/audio/oeiielteregaebeueszwoeipflanze.mp3"
 
   - type: listen_type
     id: listen_type_23
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mirgaebeihnegaeld.wav"
+    audio: "data/assets/audio/mirgaebeihnegaeld.mp3"
     answers: ["Mir gäbe ihne gäld", "mir gäh ihne gäld", "mir gaebe ihne gaeld", "mir gaeh ihne gaeld"]
     images:
       - "data/assets/images/swissfranc_give.jpg"
@@ -365,7 +365,7 @@ steps:
   - type: true_false
     id: true_false_24
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dirgaebituesnuet.wav"
+    audio: "data/assets/audio/dirgaebituesnuet.mp3"
     text: "They're saying: *You give **us** nothing!*"
     answer: "True"
     solution_display: |
@@ -396,7 +396,7 @@ steps:
       ✅ Correct!
       
       **Üs** is *us*, **öies Outo** is *your car*. In a question, we flip the order of the verb and pronoun! (**Gäbit dir ...?** instead of **Dir gäbit ... .**)
-    audio: "data/assets/audio/gaebitdiruesoeiesouto.wav"
+    audio: "data/assets/audio/gaebitdiruesoeiesouto.mp3"
 
   - type: match
     id: match_25

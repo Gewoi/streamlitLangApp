@@ -13,7 +13,7 @@ steps:
       de: "Schlecht"
     images:
       - "data/assets/images/thumbs_down.jpg"
-    audio: "data/assets/audio/schlaecht.wav"
+    audio: "data/assets/audio/schlaecht.mp3"
 
   - type: cloze
     id: cloze_1
@@ -29,7 +29,7 @@ steps:
       For *good*, we say **guet**, and for *bad*, we say **schlächt**.
     images:
       - "data/assets/images/guy_thumbs_down.jpg"
-    audio: "data/assets/audio/wiegeits_schlaecht.wav"
+    audio: "data/assets/audio/wiegeits_schlaecht.mp3"
 
   - type: order
     id: order_2
@@ -42,12 +42,12 @@ steps:
       ✅ Correct!
       
       **Mir si schlächt** means *We are bad* (*at something*)
-    audio: "data/assets/audio/mirsischlaecht.wav"
+    audio: "data/assets/audio/mirsischlaecht.mp3"
 
   - type: true_false
     id: true_false_3
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/wiegeits.wav"
+    audio: "data/assets/audio/wiegeits.mp3"
     text: "You can answer this question with **guet** or **schlächt**."
     answer: "True"
     solution_display: |
@@ -63,7 +63,7 @@ steps:
       de: "gross"
     images:
       - "data/assets/images/skyscrapers.jpg"
-    audio: "data/assets/audio/gross.wav"
+    audio: "data/assets/audio/gross.mp3"
 
   - type: order
     id: order_5
@@ -76,12 +76,12 @@ steps:
       ✅ Correct!
       
       You can describe things by saying ***noun* isch *adjective***.
-    audio: "data/assets/audio/dshuusischgross.wav"
+    audio: "data/assets/audio/dshuusischgross.mp3"
 
   - type: listen_type
     id: listen_type_6
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dubischgross.wav"
+    audio: "data/assets/audio/dubischgross.mp3"
     answers: ["Du bisch gross"]
     images:
       - "data/assets/images/tall_guy_lake.jpg"
@@ -98,7 +98,7 @@ steps:
       de: "Klein"
     images:
       - "data/assets/images/small_flower.jpg"
-    audio: "data/assets/audio/chlii.wav"
+    audio: "data/assets/audio/chlii.mp3"
 
   - type: cloze
     id: cloze_8
@@ -114,7 +114,7 @@ steps:
       Note the difference: **Chlii** with a sharp *i* (like in the word *see* in English) means *small*. **Chli**, pronounced almost like "**chle**", means *a little bit* / *some*. We will encounter that one late!
     images:
       - "data/assets/images/old_timey_train.jpg"
-    audio: "data/assets/audio/drbahnhofischchlii.wav"
+    audio: "data/assets/audio/drbahnhofischchlii.mp3"
 
   - type: order
     id: order_9
@@ -127,7 +127,7 @@ steps:
       ✅ Correct!
       
       Also here, **chlii** can mean *short* and *small*, both for objects and people. With children, **chlii** can also mean *young*.
-    audio: "data/assets/audio/dubischgross_ibichlii.wav"
+    audio: "data/assets/audio/dubischgross_ibichlii.mp3"
 
   - type: introduce_word
     id: introduce_word_10
@@ -137,7 +137,7 @@ steps:
       de: "jung"
     images:
       - "data/assets/images/kids_faces.jpg"
-    audio: "data/assets/audio/jung.wav"
+    audio: "data/assets/audio/jung.mp3"
 
   - type: translate_type
     id: translate_type_11
@@ -162,12 +162,12 @@ steps:
       de: "alt"
     images:
       - "data/assets/images/old_tv.jpg"
-    audio: "data/assets/audio/alt.wav"
+    audio: "data/assets/audio/alt.mp3"
 
   - type: true_false
     id: true_false_13
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/sisialt.wav"
+    audio: "data/assets/audio/sisialt.mp3"
     text: "This person says that **they (pl.) are old**"
     answer: "True"
     solution_display: |
@@ -186,12 +186,12 @@ steps:
       ✅ Correct!
       
       In these descriptive sentences (***noun* sii *adjective***), you just use the regular form of the adjective.
-    audio: "data/assets/audio/mirsialt_dirsitjung.wav"
+    audio: "data/assets/audio/mirsialt_dirsitjung.mp3"
 
   - type: true_false
     id: true_false_15
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dstraasischalt.wav"
+    audio: "data/assets/audio/dstraasischalt.mp3"
     text: "The street is **newly made**."
     answer: "False"
     solution_display: |
@@ -213,7 +213,7 @@ steps:
   - type: listen_type
     id: listen_type_17
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/aerischchlii.wav"
+    audio: "data/assets/audio/aerischchlii.mp3"
     answers: ["Är isch chlii"]
     images:
       - "data/assets/images/mannequin_sizes.jpg"
@@ -233,7 +233,7 @@ steps:
       ✅ Correct!
       
       **Dir sit** is plural *you are*, and **schlächt** means *bad*.
-    audio: "data/assets/audio/dirsitschlaecht.wav"
+    audio: "data/assets/audio/dirsitschlaecht.mp3"
 
   - type: translate_type
     id: translate_type_19
@@ -249,7 +249,7 @@ steps:
   - type: listen_type
     id: listen_type_20
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/dirsitjung.wav"
+    audio: "data/assets/audio/dirsitjung.mp3"
     answers: ["Dir sit jung"]
     images:
       - "data/assets/images/kids_faces.jpg"
@@ -257,7 +257,7 @@ steps:
   - type: true_false
     id: true_false_21
     prompt: "What do you think is said?"
-    audio: "data/assets/audio/dshuusischgross.wav"
+    audio: "data/assets/audio/dshuusischgross.mp3"
     text: "The house is **big**."
     answer: "True"
     solution_display: |
