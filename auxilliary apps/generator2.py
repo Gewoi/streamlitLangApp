@@ -38,7 +38,7 @@ STEP_TYPES = {
     'match': 'Match Pairs',
 }
 
-SECTIONS = ['Basics', 'Sentence Building', 'Simple Concepts', 'Getting Food', 'Appointments', 'People']
+SECTIONS = ['Basics', 'Sentence Building', 'Simple Concepts', 'Getting Food', 'Appointments', 'People', 'Jobs']
 
 
 def slugify(text: str) -> str:

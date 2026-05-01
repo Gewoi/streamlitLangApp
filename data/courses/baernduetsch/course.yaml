@@ -12,6 +12,7 @@ sections:
   - Getting Food
   - Appointments
   - People
+  - Jobs
 from_language: en
 target_language: de_ch
 secondary_language: de
