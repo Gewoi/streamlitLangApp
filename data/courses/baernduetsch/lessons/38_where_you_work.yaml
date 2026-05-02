@@ -1,0 +1,389 @@
+id: 38_where_you_work
+title: "🏥 Where You Work"
+description: "Learn the names of some common workplaces, how to change the word **in** with the *Dativ*, and how to ask someone where they work."
+estimated_minutes: 5
+section: Jobs
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Wo schaffsch du?"
+    translation:
+      en: "Where do you work?"
+      de: "Wo arbeitest du?"
+    images:
+      - "data/assets/images/meeting2.jpg"
+    audio: "data/assets/audio/woschaffschdu.mp3"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Where do you work?"
+      helper: "Wo arbeitest du?"
+    tokens: ["Wo", "schaffsch", "du?"]
+    solution_display: |
+      ✅ Correct!
+      
+      For someone you are familiar with, you can use **Wo schaffsch du?**.
+    audio: "data/assets/audio/woschaffschdu.mp3"
+
+  - type: translate_type
+    id: translate_type_2
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "Where do you work?"
+      helper: "Wo arbeitest du?"
+    answers: ["Wo schaffsch du?", "Wo schaffisch du?"]
+    images:
+      - "data/assets/images/meeting1.jpg"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Wo schaffet dir?"
+    translation:
+      en: "Where do you work? (formal)"
+      de: "Wo arbeiten Sie?"
+    images:
+      - "data/assets/images/middleaged_woman.jpg"
+    audio: "data/assets/audio/woschaffetdir.mp3"
+
+  - type: match
+    id: match_4
+    prompt: "Match the forms of *Where do you work?*"
+    pairs:
+      - left: "*informal*"
+        right: "Wo schaffsch du?"
+      - left: "*formal*"
+        right: "Wo schaffet dir?"
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Ds Spital"
+    translation:
+      en: "The Hospital"
+      de: "Das Krankenhaus"
+    images:
+      - "data/assets/images/hospital_interior.jpg"
+    audio: "data/assets/audio/dsspital.mp3"
+
+  - type: cloze
+    id: cloze_6
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Where do you work? - In the hospital."
+      helper: "Wo arbeitest du? - Im Krankenhaus."
+      target: ["Wo schaffsch du? - Im ", "."]
+    answers: ["Spital"]
+    solution_display: |
+      ✅ Correct!
+      
+      We'll look at how to use **im** and **ir** in the next slide.
+    images:
+      - "data/assets/images/doctor_f.jpg"
+    audio: "data/assets/audio/woschaffschdu_imspital.mp3"
+
+  - type: markdown
+    id: markdown_7
+    markdown: |
+      ## *im* and *ir*
+      
+      In Bärndütsch, when you talk about your workplace, you actually say that you work *in* a certain building (or business). This also happens fairly commonly in English:
+      
+      - *I work **in** the hospital* -> **I schaffe *im* Spital**
+      
+      We use the word **in** (which means *inside of*) **+** ***Dativ*** to say that something is *inside* of something. But, like in many other languages, this actually shortens itself to just one word: **im** or **ir**!
+      
+      There are two imporant things to know when we have the *Dativ* case:
+      
+      - **in** + *masculine noun* -> **im**
+      - **in** + *feminine noun* -> **ir**
+      - **in** + *neuter noun* -> **im**
+      
+      So, to repeat, for *Dativ*: **in** followed by a *masculine* or *neuter* noun turns to **im**, and **in** followed by a *feminine* noun turns to **ir**.
+      
+      Note that you can't use this with every kind of workplace; like in English, you work ***uf* dr boustell** (***on** the constructions site*). But don't worry about that for now, all the ones you'll learn here will use **im** and **ir**!
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: cloze
+    id: cloze_8
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We work in the hospital."
+      helper: "Wir arbeiten im Krankenhaus."
+      target: ["Mir schaffe ", " Spital."]
+    answers: ["im"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Spital** is grammatically *neuter* (**Ds Spital**), so we say **im Spital** for *in the hospital*.
+    images:
+      - "data/assets/images/doctor_visit.jpg"
+    audio: "data/assets/audio/mirschaffeimspital.mp3"
+
+  - type: true_false
+    id: true_false_9
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aerischimspital.mp3"
+    text: "The person is **in the hospital**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The sentence was **Är isch im Spital**, which means *he's in the hospital*.
+
+  - type: listen_type
+    id: listen_type_10
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/schaffschduimspital.mp3"
+    answers: ["Schaffsch du im Spital?", "Schaffisch du im Spital?"]
+    images:
+      - "data/assets/images/doctor_visit2.jpg"
+    solution_display: |
+      ✅ Correct! 
+      
+      This means *do you work in the hospital?*. Remember, for questions, we flip the order of verb and subject!
+
+  - type: introduce_word
+    id: introduce_word_11
+    word: "D Schuel"
+    translation:
+      en: "The School"
+      de: "Die Schule"
+    images:
+      - "data/assets/images/teacher_m.jpg"
+    audio: "data/assets/audio/dschuel.mp3"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "She works in the school."
+      helper: "Sie arbeitet in der Schule."
+    tokens: ["Si", "schaffet", "ir", "Schuel."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Schuel** is *feminine*, which is why we use **ir** here!
+    audio: "data/assets/audio/sischaffetirschuel.mp3"
+
+  - type: match
+    id: match_13
+    prompt: "Match the correct *Dativ* forms of **in**."
+    pairs:
+      - left: "im"
+        right: "Spital"
+      - left: "ir"
+        right: "Schuel"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "My brother is in school."
+      helper: "Mein Bruder ist in der Schule."
+      target: ["Mi Brueder isch ", "."]
+    answers: ["ir Schuel.", "idr Schuel."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mi Brueder** is *my brother*, and **ir Schuel** means *in school*.
+    images:
+      - "data/assets/images/kid_school.jpg"
+    audio: "data/assets/audio/mibruederischirschuel.mp3"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "Dr Lade"
+    translation:
+      en: "The Store"
+      de: "Der Laden"
+    images:
+      - "data/assets/images/store.jpg"
+    audio: "data/assets/audio/drlade.mp3"
+
+  - type: cloze
+    id: cloze_17
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "They are at the store."
+      helper: "Sie sind im Laden."
+      target: ["Si si ", "."]
+    answers: ["im Lade"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Lade** is *masculine*, so we use **im**.
+    images:
+      - "data/assets/images/salesperson_f.jpg"
+    audio: "data/assets/audio/sisiimlade.mp3"
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl) work at the store."
+      helper: "Ihr arbeitet im Laden."
+    tokens: ["Dir", "schaffet", "im", "Lade."]
+    audio: "data/assets/audio/dirschaffetimlade.mp3"
+
+  - type: choose
+    id: choose_16
+    prompt: "Choose all the words you would use **im** with."
+    single_answer: false
+    correct_answers: ["Lade", "Bahnhof", "Spital"]
+    wrong_answers: ["Schuel"]
+
+  - type: introduce_word
+    id: introduce_word_19
+    word: "Ds Büro"
+    translation:
+      en: "The Office"
+      de: "Das Büro"
+    images:
+      - "data/assets/images/office.jpg"
+    audio: "data/assets/audio/dsbuero.mp3"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I'm in the office tomorrow."
+      helper: "Ich bin morgen im Büro."
+    tokens: ["I", "bi", "morn", "im", "Büro."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Büro** is *neuter*, so we use **im**.
+    audio: "data/assets/audio/ibimornimbuero.mp3"
+
+  - type: listen_type
+    id: listen_type_21
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/uesesbueroischchlii.mp3"
+    answers: ["Üses Büro isch chlii.", "Ueses Buero isch chlii."]
+    images:
+      - "data/assets/images/office_crammed.jpg"
+
+  - type: translate_type
+    id: translate_type_22
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I work in the office."
+      helper: "Ich arbeite im Büro."
+    answers: ["I schaffe im Büro", "I schaffe im Buero"]
+    images:
+      - "data/assets/images/meeting2.jpg"
+
+  - type: markdown
+    id: markdown_23
+    markdown: |
+      ## *im ne* and *ire*
+      
+      If you'd like to be more general and say *I work in **an** office* (instead of *the* office), you can add the indefinite article **ä** or **e** between.
+      
+      With the **in** and the *Dativ*, we do a similar thing with them you've seen before though: We add binding letters and/or even combine them with the words before!
+      
+      This sounds complicated, but is actually pretty simple: While **im** and **ir** mean *in the*, you can use **im ne / imne** and **ire** for *in a*. Otherwise, you can use them exactly the same as **im** and **ir**!
+      
+      - **I schaffe im Büro** (*I work in **the** office*) -> **I schaffe *imne* Büro** (*I work in **an** office*)
+      - **I schaffe im Spital** (*I work in **the** hospital*) -> **I schaffe *imne* Spital** (*I work in **a** hospital*)
+      - **I schaffe ir Schuel** (*I work in **the** school*) -> **I schaffe *ire* Schuel** (*I work in **a** school)
+    images:
+      - "data/assets/images/teacher_f.jpg"
+
+  - type: order
+    id: order_24
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I work in an office."
+      helper: "Ich arbeite in einem Büro."
+    tokens: ["I", "schaffe", "imne", "Büro."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Imne** (or **im ne**) means *in a* for *neuter* and *masculine* nouns; **Büro** is *neuter*.
+    audio: "data/assets/audio/ischaffeimnebuero.mp3"
+
+  - type: cloze
+    id: cloze_25
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "The doctor (M) works in a hospital."
+      helper: "Der Arzt arbeitet in einem Krankenhaus."
+      target: ["Dr Arzt schaffet ", "."]
+    answers: ["imne Spital", "im ne Spital"]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/doctor_visit.jpg"
+    audio: "data/assets/audio/drarztschaffetimnespital.mp3"
+
+  - type: true_false
+    id: true_false_26
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ibiimnehuus.mp3"
+    text: "This person is in a **school**."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **I bi imne Huus**, which means *I am in a house*! **Schuel** would be the word for *school*.
+
+  - type: match
+    id: match_27
+    prompt: "Match the correct way to say *in a*."
+    pairs:
+      - left: "ire"
+        right: "Schuel"
+      - left: "imne"
+        right: "Büro"
+
+  - type: order
+    id: order_29
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Where do you work? - In a school."
+      helper: "Wo arbeitest du? - In einer Schule."
+    tokens: ["Wo", "schaffsch", "du? -", "Ire", "Schuel."]
+    audio: "data/assets/audio/woschaffschdu_ireschuel.mp3"
+
+  - type: match
+    id: match_28
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "Hospital"
+        right: "Spital"
+      - left: "Trainstation"
+        right: "Bahnhof"
+      - left: "School"
+        right: "Schuel"
+      - left: "Office"
+        right: "Büro"
+
+  - type: match
+    id: match_30
+    prompt: "Match the correct form."
+    pairs:
+      - left: "*formal*"
+        right: "Wo schaffit dir?"
+      - left: "*informal*"
+        right: "Wo schaffsch du?"
+
+  - type: match
+    id: match_31
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "in *the* hospital"
+        right: "im Spital"
+      - left: "in *a* hospital"
+        right: "imne Spital"
+      - left: "in *the* school"
+        right: "ir Schuel"
+      - left: "in *a* school"
+        right: "ire Schuel"
+      - left: "in *the* office"
+        right: "im Büro"
+      - left: "in *an* office"
+        right: "imne Büro"
