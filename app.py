@@ -90,12 +90,14 @@ elif page == "finish" and st.session_state["logged_in"]:
 if page == "login":
     st.space("small")
     st.divider()
-    st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️")
+    st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️", width='stretch')
+    st.space("small")
+    st.caption("04/05/2026: Added two new lessons, adjustment to UI.")
 else:
     with st.sidebar.container(key="sidebar_bottom"):
-        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️")
+        st.link_button("Support", url="https://buymeacoffee.com/gewoi", icon= "☕️", width='stretch')
         if st.session_state["guest"]:
-            if st.button("Logout", key="logout-btn", type="primary"):
+            if st.button("Logout", key="logout-btn", type="primary", width='stretch'):
                 st.session_state["user"] = None
                 st.session_state["guest"] = False
                 st.session_state["logged_in"] = False

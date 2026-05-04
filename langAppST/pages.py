@@ -8,17 +8,18 @@ from .progress_handler import ProgressStore
 from streamlit_supabase_auth import login_form, logout_button
 
 def login_page():
-    st.title("Welcome!")
+    st.title("Welcome!", text_alignment='center')
     st.markdown("You can use this app as a guest or, if you'd like to track your progress, you can log in.")
     st.divider()
 
-    st.subheader("Guest Login")
+    st.subheader("Guest Login", text_alignment='center')
     st.markdown("Your progress will not be saved, and you will not get recommended lessons and repetitions; but otherwise it's fully functional!")
     if st.button("Continue as Guest", width="stretch", type='primary'):
         st.session_state["guest"] = True
         st.rerun()
 
     st.divider()
+    st.subheader("Account Login", text_alignment='center')
     st.markdown("Log in for progress tracking and recommended lessons.")
     session = login_form(
         url=st.secrets["SUPABASE_URL"],

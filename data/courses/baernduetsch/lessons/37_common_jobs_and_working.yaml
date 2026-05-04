@@ -35,7 +35,7 @@ steps:
     sentence:
       question: "He is a salesperson, and she is a salesperson."
       helper: "Er ist Verkäufer, und sie ist Verkäuferin."
-    tokens: ["Är isch", "Verchöiffer,", "u", "si isch", "Vrchöifferin."]
+    tokens: ["Är isch", "Verchöiffer,", "u", "si isch", "Verchöifferin."]
     solution_display: |
       ✅ Correct!
       

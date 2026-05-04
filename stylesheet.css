@@ -58,7 +58,7 @@ height: 0%;
 [class*="sidebar_fixed_bottom"] {
     position: fixed;
     bottom: 10px;
-    width: calc(var(--sidebar-width, 300px) - 2rem);
+    width: calc(var(--sidebar-width, 275px) - 2rem);
 }
 
 
