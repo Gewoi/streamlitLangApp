@@ -227,7 +227,7 @@ steps:
     sentence:
       question: "I work as a teacher, and he's a salesperson."
       helper: "Ich arbeite als Lehrerin, und er ist Verkäufer."
-    tokens: ["I", "schaffe", "als", "Lehrerin,", "u", "är", "isch", "Verchöiffer."]
+    tokens: ["I", "schaffe", "als", "Lehrerin,", "und", "är", "isch", "Verchöiffer."]
     solution_display: |
       ✅ Correct!
       

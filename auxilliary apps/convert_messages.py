@@ -33,8 +33,8 @@ for opus_file in input_dir.glob("*.opus"):
             trimmed = peak_normalized
 
         # --- Export ---
-        output_path = output_dir / opus_file.with_suffix(".wav").name
-        trimmed.export(output_path, format="wav")
+        output_path = output_dir / opus_file.with_suffix(".mp3").name
+        trimmed.export(output_path, format="mp3")
         print(f"Converted: {opus_file.name} -> {output_path.name}")
 
     except Exception as e:
