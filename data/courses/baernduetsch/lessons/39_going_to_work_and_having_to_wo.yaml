@@ -1,0 +1,122 @@
+id: 39_going_to_work_and_having_to_wo
+title: "🚶 Going to Work, and Having to Work"
+description: "Learn about a very unique thing in Swiss German: The doubling of the word *gah* when talking about an action, and learn some more verbs."
+estimated_minutes: 5
+section: Jobs
+
+steps:
+  - type: markdown
+    id: markdown_0
+    markdown: |
+      ## Swiss German vs Standard German
+      
+      When you want to say the phrase *I go to work*, the German translation is pretty straightforward:
+      - *Ich gehe arbeiten*
+      
+      But in Swiss German, you **cannot** really say ***I gah schaffe***; that one doesn't sound right!
+      
+      Whenever you talk about something you are on your way to doing, or some activity you're going to do, you **use the word *gah* twice!**
+      
+      So instead of ***I gah schaffe***, the correct form is actually:
+      
+      - **I gah gah schaffe**
+      
+      That's one of the more unique things about Swiss German, and you'll find it across dialects.
+    images:
+      - "data/assets/images/question_mark.jpg"
+
+  - type: introduce_word
+    id: introduce_word_1
+    word: "I gah gah schaffe"
+    translation:
+      en: "I go to work"
+      de: "Ich gehe arbeiten"
+    images:
+      - "data/assets/images/construction_work.jpg"
+    audio: "data/assets/audio/igahgahschaffe.mp3"
+
+  - type: markdown
+    id: markdown_2
+    markdown: |
+      ## Du *geisch* gah schaffe
+      
+      Important about this: The first verb *adjusts to the person*, but the second one is always the base form **gah**. 
+      
+      - **Du *geisch* gah schaffe**
+      - **Si *geit* gah schaffe**
+      - **Mir *göh* gah schaffe**
+      - **Dir *göht* gah schaffe**
+      
+      It's also not exclusive to just **schaffe**: Any activity that you're planning on doing or on your way to needs the verb **gah** *two times*!
+      
+      - **Mir göh gah schwümme** (*We go swimming*)
+      - **Är geit gah wandere** (*He goes hiking*)
+      - **Dir göht gah loufe** (*You (pl) go for a walk*)
+      - **Si göh gah iichoufe** (*They go shopping*)
+      
+      So, in summary: Any **activity** that you're **going to do** or **on your way to doing**, you'll need the verb **gah** *two times*! The first one **conjugated**, the second one just the base form **gah**.
+    images:
+      - "data/assets/images/walking_shoes.jpg"
+
+  - type: choose
+    id: choose_3
+    prompt: "Choose the correct way of saying *She is going to work*"
+    images:
+      - "data/assets/images/woman_waving_two.jpg"
+    single_answer: true
+    correct_answers: ["Si geit gah schaffe"]
+    wrong_answers: ["Si gah gah schaffe", "Si geit schaffe", "Si geit geit schaffe"]
+    solution_display: |
+      ✅ Correct!
+      
+      We need the word **gah** twice; the first one conjugated, and the second one in the base form **gah**!
+    audio: "data/assets/audio/sigeitgahschaffe.mp3"
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We're going to work."
+      helper: "Wir gehen arbeiten."
+    tokens: ["Mir", "göh", "gah", "schaffe."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/mirgoehgahschaffe.mp3"
+
+  - type: listen_type
+    id: listen_type_5
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dirgoehtjetzgahschaffe.mp3"
+    answers: ["Dir göht jetz gah schaffe.", "Dir göht jetzt gah schaffe.", "Dir goeht jetz gah schaffe.", "Dir goeht jetzt gah schaffe."]
+    images:
+      - "data/assets/images/meeting3.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *You (pl) are going to work now*.
+
+  - type: cloze
+    id: cloze_6
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I go to work tomorrow."
+      helper: "Ich gehe morgen arbeiten."
+      target: ["I gah ", " schaffe."]
+    answers: ["morn gah"]
+    solution_display: |
+      ✅ Correct!
+      
+      To specify *when* you do an activity, the word is *squeezed in* between the two uses of **gah**: **I gah *morn* gah schaffe**.
+    images:
+      - "data/assets/images/calendar_circles.jpg"
+    audio: "data/assets/audio/igahmorngahschaffe.mp3"
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "müesse"
+    translation:
+      en: "to must / to have to"
+      de: "müssen"
+    images:
+      - "data/assets/images/work_guy.jpg"
+    audio: "data/assets/audio/muesse.mp3"
