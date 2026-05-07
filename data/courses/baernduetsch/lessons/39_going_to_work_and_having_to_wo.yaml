@@ -1,7 +1,7 @@
 id: 39_going_to_work_and_having_to_wo
 title: "🚶 Going to Work, and Having to Work"
-description: "Learn about a very unique thing in Swiss German: The doubling of the word *gah* when talking about an action, and learn some more verbs."
-estimated_minutes: 5
+description: "Learn about a very unique thing in Swiss German: The doubling of the word *gah* when talking about an action, and learn the verb **müesse**."
+estimated_minutes: 3
 section: Jobs
 
 steps:
@@ -22,6 +22,7 @@ steps:
       - **I gah gah schaffe**
       
       That's one of the more unique things about Swiss German, and you'll find it across dialects.
+      
     images:
       - "data/assets/images/question_mark.jpg"
 
@@ -55,6 +56,7 @@ steps:
       - **Si göh gah iichoufe** (*They go shopping*)
       
       So, in summary: Any **activity** that you're **going to do** or **on your way to doing**, you'll need the verb **gah** *two times*! The first one **conjugated**, the second one just the base form **gah**.
+      
     images:
       - "data/assets/images/walking_shoes.jpg"
 
@@ -120,3 +122,191 @@ steps:
     images:
       - "data/assets/images/work_guy.jpg"
     audio: "data/assets/audio/muesse.mp3"
+
+  - type: match
+    id: match_9
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "mues (*I*)"
+      - left: "Du"
+        right: "muesch"
+      - left: "Är / Si / Äs"
+        right: "mues (*he/she/it*)"
+
+  - type: match
+    id: match_10
+    prompt: "Match the conjugations!"
+    pairs:
+      - left: "Mir"
+        right: "müesse (*we*)"
+      - left: "Dir"
+        right: "müesst"
+      - left: "Si"
+        right: "müesse (*they*)"
+
+  - type: order
+    id: order_11
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We have to go now."
+      helper: "Wir müssen jetzt gehen."
+    tokens: ["Mir", "müesse", "jetz", "gah."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir müesse** means *we have to/must*.
+    audio: "data/assets/audio/mirmuessejetzgah.mp3"
+
+  - type: cloze
+    id: cloze_12
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "He has to give me something."
+      helper: "Er muss mir etwas geben."
+      target: ["Är ", " öppis gäh."]
+    answers: ["mues mir"]
+    solution_display: |
+      ✅ Correct!
+      
+      We've seen already that *giving* someone to something requires the *Dativ*! That is why we use **mir** here (look at the lesson about giving gifts again if you feel a bit insecure about that). **Är mues** means *he has to/must*.
+    images:
+      - "data/assets/images/giving_gift.jpg"
+    audio: "data/assets/audio/aermuesmiroeppisgaeh.mp3"
+
+  - type: listen_type
+    id: listen_type_13
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/dumueschnuetmache.mp3"
+    answers: ["Du muesch nüt mache", "Du muesch nuet mache"]
+    images:
+      - "data/assets/images/thumbs_up.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Nüt** means *nothing*, and **du muesch** means *you (singular) have to/must*.
+
+  - type: markdown
+    id: markdown_8
+    markdown: |
+      ## For activities: *Gah* also after *müesse*
+      
+      In English, you would say: *I have to **go** (to) work*, *I have to **go** running*, *I have to **go** read*, etc.
+      
+      In Bärndütsch, the construct is very similar: We also inject a **gah**! Here it's a bit more clear where it comes from though:
+      
+      - *I have to **go** (to) work* -> **I mues *gah* schaffe**
+      - *You have to **go** running* -> **Du muesch *gah* jogge**
+      - *She has to **go** reading -> **Si mues *gah* läse**
+      
+      So, again: Before an activity, we usually throw in a **gah**. That happens after **müesse** (**I mues *gah* schaffe**) and other modal verbs (like **chönne**=*to be able to*), but also after **gah** (**I gah *gah* schaffe**).
+    images:
+      - "data/assets/images/idea.jpg"
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl) have to go to work tomorrow."
+      helper: "Ihr müsst morgen arbeiten gehen."
+    tokens: ["Dir", "müesst", "morn", "gah", "schaffe."]
+    solution_display: |
+      ✅ Correct!
+      
+      We add a **gah** before an activity. Note that the order is slightly different than Standard German: We always use the **gah** *before* the verb (**gah schaffe** vs. *arbeiten gehen*).
+    audio: "data/assets/audio/dirmuesstmorngahschaffe.mp3"
+
+  - type: cloze
+    id: cloze_15
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We don't have to go to work on Saturday."
+      helper: "Wir müssen am Samstag nicht arbeiten gehen."
+      target: ["Mir müesse am Samsti nid ", "."]
+    answers: ["gah schaffe"]
+    images:
+      - "data/assets/images/saturday.jpg"
+    audio: "data/assets/audio/mirmuesseamsamstinidgahschaffe.mp3"
+
+  - type: listen_type
+    id: listen_type_16
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mueschdumornschaffe.mp3"
+    answers: ["Muesch du morn schaffe?"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *do you have to work tomorrow?*.
+
+  - type: true_false
+    id: true_false_17
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/igahmorngahschaffe.mp3"
+    text: "This person has **a free day** tomorrow."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said: **I gah morn gah schaffe**, which means *I go to work tomorro*.
+
+  - type: order
+    id: order_18
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You can't go to work today!"
+      helper: "Du kannst heute nicht arbeiten gehen!"
+    tokens: ["Du", "chasch", "hüt", "nid", "gah", "schaffe!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Chönne** (**Du chasch**) is also a *modal verb*, and for activities that you go to, we use an additional **gah**!
+    audio: "data/assets/audio/duchaschhuetnidgahschaffe.mp3"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I'm not here tomorrow. I have to go to work."
+      helper: "Ich bin morgen nicht hier. Ich muss arbeiten gehen."
+      target: ["I bi morn nid hie. ", "."]
+    answers: ["I mues gah schaffe"]
+    images:
+      - "data/assets/images/meeting3.jpg"
+    audio: "data/assets/audio/ibimornnidhie_imuesgahschaffe.mp3"
+
+  - type: match
+    id: match_20
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "I / Ig"
+        right: "mues (*I*)"
+      - left: "Du"
+        right: "muesch"
+      - left: "Är / Si / Äs"
+        right: "mues (*he/she/it*)"
+
+  - type: match
+    id: match_21
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "müesse (*we*)"
+      - left: "Dir"
+        right: "müesst"
+      - left: "Si"
+        right: "müesse (*they*)"
+
+  - type: match
+    id: match_22
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I have to go to work."
+        right: "I mues gah schaffe."
+      - left: "He goes to work."
+        right: "Är geit gah schaffe."
+      - left: "We can't go to work."
+        right: "Mir chöi nid gah schaffe."
+      - left: "They have to go now."
+        right: "Si müesse jetzt gah."
