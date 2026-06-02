@@ -1,0 +1,106 @@
+id: 40_adverbs_of_time
+title: "Adverbs of Time"
+description: "Learn about the word **no** (*still* or *yet*), **wider** / **nomal** (*again*), **immer** (*always*), **nie** (*never*)."
+estimated_minutes: 5
+section: Jobs
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "no"
+    translation:
+      en: "still / yet"
+      de: "noch"
+    images:
+      - "data/assets/images/writing.jpg"
+    audio: "data/assets/audio/no.mp3"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am not here yet."
+      helper: "Ich bin noch nicht hier."
+      target: ["I bi ", " nid hie."]
+    answers: ["no"]
+    solution_display: |
+      ✅ Correct!
+      
+      **No** is used either as *yet* or as *still*. It is used the same way as the Standard German *noch*.
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+    audio: "data/assets/audio/ibinonidhie.mp3"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I am still there."
+      helper: "Ich bin noch dort."
+    tokens: ["I", "bi", "no", "dert."]
+    solution_display: |
+      ✅ Correct!
+      
+      Here, **no** is used as *still*.
+    audio: "data/assets/audio/ibinodert.mp3"
+
+  - type: listen_type
+    id: listen_type_3
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/heschdunozit.mp3"
+    answers: ["Hesch du no zit?", "Hesch du no Zyt?"]
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *Do you still have time?*. We filp the order of verb and subject for questions!
+
+  - type: translate_type
+    id: translate_type_4
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "We don't have a car yet."
+      helper: "Wir haben noch kein Auto."
+    answers: ["Mir hei no kes Outo"]
+    images:
+      - "data/assets/images/car_keys_pass.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      Here, **no** is used as *yet*.
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "**wider** / **nomal**"
+    translation:
+      en: "again"
+      de: "wieder / nochmal"
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+    audio: "data/assets/audio/wider_nomal.mp3"
+
+  - type: markdown
+    id: markdown_6
+    markdown: |
+      ## Wider vs. Nomal
+      
+      Both **wider** and **nomal** mean *again* in Bärndütsch, but in a slightly different use case:
+      
+      **Wider**
+      - is used when something *was gone* and is now *back*.
+      	- **Är cha *wider* skifahre** (*He can ski again*)
+      	- **Ds Outo isch wider da** (*The car is back again*)
+      - is used sort of *neutrally* when something is / was / will be repeated
+      	- **Wenn gseh mir üs wider?** (*When do we see each other again?*)
+      	- **I bi wider da** (*I'm back*)
+      
+      **Nomal**
+      - is used for *repetition of something that just happened* or *is about to happen again*
+      	- **Chasch ds nomal säge?** (*Can you say that again?*)
+      	- **Si geit morn nomal gah luege** (*She'll go look again tomorrow*)
+      	- **I mache ds nid nomal!** (*I won't do that again!*)
+      
+      As a general rule, just use **nomal** whenever the action just happened or will / should happen again immediately; in any other case, use **wider**.
+    images:
+      - "data/assets/images/writing.jpg"
