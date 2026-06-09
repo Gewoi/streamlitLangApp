@@ -1,5 +1,5 @@
 id: 40_adverbs_of_time
-title: "Adverbs of Time"
+title: "⏱ Adverbs of Time"
 description: "Learn about the word **no** (*still* or *yet*), **wider** / **nomal** (*again*), **immer** (*always*), **nie** (*never*)."
 estimated_minutes: 5
 section: Jobs
@@ -60,15 +60,15 @@ steps:
     id: translate_type_4
     prompt: "Translate the following Sentence."
     sentence:
-      question: "We don't have a car yet."
-      helper: "Wir haben noch kein Auto."
-    answers: ["Mir hei no kes Outo"]
+      question: "We still have a car."
+      helper: "Wir haben noch ein Auto."
+    answers: ["Mir hei no äs Outo"]
     images:
       - "data/assets/images/car_keys_pass.jpg"
     solution_display: |
       ✅ Correct!
       
-      Here, **no** is used as *yet*.
+      Here, **no** is used as *still*.
 
   - type: introduce_word
     id: introduce_word_5
@@ -104,3 +104,223 @@ steps:
       As a general rule, just use **nomal** whenever the action just happened or will / should happen again immediately; in any other case, use **wider**.
     images:
       - "data/assets/images/writing.jpg"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I have to go again now!"
+      helper: "Ich muss jetzt nochmal gehen!"
+    tokens: ["I", "mues", "jetz", "nomal", "gah!"]
+    solution_display: |
+      ✅ Correct!
+      
+      Here, it's pretty obvious that the action is close because of the word **jetz** (*now*), so we use **nomal**.
+    audio: "data/assets/audio/imuesjetznomalgah.mp3"
+
+  - type: cloze
+    id: cloze_8
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am back there again."
+      helper: "Ich bin wieder dort."
+      target: ["I bi ", " dört."]
+    answers: ["wider"]
+    solution_display: |
+      ✅ Correct!
+      
+      Here, the person has returned to a place. In any general case where the action hasn't just happened or it will happen immediately, we just use **wider**.
+    images:
+      - "data/assets/images/tourists_map.jpg"
+    audio: "data/assets/audio/ibiwiderdoert.mp3"
+
+  - type: true_false
+    id: true_false_9
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihaettigaernnomaleskafi_merci.mp3"
+    text: "The person ordered a coffe again and used **nomal**."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      The person ordered a coffee before, and now they're doing it again, so we use **nomal**.
+
+  - type: translate_type
+    id: translate_type_10
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I see him again tomorrow!"
+      helper: "Ich sehe ihn morgen wieder!"
+    answers: ["I gseh ne morn wider.", "I gsehne morn wider.", "I gseh ihn morn wider.", "Ig gseh ne morn wider", "Ig gsehne morn wider.", "Ig gseh ihn morn wider."]
+    images:
+      - "data/assets/images/old_people_conv_garden.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This lies a bit further in the future, so we use **wider**. This is in *akkusativ*, so we use **ihn** or **ne** (look at the lesson *The Accusative Case* as a reminder).
+
+  - type: order
+    id: order_11
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They're here again!"
+      helper: "Sie sind wieder da!"
+    tokens: ["Si si", "wider", "da."]
+    solution_display: |
+      ✅ Correct!
+      
+      In this case, we use **wider**.
+    audio: "data/assets/audio/sisiwiderda.mp3"
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "immer"
+    translation:
+      en: "always"
+      de: "immer"
+    images:
+      - "data/assets/images/clock_spinning.jpg"
+    audio: "data/assets/audio/immer.mp3"
+
+  - type: order
+    id: order_13
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl.) always have time!"
+      helper: "Ihr habt immer Zeit!"
+    tokens: ["Dir", "heit", "immer", "Zit!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Immer** means *always*. **Dir heit Zit** means *You (pl.) have time*.
+    audio: "data/assets/audio/dirheitimmerzit.mp3"
+
+  - type: listen_type
+    id: listen_type_14
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ibiimmerda.mp3"
+    answers: ["I bi immer da."]
+    images:
+      - "data/assets/images/point_self.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *I'm always here*.
+
+  - type: markdown
+    id: markdown_15
+    markdown: |
+      ## *Immerno*
+      
+      We've already seen that **no** means *still / yet*. But there is another variation of this that we use in German and Bärndütsch that goes a bit further: **immerno** / **immer no** (**immer** + **no**)
+      
+      You can technically always use **no** and it will be correct, so if you're confused just stick with that! 
+      
+      But **immerno** has a unique advantage: It expresses an *expectation*. You say **immerno** when you *excpect* that a state should have ended by now but somehow is still there!
+      
+      As an example:
+      
+      - **Är schlaaft no** -> *He's still sleeping*
+      - **Är schlaaft immerno** -> *He's still sleeping (and he should have woken up by now!)*
+      
+      - **Si isch no nid hie** -> *She's not here yet*
+      - **Si isch immerno nid hie** -> *She's not here yet (she's late!)*
+      
+      - **Äs rägnet no** -> *It's still raining*
+      - **Äs rägnet immerno** -> *It's still raining (and I would have liked it to stop by now!)*
+      
+      **Immerno** / **immer no** (written in one or two words) carries a certain *expectation* or *judgement* with it. We won't go too much into detail with it here (maybe in a later lesson), but we wanted you to be aware of that phrase in case someone uses it!
+    images:
+      - "data/assets/images/watch_lookat.jpg"
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He is sill not here (*annoyed*)!"
+      helper: "Er ist immer noch nicht here!"
+    tokens: ["Är", "isch", "immerno", "nid", "hie!"]
+    solution_display: |
+      ✅ Correct!
+      
+      If you wanna express that you would have *expected* something to change but it hasn't, you use **immer no** or **immerno**.
+    audio: "data/assets/audio/aerischimmernonidhie.mp3"
+
+  - type: cloze
+    id: cloze_17
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She's still not going."
+      helper: "Sie geht immer noch nicht."
+      target: ["Si geit ", " nid."]
+    answers: ["immerno", "immer no"]
+    solution_display: |
+      ✅ Correct!
+      
+      Using **immerno** here implies that this person is somewhat disappointed that she is still not going, or that they're annoyedly telling someone who keeps asking if she's going that she really is not.
+    images:
+      - "data/assets/images/watch_lookat2.jpg"
+    audio: "data/assets/audio/sigeitimmernonid.mp3"
+
+  - type: introduce_word
+    id: introduce_word_18
+    word: "nie"
+    translation:
+      en: "never"
+      de: "nie"
+    images:
+      - "data/assets/images/no.jpg"
+    audio: "data/assets/audio/nie.mp3"
+
+  - type: order
+    id: order_19
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He never has time!"
+      helper: "Er hat nie Zeit!"
+    tokens: ["Är", "hett", "nie", "Zit!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Nie** means *never*.
+    audio: "data/assets/audio/aerhettniezit.mp3"
+
+  - type: cloze
+    id: cloze_20
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "You never do that!"
+      helper: "Du machst das nie!"
+      target: ["Du machsch das ", "."]
+    answers: ["nie"]
+    images:
+      - "data/assets/images/pointing_you.jpg"
+    audio: "data/assets/audio/dumachschdasnie.mp3"
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ihaniezit_sorry.mp3"
+    text: "This person **always** has time."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They're saying **I ha nie zit, sorry** which means *I never have time, sorry*. *Always* would be **immer**.
+
+  - type: match
+    id: match_22
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "still / yet"
+        right: "no"
+      - left: "still / yet *with an expectation*"
+        right: "immer no / immerno"
+      - left: "again (*general*)"
+        right: "wider"
+      - left: "again (*recent*)"
+        right: "nomal"
+      - left: "always"
+        right: "immer"
+      - left: "never"
+        right: "nie"

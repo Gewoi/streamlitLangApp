@@ -231,14 +231,14 @@ steps:
   - type: listen_type
     id: listen_type_16
     prompt: "Listen and type what you hear (Bärndütsch)."
-    audio: "data/assets/audio/mueschdumornschaffe.mp3"
-    answers: ["Muesch du morn schaffe?"]
+    audio: "data/assets/audio/mueschdumorngahschaffe.mp3"
+    answers: ["Muesch du morn gah schaffe?"]
     images:
       - "data/assets/images/woman_asking.jpg"
     solution_display: |
       ✅ Correct!
       
-      This means *do you have to work tomorrow?*.
+      This means *do you have to go to work tomorrow?*.
 
   - type: true_false
     id: true_false_17
