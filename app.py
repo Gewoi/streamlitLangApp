@@ -92,6 +92,7 @@ if page == "login":
     st.divider()
     st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️", width='stretch')
     st.space("small")
+    st.caption("03/07/2026: Added one new lesson, small fixes to older lessons.")
     st.caption("09/06/2026: Added two new lessons, added github.io page for longer updates.")
     st.caption("04/05/2026: Added two new lessons, adjustment to UI.")
     st.divider()

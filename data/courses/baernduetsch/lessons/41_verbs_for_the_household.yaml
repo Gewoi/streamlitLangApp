@@ -1,0 +1,493 @@
+id: 41_verbs_for_the_household
+title: "🧽 Verbs for the Household"
+description: "Learn some more verbs to talk about what you do in a household, and learn about your first *separable verb*."
+estimated_minutes: 7
+section: Jobs
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "choche"
+    translation:
+      en: "to cook"
+      de: "kochen"
+    images:
+      - "data/assets/images/cooking_spaghetti.jpg"
+    audio: "data/assets/audio/choche.mp3"
+
+  - type: match
+    id: match_1
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I"
+        right: "choche"
+      - left: "Du"
+        right: "chochsch"
+      - left: "Är / Si / Äs"
+        right: "chocht"
+
+  - type: match
+    id: match_2
+    prompt: "Match the conjugations."
+    pairs:
+      - left: "Mir"
+        right: "choche (*we*)"
+      - left: "Dir"
+        right: "chochet / chochit"
+      - left: "Si"
+        right: "choche (*they*)"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I cook soup."
+      helper: "Ich koche Suppe."
+      target: ["I ", " Suppe."]
+    solution_display: |
+      ✅ Correct!
+      
+      **I choche** means *I cook*.
+    images:
+      - "data/assets/images/soup.jpg"
+    audio: "data/assets/audio/ichochesuppe.mp3"
+    answers: ["choche"]
+
+  - type: order
+    id: order_5
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We cook something."
+      helper: "Wir kochen etwas."
+    tokens: ["Mir", "choche", "öppis."]
+    audio: "data/assets/audio/mirchocheoeppis.mp3"
+
+  - type: true_false
+    id: true_false_4
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/aerchochthuetzmittag.mp3"
+    text: "He cooks **lunch** today."
+    answer: "True"
+    solution_display: |
+      ✅ Correct!
+      
+      **Zmittag** means *lunch*, and **är chocht** means *he cooks*.
+
+  - type: match
+    id: match_7
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "choche"
+      - left: "Du"
+        right: "chochsch"
+      - left: "Är / Si / Äs"
+        right: "chocht"
+
+  - type: match
+    id: match_8
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "choche (*we*)"
+      - left: "Dir"
+        right: "chochet / chochit"
+      - left: "Si"
+        right: "choche (*they*)"
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "putze"
+    translation:
+      en: "to clean"
+      de: "putzen"
+    images:
+      - "data/assets/images/girl_cleaning.jpg"
+    audio: "data/assets/audio/putze.mp3"
+
+  - type: match
+    id: match_10
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "putze"
+      - left: "Du"
+        right: "putzisch"
+      - left: "Är / Si / Äs"
+        right: "putzt"
+
+  - type: match
+    id: match_11
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "putze (*we*)"
+      - left: "Dir"
+        right: "putzet / putzit"
+      - left: "Si"
+        right: "putze (*they*)"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "You (pl.) clean our house today."
+      helper: "Ihr putzt heute unser Haus."
+    tokens: ["Dir", "putzit", "hüt", "üses", "Huus."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Üses Huus** means *our house*, and **dir putzit/putzet** means *you (pl.) clean*.
+    audio: "data/assets/audio/dirputzithuetueseshuus.mp3"
+
+  - type: cloze
+    id: cloze_13
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We clean that."
+      helper: "Wir putzen das."
+      target: ["Mir ", " das."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir putze** means *we clean*. You can generally substitute any undefined thing with **das** (like you would use *that*).
+    images:
+      - "data/assets/images/father_son_cleaning.jpg"
+    audio: "data/assets/audio/mirputzedas.mp3"
+    answers: ["putze"]
+
+  - type: choose
+    id: choose_14
+    prompt: "Choose all correctly matched pronouns and conjugations!"
+    single_answer: false
+    correct_answers: ["mir putze", "si putze (*they*)", "du putzisch"]
+    wrong_answers: ["är putze", "i putzisch"]
+
+  - type: match
+    id: match_15
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "putze"
+      - left: "Du"
+        right: "putzisch"
+      - left: "Är / Si / Äs"
+        right: "putzt"
+
+  - type: match
+    id: match_16
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "putze (*we*)"
+      - left: "Dir"
+        right: "putzet / putzit"
+      - left: "Si"
+        right: "putze (*they*)"
+
+  - type: introduce_word
+    id: introduce_word_17
+    word: "bache"
+    translation:
+      en: "to bake"
+      de: "backen"
+    images:
+      - "data/assets/images/baking_cookies.jpg"
+    audio: "data/assets/audio/bache.mp3"
+
+  - type: match
+    id: match_18
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "bache"
+      - left: "Du"
+        right: "bachsch"
+      - left: "Är / Si / Äs"
+        right: "bacht"
+
+  - type: match
+    id: match_19
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "bache (*we*)"
+      - left: "Dir "
+        right: "bachet / bachit"
+      - left: "Si"
+        right: "bache (*they*)"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We bake something for tomorrow!"
+      helper: "Wir backen etwas für morgen!"
+    tokens: ["Mir", "bache", "öppis", "für", "morn!"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir bache** means *we bake*. And **für morn** means *for tomorrow*; the sentence structure is very similar to English!
+    audio: "data/assets/audio/mirbacheoeppisfuermorn.mp3"
+
+  - type: cloze
+    id: cloze_21
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "What are you baking?"
+      helper: "Was backst du?"
+      target: ["Was ", " du?"]
+    answers: ["bachsch"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Du bachsch** means *you bake*. For a question, we flip the order of pronoun and verb!
+    images:
+      - "data/assets/images/baking_cookies.jpg"
+    audio: "data/assets/audio/wasbachschdu.mp3"
+
+  - type: match
+    id: match_22
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "bache"
+      - left: "Du"
+        right: "bachsch"
+      - left: "Är / Si / Äs"
+        right: "bacht"
+
+  - type: match
+    id: match_23
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "bache (*we*)"
+      - left: "Dir "
+        right: "bachet / bachit"
+      - left: "Si"
+        right: "bache (*they*)"
+
+  - type: introduce_word
+    id: introduce_word_24
+    word: "wäsche"
+    translation:
+      en: "to wash"
+      de: "waschen"
+    images:
+      - "data/assets/images/washing_clothes.jpg"
+    audio: "data/assets/audio/waesche.mp3"
+
+  - type: match
+    id: match_25
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "wische"
+      - left: "Du"
+        right: "wischisch"
+      - left: "Är / Si / Äs"
+        right: "wischt"
+
+  - type: match
+    id: match_26
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "wäsche (*we*)"
+      - left: "Dir "
+        right: "wäschet / wäschit"
+      - left: "Si"
+        right: "wäsche (*they*)"
+
+  - type: order
+    id: order_27
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I wash my car."
+      helper: "Ich wasche mein Auto."
+    tokens: ["I", "wische", "mis", "Outo."]
+    solution_display: |
+      ✅ Correct!
+      
+      **I wische** means *I wash*, and **mis Outo** means *my car*.
+    audio: "data/assets/audio/iwischemisouto.mp3"
+
+  - type: markdown
+    id: markdown_28
+    markdown: |
+      # Separable Verbs
+      
+      In Bärndütsch, as well as in Standard German, some verbs can have an additional prefix or suffix that changes their meaning. This sounds complicated, but you already know this from English! Think about *to turn* vs. *to turn in*.
+      
+      - *turning a book* is flipping it so you can see it's back
+      - *turning in a book* is handing it in before a deadline
+      
+      Then, you can also *turn up*, *turn down*, etc.
+      
+      
+      German and Bärndütsch have the same thing, and a great example is **wäsche** vs. ***ab*wäsche**
+      
+      - **wäsche** is to wash clothes, or yourself
+      - ***ab*wäsche** specifically refers to the act of *doing dishes / washing dishes*
+      
+      **Ab** generally means *from* or *away from*. If you add it in front of **wäsche**, you turn it into the verb for doing dishes!
+    images:
+      - "data/assets/images/man_dishes.jpg"
+
+  - type: introduce_word
+    id: introduce_word_29
+    word: "abwäsche"
+    translation:
+      en: "to wash dishes / do dishes"
+      de: "abwaschen"
+    images:
+      - "data/assets/images/washing_dishes.jpg"
+    audio: "data/assets/audio/abwaesche.mp3"
+
+  - type: markdown
+    id: markdown_30
+    markdown: |
+      # Conjugating a separable verb
+      
+      If you have a separable verb with a prefix, like ***ab*wäsche**, you have to only pay attention to one thing when you conjugate it: **The prefix *separates* and goes after the verb!** The verb itself you can just conjugate like the non-separable version of the verb.
+      
+      In practice, this means the following:
+      - ***ab*wäsche**
+      	- **I wische *ab***
+      	- **Du wischisch *ab***
+      	- **Är wischt *ab***
+      	- **Mir wäsche *ab***
+      	- **Dir wäschet *ab***
+      	- **Si wäsche *ab***
+      
+      You can see: **Abwäsche** conjugated is just the forms of the verb **wäsche** with the **ab** added at the end!
+      
+      So just remember: A *separable* verb is a verb that has a prefix that changes its meaning. And when you conjugate it, you put that prefix at the end!
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: match
+    id: match_31
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "wische ab"
+      - left: "Du"
+        right: "wischisch ab"
+      - left: "Är / Si / Äs"
+        right: "wischt ab"
+
+  - type: match
+    id: match_32
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir "
+        right: "wäsche ab (*we*)"
+      - left: "Dir"
+        right: "wäschet ab"
+      - left: "Si"
+        right: "wäsche ab (*they*)"
+
+  - type: order
+    id: order_33
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "She's washing the dishes today."
+      helper: "Sie wischt heute ab."
+    tokens: ["Si", "wischt", "hüt", "ab."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Si wischt ab** means *she's washing the dishes*. Generally, the prefix of the *separable* verb goes at the end of the phrase! That's why you see the **ab** at the very end there.
+    audio: "data/assets/audio/siwischthuetab.mp3"
+
+  - type: order
+    id: order_34
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Are we doing the dishes tomorrow?"
+      helper: "Waschen wir morgen ab?"
+    tokens: ["Wäsche", "mir", "morn", "ab?"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Mir wäsche ab** means *we do the dishes*. In a question, we flip the order of pronoun and verb; the prefix of the *separable* verb is still at the end of the phrase!
+    audio: "data/assets/audio/waeschemirmornab.mp3"
+
+  - type: translate_type
+    id: translate_type_35
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "They are washing the dishes."
+      helper: "Sie waschen ab."
+    answers: ["Si wäsche ab."]
+    images:
+      - "data/assets/images/father_son_dishes.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Si wäsche ab** means *they're washing the dishes*. **Si wäsche** would just mean *they're washing*, not specific to dishes!
+
+  - type: match
+    id: match_36
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "to wash"
+        right: "wäsche"
+      - left: "to wash dishes / do dishes"
+        right: "abwäsche"
+
+  - type: match
+    id: match_37
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "I'm doing dishes / washing dishes"
+        right: "I wische ab"
+      - left: "I'm washing"
+        right: "I wische"
+
+  - type: match
+    id: match_38
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "I / Ig"
+        right: "wische ab"
+      - left: "Du"
+        right: "wischisch ab"
+      - left: "Är / Si / Äs"
+        right: "wischt ab"
+
+  - type: match
+    id: match_39
+    prompt: "Match the conjugations of the verb."
+    pairs:
+      - left: "Mir"
+        right: "wäsche ab (*we*)"
+      - left: "Dir"
+        right: "wäschet ab"
+      - left: "Si "
+        right: "wäsche ab (*they*)"
+
+  - type: match
+    id: match_40
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "He bakes"
+        right: "Är bacht"
+      - left: "We clean"
+        right: "Mir putze"
+      - left: "They cook"
+        right: "Si choche"
+      - left: "You (sing.) do the dishes"
+        right: "Du wischisch ab"
+      - left: "She washes"
+        right: "Si wischt"
+      - left: "You (pl.) are cooking"
+        right: "Dir chochet"
+      - left: "I am doing dishes"
+        right: "I wische ab"
+      - left: "We bake"
+        right: "Mir bache"
+      - left: "They clean"
+        right: "Si putze"
