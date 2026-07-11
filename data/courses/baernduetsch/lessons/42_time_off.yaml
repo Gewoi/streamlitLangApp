@@ -1,0 +1,96 @@
+id: 42_time_off
+title: "☀️ Time off"
+description: "Say when you have time off, and what you do when you have that time off."
+estimated_minutes: 5
+section: Jobs
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "I ha frei"
+    translation:
+      en: "I am free"
+      de: "Ich habe frei"
+    images:
+      - "data/assets/images/girl_bed_getting_uo.jpg"
+    audio: "data/assets/audio/ihafrei.mp3"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Frei haa
+      
+      If you have some time off of work, or you're free overall and don't have any other plans, you say **I ha frei**. Here we use the word **frei** which means *free*, and combine it with the word **haa** (*to have*). Note that **we use *to have*, and not *to be* in Bärndütsch** (and German in general)!
+      
+      - *I am free*/*I do not have to work* -> **I ha frei**
+      - *You're free*/*You don't have to work* -> **Du hesch frei**
+      - etc.
+      
+      You'll hear this quite often when people are trying to make plans!
+    images:
+      - "data/assets/images/woman_phone.jpg"
+
+  - type: cloze
+    id: cloze_2
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I am free tomorrow. / I am off work tomorrow."
+      helper: "Ich habe morgen frei."
+      target: ["I ha morn ", "."]
+    answers: ["frei"]
+    solution_display: |
+      ✅ Correct!
+      
+      **I ha frei** means *I am free / I don't have to work*.
+    images:
+      - "data/assets/images/cheers.jpg"
+    audio: "data/assets/audio/ihamornfrei.mp3"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Are you off work tomorrow?"
+      helper: "Hast du morgen frei?"
+    tokens: ["Hesch", "du", "morn", "frei?"]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember that when we ask a question, the order of the verb and pronoun changes!
+    audio: "data/assets/audio/heschdumornfrei.mp3"
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirheiamsamstifrei.mp3"
+    answers: ["Mir hei am Samsti frei.", "Mir hei am Samstig frei."]
+    images:
+      - "data/assets/images/saturday.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *We're free on Saturday* / *We don't have to work on Saturday*.
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Does he have time on Monday? - Yes, he's free on Monday."
+      helper: "Hat er am Montag Zeit? - Ja, er hat am Montag frei."
+      target: ["Hett är am Mänti zit? - Ja, ", "."]
+    answers: ["Är hett am Mänti frei", "Är hett am Mäntig frei."]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/conversation_casual.jpg"
+    audio: "data/assets/audio/hettaerammaentizit_jaaerhetammaentifrei.mp3"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Fiirtag"
+    translation:
+      en: "Holiday"
+      de: "Feiertag"
+    images:
+      - "data/assets/images/holiday_1.jpg"
+    audio: "data/assets/audio/fiirtag.mp3"
