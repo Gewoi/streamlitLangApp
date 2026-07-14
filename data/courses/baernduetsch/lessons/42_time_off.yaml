@@ -1,6 +1,6 @@
 id: 42_time_off
 title: "☀️ Time off"
-description: "Say when you have time off, and what you do when you have that time off."
+description: "Say when you have time off, and about the position of the verb in a sentcence."
 estimated_minutes: 5
 section: Jobs
 
@@ -27,6 +27,7 @@ steps:
       - etc.
       
       You'll hear this quite often when people are trying to make plans!
+      
     images:
       - "data/assets/images/woman_phone.jpg"
 
@@ -94,3 +95,145 @@ steps:
     images:
       - "data/assets/images/holiday_1.jpg"
     audio: "data/assets/audio/fiirtag.mp3"
+
+  - type: cloze
+    id: cloze_7
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Tomorrow is a holiday. You're off tomorrow."
+      helper: "Morgen ist ein Feiertag. Du hast morgen frei."
+      target: ["Morn isch e ", ". Du hesch morn frei."]
+    answers: ["Fiirtag"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Fiirtag** is a celebrated holiday, like religious holidays, independence days, etc.
+    images:
+      - "data/assets/images/closed_seeya_tomorrow.jpg"
+    audio: "data/assets/audio/mornischefiirtag_duheschmornfrei.mp3"
+
+  - type: order
+    id: order_8
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Are we free on Friday? - Yes, it's a holiday."
+      helper: "Haben wir am Freitag frei? - Ja, es ist ein Feiertag."
+    tokens: ["Hei", "mir", "am", "Friti", "frei? -", "Ja,", "äs", "isch", "e", "Fiirtag."]
+    audio: "data/assets/audio/heimiramfritifrei_jaesischefiirtag.mp3"
+
+  - type: true_false
+    id: true_false_9
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ammaentiischefiirtag_uamdsischtihanifrei.mp3"
+    text: "This person is **not** free on Tuesday."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person said **Am Mänti isch e Fiirtag u am Dsischti hani frei**, which means *(On) Monday is a holiday and I'm free on Tuesday*.
+
+  - type: markdown
+    id: markdown_10
+    markdown: |
+      ## **Am Samsti hani frei**
+      
+      If you want to say *I'm free on Saturday*, there are a few things to consider! 
+      Firstly, we say **Am Samsti**, which translates to *on Saturday*. You've already seen this in the *days of the week* lesson (if it's not as present you can repeat it).
+      
+      When we follow **Am Samsti**, we *flip the order* of pronoun and verb! This is like in a question: 
+      - **Är hett** -> **Am Samtsti *hett är* ...**
+      - **Mir göh** -> **Am Friti *göh mir* ...**
+      - **I cha** -> **Am Donnsti *chani* ...**
+      
+      The grammatical reason for this is rule you also find in regular German: In a "*Hauptsatz*" (main clause, simple sentences like *I go to school*, *You see the train*), *the verb always comes as the **second building block** of the sentence*. 
+      
+      You'll encounter this more often in later lessons, but for now the important thing is to remember that when your sentence *starts* with **Am Samsti**, you then *flip the order* of verb and pronoun!
+    images:
+      - "data/assets/images/book_table.jpg"
+
+  - type: choose
+    id: choose_11
+    prompt: "Choose all correct answers."
+    images:
+      - "data/assets/images/calendar_week.jpg"
+    single_answer: false
+    correct_answers: ["Am Samsti chani nid.", "Am Mittwuch isch är wäg."]
+    wrong_answers: ["Am Mänti ig bi hie.", "Am Dsischti mir chöi nid."]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: In a main clause ("*Hauptsatz*"), the **verb** is always the **second** building block! So, in sentences that start with **Am Samsti** (which counts as one building block), you need to *flip* the order of the verb and pronoun!
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "On Sunday, he's not available."
+      helper: "Am Sonntag kann er nicht."
+    tokens: ["Am", "Sunnti", "cha", "är", "nid."]
+    solution_display: |
+      ✅ Correct!
+      
+      Again, the verb comes as the second building block here, which is why **är cha** is flipped. In the audio, you'll hear the person say **chaner** instead of **cha är**. We'll talk about this in the next slide!
+    audio: "data/assets/audio/amsunntichanernid.mp3"
+
+  - type: markdown
+    id: markdown_13
+    markdown: |
+      ## *cha i* vs. *chani*
+      
+      You've now seen that in a main clause, the *verb* comes as the *second* building block of the sentence. You might remember from earlier lessons that in Bärndütsch, we often do not like to pronounce vowels that are too similar to each other right after one another (you've specifically seen this in question sentences already; check out the first few lessons as a repetition).
+      
+      So, often, instead of **cha i** we actually say **chani**.	The **-n** is a connecting element to make the sentence flow better. **Cha i** is also correct, so don't worry; it's just easier to say **chani** instead for us. 
+      
+      Note that this doesn't apply in all cases; for **du chasch** for example, **chasch du** doesn't need any additional **-n**! You'll most commonly find it for:
+      - **I / Ig** with a connecting **-n**
+      - **Är** also with a connecting **-n**
+      - **Mir**, where the ending turns into **-mr** (we don't prounounce the **-i** in there usually)
+      - **Dir**, where the ending turns into **-er** (an **e** instead of an **di**, is often easier to pronounce)
+      
+      Again, you don't need to learn these by heart! They will come naturally the more you speak to other people. And even if not, the straight version of just saying **cha i** is also correct!
+      
+      Below, you'll find examples for the words **chönne** (*to be able to*) and **haa** (*to have*). 
+      
+      <center>
+      
+      | verb | flipped | connected version (if any) |
+      | --- | --- | --- |
+      | I / Ig cha | *cha i* | **chani** |
+      | Du chasch | *chasch du* | **chasch du** |
+      | Är cha | *cha är* | **chaner** / **chanär** |
+      | Si cha | *cha si* | **cha si** |
+      | Äs cha | *cha äs* | **chas** |
+      | Mir chöi | *chöi mir* | **chöi mir** / **chöimr** |
+      | Dir chöit |  *chöit dir* | **chöit dir** / **chöiter** |
+      | Si chöi | *chöi si* | **chöi si** / **chöisi** |
+      
+      
+      | verb | flipped | connected version (if any) |
+      | --- | --- | --- |
+      | I / Ig ha | *ha i* | **hani** |
+      | Du hesch | *hesch du* | **hesch du** |
+      | Är hett | *hett är* | **hetter** / **hett är** |
+      | Si hett | *hett si* | **hett si** |
+      | Äs hett | *hett äs* | **hetts** |
+      | Mir hei | *hei mir* | **hei mir** / **heimr** |
+      | Dir heit |  *heit dir* | **heit dir** / **heiter** |
+      | Si hei | *hei si* | **hei si** |
+      
+      </center>
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "On Monday I can't, sorry."
+      helper: "Am Montag kann ich nicht, entschuldigung."
+    tokens: ["Am", "Mänti", "chani", "nid,", "sorry."]
+    solution_display: |
+      ✅ Correct!
+      
+      The verb is the second building block of the sentence, so it comes before the pronoun. And **cha i** was turned into **chani** for easier pronounciation (but, again, **cha i** would also have been correct).
+    audio: "data/assets/audio/ammaentichaninid_sorry.mp3"
