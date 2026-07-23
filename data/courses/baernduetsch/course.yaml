@@ -13,6 +13,7 @@ sections:
   - Appointments
   - People
   - Jobs
+  - Hobbies
 from_language: en
 target_language: de_ch
 secondary_language: de

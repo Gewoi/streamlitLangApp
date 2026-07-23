@@ -148,6 +148,7 @@ steps:
       The grammatical reason for this is rule you also find in regular German: In a "*Hauptsatz*" (main clause, simple sentences like *I go to school*, *You see the train*), *the verb always comes as the **second building block** of the sentence*. 
       
       You'll encounter this more often in later lessons, but for now the important thing is to remember that when your sentence *starts* with **Am Samsti**, you then *flip the order* of verb and pronoun!
+      
     images:
       - "data/assets/images/book_table.jpg"
 
@@ -202,7 +203,7 @@ steps:
       | --- | --- | --- |
       | I / Ig cha | *cha i* | **chani** |
       | Du chasch | *chasch du* | **chasch du** |
-      | Är cha | *cha är* | **chaner** / **chanär** |
+      | Är cha | *cha är* | **chaner** / **cha är** |
       | Si cha | *cha si* | **cha si** |
       | Äs cha | *cha äs* | **chas** |
       | Mir chöi | *chöi mir* | **chöi mir** / **chöimr** |
@@ -237,3 +238,92 @@ steps:
       
       The verb is the second building block of the sentence, so it comes before the pronoun. And **cha i** was turned into **chani** for easier pronounciation (but, again, **cha i** would also have been correct).
     audio: "data/assets/audio/ammaentichaninid_sorry.mp3"
+
+  - type: cloze
+    id: cloze_15
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Is he off work on Tuesday?"
+      helper: "Hat er am Dienstag frei?"
+      target: ["", " am Dsischti frei?"]
+    answers: ["Hetter", "Hett är"]
+    solution_display: |
+      ✅ Correct!
+      
+      In questions, we flip the order of verb and pronoun. Here, you can say **hetter** or **hett är**, both are correct.
+    images:
+      - "data/assets/images/tuesday.jpg"
+    audio: "data/assets/audio/hetteramdsischtifrei.mp3"
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "On Wednesday, we're off work."
+      helper: "Am Mittwoch haben wir frei."
+    tokens: ["Am", "Mittwuch", "heimer", "frei."]
+    solution_display: |
+      ✅ Correct!
+      
+      After **am Mittwuch**, we flip the order of verb and pronoun. Here, we can say **hei mir**, or as most people here would say, its shortened form **heimer**.
+    audio: "data/assets/audio/ammittwuchheimerfrei.mp3"
+
+  - type: translate_type
+    id: translate_type_17
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "On Thursday I can't, sorry."
+      helper: "Am Donnerstag kann ich nicht, sorry."
+    answers: ["Am Donnsti chani nid, sorry.", "Am Donnsti cha i nid, sorry", "am donnsti cha ig nid, sorry", "am donnsti chani nid, tschuldigung", "am donnsti cha i nid, tschuldigung", "am donnsti cha ig nid, tschuldigung"]
+    solution_display: |
+      ✅ Correct!
+      
+      You can say **cha i/ig** or its shortened form **chani**.
+
+  - type: listen_type
+    id: listen_type_18
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/heiteramfritifrei.mp3"
+    answers: ["Heiter am Friti frei?", "Heit dir am Friti frei?"]
+    images:
+      - "data/assets/images/friday.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *Are you off work on Friday?*. You can say **heit dir** or its shortened form **heiter**. Remember, in Bärndütsch (and German overall), you *have* free (and not you *are* free).
+
+  - type: true_false
+    id: true_false_19
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/amdischtiischefiirtag_amdischtiheimerfrei.mp3"
+    text: "We **have to work** on Tuesday"
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person is saying **Am Dsischti isch e Fiirtag. Am Dsischti heimer frei.**, which means, *On Tuesday is a holiday. On Tuesday, we're off.*
+
+  - type: match
+    id: match_20
+    prompt: "Match the appropriate shortened forms."
+    pairs:
+      - left: "cha i/ig"
+        right: "chani"
+      - left: "ha i/ig"
+        right: "hani"
+      - left: "cha är"
+        right: "chaner"
+      - left: "hett är"
+        right: "hetter"
+      - left: "chöi mir"
+        right: "chöimer"
+      - left: "hei mir"
+        right: "heimer"
+      - left: "chöit dir"
+        right: "chöiter"
+      - left: "heit dir"
+        right: "heiter"
+      - left: "cha äs"
+        right: "chas"
+      - left: "hett äs"
+        right: "hetts"
