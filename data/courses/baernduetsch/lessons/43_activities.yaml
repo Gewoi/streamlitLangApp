@@ -1,0 +1,207 @@
+id: 43_activities
+title: "⚽️ Activities"
+description: "Get to know a way to say your hobbies, and the names of some activities in Bärndütsch."
+estimated_minutes: 2
+section: Hobbies
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "schwümme"
+    translation:
+      en: "to swim"
+      de: "schwimmen"
+    images:
+      - "data/assets/images/swimming_in_pool.jpg"
+    audio: "data/assets/audio/schwuemme.mp3"
+
+  - type: introduce_word
+    id: introduce_word_1
+    word: "I tue gärn schwümme"
+    translation:
+      en: "I like to swim"
+      de: "Ich schwimme gerne"
+    images:
+      - "data/assets/images/swimming_ocean.jpg"
+    audio: "data/assets/audio/ituegaernschwuemme.mp3"
+
+  - type: markdown
+    id: markdown_2
+    markdown: |
+      ## I *tue* gärn
+      
+      When expressing our hobbies and what we like to do, we use the verb **tue**. **Tue** is like the English verb *to do*, but we use it less often than its English counterpart. 
+      
+      The expression **I tue gärn ...** literally translates to *I like to do ...**. So, if you want to say *I like to swim*, you say **I tue gärn schwümme** ("*I like to do swimming*).
+      
+      You could also say **I schwümme gärn** (literally *I like to swim*). This is a bit less common to express hobbies, but not wrong!
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I like to swim."
+      helper: "Ich schwimme gerne."
+      target: ["I tue gärn ", "."]
+    answers: ["schwümme", "schwuemme"]
+    solution_display: |
+      ✅ Correct!
+      
+      **I tue gärn** is what we say when we like to express what activities we like to do.
+    images:
+      - "data/assets/images/swimming_in_pool.jpg"
+    audio: "data/assets/audio/ituegaernschwuemme.mp3"
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I like to swim."
+      helper: "Ich schwimme gerne."
+    tokens: ["I", "tue", "gärn", "schwümme."]
+    audio: "data/assets/audio/ituegaernschwuemme.mp3"
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "spile"
+    translation:
+      en: "to play"
+      de: "spielen"
+    images:
+      - "data/assets/images/gaming_NES.jpg"
+    audio: "data/assets/audio/spile.mp3"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Volleyball spile"
+    translation:
+      en: "to play volleyball"
+      de: "Volleyball spielen"
+    images:
+      - "data/assets/images/beachvolley.jpg"
+    audio: "data/assets/audio/volleyballspile.mp3"
+
+  - type: order
+    id: order_7
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I like to play volleyball."
+      helper: "Ich spiele gerne Volleyball."
+    tokens: ["I", "tue", "gärn", "Volleyball", "spile."]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: **I tue gärn** is the expression for hobbies, and **Volleball spile** means *to play volleball*. These expressions usually stay together like this!
+    audio: "data/assets/audio/ituegaernvolleyballspile.mp3"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "Basketball spile"
+    translation:
+      en: "to play basketball"
+      de: "Basketball spielen"
+    images:
+      - "data/assets/images/basketball_dunk.jpg"
+    audio: "data/assets/audio/basketballspile.mp3"
+
+  - type: translate_type
+    id: translate_type_9
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I like to play basketball."
+      helper: "Ich spiele gerne Basketball."
+    answers: ["I tue gärn Basketball spile.", "I spile gärn Basketball."]
+    images:
+      - "data/assets/images/basketball_hoop.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **I tue gärn** is the expression for hobbies, and **Basketball spile** means *to play basketball*. You could also say **I spile gärn Basketball**, but the first version is more common when we're talking about hobbies.
+
+  - type: introduce_word
+    id: introduce_word_11
+    word: "Schach spile"
+    translation:
+      en: "to play chess"
+      de: "Schach spielen"
+    images:
+      - "data/assets/images/chess_game.jpg"
+    audio: "data/assets/audio/schachspile.mp3"
+
+  - type: true_false
+    id: true_false_12
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/ituenidgaernschachspile.mp3"
+    text: "This person **likes** playing chess."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      This person said **I tue *nid* gärn Schach spile**, which means *I do not like playing chess*.
+
+  - type: markdown
+    id: markdown_10
+    markdown: |
+      ## Volleyball spile
+      
+      When you talk about an activity that you play, such as a sport or a game, you can express this with **... spile**: **Volleyball spile**, **Basketball spile**, **Schach spile**. It's very similar to English, where you also say that you *play* Volleyball.
+      
+      There are some exceptions to this rule. Specifically: If there is a *unique name* for the activity of playing the sport, then we don't use **spile**. You'll encounter this for few games only, but there is one very prominent exception which we'll look at in the next slide!
+    images:
+      - "data/assets/images/beachvolley.jpg"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "schutte"
+    translation:
+      en: "to play football (soccer)"
+      de: "Fussball spielen"
+    images:
+      - "data/assets/images/football_game1.jpg"
+    audio: "data/assets/audio/schutte.mp3"
+
+  - type: order
+    id: order_14
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I like to play football."
+      helper: "Ich spiele gerne Fussball."
+    tokens: ["I", "tue", "gärn", "schutte."]
+    solution_display: |
+      ✅ Correct!
+      
+      Football is the exception. The *activity* of playing soccer has a unique word in Bärndütsch: **schutte**. The sport itself is still called **Fussball** in Bärndütsch, but the *activity of playing it* is called **schutte**.
+    audio: "data/assets/audio/ituegaernschutte.mp3"
+
+  - type: translate_type
+    id: translate_type_15
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "I don't like to play football."
+      helper: "Ich spiele nicht gerne Fussball."
+    answers: ["I tue nid gärn schutte.", "Ig tue nid gärn schutte.", "I tue nid gaern schutte.", "Ig tue nid gaern schutte."]
+    images:
+      - "data/assets/images/football_game2_women.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: match
+    id: match_16
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "to play"
+        right: "spile"
+      - left: "to play volleyball"
+        right: "Volleyball spile"
+      - left: "to play basketball"
+        right: "Basketball spile"
+      - left: "to play football"
+        right: "schutte"
+      - left: "chess"
+        right: "Schach"
+      - left: "to swim"
+        right: "schwümme"
+      - left: "I like to ..."
+        right: "I tue gärn ..."
