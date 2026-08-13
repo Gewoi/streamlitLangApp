@@ -92,9 +92,9 @@ if page == "login":
     st.divider()
     st.link_button("Buy me a coffee", url="https://buymeacoffee.com/gewoi", icon= "☕️", width='stretch')
     st.space("small")
+    st.caption("13/08/2026: Two new lessons added.")
     st.caption("03/07/2026: Added one new lesson, small fixes to older lessons.")
     st.caption("09/06/2026: Added two new lessons, added github.io page for longer updates.")
-    st.caption("04/05/2026: Added two new lessons, adjustment to UI.")
     st.divider()
     st.link_button("Changelog", url="https://gewoi.github.io/", icon="📰", width="stretch")
 else:
