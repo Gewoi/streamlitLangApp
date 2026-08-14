@@ -1,6 +1,6 @@
 id: 44_more_activities
 title: "🚴‍♂️ More Activities"
-description: "Learn more words for activities,, as well as the conjugations for the verbs *tue*."
+description: "Learn more words for activities, as well as the conjugations for the verbs *tue*."
 estimated_minutes: 3
 section: Hobbies
 
@@ -53,7 +53,7 @@ steps:
       
       **Är cha nid** means he can't. It can be used for both time (*being available*) and ability (*being able to do something*).
     images:
-      - "data/assets/images/guy_thumbs_down.jpg"
+      - "data/assets/images/guy_wondering.jpg"
     audio: "data/assets/audio/aerchanidoutofahre.mp3"
 
   - type: introduce_word
@@ -96,7 +96,7 @@ steps:
   - type: markdown
     id: markdown_7
     markdown: |
-      ## Changing the stem
+      ## Changing the Stem
       
       Usually, verbs conjugate pretty simply in Bärndütsch. However, some of them change a bit when we go to plural forms. **Tue** is one of those: its plural forms are **mir tüe**, **dir tüet** and **si tüe**. 
       
