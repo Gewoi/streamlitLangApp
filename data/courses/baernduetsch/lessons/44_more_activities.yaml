@@ -1,0 +1,264 @@
+id: 44_more_activities
+title: "🚴‍♂️ More Activities"
+description: "Learn more words for activities,, as well as the conjugations for the verbs *tue*."
+estimated_minutes: 3
+section: Hobbies
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "fahre"
+    translation:
+      en: "to drive"
+      de: "fahren"
+    images:
+      - "data/assets/images/driving.jpg"
+    audio: "data/assets/audio/fahre.mp3"
+
+  - type: introduce_word
+    id: introduce_word_1
+    word: "Outo fahre"
+    translation:
+      en: "to drive a car"
+      de: "Auto fahren"
+    images:
+      - "data/assets/images/car1.jpg"
+    audio: "data/assets/audio/outofahre.mp3"
+
+  - type: order
+    id: order_2
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I like to drive a car."
+      helper: "Ich fahre gerne Auto."
+    tokens: ["I", "tue", "gärn", "Outo", "fahre."]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember, **I tue gärn** is the phrase we use for *I like to*. **Outo fahre** means *to drive a car*. Just like in the last lesson we had with **spile** and **Volleyball spile**, **fahre** follows the same form: When you drive something, you say the vehicle and then **fahre**. 
+      
+      Important to note: **Fahre** also means *to ride*! So when you ride the bus, you also say **Bus fahre**; here it doesn't mean you're driving the bus, it just means you're on it!
+    audio: "data/assets/audio/ituegaernoutofahre.mp3"
+
+  - type: cloze
+    id: cloze_3
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "He can not drive a car."
+      helper: "Er kann nicht Auto fahren."
+      target: ["Är cha nid ", "."]
+    answers: ["Outo fahre"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Är cha nid** means he can't. It can be used for both time (*being available*) and ability (*being able to do something*).
+    images:
+      - "data/assets/images/guy_thumbs_down.jpg"
+    audio: "data/assets/audio/aerchanidoutofahre.mp3"
+
+  - type: introduce_word
+    id: introduce_word_4
+    word: "Velo"
+    translation:
+      en: "bike"
+      de: "Fahrrad"
+    images:
+      - "data/assets/images/bicycle_old.jpg"
+    audio: "data/assets/audio/velo.mp3"
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We like to ride bikes."
+      helper: "Wir fahren gerne Fahrrad."
+      target: ["Mir tüe gärn ", "."]
+    answers: ["Velo fahre"]
+    solution_display: |
+      ✅ Correct!
+      
+      Just like with **spile**, **fahre** is always in its basic form in sentences like this!
+    images:
+      - "data/assets/images/bicycle_race.jpg"
+    audio: "data/assets/audio/mirtuegaernvelofahre.mp3"
+
+  - type: match
+    id: match_6
+    prompt: "The verb *tue*: Match the singular conjugations!"
+    pairs:
+      - left: "I / Ig"
+        right: "tue"
+      - left: "Du"
+        right: "tuesch"
+      - left: "Är / Si / Äs"
+        right: "tuet"
+
+  - type: markdown
+    id: markdown_7
+    markdown: |
+      ## Changing the stem
+      
+      Usually, verbs conjugate pretty simply in Bärndütsch. However, some of them change a bit when we go to plural forms. **Tue** is one of those: its plural forms are **mir tüe**, **dir tüet** and **si tüe**. 
+      
+      Generally, this doesn't happen too often, but you'll learn about more verbs where this happens soon!
+    images:
+      - "data/assets/images/book_table.jpg"
+
+  - type: match
+    id: match_8
+    prompt: "The verb **tue**: Plural conjugations"
+    pairs:
+      - left: "Mir"
+        right: "tüe (*we*)"
+      - left: "Dir"
+        right: "tüet"
+      - left: "Si"
+        right: "tüe (*they*)"
+
+  - type: order
+    id: order_9
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They like to play volleyball."
+      helper: "Sie spielen gerne Volleyball."
+    tokens: ["Si", "tüe", "gärn", "Volleyball", "spile."]
+    solution_display: |
+      ✅ Correct!
+      
+      In the plural form, **tue** gets an **ü**!
+    audio: "data/assets/audio/situegaernvolleyballspile.mp3"
+
+  - type: listen_type
+    id: listen_type_10
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/mirtuegaernvelofahre.mp3"
+    answers: ["Mir tüe gärn velo fahre", "Mir tuee gaern velo fahre", "mir tue gaern velo fahre", "Mir tüe gärn velofahre"]
+    images:
+      - "data/assets/images/bicycle_race.jpg"
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Do you like to swim?"
+      helper: "Schwimmst du gerne?"
+      target: ["", " du gärn schwümme?"]
+    answers: ["Tuesch"]
+    solution_display: |
+      ✅ Correct!
+      
+      The conjugation is **du tuesch**, and in questions, we flip the order!
+    images:
+      - "data/assets/images/swimming_in_pool.jpg"
+    audio: "data/assets/audio/tueschdugaernschwuemme.mp3"
+
+  - type: introduce_word
+    id: introduce_word_12
+    word: "wandere"
+    translation:
+      en: "to hike"
+      de: "wandern"
+    images:
+      - "data/assets/images/guy_mountain.jpg"
+    audio: "data/assets/audio/wandere.mp3"
+
+  - type: translate_type
+    id: translate_type_13
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "She likes to hike."
+      helper: "Sie wandert gern."
+    answers: ["Si tuet gärn wandere.", "Si tuet gaern wandere."]
+    images:
+      - "data/assets/images/hiking_woman.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      **Si tuet gärn** means *she likes to*, and **wandere** means *to hike*.
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I like to go hiking."
+      helper: "Ich gehe gerne wandern."
+      target: ["I gah gärn gah ", "."]
+    answers: ["wandere"]
+    solution_display: |
+      ✅ Correct!
+      
+      This is another way you can express it, like you learned in the lesson *Going to Work and Having to Work* (repeat it if you're not too familiar with it anymore): If you like to *go* do an activity, you say **I gah gärn gah** (say the **gah** twice!).
+    images:
+      - "data/assets/images/hike_solo.jpg"
+    audio: "data/assets/audio/igahgaerngahwandere.mp3"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "lisme"
+    translation:
+      en: "to knit"
+      de: "stricken"
+    images:
+      - "data/assets/images/knitting.jpg"
+    audio: "data/assets/audio/lisme.mp3"
+
+  - type: order
+    id: order_16
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He likes to knit."
+      helper: "Er strickt gerne."
+    tokens: ["Är", "tuet", "gärn", "lisme."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Lisme** is very uniquely Bärndütsch and its surrounding dialects. Everyone else would usually say **stricken**, like in Hochdeutsch; but in Bärndütsch, **lisme** is the standard expression!
+    audio: "data/assets/audio/aertuetgaernlisme.mp3"
+
+  - type: cloze
+    id: cloze_17
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "My mother likes to knit."
+      helper: "Meine Mutter strickt gerne."
+      target: ["Mini Mueter ", "."]
+    answers: ["tuet gärn lisme", "tuet gaern lisme"]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/knitting_woman.jpg"
+    audio: "data/assets/audio/minimuetertuetgaernlisme.mp3"
+
+  - type: match
+    id: match_18
+    prompt: "Conjugate the verb **tue**!"
+    pairs:
+      - left: "I / Ig"
+        right: "tue"
+      - left: "Du"
+        right: "tuesch"
+      - left: "Är / Si / Äs"
+        right: "tuet"
+      - left: "Mir"
+        right: "tüe (*we*)"
+      - left: "Dir"
+        right: "tüet"
+      - left: "Si"
+        right: "tüe (*they*)"
+
+  - type: match
+    id: match_19
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "to knit"
+        right: "lisme"
+      - left: "to drive a car"
+        right: "Outo fahre"
+      - left: "bicycle"
+        right: "Velo"
+      - left: "to ride a bicycle"
+        right: "Velo fahre"
+      - left: "to drive / to ride"
+        right: "fahre"
+      - left: "to hike"
+        right: "wandere"
