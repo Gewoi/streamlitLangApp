@@ -1,0 +1,322 @@
+id: 45_once_a_week_or_on_the_weekend
+title: "Once a Week or on the Weekend"
+description: "Say how often you do an activity, and learn about expressions for *week*, *month*, *year*, and others. "
+estimated_minutes: 4
+section: Hobbies
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "D Wuche"
+    translation:
+      en: "The week"
+      de: "Die Woche"
+    images:
+      - "data/assets/images/calendar_week.jpg"
+    audio: "data/assets/audio/wuche.mp3"
+
+  - type: order
+    id: order_1
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "One week, two weeks, three weeks."
+      helper: "Eine Woche, zwei Wochen, drei Wochen."
+    tokens: ["Ei Wuche,", "zwöi Wuche,", "drü Wuche."]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: We use **ei** for *masculine* and *feminine* nouns and **eis** for *neuter* nouns. Also, note that the *plural* form of **Wuche** is also just **Wuche** in Bärndütsch, which makes it a bit easier!
+    audio: "data/assets/audio/eiwuchezwoeiwuchedruewuche.mp3"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Tag"
+    translation:
+      en: "Day"
+      de: "Tag"
+    images:
+      - "data/assets/images/sky.jpg"
+    audio: "data/assets/audio/tag.mp3"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "A week has seven days."
+      helper: "Eine Woche hat sieben Tage."
+    tokens: ["Ä", "Wuche", "hett", "sibe", "Täg."]
+    solution_display: |
+      ✅ Correct!
+      
+      Note here: The singular of *day* is **Tag**. The plural form *days* however is **Täg** (with an *ä*). You'll see this pattern sometimes in Bärndütsch that the plural form switches the middle vowel to an *ä*, *ö* or *ü*.
+    audio: "data/assets/audio/ewuchehettsibetaeg.mp3"
+
+  - type: listen_type
+    id: listen_type_4
+    prompt: "Listen and type what you hear (Bärndütsch)."
+    audio: "data/assets/audio/ewucheuetag.mp3"
+    answers: ["E wuche u e tag", "ä wuche u ä tag", "e wuche und e tag", "ä wuche und e tag"]
+    images:
+      - "data/assets/images/calendar_circles.jpg"
+    solution_display: |
+      ✅ Correct!
+      
+      This means *a week and a day*.
+
+  - type: introduce_word
+    id: introduce_word_5
+    word: "Dr Monet"
+    translation:
+      en: "The month"
+      de: "Der Monat"
+    images:
+      - "data/assets/images/calendar_pin.jpg"
+    audio: "data/assets/audio/drmonet.mp3"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "One month, two months, three months."
+      helper: "Ein Monat, zwei Monate, drei Monate."
+    tokens: ["Ei Monet,", "zwöi Mönet,", "drü Mönet."]
+    solution_display: |
+      ✅ Correct!
+      
+      Similar to before with **Tag**, the *plural* of **Monet** is **Mönet**!
+    audio: "data/assets/audio/eimonetzwoeimoenetdruemoenet.mp3"
+
+  - type: cloze
+    id: cloze_7
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "For one month."
+      helper: "Für einen Monat."
+      target: ["Für ei ", "."]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/watch_held.jpg"
+    audio: "data/assets/audio/fuereimonet.mp3"
+
+  - type: introduce_word
+    id: introduce_word_8
+    word: "Ds Jahr"
+    translation:
+      en: "The year"
+      de: "Das Jahr"
+    images:
+      - "data/assets/images/calendar_year.jpg"
+    audio: "data/assets/audio/dsjahr.mp3"
+
+  - type: cloze
+    id: cloze_9
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "One year or two years?"
+      helper: "Ein Jahr oder zwei Jahre?"
+      target: ["", " oder zwöi Jahr?"]
+    answers: ["Eis Jahr"]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: For *neuter* nouns we use **eis** instead of **ei** to say *one*. The *plural* of **Jahr** is also just **Jahr** again!
+    images:
+      - "data/assets/images/woman_asking.jpg"
+    audio: "data/assets/audio/eisjahroderzwoeijahr.mp3"
+
+  - type: match
+    id: match_10
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "day"
+        right: "Tag"
+      - left: "week"
+        right: "Wuche"
+      - left: "month"
+        right: "Monet"
+      - left: "year"
+        right: "Jahr"
+
+  - type: cloze
+    id: cloze_11
+    prompt: "Give the plural form."
+    sentence:
+      question: "month - months"
+      helper: ""
+      target: ["Monet - ", ""]
+    answers: ["Mönet"]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/monet_moenet.mp3"
+
+  - type: cloze
+    id: cloze_12
+    prompt: "Give the plural form."
+    sentence:
+      question: "day - days"
+      helper: ""
+      target: ["Tag - ", ""]
+    answers: ["Täg", "Taeg"]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/tag_taeg.mp3"
+
+  - type: cloze
+    id: cloze_13
+    prompt: "Give the plural form."
+    sentence:
+      question: "week - weeks"
+      helper: ""
+      target: ["Wuche - ", ""]
+    answers: ["Wuche"]
+    solution_display: |
+      ✅ Correct!
+      
+      The plural form of **Wuche** is also **Wuche**!
+    audio: "data/assets/audio/wuche_wuche.mp3"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Give the plural form."
+    sentence:
+      question: "year - years"
+      helper: ""
+      target: ["Jahr - ", ""]
+    answers: ["Jahr"]
+    solution_display: |
+      ✅ Correct!
+      
+      The plural form of **Jahr** is also **Jahr**!
+    audio: "data/assets/audio/jahr_jahr.mp3"
+
+  - type: introduce_word
+    id: introduce_word_15
+    word: "Zwöi mal pro Wuche"
+    translation:
+      en: "Two times per week"
+      de: "Zwei mal pro Woche"
+    images:
+      - "data/assets/images/two_fingers.jpg"
+    audio: "data/assets/audio/zwoeimalprowuche.mp3"
+
+  - type: markdown
+    id: markdown_16
+    markdown: |
+      ## How many times per day, week, month, year?
+      
+      The form for expressing *how often* you do an activity that you do *regularly* (like swimming twice a week, exercising once per day, etc.) is mostly simple:
+      
+      ***Number*** + **Mal** + **pro**.
+      
+      **Mal** literally means *times* (both in the occurence as well as the mathematical sense). **Pro** translates to *per* in English.
+      
+      So, if you want to say that you go swimming twice a week, you'd say:
+      
+      **I gah zwöi mal pro Wuche gah schwümme**.
+      
+      You can use **pro** for any of these time units (**pro Tag**, **pro Wuche**, **pro Monet**, **pro Jahr**), so it's the easiest to learn and we'll focus on that here! You could technically also say **zwöi Mal *ir* Wuche**, **drü Mal *im* Jahr**, etc. This roughly translates roughly to *in the week*, *in the year*, etc. You'll often also hear this, so be aware of it; but to express yourself using **pro** is perfect!
+      
+      There is one exception: If you do something *once* per day, week, month, year, you usually use **einisch** instead of **eis Mal** (although both are correct).
+      
+      Examples:
+      
+      - *I go swimming once a week* -> **I gah *einisch pro* Wuche gah schwümme**
+      - *You play volleyball once a month* -> **Du spilsch *einisch pro* Monet Volleyball**
+      - *She eats three times a day* -> **Si isst *drü Mal pro* Tag**
+      - *We go hiking two times a year* -> **Mir göh *zwöi Mal pro* Jahr gah wandere**
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: choose
+    id: choose_17
+    prompt: "How often does this person go hiking?"
+    images:
+      - "data/assets/images/hike_solo.jpg"
+    single_answer: false
+    correct_answers: ["Twice a year."]
+    wrong_answers: ["Three times a month.", "Once a week."]
+    solution_display: |
+      ✅ Correct!
+      
+      They are saying **I gah zwöi mal pro Jahr gah wandere**, which means *I go hiking two times a year*.
+    audio: "data/assets/audio/igahzwoeimalprojahrgahwandere.mp3"
+
+  - type: cloze
+    id: cloze_18
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I knit once per day."
+      helper: "Ich stricke einmal am Tag."
+      target: ["I lisme ", "."]
+    answers: ["einisch pro Tag", "eis Mal pro Tag"]
+    solution_display: |
+      ✅ Correct!
+      
+      To say *once a day*, you usually say **einisch pro Tag**. You can also say **eis Mal pro Tag**, but the first is more common.
+    images:
+      - "data/assets/images/knitting.jpg"
+    audio: "data/assets/audio/ilismeeinischprotag.mp3"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I clean the house two times a month."
+      helper: "Ich putze das Haus zwei mal pro Monat."
+      target: ["I putze ds Huus ", "."]
+    answers: ["zwöi Mal pro Monet", "zwoei Mal pro Monet"]
+    solution_display: |
+      ✅ Correct!
+    images:
+      - "data/assets/images/father_son_cleaning.jpg"
+    audio: "data/assets/audio/iputzedshuuszwoeimalpromonet.mp3"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I play Volleyball once per week."
+      helper: "Ich spiele einmal pro Woche Volleyball."
+    tokens: ["I", "spile", "einisch", "pro", "Wuche", "Volleyball."]
+    solution_display: |
+      ✅ Correct!
+    audio: "data/assets/audio/isplieeinischprowuchevolleyball.mp3"
+
+  - type: translate_type
+    id: translate_type_21
+    prompt: "Translate the following Sentence."
+    sentence:
+      question: "They go hiking three times a year."
+      helper: "Sie gehen drei mal pro Jahr wandern."
+    answers: ["Si göh drü Mal im Jahr gah wandere.", "Si goeh drue mal im Jahr gah wandere"]
+    images:
+      - "data/assets/images/tourists_map.jpg"
+    solution_display: |
+      ✅ Correct!
+
+  - type: match
+    id: match_22
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "day"
+        right: "Tag"
+      - left: "month"
+        right: "Monet"
+      - left: "week"
+        right: "Wuche"
+      - left: "year"
+        right: "Jahr"
+
+  - type: match
+    id: match_23
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "once a week"
+        right: "einisch pro Wuche"
+      - left: "two times a year"
+        right: "zwöi Mal pro Jahr"
+      - left: "three times a day"
+        right: "drü Mal pro Tag"
+      - left: "four times a month"
+        right: "vier Mal pro Monet"
