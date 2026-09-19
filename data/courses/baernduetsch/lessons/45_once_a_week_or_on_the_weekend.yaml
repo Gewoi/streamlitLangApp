@@ -1,5 +1,5 @@
 id: 45_once_a_week_or_on_the_weekend
-title: "Once a Week or on the Weekend"
+title: "🗒 Once a Week or on the Weekend"
 description: "Say how often you do an activity, and learn about expressions for *week*, *month*, *year*, and others. "
 estimated_minutes: 4
 section: Hobbies
@@ -95,6 +95,7 @@ steps:
       target: ["Für ei ", "."]
     solution_display: |
       ✅ Correct!
+    answers: ["Monet"]
     images:
       - "data/assets/images/watch_held.jpg"
     audio: "data/assets/audio/fuereimonet.mp3"
@@ -281,7 +282,7 @@ steps:
     tokens: ["I", "spile", "einisch", "pro", "Wuche", "Volleyball."]
     solution_display: |
       ✅ Correct!
-    audio: "data/assets/audio/isplieeinischprowuchevolleyball.mp3"
+    audio: "data/assets/audio/ispileeinischprowuchevolleyball.mp3"
 
   - type: translate_type
     id: translate_type_21
@@ -289,7 +290,7 @@ steps:
     sentence:
       question: "They go hiking three times a year."
       helper: "Sie gehen drei mal pro Jahr wandern."
-    answers: ["Si göh drü Mal im Jahr gah wandere.", "Si goeh drue mal im Jahr gah wandere"]
+    answers: ["Si göh drü Mal pro Jahr gah wandere.", "Si goeh drue mal pro Jahr gah wandere"]
     images:
       - "data/assets/images/tourists_map.jpg"
     solution_display: |

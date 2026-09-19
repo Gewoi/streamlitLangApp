@@ -1,0 +1,128 @@
+id: 46_names_of_sports
+title: "🏒 Names of Sports"
+description: "In this simple vocabulary lesson, learn the names of some sports, including some very traditional Swiss ones!"
+estimated_minutes: 3
+section: Hobbies
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Jogge"
+    translation:
+      en: "jogging / running"
+      de: "Joggen"
+    images:
+      - "data/assets/images/group_run.jpg"
+    audio: "data/assets/audio/jogge.mp3"
+
+  - type: cloze
+    id: cloze_1
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "I go jogging."
+      helper: "Ich gehe joggen."
+      target: ["I gah gah ", "."]
+    answers: ["jogge"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Jogge** is used for just regular recreational running for exercise.
+    images:
+      - "data/assets/images/walking_shoes.jpg"
+    audio: "data/assets/audio/igahgahjogge.mp3"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "iishockey"
+    translation:
+      en: "icehockey"
+      de: "Eishockey"
+    images:
+      - "data/assets/images/icehockey.jpg"
+    audio: "data/assets/audio/iishockey.mp3"
+
+  - type: order
+    id: order_3
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "He likes to play icehockey."
+      helper: "Er spielt gerne Eishockey."
+    tokens: ["Är", "tuet", "gärn", "Iishockey", "spile."]
+    solution_display: |
+      ✅ Correct!
+      
+      In the beginning of the word are two *i*s: **Iishockey**. **Iis** (with a long *i*, hence the two *i*s there) is the word for *ice*.
+    audio: "data/assets/audio/aertuetgaerniishockeyspile.mp3"
+
+  - type: markdown
+    id: markdown_4
+    markdown: |
+      # The same!
+      
+      There are a lot of sports that have the same name in Bärndütsch, Hochdeutsch and English. You've already seen some (like **Volleyball** and **Basketball**). Others include:
+      
+      - **Golf** -> **I tue gärn Golf spile** (*I like to play Golf*)
+      - **Tennis** -> **Du tuesch gärn Tennis spile** (*You like to play tennis*)
+      
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Roger Federer plays tennis."
+      helper: "Roger Federer spielt Tennis."
+      target: ["Roger Federer spilt ", "."]
+    answers: ["Tennis"]
+    solution_display: |
+      ✅ Correct!
+      
+      Swiss people don't often agree on a lot of things, but you'll find that most people here like (or at least have nothing against) Roger Federer!
+    images:
+      - "data/assets/images/roger_federer.jpg"
+    audio: "data/assets/audio/rogerfedererspilttennis.mp3"
+
+  - type: order
+    id: order_6
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I play golf once per week."
+      helper: "Ich spiele einmal pro Woche Golf."
+    tokens: ["I", "spile", "einisch", "pro", "Wuche", "Golf."]
+    audio: "data/assets/audio/ispileeinischprowuchegolf.mp3"
+
+  - type: introduce_word
+    id: introduce_word_7
+    word: "Fuessball / Schutte"
+    translation:
+      en: "football"
+      de: "Fussball"
+    images:
+      - "data/assets/images/football_game1.jpg"
+    audio: "data/assets/audio/fuessball_schutte.mp3"
+
+  - type: markdown
+    id: markdown_9
+    markdown: |
+      ## National Sports
+      
+      Switzerland has some unique national sports. One of the biggest ones is called **Schwinge** (in English often referred to as *Swiss wrestling* or *Swiss belt wrestling*). A fight involves two men gripping onto each others belt, and trying to get the other with his back flat on the ground. It is quite an intense sport to watch, and it is always a big event when we have the **ESAF**, the biggest event of the sport.
+      
+      Other traditional sports include **Hornusse**, which is somewhat similar to Cricket, and **Steistosse** (which translates to *stonepushing*), where a really heavy boulder is lifted above ones head and thrown as far as possible!
+      
+    images:
+      - "data/assets/images/schwingen.jpg"
+
+  - type: match
+    id: match_8
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "running"
+        right: "Jogge"
+      - left: "golf"
+        right: "Golf"
+      - left: "tennis"
+        right: "Tennis"
+      - left: "icehockey"
+        right: "Iishockey"
+      - left: "football"
+        right: "Fuesball / Schutte"

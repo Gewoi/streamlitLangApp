@@ -1,0 +1,374 @@
+id: 47_going_out
+title: "💃🏽 Going Out"
+description: "Learn some expressions for going out and hanging out with people, as well as some grammatical concepts."
+estimated_minutes: 7
+section: Hobbies
+
+steps:
+  - type: introduce_word
+    id: introduce_word_0
+    word: "Beiz"
+    translation:
+      en: "bar / restaurant"
+      de: "Bar / Restaurant"
+    images:
+      - "data/assets/images/bar.jpg"
+    audio: "data/assets/audio/beiz.mp3"
+
+  - type: markdown
+    id: markdown_1
+    markdown: |
+      ## Beiz
+      
+      **Beiz** is a quite unique word. It can mean both a *bar* and a *restaurant*. 
+      
+      You can also use the word **Bar** or **Restaurant**, and it is quite common among younger people to use that word, but older folks will often still say **Beiz**.
+      
+    images:
+      - "data/assets/images/restaurant.jpg"
+
+  - type: introduce_word
+    id: introduce_word_2
+    word: "Bar"
+    translation:
+      en: "bar"
+      de: "Bar"
+    images:
+      - "data/assets/images/bar1.jpg"
+    audio: "data/assets/audio/bar.mp3"
+
+  - type: introduce_word
+    id: introduce_word_3
+    word: "Restaurant"
+    translation:
+      en: "restaurant"
+      de: "Restaurant"
+    images:
+      - "data/assets/images/restaurant.jpg"
+    audio: "data/assets/audio/restaurant.mp3"
+
+  - type: order
+    id: order_4
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: r"A "Beiz" is a bar or a restaurant."
+      helper: r"Eine "Beiz" ist eine Bar oder ein Restaurant."
+    tokens: ["Ä Beiz", "isch", "ä Bar", "oder", "äs Restaurant."]
+    solution_display: |
+      ✅ Correct!
+      
+      You generally use **Bar** for a place that serves some food, but is mostly for drinks. **Restaurant** is generally used for places that mainly serve food, often in a bit of a fancier context. **Beiz** can refer to either of those (although you generally wouldn't call a high end restaurant a **Beiz**).
+    audio: "data/assets/audio/ebeizischebaroderesrestaurant.mp3"
+
+  - type: cloze
+    id: cloze_5
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We are in the restaurant."
+      helper: "Wir sind im Restaurant."
+      target: ["Mir si im ", "."]
+    answers: ["Restaurant"]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember: *in* + *neuter or masculine article* -> **im**. Repeat lesson "Where you Work" if you need a refresher!
+    images:
+      - "data/assets/images/ordering_table3.jpg"
+    audio: "data/assets/audio/mirsiimrestaurant.mp3"
+
+  - type: introduce_word
+    id: introduce_word_6
+    word: "Eis gah zieh"
+    translation:
+      en: "to go out (for a drink)"
+      de: "Etwas trinken gehen"
+    images:
+      - "data/assets/images/bar1.jpg"
+    audio: "data/assets/audio/eisgahzieh.mp3"
+
+  - type: markdown
+    id: markdown_7
+    markdown: |
+      ## Eis gah zieh
+      
+      To say *I'm having a drink with somebody*, you use the expression **I gah mit öpperem *eis gah zieh***. If you translate it literally, it means *to pull one*; it is a very common expression that you'll hear everywhere. Usually it's used for having a drink in the evening, but you can also technically use it if you're having coffee with someone in the afternoon, although that is less common.
+      
+      Usually this refers to going out to sit down and talk a bit while having a drink. If you're talking about going to a club or something like that, you usually don't use **eis gah zieh**. Rather you use **i Usgang gah** (*to go out*).
+      
+    images:
+      - "data/assets/images/beer.jpg"
+
+  - type: order
+    id: order_8
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We go to have a drink."
+      helper: "Wir gehen etwas trinken."
+    tokens: ["Mir", "göh", "eis", "gah", "zieh."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Eis gah zieh** is used for *going out for a drink*.
+    audio: "data/assets/audio/mirgoeheisgahzieh.mp3"
+
+  - type: introduce_word
+    id: introduce_word_9
+    word: "zäme"
+    translation:
+      en: "together"
+      de: "zusammen"
+    images:
+      - "data/assets/images/older_couple.jpg"
+    audio: "data/assets/audio/zaeme.mp3"
+
+  - type: cloze
+    id: cloze_10
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "They go to drink something together."
+      helper: "Sie gehen zusammen etwas trinken."
+      target: ["Si göh zäme ", "."]
+    answers: ["eis gah zieh"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Zäme** means *together*.
+    images:
+      - "data/assets/images/chat_table.jpg"
+    audio: "data/assets/audio/sigoehzaemeeisgahzieh.mp3"
+
+  - type: order
+    id: order_11
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "They are together."
+      helper: "Sie sind zusammen."
+    tokens: ["Si", "si", "zäme."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Si si zäme** in this context usually means they are a couple.
+    audio: "data/assets/audio/sisizaeme.mp3"
+
+  - type: order
+    id: order_12
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "Are we going out for drinks?"
+      helper: "Gehen wir zusammen etwas trinken?"
+    tokens: ["Göh", "mir zäme", "eis", "gah", "zieh?"]
+    solution_display: |
+      ✅ Correct!
+      
+      Remember, when asking a question, the verb comes at the beginning of the sentence!
+    audio: "data/assets/audio/goehmirzaemeeisgahzieh.mp3"
+
+  - type: introduce_word
+    id: introduce_word_13
+    word: "I gah i Usgang"
+    translation:
+      en: "I go out"
+      de: "Ich gehe in den Ausgang"
+    images:
+      - "data/assets/images/nightclub.jpg"
+    audio: "data/assets/audio/igahiusgang.mp3"
+
+  - type: cloze
+    id: cloze_14
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We go out once a week."
+      helper: "Wir gehen einmal pro Woche in den Ausgang."
+      target: ["Mir göh einisch pro Wuche ", "."]
+    answers: ["i Usgang"]
+    solution_display: |
+      ✅ Correct!
+      
+      **I Usgang gah** means *to go out* (as far as meaning goes, it's hard to translate literally, it basically means *go into the "going out"*). This usually refers to clubs or parties, as opposed to **eis gah zieh**, which is usually just having drinks together.
+    images:
+      - "data/assets/images/nightclub2.jpg"
+    audio: "data/assets/audio/mirgoeheinischprowucheiusgang.mp3"
+
+  - type: match
+    id: match_15
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "go out for drinks"
+        right: "eis gah zieh"
+      - left: "go partying"
+        right: "i Usgang gah"
+
+  - type: choose
+    id: choose_16
+    prompt: "What is this person doing tomorrow?"
+    images:
+      - "data/assets/images/beer.jpg"
+    single_answer: true
+    correct_answers: ["Having drinks."]
+    wrong_answers: ["Going out to party."]
+    solution_display: |
+      ✅ Correct!
+      
+      They said **I gah morn eis gah zieh**, which means they're *going out for drinks tomorrow*.
+    audio: "data/assets/audio/igahmorneisgahzieh.mp3"
+
+  - type: order
+    id: order_17
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We go to a pub."
+      helper: "Wir gehen in ein Pub."
+    tokens: ["Mir", "göh", "ine", "Beiz."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ine** is a shortening of the Hochdeutsch *in eine*, or roughly *into a* in English. We do not have this expanded form in Bärndütsch; this is the form used for the *Accusative* with the word *in* or *to*. We will look at an explanation of that in the next slide!
+    audio: "data/assets/audio/mirgoehinebeiz.mp3"
+
+  - type: markdown
+    id: markdown_18
+    markdown: |
+      ## Accusative: *ir* and *ine*
+      
+      You have already seen the *Dativ* being used with *in* (as a reminder, you can do the lesson "Where you Work"). As a reminder:
+      
+      - **in** + *masculine noun* -> **im**
+      - **in** + *feminine noun* -> **ir**
+      - **in** + *neuter noun* -> **im**
+      
+      - *I work **in** the hospital* -> **I schaffe *im* Spital**
+      
+      Now, we'll look at the *Akkusativ* case *into a*. If you want to say you're going *inside of* or *into* something, the Standard German expression would be *in ein / in eine*. In Bärndütsch, we shorten these to one single word: **ine**. The forms are straightforward: 
+      
+      - *into a* + *masculine noun* -> **ine**
+      - *into a* + *feminine noun* -> **ine**
+      - *into a* + *neuter noun* -> **ines**
+      
+      When you go to a bar, in Bärndütsch, you say that you're going *into a* bar. Same with restaurants and, for example, offices; you don't go *to* them like you would in English, you go *into* them. Some example sentences:
+      
+      - *We go to a pub* -> **Mir göh *ine* Beiz**
+      - *You all go to a restaurant tomorrow* -> **Dir göht morn *ines* Restaurant**
+      
+      In a future lesson, we'll do an overview of all the forms of **in** to give a broader overview, but for now focus on these expressions!
+    images:
+      - "data/assets/images/writing.jpg"
+
+  - type: cloze
+    id: cloze_19
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "Where are you going for drinks? - To a pub."
+      helper: "Wo geht ihr etwas trinken? - In eine Bar."
+      target: ["Wo göht dir eis gah zieh? - ", "."]
+    answers: ["ine bar", "ine beiz"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Ine Bar / Ine Beiz** means *into a pub*. In Bärndütsch, we use the form *into a* when you go into a building (as opposed to English where you'd say *to a bar*).
+    images:
+      - "data/assets/images/bar.jpg"
+    audio: "data/assets/audio/wogoehtdireisgahzieh_inebeiz.mp3"
+
+  - type: order
+    id: order_20
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "We go to a restaurant on Sunday."
+      helper: "Wir gehen am Sonntag in ein Restaurant."
+    tokens: ["Mir", "göh", "am", "Sunnti", "ines", "Restaurant."]
+    solution_display: |
+      ✅ Correct!
+      
+      **Restaurant** is *neuter*, so we use **ines**.
+    audio: "data/assets/audio/mirgoehamsunntiinesrestaurant.mp3"
+
+  - type: true_false
+    id: true_false_21
+    prompt: "What do you think is said?"
+    audio: "data/assets/audio/amfritigoehsiinebar_uamsamstigoehsiiusgang.mp3"
+    text: "They are going partying on Friday."
+    answer: "False"
+    solution_display: |
+      ✅ Correct!
+      
+      They said **Am Friti göh si ine Bar u am Samsti göh si i Usgang**, which means *They're going to a bar on Friday and they're going partying on Saturday*. **I Usgang gah** means *to go out*.
+
+  - type: cloze
+    id: cloze_22
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "She's going to a store."
+      helper: "Sie geht in einen Laden."
+      target: ["Si geit ", " Lade."]
+    answers: ["ine"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Dr Lade** is *masculine*, so we use **ine**.
+    images:
+      - "data/assets/images/store.jpg"
+    audio: "data/assets/audio/sigeitinelade.mp3"
+
+  - type: introduce_word
+    id: introduce_word_23
+    word: "tanze"
+    translation:
+      en: "to dance"
+      de: "tanzen"
+    images:
+      - "data/assets/images/woman_dancing.jpg"
+    audio: "data/assets/audio/tanze.mp3"
+
+  - type: introduce_word
+    id: introduce_word_24
+    word: "Dr Club"
+    translation:
+      en: "The nightclub"
+      de: "Der Club"
+    images:
+      - "data/assets/images/nightclub.jpg"
+    audio: "data/assets/audio/drclub.mp3"
+
+  - type: cloze
+    id: cloze_25
+    prompt: "Fill in the missing words (answer in Bärndütsch)."
+    sentence:
+      question: "We go dancing in a club."
+      helper: "Wir gehen in einem Club tanzen."
+      target: ["Mir göh ", " gah tanze."]
+    answers: ["ine Club"]
+    solution_display: |
+      ✅ Correct!
+      
+      **Club** is *masculine*, so we use **ine**.
+    images:
+      - "data/assets/images/nightclub2.jpg"
+    audio: "data/assets/audio/mirgoehineclubgahtanze.mp3"
+
+  - type: order
+    id: order_26
+    prompt: "Put the words in the correct order (Bärndütsch)."
+    sentence:
+      question: "I like to dance."
+      helper: "Ich tanze gerne."
+    tokens: ["I", "tue", "gärn", "tanze."]
+    audio: "data/assets/audio/ituegaerntanze.mp3"
+
+  - type: match
+    id: match_27
+    prompt: "Match the translations (English → Bärndütsch)."
+    pairs:
+      - left: "to dance"
+        right: "tanze"
+      - left: "nightclub"
+        right: "Club"
+      - left: "bar / restaurant"
+        right: "Beiz"
+      - left: "bar"
+        right: "Bar"
+      - left: "restaurant"
+        right: "Restaurant"
+      - left: "to go out (partying)"
+        right: "i Usgang gah"
+      - left: "to have a drink"
+        right: "eis gah zieh"
